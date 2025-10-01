@@ -1,0 +1,1033 @@
+name: Build & Deploy Combined Release Timeline (GitHub + Jira markers)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+env:
+  # 조사 대상 GitHub 리포 목록 (JSON 배열: "owner/repo")
+  TARGET_REPOS: '["your-org/repo-one","your-org/repo-two"]'
+  # 각 리포의 기존 Pages에 올라가 있다고 가정하는 파일명 (링크용, 전역 변수)
+  TIMELINE_FILENAME: "timeline.html"
+  # 인덱스 페이지 제목
+  PAGE_TITLE: "Multi-Repo Release Timelines (GitHub + Jira markers)"
+
+jobs:
+  build:
+    runs-on:
+      group: Linux-pc-group
+    steps:
+      - name: Generate combined timeline (all-repos.html) and index.html
+        uses: actions/github-script@v7
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_PROJECT_KEY: ${{ secrets.JIRA_PROJECT_KEY }}
+          JIRA_ID_TEST: ${{ secrets.JIRA_ID_TEST }}
+          JIRA_PW_TEST: ${{ secrets.JIRA_PW_TEST }}
+        with:
+          github-token: ${{ secrets.ACTION_TOKEN }}
+          script: |
+            const fs = require('fs');
+
+            // ---------- helpers ----------
+            const GH_WEB = 'https://github.samsungds.net';
+
+            const esc = (s) => (s ?? '')
+              .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+            const fmtDate = (iso) => {
+              if (!iso) return '—';
+              const d = new Date(iso);
+              return d.toLocaleString(undefined, {
+                year:'numeric', month:'short', day:'2-digit',
+                hour:'2-digit', minute:'2-digit'
+              });
+            };
+            const fmtYMD = (iso) => {
+              if (!iso) return '';
+              const d = new Date(iso);
+              return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+            };
+            const ymKey = (iso) => {
+              if (!iso) return '';
+              const d = new Date(iso);
+              return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+            };
+            const MISC_KEY = '_MISC_';
+            const getPrefix = (tag) => {
+              if (!tag) return MISC_KEY;
+              const s = String(tag);
+              const idx = s.indexOf('_');
+              const head = idx >= 0 ? s.slice(0, idx) : s;
+              return head || MISC_KEY;
+            };
+            const repoBaseOf = (name) => { const i = String(name).indexOf('_'); return i === -1 ? name : name.slice(0, i); };
+
+            function cyrb128(str) {
+              let h1 = 1779033703, h2 = 3144134277, h3 = 1013904242, h4 = 2773480762;
+              for (let i=0, k; i<str.length; i++) {
+                k = str.charCodeAt(i);
+                h1 = h2 ^ Math.imul(h1 ^ k, 597399067);
+                h2 = h3 ^ Math.imul(h2 ^ k, 2869860233);
+                h3 = h4 ^ Math.imul(h3 ^ k, 951274213);
+                h4 = h1 ^ Math.imul(h4 ^ k, 2716044179);
+              }
+              h1 = Math.imul(h3 ^ (h1>>>18), 597399067);
+              h2 = Math.imul(h4 ^ (h2>>>22), 2869860233);
+              h3 = Math.imul(h1 ^ (h3>>>17), 951274213);
+              h4 = Math.imul(h2 ^ (h4>>>19), 2773480762);
+              return [(h1^h2^h3^h4)>>>0, (h2^h1)>>>0, (h3^h1)>>>0, (h4^h1)>>>0];
+            }
+            function sfc32(a,b,c,d){ return function(){
+              a|=0; b|=0; c|=0; d|=0;
+              var t = (a + b | 0) + d | 0;
+              d = d + 1 | 0;
+              a = b ^ b >>> 9;
+              b = c + (c<<3) | 0;
+              c = (c<<21 | c>>>11);
+              c = c + t | 0;
+              return (t >>> 0) / 4294967296;
+            };}
+
+            // ---------- inputs ----------
+            const TIMELINE_FILENAME = process.env.TIMELINE_FILENAME || 'timeline.html';
+
+            let targets = [];
+            try { targets = JSON.parse(process.env.TARGET_REPOS || '[]'); }
+            catch(e){ core.setFailed('TARGET_REPOS must be a JSON array of "owner/repo"'); }
+            if (!Array.isArray(targets) || targets.length === 0) {
+              core.setFailed('No TARGET_REPOS provided. Set env.TARGET_REPOS to JSON array.');
+              process.exit(1);
+            }
+
+            fs.mkdirSync('dist', { recursive: true });
+            const allReleases = [];   // for combined page (GH + Jira)
+            const generated = [];     // for index links (GH만)
+
+            // ---------- fetch GitHub releases ----------
+            for (const full of targets) {
+              const [owner, repo] = String(full).split('/');
+              if (!owner || !repo) { core.warning(`Skip invalid repo: ${full}`); continue; }
+
+              const rels = await github.paginate(
+                github.rest.repos.listReleases, { owner, repo, per_page: 100 }
+              );
+              const data = rels.map(r => ({
+                id: `gh-${r.id}`,
+                name: r.name || r.tag_name || '',
+                tag: r.tag_name || '',
+                url: r.html_url, // In GHE this will already have enterprise host
+                created_at: r.created_at,
+                published_at: r.published_at || r.created_at,
+                author: r.author?.login ?? '',
+                draft: !!r.draft,
+                prerelease: !!r.prerelease,
+                body: r.body || '',
+                owner, repo,
+                prefix: getPrefix(r.tag),
+                src: 'github'
+              })).filter(r => !!r.published_at)
+                .sort((a,b)=> new Date(b.published_at) - new Date(a.published_at));
+
+              for (const r of data) allReleases.push(r);
+
+              // index linking info (Enterprise Pages URL)
+              generated.push({
+                owner, repo, count: data.length,
+                pageUrl: `${GH_WEB.replace(/\/+$/,'')}/${owner}/${repo}/${encodeURIComponent(TIMELINE_FILENAME)}`
+              });
+            }
+
+            // ---------- fetch Jira releases (versions) with Basic(ID:PW) ----------
+            async function fetchJiraVersions(base, projectKey, id, pw) {
+              const baseURL = String(base || '').replace(/\/+$/,'');
+              if (!baseURL || !projectKey || !id || !pw) return null;
+              const url = `${baseURL}/rest/api/3/project/${encodeURIComponent(projectKey)}/versions`;
+              const auth = Buffer.from(`${id}:${pw}`).toString('base64');
+              const res = await fetch(url, {
+                headers: {
+                  'Authorization': `Basic ${auth}`,
+                  'Accept': 'application/json'
+                }
+              });
+              if (!res.ok) throw new Error(`Jira API ${res.status}: ${await res.text()}`);
+              return await res.json(); // array of version objects
+            }
+
+            try {
+              const jiraBase = process.env.JIRA_BASE_URL;
+              const jiraProject = process.env.JIRA_PROJECT_KEY;
+              const jiraId = process.env.JIRA_ID_TEST;
+              const jiraPw = process.env.JIRA_PW_TEST;
+
+              if (jiraBase && jiraProject && jiraId && jiraPw) {
+                const versions = await fetchJiraVersions(jiraBase, jiraProject, jiraId, jiraPw);
+                if (Array.isArray(versions)) {
+                  const mapped = versions.map(v => {
+                    const releasedAt = v.releaseDate ? `${v.releaseDate}T00:00:00Z` :
+                                       (v.startDate ? `${v.startDate}T00:00:00Z` : null);
+                    return {
+                      id: `jira-${v.id}`,
+                      name: v.name || '',
+                      tag: v.name || '',
+                      url: `${String(jiraBase).replace(/\/+$/,'')}/projects/${jiraProject}/versions/${v.id}`,
+                      created_at: null,
+                      published_at: releasedAt,
+                      author: '',
+                      draft: false,
+                      prerelease: false,
+                      body: v.description || '',
+                      owner: 'JIRA',
+                      repo: jiraProject,
+                      prefix: getPrefix(v.name || ''), // prefix 계산은 하지만, prefix pill 목록에는 포함하지 않음
+                      src: 'jira',
+                      released: !!v.released
+                    };
+                  }).filter(r => !!r.published_at)
+                    .sort((a,b)=> new Date(b.published_at) - new Date(a.published_at));
+
+                  mapped.forEach(r => allReleases.push(r));
+                  core.info(`Jira: loaded ${mapped.length} versions from ${jiraProject}`);
+                } else {
+                  core.warning('Jira: versions response is not an array');
+                }
+              } else {
+                core.info('Jira disabled (missing JIRA_* secrets).');
+              }
+            } catch (e) {
+              core.warning(`Jira fetch failed: ${e.message}`);
+            }
+
+            // ---------- derived sets/maps ----------
+            // Jira 날짜(YYYY-MM-DD) 집합
+            const JIRA_YMD = new Set(
+              allReleases.filter(r => r.src === 'jira').map(r => fmtYMD(r.published_at))
+            );
+
+            // global months from all releases (GH + Jira)
+            let monthsAll = [];
+            if (allReleases.length) {
+              const sorted = [...allReleases].sort((a,b)=> new Date(b.published_at) - new Date(a.published_at));
+              const max = new Date(sorted[0].published_at);
+              const min = new Date(sorted[sorted.length-1].published_at);
+              const d = new Date(max.getFullYear(), max.getMonth(), 1);
+              const stop = new Date(min.getFullYear(), min.getMonth(), 1);
+              while (d >= stop) {
+                monthsAll.push(`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`);
+                d.setMonth(d.getMonth()-1);
+              }
+            }
+
+            // colors (assign hues per repo/repoBase/prefix)
+            const GOLDEN = 137.50776405003785;
+
+            // by repo (owner/repo) — Jira는 "JIRA/PROJECT"
+            const repoKeys = [...new Set(allReleases.map(r => `${r.owner}/${r.repo}`))].sort();
+            const [cs1,cs2,cs3,cs4] = cyrb128(`COMBINED_REPOS|${repoKeys.join('|')}`);
+            const srand = sfc32(cs1,cs2,cs3,cs4);
+            const repoHue = {}, repoLight = {};
+            const startHue = Math.floor(srand()*360);
+            repoKeys.forEach((k,i) => {
+              const h = Math.round((startHue + i*GOLDEN)%360);
+              const l = 54 + Math.floor(srand()*9) - 4;
+              repoHue[k] = h; repoLight[k] = Math.max(45, Math.min(60, l));
+            });
+
+            // by repoBase (owner/repo의 repo에서 '_' 앞부분) — GitHub만
+            const repoBaseKeys = [...new Set(
+              allReleases
+                .filter(r => r.src === 'github')
+                .map(r => `${r.owner}/${repoBaseOf(r.repo)}`)
+            )].sort();
+            const [rbs1,rbs2,rbs3,rbs4] = cyrb128(`COMBINED_REPOBASE|${repoBaseKeys.join('|')}`);
+            const rbrand = sfc32(rbs1,rbs2,rbs3,rbs4);
+            const repoBaseHue = {}, repoBaseLight = {};
+            const startRB = Math.floor(rbrand()*360);
+            repoBaseKeys.forEach((k,i) => {
+              const h = Math.round((startRB + i*GOLDEN)%360);
+              const l = 54 + Math.floor(rbrand()*9) - 4;
+              repoBaseHue[k] = h; repoBaseLight[k] = Math.max(45, Math.min(60, l));
+            });
+
+            // by prefix (GH only) — pill에서 All/Misc 제거
+            const ghOnly = allReleases.filter(r => r.src === 'github');
+            const prefixKeys = [...new Set(ghOnly.map(r => r.prefix))].filter(p => p !== MISC_KEY).sort();
+            const [ps1,ps2,ps3,ps4] = cyrb128(`COMBINED_PREFIX|${prefixKeys.join('|')}`);
+            const prand = sfc32(ps1,ps2,ps3,ps4);
+            const prefixHue = {}, prefixLight = {};
+            const startPH = Math.floor(prand()*360);
+            prefixKeys.forEach((p,i) => {
+              const h = Math.round((startPH + i*GOLDEN)%360);
+              const l = 54 + Math.floor(prand()*9) - 4;
+              prefixHue[p] = h; prefixLight[p] = Math.max(45, Math.min(60, l));
+            });
+
+            // group by month globally
+            const byMonthGlobal = {};
+            for (const r of allReleases) {
+              const mk = ymKey(r.published_at);
+              (byMonthGlobal[mk] ||= []).push(r);
+            }
+
+            // GH-only by month (for HAD_BY_PREFIX)
+            const byMonthGH = {};
+            for (const r of ghOnly) {
+              const mk = ymKey(r.published_at);
+              (byMonthGH[mk] ||= []).push(r);
+            }
+
+            // hadOriginal maps (GLOBAL=GH+Jira, REPO=GH+Jira, REPOBASE=GH only, PREFIX=GH only)
+            const HAD_GLOBAL = {};
+            for (const mk of monthsAll) {
+              HAD_GLOBAL[mk] = !!(byMonthGlobal[mk] && byMonthGlobal[mk].length);
+            }
+            const HAD_BY_REPO = {};
+            const byMonthPerRepo = {};
+            for (const r of allReleases) {
+              const key = `${r.owner}/${r.repo}`;
+              const mk = ymKey(r.published_at);
+              (byMonthPerRepo[key] ||= {});
+              (byMonthPerRepo[key][mk] ||= []).push(r);
+            }
+            for (const key of repoKeys) {
+              HAD_BY_REPO[key] = {};
+              for (const mk of monthsAll) {
+                HAD_BY_REPO[key][mk] = !!(byMonthPerRepo[key] && byMonthPerRepo[key][mk] && byMonthPerRepo[key][mk].length);
+              }
+            }
+            const HAD_BY_REPOBASE = {};
+            for (const baseKey of repoBaseKeys) {
+              HAD_BY_REPOBASE[baseKey] = {};
+              for (const mk of monthsAll) {
+                HAD_BY_REPOBASE[baseKey][mk] = !!((byMonthGlobal[mk]||[]).some(r => r.src==='github' && `${r.owner}/${repoBaseOf(r.repo)}` === baseKey));
+              }
+            }
+            const HAD_BY_PREFIX = {};
+            for (const p of prefixKeys) {
+              HAD_BY_PREFIX[p] = {};
+              for (const mk of monthsAll) {
+                HAD_BY_PREFIX[p][mk] = !!((byMonthGH[mk]||[]).some(r => r.prefix === p));
+              }
+            }
+
+            // ---------- HTML builders ----------
+            function cardCombined(r) {
+              if (r.src !== 'github') return '';
+              const key = `${r.owner}/${r.repo}`;
+              const repoBaseKey = `${r.owner}/${repoBaseOf(r.repo)}`;
+              const h = repoHue[key] ?? 210;
+              const l = repoLight[key] ?? 54;
+              const ymd = fmtYMD(r.published_at);
+              const safeRepo = `${r.owner}__${r.repo}`.replace(/[^A-Za-z0-9._-]/g,'_');
+              const nid = `notes-COMB-${safeRepo}-${r.id}`;
+              // JSON 안전 인라인: </script> 방지 위해 '<' -> \u003c
+              const notesScript = (r.body && r.body.trim())
+                ? `<script type="application/json" class="md-src" data-target="${nid}">
+${JSON.stringify((r.body || '').slice(0, 200000)).replace(/</g,'\\u003c')}
+                   </script>`
+                : '';
+
+              return `
+              <article class="card ${r.prerelease?'pre':''} ${r.draft?'draft':''}"
+                       data-src="github"
+                       data-repo="${esc(key)}" data-repo-base="${esc(repoBaseKey)}"
+                       data-prefix="${esc(r.prefix)}" data-date="${r.published_at}"
+                       style="--h:${h}; --l:${l}%">
+                <div class="dot"></div>
+                <div class="date-badge" title="${esc(r.published_at)}">${ymd}</div>
+                <div class="content">
+                  <div class="top">
+                    <a class="tag" href="${r.url}" target="_blank" rel="noopener">${esc(r.tag)}</a>
+                    ${r.prerelease?'<span class="chip amber">prerelease</span>':''}
+                    ${r.draft?'<span class="chip gray">draft</span>':''}
+                  </div>
+                  <h3>${esc(r.name)}</h3>
+                  <p class="meta">
+                    Repo: <a href="${GH_WEB}/${esc(r.owner)}/${esc(r.repo)}" target="_blank" rel="noopener">${esc(r.owner)}/${esc(r.repo)}</a>
+                    · Published: <time datetime="${r.published_at}">${fmtDate(r.published_at)}</time>
+                  </p>
+                  ${r.body && r.body.trim()
+                    ? `<details class="notes-wrap"><summary>Notes</summary>
+                         <div class="notes md" id="${nid}"><pre class="pre-fallback">${esc((r.body || '').slice(0, 20000))}</pre></div>
+                         ${notesScript}
+                       </details>`
+                    : ''}
+                </div>
+              </article>`;
+            }
+
+            function jiraCardHTML(ymd, name, url, owner, repo, released) {
+              const safeName = esc(name || '(no name)');
+              const safeUrl = url ? String(url) : '';
+              const key = `${owner}/${repo}`;
+              const isReleased = !!released;
+              return `
+                <article class="jira-card"
+                         data-src="jira"
+                         data-date="${ymd}"
+                         data-repo="${esc(key)}"
+                         data-released="${isReleased ? '1':'0'}"
+                         data-name="${esc((name||'').toLowerCase())}">
+                  <div class="dot"></div>
+                  <div class="date-badge" title="${ymd} (KST)">🗓️ ${ymd}</div>
+                  <div class="row">
+                    <span class="jira-ic" aria-label="Jira" title="Jira">
+                      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+                        <path d="M12 2l5.5 5.5L12 13 6.5 7.5 12 2zm0 9l5.5 5.5L12 22 6.5 16.5 12 11z"></path>
+                      </svg>
+                    </span>
+                    <span class="name">${safeName}</span>
+                    ${safeUrl ? '<a class="link" href="' + safeUrl + '" target="_blank" rel="noopener">Open in Jira</a>' : ''}
+                  </div>
+                </article>
+              `;
+            }
+
+            // title & generated time
+            const titleCombined = 'All Repositories — Unified Release Timeline (GitHub + Jira markers)';
+            const nowISO = new Date().toISOString();
+            const TODAY_YMD_KST = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year:'numeric', month:'2-digit', day:'2-digit'}).format(new Date());
+
+            // Build month blocks (with per-day grouping and tone)
+            const monthBlocksCombined = monthsAll.map(mk => {
+              const rows = (byMonthGlobal[mk] || []);
+              if (!rows.length) {
+                return `
+                  <div class="month" data-month="${mk}">
+                    <div class="m-head"><span class="m-tick"></span><span class="m-label">${mk}</span></div>
+                    <div class="m-empty">No releases</div>
+                  </div>`;
+              }
+
+              // group by date (YYYY-MM-DD)
+              const byDate = {};
+              for (const r of rows) {
+                const ymd = fmtYMD(r.published_at);
+                (byDate[ymd] ||= { jira:[], github:[] });
+                if (r.src === 'jira') byDate[ymd].jira.push(r);
+                else byDate[ymd].github.push(r);
+              }
+
+              const dates = Object.keys(byDate).sort().reverse();
+              const dayCards = dates.map((ymd, i) => {
+                const g = byDate[ymd];
+
+                const jiraHtml = g.jira
+                  .slice()
+                  .sort((a,b)=> new Date(a.published_at) - new Date(b.published_at))
+                  .map(j => jiraCardHTML(ymd, j.name, j.url, j.owner, j.repo, j.released))
+                  .join('\n');
+
+                const ghHtml = g.github
+                  .slice()
+                  .sort((a,b)=> new Date(b.published_at) - new Date(a.published_at))
+                  .map(cardCombined)
+                  .join('\n');
+
+                const content = jiraHtml + ghHtml;
+
+                // D-day + tone (only if Jira exists that day)
+                var dcountHTML = '';
+                var tone = '';
+                if (g.jira.length) {
+                  var a = new Date(TODAY_YMD_KST + 'T00:00:00+09:00');
+                  var b = new Date(ymd + 'T00:00:00+09:00');
+                  var dd = Math.round((b - a) / 86400000);
+                  var label = (dd === 0) ? 'D-day' : (dd > 0 ? 'D-' + dd : 'D+' + (-dd));
+                  tone = (dd < 0) ? 'past' : (dd <= 7 ? 'red' : (dd <= 14 ? 'orange' : 'green'));
+                  dcountHTML = '<span class="dcount ' + tone + '" data-day="' + ymd + '">' + label + '</span>';
+                }
+
+                return (i>0 ? '<div class="day-sep"></div>' : '')
+                     + '<div class="day-group" data-day="' + ymd + '" data-tone="' + (tone || '') + '">'
+                     +   '<div class="date-badge" title="' + ymd + ' (KST)">🗓️ ' + ymd + '</div>'
+                     +   dcountHTML
+                     +   content
+                     + '</div>';
+              }).join('\n');
+
+              return `
+                <div class="month" data-month="${mk}">
+                  <div class="m-head">
+                    <span class="m-tick"></span>
+                    <span class="m-label">${mk}</span>
+                  </div>
+                  ${dayCards}
+                  <div class="m-empty" style="display:none"></div>
+                </div>`;
+            }).join('\n');
+
+            // Pills
+            const repoPills = [
+              '<button type="button" class="pill active" data-repo="__ALL__">All repos</button>',
+              // owner/repo
+              ...repoKeys.map(k => {
+                const h = repoHue[k], l = repoLight[k];
+                return `<button type="button" class="pill" data-repo="${esc(k)}" style="--h:${h}; --l:${l}%">${esc(k)}</button>`;
+              }),
+              // owner/repoBase (GH only) — label은 **를 덧붙여 표기
+              ...repoBaseKeys.map(k => {
+                const h = repoBaseHue[k], l = repoBaseLight[k];
+                return `<button type="button" class="pill" data-repo-base="${esc(k)}" style="--h:${h}; --l:${l}%">${esc(k)}**</button>`;
+              })
+            ].join('\n');
+
+            // Prefix pill (All/Misc 제거)
+            const prefixPills = prefixKeys
+              .map(p => {
+                const h = prefixHue[p], l = prefixLight[p];
+                return `<button type="button" class="pill" data-prefix="${esc(p)}" style="--h:${h}; --l:${l}%">${esc(p)}</button>`;
+              }).join('\n');
+
+            // ---------- HTML ----------
+            const combinedHTML = `<!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1"/>
+              <title>${esc(titleCombined)}</title>
+              <style>
+                :root {
+                  --bg:#0b0d10; --fg:#e7edf3; --muted:#9fb1c1;
+                  --card:#11161b; --card-border:#202a33; --accent:#4ea1ff;
+                  --amber:#ffb300; --gray:#7b8a97; --link:#9fd1ff;
+                }
+                @media (prefers-color-scheme: light) {
+                  :root {
+                    --bg:#f7fafc; --fg:#111418; --muted:#556272;
+                    --card:#ffffff; --card-border:#e3e8ef; --accent:#2563eb;
+                    --amber:#b45309; --gray:#6b7280; --link:#2563eb;
+                  }
+                }
+                * { box-sizing: border-box; }
+                body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans; }
+                a { color:var(--link); }
+                header { position:sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: color-mix(in oklab, var(--bg) 72%, transparent); border-bottom:1px solid var(--card-border); }
+                .container { max-width:1280px; margin:0 auto; padding:24px; }
+                h1 { margin:0 0 6px; font-size:clamp(20px,3vw,32px); letter-spacing:-0.02em; }
+                .sub { color:var(--muted); margin-bottom:12px; }
+
+                /* Controls: search | show-empty | jump(right) */
+                .controls { display:flex; align-items:center; gap:12px; }
+                .controls input[type="search"] {
+                  flex:1;
+                  padding:10px 12px; border:1px solid var(--card-border); background:var(--card); color:var(--fg); border-radius:12px;
+                }
+                .controls label {
+                  display:inline-flex; gap:8px; align-items:center; background:var(--card);
+                  border:1px solid var(--card-border); padding:8px 12px; border-radius:12px; cursor:pointer;
+                }
+                .controls label.jump { margin-left:auto; background:transparent; border:none; padding:0; }
+                .controls label.jump select {
+                  padding:8px 10px; border:1px solid var(--card-border); background:var(--card); color:var(--fg); border-radius:12px; min-width:180px;
+                }
+
+                .pillbar { margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+                .pill { border:1px solid var(--card-border); background:var(--card); padding:6px 10px; border-radius:999px; cursor:pointer; font-size:14px; }
+                .pill.active { outline:2px solid color-mix(in oklab, var(--accent) 55%, transparent); }
+                .pill[style*="--h"] { border-color: hsl(var(--h) 86% calc(var(--l))); box-shadow: inset 0 0 0 1px hsl(var(--h) 86% calc(var(--l)) / .25); }
+
+                .group-title { display:none !important; }
+                .timeline { position:relative; margin:8px 0 12px; }
+                .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:var(--card-border); }
+
+                .month { position:relative; margin-bottom:8px; }
+                .m-head { position:relative; margin-left:32px; display:flex; align-items:center; gap:8px; color:var(--muted); font-weight:600; }
+                .m-tick { position:absolute; left:-22px; top:6px; width:10px; height:10px; border-radius:50%; background:var(--card-border); }
+                .m-label { font-size:14px; letter-spacing:0.02em; }
+
+                .card { position:relative; margin-left:32px; margin-bottom:16px; border:1px solid var(--card-border); background:var(--card); border-radius:16px; padding:16px 16px 12px; }
+                .card:hover { border-color: color-mix(in oklab, var(--accent) 40%, var(--card-border)); box-shadow:0 2px 20px rgba(0,0,0,0.15); }
+                .card .dot { position:absolute; left:-22px; top:22px; width:14px; height:14px; border-radius:50%; background: hsl(var(--h) 86% var(--l)); box-shadow: 0 0 0 3px hsl(var(--h) 86% var(--l) / .25); }
+                .date-badge { position:absolute; left:-98px; top:12px; font-size:12px; font-weight:700; color:var(--fg); background: color-mix(in oklab, var(--card) 70%, transparent); border:1px solid var(--card-border); padding:2px 8px; border-radius:999px; white-space:nowrap; }
+
+                .top { display:flex; gap:10px; align-items:center; margin-bottom:4px; flex-wrap:wrap; }
+                .tag { font-weight:600; text-decoration:none; color:var(--fg); background: color-mix(in oklab, hsl(var(--h) 86% var(--l)) 25%, transparent); border:1px solid color-mix(in oklab, hsl(var(--h) 86% var(--l)) 45%, var(--card-border)); padding:3px 8px; border-radius:999px; }
+                .chip { font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--card-border); }
+                .chip.amber { background: color-mix(in oklab, var(--amber) 20%, transparent); }
+                .chip.gray  { background: color-mix(in oklab, var(--gray)  20%, transparent); }
+
+                h3 { margin:6px 0 6px; font-size:clamp(16px,2.2vw,22px); }
+                .meta { margin:0 0 8px; color:var(--muted); font-size:14px; }
+
+                details { background: color-mix(in oklab, var(--card) 70%, transparent); border:1px dashed var(--card-border); padding:8px 10px; border-radius:12px; }
+                .notes, .notes * { overflow-wrap:anywhere; word-break:break-word; }
+                .notes pre { white-space: pre; overflow:auto; max-width:100%; }
+                .notes :not(pre) code { white-space: break-spaces; }
+                .notes table { display:block; max-width:100%; overflow-x:auto; }
+
+                /* 날짜 그룹: 왼쪽 달력 배지 1개만 + D-day */
+                .day-group { position: relative; }
+                .day-group > .date-badge { position:absolute; left:-98px; top:12px; font-size:12px; font-weight:700; color:var(--fg); background: color-mix(in oklab, var(--card) 70%, transparent); border:1px solid var(--card-border); padding:2px 8px; border-radius:999px; white-space:nowrap; z-index:2; }
+                .day-group > .dcount { position:absolute; left:-45px; top:34px; font-size:12px; font-weight:700; z-index:2; color:var(--muted); }
+                /* D-day 색상 */
+                .day-group > .dcount.red    { color:#ef4444; } /* D-7 ~ D-day */
+                .day-group > .dcount.orange { color:#f59e0b; } /* D-14 ~ D-8 */
+                .day-group > .dcount.green  { color:#10b981; } /* D-15 이상 */
+                .day-group > .dcount.past   { color:#9ca3af; } /* 지난 날 */
+
+                .day-group .card .date-badge,
+                .day-group .jira-card .date-badge { display:none; }
+
+                /* 날짜 구분선(더 진하게) */
+                .day-sep { margin:10px 0 14px 32px; border-top:2px solid var(--card-border); opacity:.9; }
+
+                /* Jira cards — tone 기반 파스텔 */
+                .jira-card {
+                  --jiraTone: #e5e7eb;   /* 기본(연회색) */
+                  --jiraBorder: #9ca3af;
+                  position:relative; margin-left:32px; margin-bottom:10px;
+                  border:1px solid color-mix(in oklab, var(--jiraBorder) 55%, var(--card-border));
+                  background: color-mix(in oklab, var(--jiraTone) 45%, var(--card));
+                  color: var(--fg);
+                  border-radius:12px; padding:8px 10px;
+                }
+                .jira-card:hover { border-color: color-mix(in oklab, var(--jiraBorder) 75%, var(--card-border)); box-shadow:0 1px 14px rgba(0,0,0,0.10); }
+                .jira-card a { color: var(--link); }
+                .jira-card .dot { position:absolute; left:-22px; top:15px; width:12px; height:12px; border-radius:50%; background: color-mix(in oklab, var(--jiraBorder) 80%, transparent); box-shadow: 0 0 0 3px color-mix(in oklab, var(--jiraBorder) 25%, transparent); }
+                .jira-card .row { display:flex; align-items:center; gap:10px; min-height:22px; }
+                .jira-card .jira-ic { display:inline-flex; width:16px; height:16px; flex:0 0 16px; }
+                .jira-card .jira-ic svg { width:16px; height:16px; fill: color-mix(in oklab, #6b7280 80%, black); }
+                .jira-card .name { flex:1 1 auto; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-weight:700; font-size:14px; line-height:1.2; }
+                .jira-card .link { flex:0 0 auto; font-size:12px; font-weight:600; text-decoration:none; }
+                /* tone overrides */
+                .day-group[data-tone="green"]  .jira-card { --jiraTone:#ecfdf5; --jiraBorder:#10b981; } /* 연녹 */
+                .day-group[data-tone="orange"] .jira-card { --jiraTone:#fff7ed; --jiraBorder:#f59e0b; } /* 연주황 */
+                .day-group[data-tone="red"]    .jira-card { --jiraTone:#fef2f2; --jiraBorder:#ef4444; } /* 연붉 */
+                .day-group[data-tone="past"]   .jira-card { --jiraTone:#e5e7eb; --jiraBorder:#9ca3af; } /* 연회 */
+
+                .m-empty { margin:8px 0 16px 32px; padding:10px 12px; border:1px dashed var(--card-border); border-radius:12px; color:var(--muted); font-size:14px; }
+                .m-empty.no-releases::before { content:'ⓘ '; opacity:.8; }
+
+                @media (max-width:560px){
+                  .controls { flex-wrap:wrap; }
+                  .controls label.jump { margin-left:0; }
+                  .timeline::before { left:7px; }
+                  .card { margin-left:24px; }
+                  .card .dot { left:-18px; }
+                  .date-badge { position:static; display:inline-block; margin:0 0 6px 0; }
+                  .jira-card .date-badge { position:static; display:inline-block; margin:0 0 6px 0; }
+                  .day-group > .date-badge { position:static; display:inline-block; margin:0 0 2px 0; left:auto; top:auto; }
+                  .day-group > .dcount { position:static; display:block; margin:0 0 6px 0; left:auto; top:auto; }
+                  .day-sep { margin-left:24px; }
+                }
+              </style>
+            </head>
+            <body>
+              <header>
+                <div class="container">
+                  <h1>${esc(titleCombined)}</h1>
+                  <div class="sub">Generated ${fmtDate(nowISO)} • ${allReleases.length} item(s) incl. Jira • ${repoKeys.length} repo(s)</div>
+                  <div class="controls">
+                    <input id="q" type="search" placeholder="Search tag, title, author, or body…"/>
+                    <label><input id="show-empty" type="checkbox" checked/> Show empty months</label>
+                    <label class="jump"><select id="jump-month" title="Jump to month"></select></label>
+                  </div>
+                  <div class="pillbar" id="pillbar-repo">${repoPills}</div>
+                  <div class="pillbar" id="pillbar-prefix">${prefixPills}</div>
+                </div>
+              </header>
+
+              <main class="container">
+                <section class="group combined" id="combined">
+                  <h2 class="group-title">All Repos</h2>
+                  <div class="timeline">
+                    ${monthBlocksCombined}
+                  </div>
+                </section>
+              </main>
+
+              <footer style="text-align:center; color:var(--muted); margin:28px 0 12px;">
+                Built from GitHub Releases with Jira markers
+              </footer>
+
+              <script>
+                // hadOriginal meta (GLOBAL=GH+Jira, PREFIX=GH only)
+                const HAD_GLOBAL = ${JSON.stringify(HAD_GLOBAL)};
+                const HAD_BY_REPO = ${JSON.stringify(HAD_BY_REPO)};
+                const HAD_BY_REPOBASE = ${JSON.stringify(HAD_BY_REPOBASE)};
+                const HAD_BY_PREFIX = ${JSON.stringify(HAD_BY_PREFIX)};
+                const monthsAll = ${JSON.stringify(monthsAll)};
+
+                (function(){
+                  const q = document.getElementById('q');
+                  const showEmpty = document.getElementById('show-empty');
+                  const pillsRepo    = Array.from(document.querySelectorAll('#pillbar-repo .pill[data-repo]'));
+                  const pillsRepoBase= Array.from(document.querySelectorAll('#pillbar-repo .pill[data-repo-base]'));
+                  const pillsPrefix  = Array.from(document.querySelectorAll('#pillbar-prefix .pill'));
+                  const combined = document.getElementById('combined');
+                  const jump = document.getElementById('jump-month');
+
+                  let selectedRepo = '__ALL__';
+                  let selectedRepoBase = '__ALL_REPOBASE__';
+                  let selectedPrefix = '__ALL_PREFIX__';
+
+                  function setSelectedRepo(repoKey){
+                    selectedRepo = repoKey;
+
+                    // Repo pill 활성화 토글
+                    const allRepoPills = Array.from(document.querySelectorAll('#pillbar-repo .pill[data-repo]'));
+                    allRepoPills.forEach(p => p.classList.toggle('active', p.getAttribute('data-repo') === repoKey));
+
+                    // Repo 선택 시 RepoBase/Prefix 해제
+                    selectedRepoBase = '__ALL_REPOBASE__';
+                    pillsRepoBase.forEach(p => p.classList.remove('active'));
+                    selectedPrefix = '__ALL_PREFIX__';
+                    pillsPrefix.forEach(p => p.classList.remove('active'));
+
+                    applyFilters();
+                  }
+                  function setSelectedRepoBase(key){
+                    selectedRepoBase = key;
+                    pillsRepoBase.forEach(p => p.classList.toggle('active', p.getAttribute('data-repo-base') === key));
+
+                    // RepoBase 선택 시 Repo/Prefix 해제
+                    selectedRepo = '__ALL__';
+                    const allRepoPills = Array.from(document.querySelectorAll('#pillbar-repo .pill[data-repo]'));
+                    allRepoPills.forEach(p => p.classList.remove('active'));
+                    selectedPrefix = '__ALL_PREFIX__';
+                    pillsPrefix.forEach(p => p.classList.remove('active'));
+
+                    applyFilters();
+                  }
+                  function setSelectedPrefix(prefixKey){
+                    // 동일 클릭 시 해제(전체)
+                    if (selectedPrefix === prefixKey) {
+                      selectedPrefix = '__ALL_PREFIX__';
+                      pillsPrefix.forEach(p => p.classList.remove('active'));
+                    } else {
+                      selectedPrefix = prefixKey;
+                      pillsPrefix.forEach(p => p.classList.toggle('active', p.getAttribute('data-prefix') === prefixKey));
+                    }
+
+                    // Prefix 선택 시 Repo/RepoBase 해제
+                    selectedRepo = '__ALL__';
+                    const allRepoPills = Array.from(document.querySelectorAll('#pillbar-repo .pill[data-repo]'));
+                    allRepoPills.forEach(p => p.classList.remove('active'));
+                    selectedRepoBase = '__ALL_REPOBASE__';
+                    pillsRepoBase.forEach(p => p.classList.remove('active'));
+
+                    applyFilters();
+                  }
+
+                  function applyFilters(){
+                    const term = (q.value||'').toLowerCase();
+                    const isFilterActive = term.trim().length > 0;
+                    const allowPre = true;   // 항상 프리릴리즈 표시
+                    const allowDraft = false; // 드래프트는 항상 숨김
+                    const showNoReleaseMonths = showEmpty.checked;
+
+                    const usingPrefix   = (selectedPrefix   !== '__ALL_PREFIX__');
+                    const usingRepo     = (selectedRepo     !== '__ALL__');
+                    const usingRepoBase = (selectedRepoBase !== '__ALL_REPOBASE__') && !usingRepo; // Repo 선택 시 RepoBase 비활성
+                    const isJiraRepoSelected = usingRepo && selectedRepo.startsWith('JIRA/');
+
+                    // --- Reset phase: 이전 선택 display 초기화 ---
+                    Array.from(combined.querySelectorAll('.card, .jira-card')).forEach(el => { el.style.display = ''; });
+                    Array.from(combined.querySelectorAll('.day-group')).forEach(g => { g.style.display = ''; });
+                    Array.from(combined.querySelectorAll('.day-sep')).forEach(sep => { sep.style.display = 'none'; });
+                    Array.from(combined.querySelectorAll('.month')).forEach(m => { m.style.display = ''; });
+
+                    // 1) 카드 수집
+                    const ghCards   = Array.from(combined.querySelectorAll('.card'));
+                    const jiraCards = Array.from(combined.querySelectorAll('.jira-card'));
+
+                    // 2) GH 카드 필터링 (Jira pill 모드면 GH 전부 숨김)
+                    if (isJiraRepoSelected) {
+                      ghCards.forEach(el => { el.style.display = 'none'; });
+                    } else {
+                      for (const el of ghCards){
+                        const repoKey   = el.getAttribute('data-repo') || '';
+                        const repoBase  = el.getAttribute('data-repo-base') || '';
+                        const prefixKey = el.getAttribute('data-prefix') || '';
+                        const isPre   = el.classList.contains('pre');
+                        const isDraft = el.classList.contains('draft');
+                        const hay     = el.innerText.toLowerCase();
+
+                        const okTerm   = !term || hay.includes(term);
+                        const okPre    = allowPre || !isPre;
+                        const okDraft  = allowDraft || !isDraft;
+                        const okRepo   = !usingRepo     || (repoKey  === selectedRepo);
+                        const okRB     = !usingRepoBase || (repoBase === selectedRepoBase);
+                        const okPrefix = !usingPrefix   || (prefixKey === selectedPrefix);
+
+                        el.style.display = (okRepo && okRB && okPrefix && okTerm && okPre && okDraft) ? '' : 'none';
+                      }
+                    }
+
+                    // 3) 현재 보이는 GH 카드들의 날짜(YYYY-MM-DD) 집합
+                    const visibleGhDates = new Set();
+                    ghCards.forEach(el => {
+                      if (el.style.display === '' || el.style.display == null) {
+                        const iso = el.getAttribute('data-date') || '';
+                        let ymd = '';
+                        if (/^\d{4}-\d{2}-\d{2}/.test(iso)) ymd = iso.slice(0,10);
+                        else {
+                          try { ymd = new Date(iso).toISOString().slice(0,10); } catch(e){}
+                        }
+                        if (ymd) visibleGhDates.add(ymd);
+                      }
+                    });
+
+                    // 4) Jira 카드 필터링
+                    if (isJiraRepoSelected) {
+                      // Jira pill 선택: 해당 Jira 프로젝트만, GH는 숨김
+                      jiraCards.forEach(el => {
+                        const repoKey = el.getAttribute('data-repo') || '';
+                        const hay     = el.innerText.toLowerCase();
+                        const okTerm  = !term || hay.includes(term);
+                        el.style.display = (repoKey === selectedRepo && okTerm) ? '' : 'none';
+                      });
+                    } else if (usingRepo) {
+                      // GH Repo pill 선택: 같은 날짜 + Unreleased Jira 포함, DPU 규칙
+                      const repoHasDpu = /dpu/i.test(selectedRepo);
+                      jiraCards.forEach(el => {
+                        const ymd = el.getAttribute('data-date') || '';
+                        const nameLc = (el.getAttribute('data-name') || el.innerText || '').toLowerCase();
+                        const isUnreleased = el.getAttribute('data-released') === '0';
+                        const nameHasDpu  = /dpu/.test(nameLc);
+                        const nameOk = repoHasDpu ? nameHasDpu : !nameHasDpu;
+                        const dateMatch = visibleGhDates.has(ymd);
+                        const okTerm = !term || el.innerText.toLowerCase().includes(term);
+                        el.style.display = (nameOk && okTerm && (dateMatch || isUnreleased)) ? '' : 'none';
+                      });
+                    } else if (usingRepoBase) {
+                      // RepoBase pill: 같은 날짜 + Unreleased Jira 포함, DPU 규칙
+                      const repoBaseHasDpu = /dpu/i.test(selectedRepoBase);
+                      jiraCards.forEach(el => {
+                        const ymd = el.getAttribute('data-date') || '';
+                        const isUnreleased = el.getAttribute('data-released') === '0';
+                        const nameLc = (el.getAttribute('data-name') || el.innerText || '').toLowerCase();
+                        const nameHasDpu  = /dpu/.test(nameLc);
+                        const nameOk = repoBaseHasDpu ? nameHasDpu : !nameHasDpu;
+                        const dateMatch = visibleGhDates.has(ymd);
+                        const okTerm = !term || el.innerText.toLowerCase().includes(term);
+                        el.style.display = (nameOk && okTerm && (dateMatch || isUnreleased)) ? '' : 'none';
+                      });
+                    } else {
+                      // All repos 또는 Prefix만 선택: 기본 모드에서만 Jira 보이기
+                      const allowJira = (!usingPrefix && !usingRepo && !usingRepoBase && !isFilterActive);
+                      jiraCards.forEach(el => { el.style.display = allowJira ? '' : 'none'; });
+                    }
+
+                    // [REPLACE] 유령 달력 제거(리셋 안전)
+                    (function refreshDayGroups(){
+                      const monthsAllNodes = Array.from(combined.querySelectorAll('.month'));
+                      for (const m of monthsAllNodes){
+                        m.querySelectorAll('.day-sep').forEach(sep => { sep.style.display = 'none'; });
+
+                        let visibleIdx = 0;
+                        const groups = Array.from(m.querySelectorAll('.day-group'));
+
+                        for (const g of groups){
+                          g.style.display = '';
+                          const cards = Array.from(g.querySelectorAll('.card, .jira-card'));
+                          const hasVisibleCard = cards.some(el => (el.style.display || '') !== 'none');
+
+                          if (!hasVisibleCard) {
+                            g.style.display = 'none';
+                          } else {
+                            g.style.display = '';
+                            const prev = g.previousElementSibling;
+                            if (prev && prev.classList.contains('day-sep')) {
+                              prev.style.display = (visibleIdx > 0) ? '' : 'none';
+                            }
+                            visibleIdx++;
+                          }
+                        }
+                      }
+                    })();
+
+                    // 5) 월 표시/빈 상태 업데이트
+                    const months = Array.from(combined.querySelectorAll('.month'));
+                    for (const m of months){
+                      const mk = m.getAttribute('data-month');
+                      const emptyEl = m.querySelector('.m-empty');
+                      if (!emptyEl) continue;
+
+                      const ghVisible   = m.querySelectorAll('.card:not([style*="display: none"])').length;
+                      const jiraVisible = m.querySelectorAll('.jira-card:not([style*="display: none"])').length;
+                      const visibleCount = ghVisible + jiraVisible;
+
+                      let hasOriginal = false;
+                      if (isJiraRepoSelected) {
+                        hasOriginal = !!(HAD_BY_REPO[selectedRepo] && HAD_BY_REPO[selectedRepo][mk]);
+                      } else if (usingPrefix && !usingRepo && !usingRepoBase) {
+                        hasOriginal = !!(HAD_BY_PREFIX[selectedPrefix] && HAD_BY_PREFIX[selectedPrefix][mk]);
+                      } else if (!usingPrefix && usingRepo && !usingRepoBase) {
+                        hasOriginal = !!(HAD_BY_REPO[selectedRepo] && HAD_BY_REPO[selectedRepo][mk]);
+                      } else if (!usingPrefix && !usingRepo && usingRepoBase) {
+                        hasOriginal = !!(HAD_BY_REPOBASE[selectedRepoBase] && HAD_BY_REPOBASE[selectedRepoBase][mk]);
+                      } else if (!usingPrefix && !usingRepo && !usingRepoBase) {
+                        hasOriginal = !!HAD_GLOBAL[mk];
+                      } else {
+                        hasOriginal = visibleCount > 0;
+                      }
+
+                      if (!hasOriginal && !showNoReleaseMonths) {
+                        m.style.display = 'none';
+                        continue;
+                      } else {
+                        m.style.display = '';
+                      }
+
+                      if (visibleCount === 0) {
+                        if (isFilterActive) {
+                          emptyEl.style.display = 'none';
+                        } else {
+                          emptyEl.style.display = '';
+                          emptyEl.textContent = hasOriginal ? 'No visible releases' : 'No releases';
+                        }
+                      } else {
+                        emptyEl.style.display = 'none';
+                      }
+                    }
+                  }
+
+                  // Bind events
+                  pillsRepo.forEach(p => p.addEventListener('click', () => setSelectedRepo(p.getAttribute('data-repo'))));
+                  pillsRepoBase.forEach(p => p.addEventListener('click', () => setSelectedRepoBase(p.getAttribute('data-repo-base'))));
+                  pillsPrefix.forEach(p => p.addEventListener('click', () => setSelectedPrefix(p.getAttribute('data-prefix'))));
+                  q.addEventListener('input', applyFilters);
+                  showEmpty.addEventListener('change', applyFilters);
+
+                  // Jump to month
+                  (function(){
+                    if (!jump) return;
+                    // 최신 → 과거
+                    jump.innerHTML = monthsAll.map(mk => `<option value="${mk}">${mk}</option>`).join('');
+                    jump.addEventListener('change', function(e){
+                      const mk = e.target.value;
+                      const sec = document.querySelector(\`.month[data-month="\${mk}"]\`);
+                      if (sec) sec.scrollIntoView({ behavior:'smooth', block:'start' });
+                    });
+                  })();
+
+                  // Defaults
+                  setSelectedRepo('__ALL__');
+                  selectedRepoBase = '__ALL_REPOBASE__';
+                  selectedPrefix = '__ALL_PREFIX__';
+                  applyFilters();
+                })();
+              </script>
+
+              <!-- Markdown rendering libs -->
+              <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+              <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+              <!-- Render Notes: JSON(\\u003c-safe) → GFM → sanitize -->
+              <script>
+                (function(){
+                  function renderAll(){
+                    if (!(window.marked && window.DOMPurify && typeof marked.parse === 'function')) return;
+                    if (marked.setOptions) marked.setOptions({ gfm:true, breaks:true, headerIds:false, mangle:false });
+
+                    const items = document.querySelectorAll('script.md-src[type="application/json"][data-target]');
+                    items.forEach(function(s){
+                      try {
+                        const id = s.dataset.target;
+                        const el = document.getElementById(id);
+                        if (!el) return;
+
+                        let raw = '';
+                        try { raw = JSON.parse(s.textContent || '""'); }
+                        catch { raw = String(s.textContent || ''); }
+
+                        const html = DOMPurify.sanitize(marked.parse(String(raw || '')), { USE_PROFILES: { html: true } });
+                        el.innerHTML = html;
+                        // links
+                        el.querySelectorAll('a').forEach(a => { a.target = '_blank'; a.rel = 'nofollow noopener noreferrer'; });
+                      } catch (e) {
+                        console.error('Notes render error:', e);
+                      }
+                    });
+                  }
+
+                  if (document.readyState === 'complete') renderAll();
+                  else window.addEventListener('load', renderAll, { once:true });
+                })();
+              </script>
+            </body>
+            </html>`;
+
+            fs.writeFileSync('dist/all-repos.html', combinedHTML);
+
+            // ---------- index page (links to each repo's existing timeline.html) ----------
+            const title = process.env.PAGE_TITLE || 'Multi-Repo Release Timelines (GitHub + Jira markers)';
+            const list = generated.map(g => `
+              <li>
+                <a href="${g.pageUrl}" target="_blank" rel="noopener">${g.owner}/${g.repo}</a>
+                <small>(${g.count} releases)</small>
+              </li>
+            `).join('\n');
+            const index = `<!doctype html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8"/>
+              <meta name="viewport" content="width=device-width, initial-scale=1"/>
+              <title>${esc(title)}</title>
+              <style>
+                :root { --bg:#0b0d10; --fg:#e7edf3; --muted:#9fb1c1; --card:#11161b; --card-border:#202a33; --link:#9fd1ff; }
+                @media (prefers-color-scheme: light) {
+                  :root { --bg:#f7fafc; --fg:#111418; --muted:#556272; --card:#ffffff; --card-border:#e3e8ef; --link:#2563eb; }
+                }
+                body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Noto Sans; }
+                .container { max-width:900px; margin:0 auto; padding:24px; }
+                h1 { margin:0 0 8px; font-size:clamp(22px,3vw,34px); }
+                .sub { color:var(--muted); margin-bottom:18px; }
+                .callout { margin:12px 0 18px; padding:10px 12px; border:1px dashed var(--card-border); border-radius:10px; }
+                ul { list-style: none; padding:0; margin:0; display:grid; gap:10px; }
+                li { background:var(--card); border:1px solid var(--card-border); border-radius:12px; padding:12px 14px; }
+                a { color:var(--link); text-decoration: none; font-weight:600; }
+                a:hover { text-decoration: underline; }
+                small { color:var(--muted); }
+              </style>
+            </head>
+            <body>
+              <main class="container">
+                <h1>${esc(title)}</h1>
+                <div class="sub">Index • ${generated.length} repo(s)</div>
+                <div class="callout">
+                  <a href="./all-repos.html">All repositories — unified timeline</a>
+                </div>
+                <ul>
+                  ${list || '<li><em>No repos</em></li>'}
+                </ul>
+              </main>
+            </body>
+            </html>`;
+
+            fs.writeFileSync('dist/index.html', index);
+
+            core.info(`Generated all-repos.html + index.html`);
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on:
+      group: Linux-pc-group
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
