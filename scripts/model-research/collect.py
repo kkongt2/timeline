@@ -1,5 +1,5 @@
 """Download public daily KRA reports; validate dates, starters and payout winners."""
-import argparse, gzip, hashlib, json, re, time
+import argparse, gzip, hashlib, json, re, time, threading
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
@@ -11,22 +11,32 @@ HEADERS={'User-Agent':'Mozilla/5.0','Referer':BASE+'/','Accept-Language':'ko-KR,
 VENUES={1:'seoul',2:'jeju',3:'busan'}
 CIRCLES={chr(0x2460+i):i+1 for i in range(20)}
 
+RATE_LOCK=threading.Lock()
+NEXT_REQUEST=0.0
+LOCAL=threading.local()
 def get(url,params=None):
+ global NEXT_REQUEST
+ if not hasattr(LOCAL,'session'):LOCAL.session=requests.Session()
  for attempt in range(3):
   try:
-   r=requests.get(url,params=params,headers=HEADERS,timeout=(10,35));r.raise_for_status()
+   with RATE_LOCK:
+    time.sleep(max(0,NEXT_REQUEST-time.monotonic()));NEXT_REQUEST=time.monotonic()+1.0
+   r=LOCAL.session.get(url,params=params,headers=HEADERS,timeout=(15,35));r.raise_for_status()
    for enc in ['cp949','utf-8',r.apparent_encoding]:
     try:return r.content.decode(enc)
     except (UnicodeError,TypeError):pass
    raise ValueError('Unknown text encoding')
   except (requests.RequestException,ValueError):
    if attempt==2:raise
-   time.sleep(1+attempt)
+   time.sleep(4*(attempt+1))
 
 def catalog(args):
  meet,month=args;urls=set()
  for page in range(1,4):
-  txt=get(BASE+'/dbdata/textDataList.do',{'meet':meet,'fileType':'dacom11','fileSearchName':month,'pageIndex':page})
+  cache=Path('training/raw/catalog')/f'{meet}-{month}-{page}.txt.gz';cache.parent.mkdir(parents=True,exist_ok=True)
+  if cache.exists():txt=gzip.decompress(cache.read_bytes()).decode('utf-8')
+  else:
+   txt=get(BASE+'/dbdata/textDataList.do',{'meet':meet,'fileType':'dacom11','fileSearchName':month,'pageIndex':page});cache.write_bytes(gzip.compress(txt.encode('utf-8'),mtime=0))
   soup=BeautifulSoup(txt,'html.parser');added=0
   for a in soup.select('a[href]'):
    href=a['href']
@@ -81,15 +91,15 @@ def download(args):
 def run(end):
  jobs=[(v,f'{y}{m:02d}') for v in VENUES for y in range(2024,int(end[:4])+1) for m in range(1,13) if f'{y}{m:02d}'<=end[:6]]
  urls=[];errors=[]
- with ThreadPoolExecutor(max_workers=4) as ex:
+ with ThreadPoolExecutor(max_workers=2) as ex:
   for job,result in zip(jobs,ex.map(catalog,jobs)):
-   urls.extend(result)
+   urls.extend(result);print('catalog',job,'reports',len(result),flush=True)
  urls=sorted(set((v,u) for v,u in urls if re.search(r'(20\d{6})[^/]*\.(?:rpt|txt)',u)[1]<=end))
  print('daily_reports',len(urls),flush=True);out={};manifest=[]
  def safe(job):
   try:return download(job)
   except Exception as e:return {'source':job[1],'error':str(e)}
- with ThreadPoolExecutor(max_workers=4) as ex:
+ with ThreadPoolExecutor(max_workers=2) as ex:
   for i,res in enumerate(ex.map(safe,urls)):
    if 'error' in res:errors.append(res)
    else:
