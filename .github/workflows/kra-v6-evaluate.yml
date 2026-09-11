@@ -1,0 +1,49 @@
+name: Evaluate KRA selective models
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Train KRA historical model]
+    types: [completed]
+permissions:
+  contents: write
+concurrency:
+  group: kra-v6-evaluation
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy scipy scikit-learn==1.8.0
+      - name: Compare chronological models and validate fixed selection policies
+        run: python scripts/model-research/train_v6.py --input training/history.jsonl.gz --output data
+      - name: Preserve evaluation and live feature context
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/model-v6.json data/history-context.json data/evaluation-v6.json data/parity-v6.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save v6 chronological comparison and selective prediction evidence'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kra-v6-evaluation
+          path: |
+            data/model-v6.json
+            data/evaluation-v6.json
+            data/parity-v6.json
+          if-no-files-found: ignore
