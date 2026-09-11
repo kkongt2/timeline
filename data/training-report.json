@@ -1,0 +1,120 @@
+{
+  "approved_venues": [
+    "busan",
+    "jeju",
+    "seoul"
+  ],
+  "schema": 1,
+  "status": "validated_improvement",
+  "model": "5.0-history",
+  "counts": {
+    "collected_races": 6447,
+    "training_races": 3404,
+    "validation_races": 299,
+    "test_races": 360,
+    "horse_starts": 66681
+  },
+  "period": {
+    "from": "20240105",
+    "to": "20260910",
+    "train": "20250101–20260531",
+    "validation": "20260601–20260715",
+    "test": "20260716–20260910"
+  },
+  "baseline": {
+    "races": 360,
+    "place_hit_rate": 0.5444444444444444,
+    "pair_hit_rate": 0.21666666666666667,
+    "brier": 0.19398490367475357
+  },
+  "candidate": {
+    "races": 360,
+    "place_hit_rate": 0.5888888888888889,
+    "pair_hit_rate": 0.24444444444444444,
+    "brier": 0.1885459724162014
+  },
+  "by_venue": {
+    "busan": {
+      "baseline": {
+        "races": 103,
+        "place_hit_rate": 0.5048543689320388,
+        "pair_hit_rate": 0.1650485436893204,
+        "brier": 0.18908544410399641
+      },
+      "candidate": {
+        "races": 103,
+        "place_hit_rate": 0.6407766990291263,
+        "pair_hit_rate": 0.23300970873786409,
+        "brier": 0.1813009572126619
+      }
+    },
+    "jeju": {
+      "baseline": {
+        "races": 109,
+        "place_hit_rate": 0.5229357798165137,
+        "pair_hit_rate": 0.1743119266055046,
+        "brier": 0.2030541664907261
+      },
+      "candidate": {
+        "races": 109,
+        "place_hit_rate": 0.5229357798165137,
+        "pair_hit_rate": 0.2018348623853211,
+        "brier": 0.20275270422401895
+      }
+    },
+    "seoul": {
+      "baseline": {
+        "races": 148,
+        "place_hit_rate": 0.5878378378378378,
+        "pair_hit_rate": 0.28378378378378377,
+        "brier": 0.19071527319399004
+      },
+      "candidate": {
+        "races": 148,
+        "place_hit_rate": 0.6013513513513513,
+        "pair_hit_rate": 0.28378378378378377,
+        "brier": 0.1831250453818261
+      }
+    }
+  },
+  "paired_daily_bootstrap_95ci": [
+    0.016347663191564978,
+    0.05722070844686648
+  ],
+  "ridge": 0.01,
+  "features": [
+    "place_1y",
+    "win_1y",
+    "distance_place",
+    "relative_rating",
+    "recent_form",
+    "jockey_place",
+    "trainer_place",
+    "relative_burden",
+    "body_change",
+    "interval"
+  ],
+  "weights": [
+    0.554076222465925,
+    0.4030695810404623,
+    0.2733776009508378,
+    0.19907230624979189,
+    1.7441780325728609,
+    0.784546198349879,
+    0.35076899691872115,
+    -0.05340766326629801,
+    0.3769070627394364,
+    0.2379518385049831
+  ],
+  "approved": true,
+  "dataset_sha256": "f78034a04031fe1b76b94d3ce0aea7fa82ce9b47b451e9dca9563788543294b8",
+  "source": "https://race.kra.co.kr/",
+  "limitations": [
+    "Historical replay, not prospective live validation.",
+    "No final odds or same-race results used as features.",
+    "Horse/person historical statistics reconstructed from earlier dates only.",
+    "Distance histories begin at collection start; not lifetime totals.",
+    "Abstention and returns are not evaluated; all eligible races are scored.",
+    "Horse identity uses venue and name; name changes are not linked."
+  ]
+}
