@@ -43,19 +43,25 @@ def inum(v, default=0):
 
 def get_html(endpoint: str, params: dict) -> str:
     url = f"{BASE}/{endpoint}"
-    r = S.get(url, params=params, timeout=25)
-    r.raise_for_status()
-    # KRA legacy pages have historically used CP949/EUC-KR.
-    for enc in (r.apparent_encoding, "cp949", "euc-kr", "utf-8"):
-        if not enc:
-            continue
+    last = None
+    for attempt in range(3):
         try:
-            text = r.content.decode(enc, errors="strict")
-            if "마명" in text or "출전" in text:
-                return text
-        except Exception:
-            pass
-    return r.content.decode("cp949", errors="ignore")
+            r = S.get(url, params=params, timeout=(10, 25))
+            r.raise_for_status()
+            for enc in (r.apparent_encoding, "cp949", "euc-kr", "utf-8"):
+                if not enc:
+                    continue
+                try:
+                    text = r.content.decode(enc, errors="strict")
+                    if "마명" in text or "출전" in text:
+                        return text
+                except Exception:
+                    pass
+            return r.content.decode("cp949", errors="ignore")
+        except requests.RequestException as e:
+            last = e
+            time.sleep(0.8 * (attempt + 1))
+    raise last
 
 def params(date: str, rc_no: int, meet: int) -> dict:
     return {"meet": meet, "rcNo": rc_no, "rcDate": date, "Act": "02", "Sub": "1"}
@@ -183,6 +189,29 @@ def match_horse(row, by_name, by_no):
     if row and re.fullmatch(r"\d+", row[0]) and int(row[0]) in by_no:
         return by_no[int(row[0])]
     return None
+
+STATIC_HORSE_FIELDS = (
+    "starts_1y","wins_1y","seconds_1y","thirds_1y",
+    "distance_starts","distance_top3","recent_finishes",
+)
+
+def reuse_static_horse_data(race, previous):
+    if not previous:
+        return False
+    old = {h.get("name"): h for h in previous.get("horses", []) if h.get("name")}
+    if not old:
+        return False
+    matched = 0
+    for h in race.get("horses", []):
+        p = old.get(h.get("name"))
+        if not p:
+            continue
+        matched += 1
+        for key in STATIC_HORSE_FIELDS:
+            if key in p:
+                h[key] = p[key]
+    # Only skip the historical sub-pages when essentially the same field is present.
+    return matched >= max(2, len(race.get("horses", [])) - 1)
 
 def enrich_record(race, date, rc_no, meet, debug):
     try:
@@ -443,6 +472,13 @@ def main():
     # Race cards are published before the meeting; keep today plus the next 2 days
     # so Fri/Sat/Sun can be selected from the mobile UI.
     dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(3)]
+    previous_map = {}
+    try:
+        previous_doc = json.loads(Path("data/latest.json").read_text(encoding="utf-8"))
+        for r in previous_doc.get("races", []):
+            previous_map[(str(r.get("date")), r.get("venue"), int(r.get("race_no") or 0))] = r
+    except Exception:
+        pass
     jockey_stats = {meet: fetch_person_stats("jockey", meet) for meet in MEETS}
     trainer_stats = {meet: fetch_person_stats("trainer", meet) for meet in MEETS}
     tracks = {meet: fetch_track_snapshot(meet) for meet in MEETS}
@@ -460,9 +496,13 @@ def main():
                             break
                         continue
                     misses = 0
-                    enrich_record(race, date, rc_no, meet, dbg)
-                    enrich_distance(race, date, rc_no, meet, dbg)
-                    enrich_recent(race, date, rc_no, meet, dbg)
+                    prev = previous_map.get((date, MEETS[meet][0], rc_no))
+                    reused = reuse_static_horse_data(race, prev)
+                    if not reused:
+                        enrich_record(race, date, rc_no, meet, dbg)
+                        enrich_distance(race, date, rc_no, meet, dbg)
+                        enrich_recent(race, date, rc_no, meet, dbg)
+                    dbg["static_reused"] = reused
                     if date == dates[0]:
                         enrich_weight(race, date, rc_no, meet, dbg)
                     races.append(race)
