@@ -9,11 +9,52 @@ const DEMO={venue:'busan',venue_name:'부경',date:'20260911',race_no:1,title:'�
 {number:7,name:'샘플G',rating:40,burden:51.5,starts_1y:9,wins_1y:0,seconds_1y:1,thirds_1y:2,distance_starts:3,distance_top3:1,recent_finishes:[6,3,5,4,8],jockey:'기수G'},
 {number:8,name:'샘플H',rating:52,burden:55.5,starts_1y:8,wins_1y:1,seconds_1y:3,thirds_1y:1,distance_starts:3,distance_top3:2,recent_finishes:[2,2,5,3,4],jockey:'기수H'}]};
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),div=(a,b,d=0)=>+b?+a/+b:d;
-function score(h,f){let n=+h.starts_1y||0,w=+h.wins_1y||0,s=+h.seconds_1y||0,t=+h.thirds_1y||0,r3=div(w+s+t,n,.18),wr=div(w,n,.06),ds=+h.distance_starts||0,dr=div(+h.distance_top3||0,ds,r3),rs=f.map(x=>+x.rating||0),lo=Math.min(...rs),hi=Math.max(...rs),rn=hi>lo?((+h.rating||0)-lo)/(hi-lo):.5,bs=f.map(x=>+x.burden||0).filter(Boolean),ab=bs.reduce((a,b)=>a+b,0)/(bs.length||1),ba=clamp((ab-(+h.burden||0))/5,-1,1),rec=(h.recent_finishes||[]).slice(0,5),rg=rec.length?rec.map((p,i)=>clamp((8-p)/7,0,1)*(1-i*.08)).reduce((a,b)=>a+b,0)/rec.map((_,i)=>1-i*.08).reduce((a,b)=>a+b,0):0,raw=2.25*r3+.65*wr+1.15*dr+.7*rn+.22*ba+.72*rg,re=[];if(n>=3&&r3>=.5)re.push('최근1년 3착내 '+Math.round(r3*100)+'%');if(ds>=2&&dr>=.5)re.push('거리 3착내 '+Math.round(dr*100)+'%');if(rn>=.72)re.push('레이팅 상위');if(rg>=.68)re.push('최근 흐름 양호');if(!re.length)re.push('뚜렷한 우위 신호 적음');return{raw,re}}
+function fieldNorm(v,vals,def=.5){let a=vals.filter(Number.isFinite);if(!Number.isFinite(v)||!a.length)return def;let lo=Math.min(...a),hi=Math.max(...a);return hi>lo?(v-lo)/(hi-lo):def}
+function score(h,f){
+  let n=+h.starts_1y||0,w=+h.wins_1y||0,s=+h.seconds_1y||0,t=+h.thirds_1y||0;
+  // Light Bayesian shrinkage prevents 2-3 starts from looking falsely certain.
+  let r3=(w+s+t+1.2)/(n+4),wr=(w+.35)/(n+4);
+  let ds=+h.distance_starts||0,dt=+h.distance_top3||0,dr=(dt+.8)/(ds+3);
+  let rs=f.map(x=>+x.rating||0),lo=Math.min(...rs),hi=Math.max(...rs),rn=hi>lo?((+h.rating||0)-lo)/(hi-lo):.5;
+  let bs=f.map(x=>+x.burden||0).filter(Boolean),ab=bs.reduce((a,b)=>a+b,0)/(bs.length||1),ba=clamp((ab-(+h.burden||0))/5,-1,1);
+  let rec=(h.recent_finishes||[]).slice(0,5),weights=rec.map((_,i)=>1-i*.09),rg=rec.length?rec.map((p,i)=>clamp((8-p)/7,0,1)*weights[i]).reduce((a,b)=>a+b,0)/weights.reduce((a,b)=>a+b,0):.35;
+  let jp=h.jockey_stats_1y?.place_rate,tp=h.trainer_stats_1y?.place_rate;
+  let jn=fieldNorm(jp,f.map(x=>x.jockey_stats_1y?.place_rate)),tn=fieldNorm(tp,f.map(x=>x.trainer_stats_1y?.place_rate));
+  let bw=+h.horse_weight||0,bc=h.horse_weight_change==null?null:+h.horse_weight_change;
+  let body=0;if(bw>0&&bc!=null){let rel=Math.abs(bc)/bw;body=-clamp((rel-.015)/.045,0,1)}
+  let iw=+h.interval_weeks||0,interval=iw?((iw>=2&&iw<=8)?.15:(iw>14?-.35:0)):0;
+  let raw=2.10*r3+.55*wr+1.15*dr+.75*rn+.65*rg+.35*jn+.25*tn+.18*ba+.20*body+.10*interval,re=[];
+  if(n>=3&&r3>=.42)re.push('최근 전적 안정');
+  if(ds>=2&&dr>=.42)re.push('동일거리 강점');
+  if(rn>=.72)re.push('레이팅 상위');
+  if(rg>=.68)re.push('최근 흐름 양호');
+  if(Number.isFinite(jp)&&jp>=.35)re.push('기수 연승률 '+Math.round(jp*100)+'%');
+  if(Number.isFinite(tp)&&tp>=.30)re.push('조교사 연승률 '+Math.round(tp*100)+'%');
+  if(bw>0&&bc!=null&&Math.abs(bc)>=8)re.push('마체중 '+(bc>0?'+':'')+bc+'kg 주의');
+  if(iw>14)re.push('장기 휴양 '+iw+'주');
+  if(!re.length)re.push('상대지표 종합');
+  let completeness=[n>0,ds>0,rec.length>0,Number.isFinite(jp),Number.isFinite(tp),bw>0].filter(Boolean).length/6;
+  return{raw,re,completeness}
+}
 function probs(st,k){let n=st.length,p=Array(n).fill(0),q={};for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)q[i+'-'+j]=0;let T=st.reduce((a,b)=>a+b,0),add=(o,x)=>{o.forEach(i=>p[i]+=x);for(let a=0;a<o.length;a++)for(let b=a+1;b<o.length;b++){let i=Math.min(o[a],o[b]),j=Math.max(o[a],o[b]);q[i+'-'+j]+=x}};for(let i=0;i<n;i++){let x=st[i]/T,r1=T-st[i];for(let j=0;j<n;j++)if(j!==i){let y=x*st[j]/r1;if(k===2)add([i,j],y);else{let r2=r1-st[j];for(let z=0;z<n;z++)if(z!==i&&z!==j)add([i,j,z],y*st[z]/r2)}}}return{p,q}}
-function rank(r,o={}){let h=(r.horses||[]).map(x=>({...x})),sc=h.map(x=>score(x,h)),raw=sc.map(x=>x.raw),m=raw.reduce((a,b)=>a+b,0)/raw.length,st=raw.map(x=>Math.exp(clamp((x-m)*.6,-4,4))),k=h.length<=7?2:3,{p,q}=probs(st,k),mn=Math.min(...raw),mx=Math.max(...raw);h.forEach((x,i)=>{x.score=Math.round(1000*(mx>mn?(raw[i]-mn)/(mx-mn):.5))/10;x.place_prob=p[i];x.reasons=sc[i].re});let po=o.place||{},qo=o.qpl||{},pr=h.map(x=>{let odd=+po[x.number]||null,ev=odd?x.place_prob*odd-1:null;return{number:x.number,name:x.name,prob:x.place_prob,score:x.score,odds:odd,ev}}).sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob)).slice(0,5),qr=[];for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++){let a=h[i],b=h[j],odd=+qo[a.number+'-'+b.number]||+qo[b.number+'-'+a.number]||null,p=q[i+'-'+j],ev=odd?p*odd-1:null;qr.push({numbers:[a.number,b.number],names:[a.name,b.name],prob:p,odds:odd,ev})}qr.sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob));return{...r,place_rule:k+'착 이내',horses:h.sort((a,b)=>b.place_prob-a.place_prob),place_recommendations:pr,qpl_recommendations:qr.slice(0,7)}}
+function rank(r,o={}){let h=(r.horses||[]).map(x=>({...x})),sc=h.map(x=>score(x,h)),raw=sc.map(x=>x.raw),m=raw.reduce((a,b)=>a+b,0)/raw.length,st=raw.map(x=>Math.exp(clamp((x-m)*.6,-4,4))),k=h.length<=7?2:3,{p,q}=probs(st,k),mn=Math.min(...raw),mx=Math.max(...raw);h.forEach((x,i)=>{x.score=Math.round(1000*(mx>mn?(raw[i]-mn)/(mx-mn):.5))/10;x.place_prob=p[i];x.reasons=sc[i].re;x.data_completeness=sc[i].completeness});let po=o.place||{},qo=o.qpl||{},pr=h.map(x=>{let odd=+po[x.number]||null,ev=odd?x.place_prob*odd-1:null;return{number:x.number,name:x.name,prob:x.place_prob,score:x.score,odds:odd,ev}}).sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob)).slice(0,5),qr=[];for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++){let a=h[i],b=h[j],odd=+qo[a.number+'-'+b.number]||+qo[b.number+'-'+a.number]||null,p=q[i+'-'+j],ev=odd?p*odd-1:null;qr.push({numbers:[a.number,b.number],names:[a.name,b.name],prob:p,odds:odd,ev})}qr.sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob));return{...r,place_rule:k+'착 이내',horses:h.sort((a,b)=>b.place_prob-a.place_prob),place_recommendations:pr,qpl_recommendations:qr.slice(0,7)}}
 const pct=x=>(x*100).toFixed(1)+'%',ev=x=>x==null?'':'<span class="'+(x>=0?'positive':'negative')+'">EV '+(x*100).toFixed(1)+'%</span>',od=s=>{let o={};s.split(',').forEach(x=>{let[k,v]=x.split('=').map(y=>y?.trim());if(k&&+v>0)o[k]=+v});return o};
-function render(r){cur=r;$('#raceTitle').textContent=(r.venue_name||r.venue)+' '+r.race_no+'R';$('#raceMeta').textContent=(r.date||'')+' · '+(r.title||'');$('#placeRule').textContent='연승 '+r.place_rule;$('#horseCount').textContent=r.horses.length+'두';$('#placeList').innerHTML=r.place_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.number+' '+x.name+'</b><span>입상 '+pct(x.prob)+' · 점수 '+x.score+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');$('#qplList').innerHTML=r.qpl_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.numbers.join('-')+' '+x.names.join(' × ')+'</b><span>동반입상 '+pct(x.prob)+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');$('#horseCards').innerHTML=r.horses.map(x=>'<div class="horse"><div class="horse-top"><b>'+x.number+' '+x.name+'</b><strong>'+pct(x.place_prob)+'</strong></div><div class="horse-grid"><div class="metric"><span>점수</span><strong>'+x.score+'</strong></div><div class="metric"><span>레이팅</span><strong>'+(x.rating||'-')+'</strong></div><div class="metric"><span>부담중량</span><strong>'+(x.burden||'-')+'</strong></div></div><p class="reasons">'+x.reasons.join(' · ')+'</p></div>').join('')}
+function render(r){
+  cur=r;
+  $('#raceTitle').textContent=(r.venue_name||r.venue)+' '+r.race_no+'R';
+  let meta=[r.date||'',r.title||''];
+  if(r.track?.condition)meta.push('주로 '+r.track.condition+' '+(r.track.moisture_pct??'?')+'%');
+  $('#raceMeta').textContent=meta.filter(Boolean).join(' · ');
+  $('#placeRule').textContent='연승 '+r.place_rule;
+  $('#horseCount').textContent=r.horses.length+'두';
+  $('#placeList').innerHTML=r.place_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.number+' '+x.name+'</b><span>입상 '+pct(x.prob)+' · 점수 '+x.score+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
+  $('#qplList').innerHTML=r.qpl_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.numbers.join('-')+' '+x.names.join(' × ')+'</b><span>동반입상 '+pct(x.prob)+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
+  $('#horseCards').innerHTML=r.horses.map(x=>{
+    let jp=x.jockey_stats_1y?.place_rate,tp=x.trainer_stats_1y?.place_rate;
+    let body=x.horse_weight?x.horse_weight+'kg'+(x.horse_weight_change!=null?' ('+(x.horse_weight_change>0?'+':'')+x.horse_weight_change+')':''):'대기';
+    return '<div class="horse"><div class="horse-top"><b>'+x.number+' '+x.name+'</b><strong>'+pct(x.place_prob)+'</strong></div><div class="horse-grid"><div class="metric"><span>모델점수</span><strong>'+x.score+'</strong></div><div class="metric"><span>레이팅</span><strong>'+(x.rating||'-')+'</strong></div><div class="metric"><span>부담중량</span><strong>'+(x.burden||'-')+'</strong></div><div class="metric"><span>마체중</span><strong>'+body+'</strong></div><div class="metric"><span>기수 연승률</span><strong>'+(Number.isFinite(jp)?Math.round(jp*1000)/10+'%':'-')+'</strong></div><div class="metric"><span>조교사 연승률</span><strong>'+(Number.isFinite(tp)?Math.round(tp*1000)/10+'%':'-')+'</strong></div></div><p class="reasons">'+x.reasons.join(' · ')+' · 데이터 '+Math.round((x.data_completeness||0)*100)+'%</p></div>'
+  }).join('')
+}
 let d=new Date(),pad=n=>String(n).padStart(2,'0');$('#date').value=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());for(let i=1;i<=16;i++)$('#raceNo').insertAdjacentHTML('beforeend','<option>'+i+'</option>');
 const venueName={seoul:'서울',busan:'부경',jeju:'제주'};
 function setVenue(v){venue=v;$('.venue').forEach(x=>x.classList.toggle('active',x.dataset.v===v))}
