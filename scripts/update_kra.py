@@ -294,8 +294,59 @@ def enrich_recent(race, date, rc_no, meet, debug):
     except Exception as e:
         debug["recent_error"] = repr(e)
 
+
+def probe_todayrace_forms():
+    """Capture form/input metadata needed for reliable todayrace venue/date selection."""
+    out = {}
+    urls = {
+        "weight": "https://todayrace.kra.co.kr/racing/weight/selectWeightList.do",
+        "jockey": "https://todayrace.kra.co.kr/score/statu/selectTop10JockeysList.do",
+        "trainer": "https://todayrace.kra.co.kr/score/statu/selectTop10TrainersList.do",
+    }
+    for key, url in urls.items():
+        try:
+            r = S.get(url, timeout=25)
+            r.raise_for_status()
+            soup = BeautifulSoup(r.text, "html.parser")
+            forms = []
+            for form in soup.find_all("form"):
+                inputs = []
+                for el in form.find_all(["input", "select", "button"]):
+                    item = {
+                        "tag": el.name,
+                        "name": el.get("name"),
+                        "id": el.get("id"),
+                        "value": el.get("value"),
+                        "type": el.get("type"),
+                    }
+                    if el.name == "select":
+                        item["options"] = [
+                            {"value": o.get("value"), "text": clean(o.get_text(" ", strip=True)), "selected": o.has_attr("selected")}
+                            for o in el.find_all("option")[:30]
+                        ]
+                    inputs.append(item)
+                forms.append({
+                    "action": form.get("action"),
+                    "method": form.get("method"),
+                    "id": form.get("id"),
+                    "name": form.get("name"),
+                    "inputs": inputs[:100],
+                })
+            scripts = "\n".join(x.get_text("\n", strip=False) for x in soup.find_all("script"))
+            tokens = sorted(set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,30}", scripts)))
+            interesting = [x for x in tokens if any(k in x.lower() for k in ("meet","date","race","rc","tab","jockey","trainer","weight"))]
+            out[key] = {
+                "url": str(r.url),
+                "forms": forms[:10],
+                "interesting_js_tokens": interesting[:150],
+                "title": clean(soup.title.get_text()) if soup.title else "",
+            }
+        except Exception as e:
+            out[key] = {"error": repr(e)}
+    Path("data/probe.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+
 def main():
-    kst = ZoneInfo("Asia/Seoul")
+    probe_todayrace_forms()\n    kst = ZoneInfo("Asia/Seoul")
     now = datetime.now(kst)
     # Race cards are published before the meeting; keep today plus the next 2 days
     # so Fri/Sat/Sun can be selected from the mobile UI.
