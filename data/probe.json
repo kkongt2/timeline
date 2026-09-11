@@ -232,7 +232,8 @@
             }
           ]
         }
-      ]
+      ],
+      "goDetail_excerpt": "\"li:eq(0)\");\n    \tif($Sub.length > 0){\n    \t\t$Sub.addClass(\"on\");\n    \t}\n    }\n\n    activeTopMenu('3',04-1);\n});\n\n\nvar imgOn = function($this){\n\n\tvar imgSrc = $(\">img\", $this).attr(\"src\");\n\tvar imgBar = imgSrc.split(\"_\");\n\tvar imgPng = imgBar[0].split(\".png\");\n\t//$(\"img\", $this).attr(\"src\", $(\"img\", $this).attr(\"src\").replace(\".png\", \"_on.png\"));\n\t//alert(imgPng[0]);\n\t$(\"img\", $this).attr(\"src\", imgPng[0]+\"_on.png\");\n}\n\nfunction activeTopMenu(idx,Sub){\n\timgOn($(\"#gnb > li:eq(\"+idx+\") > a\"));\n\n\t//서브 액티브\n\t$(\"#gnb > li:eq(\"+idx+\")\").addClass(\"on\");\n\t$(\"#gnb > li:eq(\"+idx+\") > ul > li:eq(\"+Sub+\") > a\").attr(\"style\",\"color:#de1829; text-decoration:underline;\");\n\tnavigation.gnb();\n}\n\n\n\n\n\tfunction goDetail(rcNo, raceDate, meet) {\n\t  \tdocument.getElementById(\"detail\").rcNo.value = rcNo;\n\t  \tdocument.getElementById(\"detail\").date.value = raceDate;\n\t  \tdocument.getElementById(\"detail\").meet.value = meet;\n\t  \tdocument.getElementById(\"detail\").action = \"/raceFastreport/ChuljumaWeightList.do\";\n\t  \tdocument.getElementById(\"detail\").submit();\n\t}\n"
     },
     "2": {
       "url": "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do?Act=04&Sub=4&meet=2",
@@ -440,7 +441,8 @@
             }
           ]
         }
-      ]
+      ],
+      "goDetail_excerpt": "\"li:eq(0)\");\n    \tif($Sub.length > 0){\n    \t\t$Sub.addClass(\"on\");\n    \t}\n    }\n\n    activeTopMenu('3',04-1);\n});\n\n\nvar imgOn = function($this){\n\n\tvar imgSrc = $(\">img\", $this).attr(\"src\");\n\tvar imgBar = imgSrc.split(\"_\");\n\tvar imgPng = imgBar[0].split(\".png\");\n\t//$(\"img\", $this).attr(\"src\", $(\"img\", $this).attr(\"src\").replace(\".png\", \"_on.png\"));\n\t//alert(imgPng[0]);\n\t$(\"img\", $this).attr(\"src\", imgPng[0]+\"_on.png\");\n}\n\nfunction activeTopMenu(idx,Sub){\n\timgOn($(\"#gnb > li:eq(\"+idx+\") > a\"));\n\n\t//서브 액티브\n\t$(\"#gnb > li:eq(\"+idx+\")\").addClass(\"on\");\n\t$(\"#gnb > li:eq(\"+idx+\") > ul > li:eq(\"+Sub+\") > a\").attr(\"style\",\"color:#de1829; text-decoration:underline;\");\n\tnavigation.gnb();\n}\n\n\n\n\n\tfunction goDetail(rcNo, raceDate, meet) {\n\t  \tdocument.getElementById(\"detail\").rcNo.value = rcNo;\n\t  \tdocument.getElementById(\"detail\").date.value = raceDate;\n\t  \tdocument.getElementById(\"detail\").meet.value = meet;\n\t  \tdocument.getElementById(\"detail\").action = \"/raceFastreport/ChuljumaWeightList.do\";\n\t  \tdocument.getElementById(\"detail\").submit();\n\t}\n"
     },
     "3": {
       "url": "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do?Act=04&Sub=4&meet=3",
@@ -613,7 +615,8 @@
             }
           ]
         }
-      ]
+      ],
+      "goDetail_excerpt": "\"li:eq(0)\");\n    \tif($Sub.length > 0){\n    \t\t$Sub.addClass(\"on\");\n    \t}\n    }\n\n    activeTopMenu('3',04-1);\n});\n\n\nvar imgOn = function($this){\n\n\tvar imgSrc = $(\">img\", $this).attr(\"src\");\n\tvar imgBar = imgSrc.split(\"_\");\n\tvar imgPng = imgBar[0].split(\".png\");\n\t//$(\"img\", $this).attr(\"src\", $(\"img\", $this).attr(\"src\").replace(\".png\", \"_on.png\"));\n\t//alert(imgPng[0]);\n\t$(\"img\", $this).attr(\"src\", imgPng[0]+\"_on.png\");\n}\n\nfunction activeTopMenu(idx,Sub){\n\timgOn($(\"#gnb > li:eq(\"+idx+\") > a\"));\n\n\t//서브 액티브\n\t$(\"#gnb > li:eq(\"+idx+\")\").addClass(\"on\");\n\t$(\"#gnb > li:eq(\"+idx+\") > ul > li:eq(\"+Sub+\") > a\").attr(\"style\",\"color:#de1829; text-decoration:underline;\");\n\tnavigation.gnb();\n}\n\n\n\n\n\tfunction goDetail(rcNo, raceDate, meet) {\n\t  \tdocument.getElementById(\"detail\").rcNo.value = rcNo;\n\t  \tdocument.getElementById(\"detail\").date.value = raceDate;\n\t  \tdocument.getElementById(\"detail\").meet.value = meet;\n\t  \tdocument.getElementById(\"detail\").action = \"/raceFastreport/ChuljumaWeightList.do\";\n\t  \tdocument.getElementById(\"detail\").submit();\n\t}\n"
     }
   }
 }

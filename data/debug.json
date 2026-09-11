@@ -1,6 +1,13 @@
 {
-  "updated_at": "2026-09-11T10:10:43+09:00",
-  "errors": [],
+  "updated_at": "2026-09-11T10:14:56+09:00",
+  "errors": [
+    {
+      "date": "20260913",
+      "meet": 1,
+      "race_no": 6,
+      "error": "ConnectTimeout(MaxRetryError(\"HTTPSConnectionPool(host='race.kra.co.kr', port=443): Max retries exceeded with url: /chulmainfo/chulmaDetailInfoChulmapyo.do?meet=1&rcNo=6&rcDate=20260913&Act=02&Sub=1 (Caused by ConnectTimeoutError(<HTTPSConnection(host='race.kra.co.kr', port=443) at 0x7fab45e91310>, 'Connection to race.kra.co.kr timed out. (connect timeout=25)'))\"))"
+    }
+  ],
   "sample": {
     "date": "20260911",
     "meet": 2,
