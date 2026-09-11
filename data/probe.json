@@ -29,5 +29,591 @@
       "toLowerCase"
     ],
     "title": ""
+  },
+  "weekly_weight": {
+    "1": {
+      "url": "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do?Act=04&Sub=4&meet=1",
+      "anchors": [
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/raceScore/ObjtRaceRaceList.do?Act=05&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "8",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"8\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "9",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"9\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "10",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"10\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "11",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"11\",\"20260913\",\"1\")"
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "8",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"8\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "9",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"9\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "10",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"10\",\"20260912\",\"1\")"
+        },
+        {
+          "text": "e오늘의경주",
+          "href": "https://todayrace.kra.co.kr/",
+          "onclick": null
+        },
+        {
+          "text": "한국경주마생산자협회",
+          "href": "http://www.ktba.co.kr/",
+          "onclick": null
+        }
+      ],
+      "forms": [
+        {
+          "action": null,
+          "method": "post",
+          "fields": [
+            {
+              "tag": "input",
+              "name": "rcNo",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "date",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "meet",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "Act",
+              "id": null,
+              "value": "03"
+            },
+            {
+              "tag": "input",
+              "name": "Sub",
+              "id": null,
+              "value": "4"
+            }
+          ]
+        }
+      ]
+    },
+    "2": {
+      "url": "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do?Act=04&Sub=4&meet=2",
+      "anchors": [
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/raceScore/ObjtRaceRaceList.do?Act=05&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260912\",\"2\")"
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260911\",\"2\")"
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "8",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"8\",\"20260910\",\"2\")"
+        },
+        {
+          "text": "e오늘의경주",
+          "href": "https://todayrace.kra.co.kr/",
+          "onclick": null
+        },
+        {
+          "text": "한국경주마생산자협회",
+          "href": "http://www.ktba.co.kr/",
+          "onclick": null
+        }
+      ],
+      "forms": [
+        {
+          "action": null,
+          "method": "post",
+          "fields": [
+            {
+              "tag": "input",
+              "name": "rcNo",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "date",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "meet",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "Act",
+              "id": null,
+              "value": "03"
+            },
+            {
+              "tag": "input",
+              "name": "Sub",
+              "id": null,
+              "value": "4"
+            }
+          ]
+        }
+      ]
+    },
+    "3": {
+      "url": "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do?Act=04&Sub=4&meet=3",
+      "anchors": [
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=1",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/chulmainfo/SeriesRaceOperationInfo.do?Act=05&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=3",
+          "onclick": null
+        },
+        {
+          "text": "경주성적",
+          "href": "/raceScore/ScoretableScoreList.do?Act=04&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "대상특별경주",
+          "href": "/raceScore/ObjtRaceRaceList.do?Act=05&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "경주마정보",
+          "href": "/racehorse/ProfileHorsenameKinds.do?Act=08&Sub=1&meet=2",
+          "onclick": null
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260913\",\"4\")"
+        },
+        {
+          "text": "1",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"1\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "2",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"2\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "3",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"3\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "4",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"4\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "5",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"5\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "6",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"6\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "7",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"7\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "8",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"8\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "9",
+          "href": "#",
+          "onclick": "javascript:goDetail(\"9\",\"20260911\",\"3\")"
+        },
+        {
+          "text": "e오늘의경주",
+          "href": "https://todayrace.kra.co.kr/",
+          "onclick": null
+        },
+        {
+          "text": "한국경주마생산자협회",
+          "href": "http://www.ktba.co.kr/",
+          "onclick": null
+        }
+      ],
+      "forms": [
+        {
+          "action": null,
+          "method": "post",
+          "fields": [
+            {
+              "tag": "input",
+              "name": "rcNo",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "date",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "meet",
+              "id": null,
+              "value": ""
+            },
+            {
+              "tag": "input",
+              "name": "Act",
+              "id": null,
+              "value": "03"
+            },
+            {
+              "tag": "input",
+              "name": "Sub",
+              "id": null,
+              "value": "4"
+            }
+          ]
+        }
+      ]
+    }
   }
 }
