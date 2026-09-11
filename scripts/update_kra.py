@@ -515,6 +515,13 @@ def main():
                     print(f"ERR {date} meet={meet} race={rc_no}: {e}", file=sys.stderr)
                     time.sleep(0.3)
     attach_live_context(races, jockey_stats, trainer_stats, tracks)
+    history_status = {"status": "unavailable"}
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent / 'model-research'))
+        from refresh_context import refresh_and_attach
+        history_status = refresh_and_attach(races)
+    except Exception as e:
+        history_status = {"status": "error", "error": str(e)}
     out = {
         "updated_at": now.isoformat(timespec="seconds"),
         "races": races,
@@ -522,6 +529,7 @@ def main():
             "race_count": len(races),
             "error_count": len(errors),
             "dates": dates,
+            "history": history_status,
             "note": "Auto-collected from KRA public race pages; odds may require manual entry.",
         },
     }

@@ -31,32 +31,92 @@ function probs(st,k){if(st.length<k||k<2) return {p:st.map(()=>0),q:{}};let n=st
 
 const MODEL_VERSION='4.0';
 let learnedModel=null;
+let advancedModel=null;
+const ADVANCED_FEATURES=['place_1y','win_1y','distance_place','relative_rating','recent_form','jockey_place','trainer_place','relative_burden','days_since_run','history_count','finish_fraction','form_trend','finish_consistency','distance_change','burden_change','recent_margin','relative_speed','opponent_rating','jockey_horse','distance_experience','field_size','place_slots','distance','seoul','busan','jeju','sparse_field','speed_available','margin_available','relative_recent_form','rating_level','long_break'];
+const PAIR_COLUMNS=[...Array.from({length:20},(_,i)=>i),27,28,29,30,31];
+function validEstimator(m,width){
+ if(!m||!Number.isFinite(m.bias))return false;
+ if(m.kind==='linear')return Array.isArray(m.weights)&&m.weights.length===width&&m.weights.every(Number.isFinite);
+ return m.kind==='tree'&&Array.isArray(m.trees)&&m.trees.length>0&&m.trees.length<=200&&m.trees.every(t=>Array.isArray(t)&&t.length>0&&t.length<=63&&t.every((n,i)=>Array.isArray(n)&&n.length===6&&n.every(Number.isFinite)&&(n[0]===1||(n[0]===0&&Number.isInteger(n[1])&&n[1]>=0&&n[1]<width&&[n[3],n[4]].every(c=>Number.isInteger(c)&&c>i&&c<t.length)))));
+}
+function setAdvancedModel(r){
+ advancedModel=null;
+ if(!r||r.schema!==2||r.feature_version!=='6.0-conditions'||JSON.stringify(r.features)!==JSON.stringify(ADVANCED_FEATURES)||JSON.stringify(r.pair_columns)!==JSON.stringify(PAIR_COLUMNS))return false;
+ for(const kind of ['place','pair']){
+  if(typeof r.deployment?.[kind]?.approved!=='boolean'||typeof r.policies?.[kind]?.approved!=='boolean')return false;
+  if(!validEstimator(r.models?.[kind],kind==='place'?32:82))return false;
+  const c=r.calibrators?.[kind],p=r.policies?.[kind];
+  if(!c||!Number.isFinite(c.a)||c.a<=0||!Number.isFinite(c.b)||!p||!Array.isArray(p.approved_venues))return false;
+  if(p.approved&&(!p.criteria||!['min_probability','min_gap','min_starts','max_sparse'].every(k=>Number.isFinite(p.criteria[k]))))return false;
+ }
+ advancedModel=r;return true;
+}
+function predictEstimator(m,x){
+ let z=m.bias;
+ if(m.kind==='linear')z+=m.weights.reduce((a,w,i)=>a+w*x[i],0);
+ else for(const t of m.trees){let i=0;while(!t[i][0])i=x[t[i][1]]<=t[i][2]?t[i][3]:t[i][4];z+=t[i][5]}
+ return 1/(1+Math.exp(-z));
+}
+function pairFeatures(a,b){return [...PAIR_COLUMNS.map(i=>(a[i]+b[i])/2),...PAIR_COLUMNS.map(i=>Math.min(a[i],b[i])),...PAIR_COLUMNS.map(i=>Math.abs(a[i]-b[i])),...a.slice(20,27)]}
+function calibrated(m,x,kind){const p=clamp(predictEstimator(m.models[kind],x),1e-6,1-1e-6),c=m.calibrators[kind];return 1/(1+Math.exp(-(c.a*Math.log(p/(1-p))+c.b)))}
+function advancedReady(r,h){
+ if(!advancedModel||r.feature_version!==advancedModel.feature_version||!/^\d{8}$/.test(r.history_through||'')||r.history_through>=r.date)return false;
+ const parse=d=>Date.parse(d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8)+'T00:00:00Z');
+ if(!Number.isFinite(parse(r.date))||parse(r.date)-parse(r.history_through)>7*86400000)return false;
+ return h.every(x=>Array.isArray(x.features_v6)&&x.features_v6.length===32&&x.features_v6.every(v=>Number.isFinite(v)&&Math.abs(v)<=20)&&Math.abs(x.features_v6[20]-h.length/20)<1e-8&&Math.abs(x.features_v6[21]-(h.length<=7?2:3)/3)<1e-8&&Math.abs(x.features_v6[22]-r.distance/2500)<1e-8&&x.quality_v6&&Number.isFinite(x.quality_v6.starts)&&Number.isFinite(x.quality_v6.sparse));
+}
+function selectiveStatus(r,items,type,active){
+ const policy=advancedModel?.policies[type],x=items[0];
+ const status={qualified:false,available:false,reason:'선별 기준 검증 대기'};
+ if(!active)return advancedModel?.deployment?.[type]?.approved?{...status,reason:'과거 기록 갱신 대기 · 일반 후보 제공'}:status;
+ if(!policy?.approved)return status;
+ if(!policy.approved_venues.includes(r.venue))return {...status,reason:'이 지역은 선별 검증 표본 부족 또는 기준 미달'};
+ status.available=true;
+ if(r.mode==='value')return {...status,reason:'적중률 우선 기준에서 선별 표시'};
+ const p=policy.criteria,qs=x.numbers.map(n=>r.horses.find(h=>h.number===n).quality_v6);
+ status.qualified=x.prob>=p.min_probability&&x.prob-(items[1]?.prob||0)>=p.min_gap&&Math.min(...qs.map(q=>q.starts))>=p.min_starts&&Math.max(...qs.map(q=>q.sparse))<=p.max_sparse;
+ status.reason=status.qualified?'과거 검증을 통과한 선별 기준 충족':'일반 후보 · 선별 기준 미충족';
+ return status;
+}
 function setTrainedModel(report){
  const expected=['place_1y','win_1y','distance_place','relative_rating','recent_form','jockey_place','trainer_place','relative_burden','body_change','interval'];
  learnedModel=report&&report.approved===true&&JSON.stringify(report.features)===JSON.stringify(expected)&&Array.isArray(report.weights)&&report.weights.length===10&&report.weights.every(x=>Number.isFinite(x)&&Math.abs(x)<=6)&&Array.isArray(report.approved_venues)?report:null;
 }
 
 function analyze(r,mode='accuracy',odds={place:{},qpl:{}}){
- const h=(r.horses||[]).filter(x=>!x.withdrawn&&!/출전취소|출전제외|경주취소/.test(x.note||'')).map(x=>({...x}));
+ const h=(r.horses||[]).filter(x=>!x.withdrawn&&!/출전취소|출전제외|경주취소/.test(x.note||'')).map(x=>({...x})).sort((a,b)=>+a.number-+b.number);
  if(h.length<3||h.length>20||new Set(h.map(x=>+x.number)).size!==h.length||h.some(x=>!Number.isInteger(+x.number)||+x.number<1))throw Error('서로 다른 출전마 3~20두가 필요합니다.');
  const trained=learnedModel&&learnedModel.approved_venues.includes(r.venue);
  const sc=h.map(x=>score(x,h)),raw=sc.map(x=>trained?x.features.reduce((a,v,i)=>a+v*learnedModel.weights[i],0)/.6:x.raw),mean=raw.reduce((a,b)=>a+b,0)/h.length;
  const st=raw.map(x=>Math.exp(clamp((x-mean)*.6,-4,4))),k=h.length<=7?2:3,place=probs(st,k),pair=probs(st,3);
+ const ready=advancedReady(r,h),active={place:!!(ready&&advancedModel.deployment?.place?.approved),pair:!!(ready&&advancedModel.deployment?.pair?.approved)};
+ const selectiveActive={place:!!(ready&&advancedModel.policies.place.approved),pair:!!(ready&&advancedModel.policies.pair.approved)};
+ const vp=(active.place||selectiveActive.place)?h.map(x=>calibrated(advancedModel,x.features_v6,'place')):null,vq={};
+ if(active.pair||selectiveActive.pair)for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++)vq[i+'-'+j]=calibrated(advancedModel,pairFeatures(h[i].features_v6,h[j].features_v6),'pair');
+ if(active.place)h.forEach((x,i)=>place.p[i]=vp[i]);
+ if(active.pair)Object.assign(pair.q,vq);
  h.forEach((x,i)=>{x.prob=place.p[i];x.reasons=sc[i].re;x.quality=sc[i].completeness;});
  const item=(numbers,p,quality,market)=>{const key=numbers.join('-'),odd=Number(market[key]??market[[...numbers].reverse().join('-')]);return {numbers,prob:p,quality,odds:Number.isFinite(odd)&&odd>=1?odd:null,ev:Number.isFinite(odd)&&odd>=1?p*odd-1:null};};
  const places=h.map(x=>({...item([x.number],x.prob,x.quality,odds.place||{}),names:[x.name]}));
  const pairs=[];for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++)pairs.push({...item([h[i].number,h[j].number],pair.q[i+'-'+j],Math.min(h[i].quality,h[j].quality),odds.qpl||{}),names:[h[i].name,h[j].name]});
+ const selectivePlaces=vp?h.map((x,i)=>({...item([x.number],vp[i],x.quality,{}),names:[x.name]})).sort((a,b)=>b.prob-a.prob):[];
+ const selectivePairs=[];if(selectiveActive.pair)for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++)selectivePairs.push({...item([h[i].number,h[j].number],vq[i+'-'+j],Math.min(h[i].quality,h[j].quality),{}),names:[h[i].name,h[j].name]});
+ selectivePairs.sort((a,b)=>b.prob-a.prob);
  const compare=mode==='value'?(a,b)=>(b.ev??-Infinity)-(a.ev??-Infinity)||b.prob-a.prob:(a,b)=>b.prob-a.prob;
  places.sort(compare);pairs.sort(compare);
  const sparse=h.filter(x=>(+x.starts_1y||0)<3).length/h.length;
  const reasons=[];if(sparse>=.3)reasons.push('전적 3회 미만 출전마가 30% 이상');
  if(h.filter(x=>x.quality<.5).length/h.length>=.3)reasons.push('출전마 정보 부족');
- return {...r,horses:h.sort((a,b)=>b.prob-a.prob),places,pairs,k,mode,reasons,model:trained?learnedModel.model:MODEL_VERSION};
+ const result={...r,horses:h.sort((a,b)=>b.prob-a.prob),places,pairs,k,mode,reasons,advanced:active,model:active.place||active.pair?advancedModel.model:(trained?learnedModel.model:MODEL_VERSION)};
+ result.models={place:active.place?advancedModel.model:(trained?learnedModel.model:MODEL_VERSION),pair:active.pair?advancedModel.model:(trained?learnedModel.model:MODEL_VERSION)};
+ result.selectiveActive=selectiveActive;
+ result.selection={place:selectiveStatus(result,selectivePlaces,'place',selectiveActive.place),pair:selectiveStatus(result,selectivePairs,'pair',selectiveActive.pair)};
+ result.selectivePicks={place:result.selection.place.qualified?selectivePlaces[0]:null,pair:result.selection.pair.qualified?selectivePairs[0]:null};
+ return result;
 }
 function candidateReasons(r,x,type){
- const why=[...r.reasons];if(!x)return ['후보 없음'];if(x.quality<2/3)why.push('후보 데이터 부족');
+ const why=r.advanced?.[type]?[]:[...r.reasons];if(!x)return ['후보 없음'];if(!r.advanced?.[type]&&x.quality<2/3)why.push('후보 데이터 부족');
  if(r.mode==='value'&&(x.ev===null||x.ev<(type==='place'?.1:.15)))why.push(x.ev===null?'배당 입력 필요':'검토 기준 미달');
  return why;
 }
-if(typeof module!=='undefined')module.exports={analyze,probs,candidateReasons,MODEL_VERSION,setTrainedModel};
-
+if(typeof module!=='undefined')module.exports={analyze,probs,candidateReasons,MODEL_VERSION,setTrainedModel,setAdvancedModel,predictEstimator,pairFeatures,advancedReady};
