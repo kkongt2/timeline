@@ -27,7 +27,7 @@ jobs:
           ]
           for url in urls:
             try:
-              r=requests.get(url,timeout=35);r.raise_for_status()
+              r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/131 Safari/537.36','Referer':'https://race.kra.co.kr/','Accept-Language':'ko-KR,ko;q=0.9'});r.raise_for_status()
               r.encoding=r.apparent_encoding
               soup=BeautifulSoup(r.text,'html.parser')
               print('SOURCE',url)
