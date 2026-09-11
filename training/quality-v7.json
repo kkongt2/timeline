@@ -1,0 +1,3898 @@
+{
+  "races": 12903,
+  "reports": 1620,
+  "errors": [],
+  "exclusions": [
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210307",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210516",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210523",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210523",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211023",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211127",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211225",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220108",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220115",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220116",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220130",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220226",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220402",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220430",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220501",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220618",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220625",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220709",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220731",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220918",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220924",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221001",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221008",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221016",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230204",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230205",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230212",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230401",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230507",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230521",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230708",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230716",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230722",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230723",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231007",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240225",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240316",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240414",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240629",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240630",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240707",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240714",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240721",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241006",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250223",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250323",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250330",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250413",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250518",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250518",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250621",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250802",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250830",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251123",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251206",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251221",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251228",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260117",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260214",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260228",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260315",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260524",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260628",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260704",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260725",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260809",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260817",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210219",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210226",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210226",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210305",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210305",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210312",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210319",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210319",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210402",
+      "venue": "jeju",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210409",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210409",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210416",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210423",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210423",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210430",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210430",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210430",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210430",
+      "venue": "jeju",
+      "race_no": 11,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210507",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210507",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210514",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210514",
+      "venue": "jeju",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210528",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210528",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210604",
+      "venue": "jeju",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210611",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210611",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210611",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210618",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210618",
+      "venue": "jeju",
+      "race_no": 12,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210625",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210625",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210702",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210703",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210717",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210723",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210723",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210724",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210730",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210806",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210806",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210910",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210911",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211001",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211002",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211002",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211002",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211016",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211030",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211030",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211105",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211112",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211119",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211126",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211126",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211203",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211204",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211210",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211211",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211218",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211218",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220107",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220108",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220108",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220114",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220115",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220121",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220128",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220129",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220129",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220218",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220219",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220219",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220225",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220311",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220311",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220312",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220318",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220318",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220325",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220325",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220401",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220402",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220402",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220408",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220416",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220422",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220423",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220430",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220506",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220506",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220507",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220507",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220603",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220603",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220604",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220610",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220610",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220611",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220611",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220611",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220611",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220617",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220624",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220624",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220702",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220708",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220715",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220716",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220722",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220722",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220723",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220805",
+      "venue": "jeju",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220806",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220806",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220812",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220812",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220812",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220812",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220820",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220826",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220826",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220902",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220916",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220916",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220916",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220917",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220923",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220923",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220924",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220930",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220930",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221001",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221008",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221015",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221015",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221021",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221022",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221111",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221112",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221118",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221118",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221125",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221203",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221209",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221210",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221216",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221217",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221223",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221223",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230106",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230107",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230128",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230203",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230204",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230211",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230218",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230311",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230311",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230318",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230407",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230422",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230429",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230505",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230513",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230526",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230527",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230527",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230602",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230616",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230707",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230714",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230812",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230818",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230819",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230819",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230826",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230902",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231027",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231104",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231104",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231118",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231124",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231124",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231201",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231208",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231209",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231229",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231229",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231230",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240105",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240106",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240120",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240202",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240203",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240302",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240308",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240315",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240323",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240413",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240419",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240503",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240510",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240510",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240510",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240511",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240524",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240524",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240525",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240531",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240607",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240615",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240621",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240628",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240705",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240712",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240713",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240720",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240726",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240726",
+      "venue": "jeju",
+      "race_no": 14,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240727",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240816",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240817",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240830",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240906",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240928",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241004",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241005",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241005",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241011",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241012",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241012",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241018",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241026",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241108",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241108",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241109",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241115",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241116",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241116",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241122",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241123",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241130",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241213",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241213",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241220",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241221",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241227",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250214",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250214",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250222",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250228",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250307",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250308",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250315",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250321",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250321",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250328",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250404",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250405",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250411",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250418",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250418",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250509",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250516",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250517",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250517",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250517",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250530",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250614",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250614",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250614",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250621",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250627",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250628",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250705",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250711",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250718",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250718",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250719",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250725",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250725",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250808",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250808",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250822",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250822",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250829",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250829",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250829",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250905",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250920",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250926",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250927",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251017",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251018",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251018",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251024",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251025",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251101",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251107",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251107",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251107",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251114",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251121",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251121",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251129",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251205",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251206",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251212",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260102",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260116",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260124",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260213",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260227",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260227",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260313",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260314",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260327",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260327",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260417",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260417",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260424",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260424",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260501",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260502",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260515",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260515",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260515",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260516",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260619",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260704",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260724",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260807",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260807",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260814",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260817",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260817",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260828",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260829",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260904",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260905",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210115",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210129",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210205",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210516",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210620",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210716",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211024",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211126",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211128",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20211205",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220123",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220218",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220701",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220703",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220724",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220729",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220819",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220902",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20220923",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20221104",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230129",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230203",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230305",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230317",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230331",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230414",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230514",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230602",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230716",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230723",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230730",
+      "venue": "busan",
+      "race_no": 15,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20230915",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231119",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231124",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20231203",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240119",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240121",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240121",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240126",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240126",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240225",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240315",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240322",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240331",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240505",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240614",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240901",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240901",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240906",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20240915",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241020",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241110",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20241206",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250302",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250404",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250406",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250516",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250822",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20250928",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20251228",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260111",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260410",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260417",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260424",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260531",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260628",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "ambiguous_field_or_official_winners"
+    },
+    {
+      "date": "20260724",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "ambiguous_field_or_official_winners"
+    }
+  ],
+  "early_positions": 60062,
+  "sectionals": 59463,
+  "nonfinishers": 0
+}
