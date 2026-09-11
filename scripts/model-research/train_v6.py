@@ -123,10 +123,13 @@ def incumbent_predictions(rows,weights,kind):
  for r in rows:
   p,q=legacy_probabilities(r['X']@weights,r['place_k']);n=len(p)
   numbers=[h['number'] for h in r['form']]
-  if kind=='place':i=int(np.argmax(p));nums=[numbers[i]];prob=p[i];hit=int(i in set(r['order'][:r['place_k']]))
+  if kind=='place':
+   truth=set(r['order'][:r['place_k']]);i=int(np.argmax(p));nums=[numbers[i]];prob=p[i];hit=int(i in truth)
+   brier=float(np.mean([(p[j]-int(j in truth))**2 for j in range(n)]))
   else:
    a,b=np.unravel_index(np.argmax(q),q.shape);nums=[numbers[a],numbers[b]];prob=q[a,b];hit=int(a in set(r['order'][:3]) and b in set(r['order'][:3]))
-  out.append({'date':r['date'],'venue':r['venue'],'race_no':r['race_no'],'numbers':nums,'prob':float(prob),'hit':hit,'brier':0})
+   truth=set(r['order'][:3]);brier=float(np.mean([(q[i,j]-int(i in truth and j in truth))**2 for i in range(n) for j in range(i+1,n)]))
+  out.append({'date':r['date'],'venue':r['venue'],'race_no':r['race_no'],'numbers':nums,'prob':float(prob),'hit':hit,'brier':brier})
  return out
 
 def paired_ci(old,new):
@@ -240,6 +243,12 @@ def run(input_path,out):
    'Horse identity uses venue and name; renamed or transferred horses may have incomplete history.',
    'Ambiguous results, ties and DNFs are excluded; selection bias may remain.',
    'Historic clocks use previous dates by venue/distance/track; this is not an official speed index.']}
+ manifest_path=Path('training/manifest.json')
+ if manifest_path.exists():
+  manifest=json.loads(manifest_path.read_text())
+  report['quality'].update(source_reports=len(manifest.get('reports',[])),download_errors=len(manifest.get('errors',[])),parser_excluded_races=sum(len(x.get('skips',[])) for x in manifest.get('reports',[])))
+ report['serving']={'all_candidates':'Incumbent unless the all-race deployment guard passes.',
+  'selective_candidates':'Separate candidate and record from the model whose frozen selection policy passes confirmation.','independent_tracks':True}
  (out/'model-v6.json').write_text(json.dumps(report,ensure_ascii=False,separators=(',',':')))
  (out/'history-context.json').write_text(json.dumps(context.export(),ensure_ascii=False,separators=(',',':')))
  (out/'evaluation-v6.json').write_text(json.dumps(details,ensure_ascii=False,separators=(',',':')))
