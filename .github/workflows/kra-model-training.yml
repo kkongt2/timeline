@@ -27,7 +27,7 @@ jobs:
           ]
           for url in urls:
             try:
-              r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 Chrome/131 Safari/537.36','Referer':'https://race.kra.co.kr/','Accept-Language':'ko-KR,ko;q=0.9'});r.raise_for_status()
+              r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'});r.raise_for_status()
               r.encoding=r.apparent_encoding
               soup=BeautifulSoup(r.text,'html.parser')
               print('SOURCE',url)
@@ -36,6 +36,6 @@ jobs:
                 rows=[[c.get_text(' ',strip=True) for c in tr.find_all(['td','th'])] for tr in table.find_all('tr')]
                 if rows: print(json.dumps(rows[:5],ensure_ascii=False))
               if 'dbdata' in url:
-                print(str(soup)[-18000:])
+                print('\\n'.join(str(a) for a in soup.find_all('a') if 'dbdata' in str(a) or 'Text' in str(a)))
             except Exception as e: print(type(e).__name__,str(e))
           PY
