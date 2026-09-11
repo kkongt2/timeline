@@ -68,8 +68,8 @@ function render(r){
 }
 let d=new Date(),pad=n=>String(n).padStart(2,'0');$('#date').value=d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());for(let i=1;i<=16;i++)$('#raceNo').insertAdjacentHTML('beforeend','<option>'+i+'</option>');
 const venueName={seoul:'서울',busan:'부경',jeju:'제주'};
-function setVenue(v){venue=v;$('.venue').forEach(x=>x.classList.toggle('active',x.dataset.v===v))}
-$('.venue').forEach(b=>b.onclick=()=>setVenue(b.dataset.v));
+function setVenue(v){venue=v;document.querySelectorAll('.venue').forEach(x=>x.classList.toggle('active',x.dataset.v===v))}
+document.querySelectorAll('.venue').forEach(b=>b.onclick=()=>setVenue(b.dataset.v));
 async function latest(){let x=await(await fetch('data/latest.json?t='+Date.now(),{cache:'no-store'})).json();let rs=Array.isArray(x)?x:x.races||[];if(x.updated_at)$('#dataStatus').textContent='자동 갱신 '+x.updated_at.replace('T',' ').slice(0,16)+' · '+rs.length+'개 경주';return{x,rs}}
 function selectRace(r){setVenue(r.venue);let s=String(r.date);$('#date').value=s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8);$('#raceNo').value=String(r.race_no);render(rank(r))}
 function raceTime(r){let s=String(r.date),t=r.start_time||'23:59';return new Date(s.slice(0,4)+'-'+s.slice(4,6)+'-'+s.slice(6,8)+'T'+t+':00+09:00').getTime()}
