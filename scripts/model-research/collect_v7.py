@@ -17,11 +17,11 @@ def parse_report(text, meet, expected):
         if date != expected:
             raise ValueError('Report date mismatch')
         dist = re.search(r'제\s*\d+일\s+(\d+)M', block)
-        grade = re.search(r'\b(국\d등급|혼\d등급|제\d등급|\d등급|오픈)\b', block)
+        grade = re.search(r'(국\d등급|혼\d등급|제\d등급|\d등급|오픈)', block)
         hs = {}; section = None; ambiguous = False
         for line in block.splitlines():
             if '순위' in line and '마번' in line:
-                section = 'card' if '부담중량' in line else ('weight' if '마 체 중' in line else ('sectionals' if 'G-1F' in line else 'other'))
+                section = 'card' if '부담중량' in line else ('weight' if '마체중' in line.replace(' ', '') else ('sectionals' if 'G-1F' in line else 'other'))
                 continue
             if section == 'card':
                 h = re.match(r'^\s*(\S+)\s+(\d+)\s+(\S+)\s+(\S+)\s+([암수거])\s+(\d+)\s+([\d.]+)\s+(\S+)\s+(\S+)\s+(.*)$', line)
@@ -35,20 +35,22 @@ def parse_report(text, meet, expected):
                         rating=int(rt[1]) if rt else 0, burden=float(burden), jockey=re.sub(r'^\([^)]*\)', '', jockey), trainer=trainer)
                 elif re.match(r'^\s*\S+\s+\d+\s+\S+', line): ambiguous = True
             elif section == 'weight':
-                h = re.match(r'^\s*\S+\s+(\d+)\s+\S+\s+(\d+)\(\s*([+-]?\d+)\)', line)
+                h = re.match(r'^\s*\S+\s+(\d+)\s+\S+\s+(\d+)(?:\(\s*([+-]?\d+)\)|([+-]\d+))?\s+(\d+):(\d+\.\d+)', line)
                 if h and int(h[1]) in hs:
-                    horse = hs[int(h[1])];horse.update(horse_weight=int(h[2]), horse_weight_change=int(h[3]))
-                    tm = re.search(r'\)\s+(\d+):(\d+\.\d+)', line)
-                    if tm: horse['race_seconds'] = 60 * int(tm[1]) + float(tm[2])
-                    # Six course positions, with explicit blank corner positions retained.
-                    positions = re.search(r'(\d+)\s*-\s*(\d*)\s*-\s*(\d*)\s*-\s*(\d*)\s*-\s*(\d*)\s*-\s*(\d+)\s*$', line)
+                    horse=hs[int(h[1])];horse.update(horse_weight=int(h[2]),horse_weight_change=int(h[3] or h[4] or 0),race_seconds=60*int(h[5])+float(h[6]))
+                    positions=re.search(r'(\d+\s*(?:-\s*\d*\s*){5,6})$',line)
                     if positions:
-                        horse['early_position'] = int(positions[1]); horse['last_position'] = int(positions[6])
+                        parts=re.split(r'\s*-\s*',positions[1].strip())
+                        if parts[0] and parts[-1]:horse.update(early_position=int(parts[0]),last_position=int(parts[-1]))
             elif section == 'sectionals':
-                h = re.match(r'^\s*\d+\s+(\d+)\s+([\d.]+)\s+(\d+:[\d.]+)\s+(.*?)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s*$', line)
-                if h and int(h[1]) in hs:
-                    mins, secs = h[3].split(':')
-                    hs[int(h[1])].update(early_seconds=int(mins)*60+float(secs), last_seconds=float(h[5]))
+                cells=line.split()
+                def seconds(value):
+                    return sum(float(v)*factor for v,factor in zip(value.split(':')[::-1],[1,60]))
+                if len(cells)>=7 and cells[0].isdigit() and cells[1].isdigit() and int(cells[1]) in hs:
+                    try:
+                        early,last=seconds(cells[3]),seconds(cells[-3])
+                        if 8<=early<=40 and 8<=last<=40:hs[int(cells[1])].update(early_seconds=early,last_seconds=last)
+                    except ValueError:pass
         pp = re.search(r'배당률\s+단:.*?\s연:\s*(.*?)\s+복:', block, re.S)
         winners = [CIRCLES[c] for c in pp[1] if c in CIRCLES] if pp else []
         n = len(hs); ordered = sorted(hs.values(), key=lambda h: h['finish'] if h['finish'] is not None else 99)
@@ -71,7 +73,7 @@ def parse_report(text, meet, expected):
 
 
 def run():
-    manifest = json.loads(Path('training/manifest.json').read_text()); rows = []; issues = []; errors = []; samples = {}
+    manifest = json.loads(Path('training/manifest.json').read_text()); rows = []; issues = []; errors = []
     for i, report in enumerate(manifest['reports']):
         try:
             path = Path('training/raw') / str(report['meet']) / (report['date']+'.txt.gz')
@@ -80,11 +82,10 @@ def run():
                 path.write_bytes(gzip.compress(get(report['source']).encode(), mtime=0))
             text = gzip.decompress(path.read_bytes()).decode()
             result, skipped = parse_report(text, report['meet'], report['date'])
-            if report['date'] >= '20260901': samples[str(report['meet'])] = text.splitlines()[:65]
             rows.extend(result); issues.extend(skipped)
         except Exception as exc: errors.append({'source': report['source'], 'error': str(exc)})
         if i % 100 == 0: print('reparsed', i+1, 'races', len(rows), 'errors', len(errors), flush=True)
-    quality = dict(samples=samples, races=len(rows), reports=len(manifest['reports']), errors=errors, exclusions=issues,
+    quality = dict(races=len(rows), reports=len(manifest['reports']), errors=errors, exclusions=issues,
         early_positions=sum('early_position' in h for r in rows for h in r['horses']),
         sectionals=sum('early_seconds' in h for r in rows for h in r['horses']),
         nonfinishers=sum(h.get('finish_status') in ('中止','중지','실격') for r in rows for h in r['horses']))
