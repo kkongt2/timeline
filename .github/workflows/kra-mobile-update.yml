@@ -17,6 +17,9 @@ concurrency:
   group: kra-mobile-data
   cancel-in-progress: true
 
+env:
+  PYTHONUNBUFFERED: "1"
+
 jobs:
   update:
     runs-on: ubuntu-latest
