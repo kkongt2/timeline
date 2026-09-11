@@ -343,6 +343,32 @@ def probe_todayrace_forms():
             }
         except Exception as e:
             out[key] = {"error": repr(e)}
+    # Weekly KRA weight page uses legacy links/onclick handlers. Capture the
+    # real attributes so the production parser can follow only date/race-specific links.
+    weekly = {}
+    for meet in MEETS:
+        try:
+            url = "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do"
+            r = S.get(url, params={"Act":"04","Sub":"4","meet":meet}, timeout=25)
+            r.raise_for_status()
+            soup = BeautifulSoup(r.content.decode(r.apparent_encoding or "cp949", errors="ignore"), "html.parser")
+            anchors = []
+            for a in soup.find_all("a"):
+                txt = clean(a.get_text(" ", strip=True))
+                href = a.get("href")
+                onclick = a.get("onclick")
+                if (txt.isdigit() or "경주" in txt) and (href or onclick):
+                    anchors.append({"text":txt,"href":href,"onclick":onclick})
+            forms = []
+            for form in soup.find_all("form"):
+                fields=[]
+                for el in form.find_all(["input","select"]):
+                    fields.append({"tag":el.name,"name":el.get("name"),"id":el.get("id"),"value":el.get("value")})
+                forms.append({"action":form.get("action"),"method":form.get("method"),"fields":fields[:80]})
+            weekly[str(meet)]={"url":str(r.url),"anchors":anchors[:120],"forms":forms[:10]}
+        except Exception as e:
+            weekly[str(meet)]={"error":repr(e)}
+    out["weekly_weight"] = weekly
     Path("data/probe.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def main():
