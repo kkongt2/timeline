@@ -20,11 +20,7 @@ jobs:
           python - <<'PY'
           import requests, json
           from bs4 import BeautifulSoup
-          urls=[
-            'https://race.kra.co.kr/raceScore/ScoretableDetailList.do?meet=1&realRcDate=20250907&realRcNo=1',
-            'https://race.kra.co.kr/dbdata/textDataList.do?meet=1',
-            'https://race.kra.co.kr/chulmainfo/chulmaDetailInfoChulmapyo.do?meet=1&rcDate=20250907&rcNo=1&Act=02&Sub=1'
-          ]
+          urls=['https://race.kra.co.kr/dbdata/textData.do?Act=12&Sub=1&meet=1']
           for url in urls:
             try:
               r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'});r.raise_for_status()
@@ -36,6 +32,6 @@ jobs:
                 rows=[[c.get_text(' ',strip=True) for c in tr.find_all(['td','th'])] for tr in table.find_all('tr')]
                 if rows: print(json.dumps(rows[:5],ensure_ascii=False))
               if 'dbdata' in url:
-                print('\\n'.join(str(a) for a in soup.find_all('a') if 'dbdata' in str(a) or 'Text' in str(a)))
+                print(str(soup)[-35000:])
             except Exception as e: print(type(e).__name__,str(e))
           PY
