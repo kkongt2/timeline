@@ -139,7 +139,7 @@ def paired_ci(old,new):
   sample=rng.choice(keys,len(keys));values.append(np.mean([v for d in sample for v in days[d]]))
  return np.quantile(values,[.025,.975]).tolist()
 
-def matches(x,p):return x['prob']>=p['min_probability'] and x['gap']>=p['min_gap'] and x['starts']>=p['min_starts'] and x['sparse']<=p['max_sparse']
+def matches(x,p):return x['venue'] in p.get('venues',['seoul','busan','jeju']) and x['prob']>=p['min_probability'] and x['gap']>=p['min_gap'] and x['starts']>=p['min_starts'] and x['sparse']<=p['max_sparse']
 
 def uplift_ci(allitems,selected,seed=SEED):
  # Date-cluster bootstrap of selective minus all-race hit rate, preserving meeting dependence.
@@ -163,14 +163,20 @@ def choose_policy(items):
     a=[x for x in items if matches(x,p)];s=summary(a)
     if len(a)>=80 and .15<=len(a)/len(items)<=.65:
      possibilities.append((s['hit_rate_95ci'][0],len(a),p))
- return max(possibilities,key=lambda x:(x[0],x[1]))[2] if possibilities else None
+ if not possibilities:return None
+ policy=max(possibilities,key=lambda x:(x[0],x[1]))[2]
+ # Venue eligibility is frozen on policy-selection dates, never chosen using confirmation labels.
+ chosen=[x for x in items if matches(x,policy)]
+ policy['venues']=[v for v in ['seoul','busan','jeju'] if len([x for x in chosen if x['venue']==v])>=20 and summary([x for x in chosen if x['venue']==v])['hit_rate']>summary([x for x in items if x['venue']==v])['hit_rate']]
+ return policy
 
 def validate_policy(policy,items):
  a=[x for x in items if policy and matches(x,policy)];s=summary(a);ci=uplift_ci(items,a)
  by={v:summary([x for x in a if x['venue']==v]) for v in ['seoul','busan','jeju']}
  # Confirm a fixed, previously chosen rule on different dates. No test-based threshold search.
  approved=bool(policy and len(a)>=80 and .1<=len(a)/len(items)<=.7 and ci[0]>0)
- venues=[v for v in by if approved and by[v]['races']>=25 and by[v]['hit_rate']>summary([x for x in items if x['venue']==v])['hit_rate']]
+ venues=policy.get('venues',[]) if approved else []
+ if any(by[v]['races']<25 for v in venues):approved=False;venues=[]
  return {'approved':approved and bool(venues),'approved_venues':venues,'criteria':policy,'selected':s,
   'all':summary(items),'coverage':len(a)/len(items),'uplift_95ci':ci,'by_venue':by}
 
