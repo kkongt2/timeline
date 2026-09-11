@@ -5,33 +5,53 @@ on:
     branches: [main]
     paths: ['.github/workflows/kra-model-training.yml', 'scripts/model-research/**']
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: kra-history-training
+  cancel-in-progress: false
 jobs:
-  inspect:
+  train:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install requests beautifulsoup4
-      - name: Inspect official historical data
+      - run: pip install requests beautifulsoup4 numpy scipy
+      - uses: actions/cache@v4
+        with:
+          path: training/raw
+          key: kra-history-v1-20260910
+      - name: Collect validated daily results from 2024
+        run: python scripts/model-research/collect.py --end 20260910
+      - name: Train and evaluate on held-out dates
+        run: python scripts/model-research/train.py --input training/history.jsonl --output data
+      - name: Preserve research dataset and evaluation
         run: |
           python - <<'PY'
-          import requests, json
-          from bs4 import BeautifulSoup
-          urls=['https://race.kra.co.kr/dbdata/fileDownLoad.do?fn=chollian/seoul/jungbo/rcresult/20250928dacom11.rpt&meet=1']
-          for url in urls:
-            try:
-              r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'});r.raise_for_status()
-              r.encoding=r.apparent_encoding
-              soup=BeautifulSoup(r.text,'html.parser')
-              print('SOURCE',url)
-              print(soup.get_text(' ',strip=True)[:2500])
-              for table in soup.find_all('table'):
-                rows=[[c.get_text(' ',strip=True) for c in tr.find_all(['td','th'])] for tr in table.find_all('tr')]
-                if rows: print(json.dumps(rows[:5],ensure_ascii=False))
-              if 'dbdata' in url:
-                print(r.text[:22000])
-            except Exception as e: print(type(e).__name__,str(e))
+          import gzip
+          from pathlib import Path
+          p=Path('training/history.jsonl')
+          Path('training/history.jsonl.gz').write_bytes(gzip.compress(p.read_bytes(),mtime=0))
           PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/training-report.json data/candidate-model.json training/history.jsonl.gz training/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save historical training data and held-out evaluation'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kra-training-evidence
+          path: |
+            training/manifest.json
+            data/training-report.json
+            data/candidate-model.json
+          if-no-files-found: ignore
