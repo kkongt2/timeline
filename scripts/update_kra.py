@@ -396,87 +396,48 @@ def attach_live_context(races, jockey_stats, trainer_stats, tracks):
             h.setdefault("horse_weight", None)
             h.setdefault("horse_weight_change", None)
 
-def probe_todayrace_forms():
-    """Capture form/input metadata needed for reliable todayrace venue/date selection."""
-    out = {}
-    urls = {
-        "weight": "https://todayrace.kra.co.kr/racing/weight/selectWeightList.do",
-        "jockey": "https://todayrace.kra.co.kr/score/statu/selectTop10JockeysList.do",
-        "trainer": "https://todayrace.kra.co.kr/score/statu/selectTop10TrainersList.do",
-    }
-    for key, url in urls.items():
-        try:
-            r = S.get(url, timeout=25)
-            r.raise_for_status()
-            soup = BeautifulSoup(r.text, "html.parser")
-            forms = []
-            for form in soup.find_all("form"):
-                inputs = []
-                for el in form.find_all(["input", "select", "button"]):
-                    item = {
-                        "tag": el.name,
-                        "name": el.get("name"),
-                        "id": el.get("id"),
-                        "value": el.get("value"),
-                        "type": el.get("type"),
-                    }
-                    if el.name == "select":
-                        item["options"] = [
-                            {"value": o.get("value"), "text": clean(o.get_text(" ", strip=True)), "selected": o.has_attr("selected")}
-                            for o in el.find_all("option")[:30]
-                        ]
-                    inputs.append(item)
-                forms.append({
-                    "action": form.get("action"),
-                    "method": form.get("method"),
-                    "id": form.get("id"),
-                    "name": form.get("name"),
-                    "inputs": inputs[:100],
-                })
-            scripts = "\n".join(x.get_text("\n", strip=False) for x in soup.find_all("script"))
-            tokens = sorted(set(re.findall(r"[A-Za-z_][A-Za-z0-9_]{2,30}", scripts)))
-            interesting = [x for x in tokens if any(k in x.lower() for k in ("meet","date","race","rc","tab","jockey","trainer","weight"))]
-            out[key] = {
-                "url": str(r.url),
-                "forms": forms[:10],
-                "interesting_js_tokens": interesting[:150],
-                "title": clean(soup.title.get_text()) if soup.title else "",
-            }
-        except Exception as e:
-            out[key] = {"error": repr(e)}
-    # Weekly KRA weight page uses legacy links/onclick handlers. Capture the
-    # real attributes so the production parser can follow only date/race-specific links.
-    weekly = {}
-    for meet in MEETS:
-        try:
-            url = "https://race.kra.co.kr/thisweekrace/ThisWeekWeight.do"
-            r = S.get(url, params={"Act":"04","Sub":"4","meet":meet}, timeout=25)
-            r.raise_for_status()
-            soup = BeautifulSoup(r.content.decode(r.apparent_encoding or "cp949", errors="ignore"), "html.parser")
-            anchors = []
-            for a in soup.find_all("a"):
-                txt = clean(a.get_text(" ", strip=True))
-                href = a.get("href")
-                onclick = a.get("onclick")
-                if (txt.isdigit() or "경주" in txt) and (href or onclick):
-                    anchors.append({"text":txt,"href":href,"onclick":onclick})
-            forms = []
-            for form in soup.find_all("form"):
-                fields=[]
-                for el in form.find_all(["input","select"]):
-                    fields.append({"tag":el.name,"name":el.get("name"),"id":el.get("id"),"value":el.get("value")})
-                forms.append({"action":form.get("action"),"method":form.get("method"),"fields":fields[:80]})
-            scripts = "\n".join(x.get_text("\n", strip=False) for x in soup.find_all("script"))
-            gi = scripts.find("goDetail")
-            excerpt = scripts[max(0, gi-700):gi+1700] if gi >= 0 else ""
-            weekly[str(meet)]={"url":str(r.url),"anchors":anchors[:120],"forms":forms[:10],"goDetail_excerpt":excerpt}
-        except Exception as e:
-            weekly[str(meet)]={"error":repr(e)}
-    out["weekly_weight"] = weekly
-    Path("data/probe.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+def enrich_weight(race, date, rc_no, meet, debug):
+    """Attach race-day body weight only when KRA has actually published it."""
+    try:
+        html = get_html("chulmaDetailInfoWeight.do", params(date, rc_no, meet))
+        soup = BeautifulSoup(html, "html.parser")
+        table = None
+        for t in soup.find_all("table"):
+            txt = clean(t.get_text(" ", strip=True))
+            if "마명" in txt and "금일체중" in txt and "증감" in txt:
+                table = t
+                break
+        if table is None:
+            return
+        by_no = {h["number"]: h for h in race["horses"]}
+        by_name = {h["name"]: h for h in race["horses"]}
+        samples = []
+        for row in table_rows(table):
+            if len(row) < 4:
+                continue
+            h = None
+            if row[0].isdigit():
+                h = by_no.get(int(row[0]))
+            if h is None:
+                h = by_name.get(row[1] if len(row) > 1 else "")
+            if h is None:
+                continue
+            wm = re.search(r"-?\d+(?:\.\d+)?", row[2] if len(row) > 2 else "")
+            cm = re.search(r"-?\d+(?:\.\d+)?", row[3] if len(row) > 3 else "")
+            # Blank current weight means KRA has not entered race-day weight yet.
+            h["horse_weight"] = float(wm.group()) if wm else None
+            h["horse_weight_change"] = float(cm.group()) if (wm and cm) else None
+            if len(row) > 5:
+                h["previous_weight"] = fnum(row[5], 0) or None
+            if len(row) > 6:
+                h["average_weight"] = fnum(row[6], 0) or None
+            if len(samples) < 3:
+                samples.append(row[:8])
+        debug["weight_samples"] = samples
+    except Exception as e:
+        debug["weight_error"] = repr(e)
 
 def main():
-    probe_todayrace_forms()
     kst = ZoneInfo("Asia/Seoul")
     now = datetime.now(kst)
     # Race cards are published before the meeting; keep today plus the next 2 days
@@ -502,6 +463,8 @@ def main():
                     enrich_record(race, date, rc_no, meet, dbg)
                     enrich_distance(race, date, rc_no, meet, dbg)
                     enrich_recent(race, date, rc_no, meet, dbg)
+                    if date == dates[0]:
+                        enrich_weight(race, date, rc_no, meet, dbg)
                     races.append(race)
                     if debug_race is None:
                         debug_race = {"date":date,"meet":meet,"rc_no":rc_no,**dbg}
