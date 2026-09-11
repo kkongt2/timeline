@@ -1,3 +1,4 @@
+window.addEventListener('error',e=>{let x=document.querySelector('#dataStatus');if(x)x.textContent='스크립트 오류: '+(e.message||'알 수 없는 오류')});
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];let venue='seoul',cur=null;
 const DEMO={venue:'busan',venue_name:'부경',date:'20260911',race_no:1,title:'모바일 데모',horses:[
 {number:1,name:'샘플A',rating:54,burden:55,starts_1y:9,wins_1y:2,seconds_1y:2,thirds_1y:1,distance_starts:4,distance_top3:3,recent_finishes:[2,3,1,5,4],jockey:'기수A'},
