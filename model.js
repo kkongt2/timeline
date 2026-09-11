@@ -1,4 +1,6 @@
 'use strict';
+const challengerEngine=typeof module!=='undefined'?require('./model-v7.js'):globalThis.KraV7;
+function setChallengerModel(r){return challengerEngine?.configure(r)||false;}
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x)),div=(a,b,d=0)=>+b?+a/+b:d;
 function fieldNorm(v,vals,def=.5){let a=vals.filter(Number.isFinite);if(!Number.isFinite(v)||!a.length)return def;let lo=Math.min(...a),hi=Math.max(...a);return hi>lo?(v-lo)/(hi-lo):def}
 function score(h,f){
@@ -112,6 +114,15 @@ function analyze(r,mode='accuracy',odds={place:{},qpl:{}}){
  result.selectiveActive=selectiveActive;
  result.selection={place:selectiveStatus(result,selectivePlaces,'place',selectiveActive.place),pair:selectiveStatus(result,selectivePairs,'pair',selectiveActive.pair)};
  result.selectivePicks={place:result.selection.place.qualified?selectivePlaces[0]:null,pair:result.selection.pair.qualified?selectivePairs[0]:null};
+ result.incumbent={model:{...result.models},place:result.places.slice(),pair:result.pairs.slice()};
+ const challenger=challengerEngine?.analyze(r);result.challenger=challenger;
+ if(challenger)for(const type of ['place','pair'])if(challenger.deployment[type].approved){
+  const market=type==='place'?odds.place:odds.qpl;
+  const items=challenger[type].map(x=>({...x,...item(x.numbers,x.prob,1,market||{})})).sort(compare);
+  result[type==='place'?'places':'pairs']=items;result.models[type]=challenger.model;result.advanced[type]=true;
+  if(type==='place')result.horses.forEach(h=>h.prob=items.find(x=>x.numbers[0]===h.number).prob);
+  result.model=challenger.model;
+ }
  return result;
 }
 function candidateReasons(r,x,type){
@@ -119,4 +130,4 @@ function candidateReasons(r,x,type){
  if(r.mode==='value'&&(x.ev===null||x.ev<(type==='place'?.1:.15)))why.push(x.ev===null?'배당 입력 필요':'검토 기준 미달');
  return why;
 }
-if(typeof module!=='undefined')module.exports={analyze,probs,candidateReasons,MODEL_VERSION,setTrainedModel,setAdvancedModel,predictEstimator,pairFeatures,advancedReady};
+if(typeof module!=='undefined')module.exports={setChallengerModel,analyze,probs,candidateReasons,MODEL_VERSION,setTrainedModel,setAdvancedModel,predictEstimator,pairFeatures,advancedReady};

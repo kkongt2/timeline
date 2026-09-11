@@ -151,6 +151,7 @@ def parse_card(date: str, rc_no: int, meet: int):
         horses.append({
             "number": no,
             "name": row[1],
+            "age": inum(row[4]), "sex": row[3],
             "rating": rating,
             "burden": burden,
             "burden_change": fnum(row[7]) if len(row) > 7 else 0,
@@ -165,6 +166,14 @@ def parse_card(date: str, rc_no: int, meet: int):
             "distance_starts": 0, "distance_top3": 0,
             "recent_finishes": [],
         })
+    for tr in table.select('tr'):
+        cells=tr.find_all('td')
+        if len(cells)<2: continue
+        number=inum(cells[0].get_text())
+        match=re.search(r"(?:hrNo[=\s'\":]+|goHorse\(['\"])([0-9]+)", str(cells[1]))
+        if match:
+            for horse in horses:
+                if horse['number']==number: horse['horse_id']=match[1]
     if len(horses) < 2:
         return None, {"reason": "too_few_horses", "headers": table_headers(table), "rows": rows[:3]}
     race = {
@@ -531,6 +540,12 @@ def main():
         history_status = refresh_and_attach(races)
     except Exception as e:
         history_status = {"status": "error", "error": str(e)}
+    v7_status = {"status": "unavailable"}
+    try:
+        from refresh_v7 import refresh_and_attach as refresh_v7
+        v7_status = refresh_v7(races)
+    except Exception as e:
+        v7_status = {"status": "error", "error": str(e)}
     from results_kra import attach_results
     result_status = attach_results(races, previous_map, now, S, decode_response)
     out = {
@@ -542,6 +557,7 @@ def main():
             "dates": dates,
             "history": history_status,
             "results": result_status,
+            "history_v7": v7_status,
             "note": "Auto-collected from KRA public race pages; odds may require manual entry.",
         },
     }

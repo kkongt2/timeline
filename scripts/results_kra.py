@@ -54,7 +54,16 @@ def parse_result(html, race):
             seen.add(key)
             payouts.append({'numbers': numbers, 'odds': odds})
         markets[kind] = {'status': 'confirmed', 'payouts': payouts}
-    return {'status': 'confirmed' if all(v['status'] == 'confirmed' for v in markets.values()) else 'partial', **markets}
+    starters = []
+    card = next((t for t in soup.select('table') if t.find('caption') and '경주상세성적' in t.find('caption').get_text()), None)
+    if card:
+        for tr in card.select('tr'):
+            cells = tr.find_all('td')
+            if len(cells) < 3: continue
+            position = cells[0].get_text(' ', strip=True); number = cells[1].get_text(' ', strip=True)
+            if number.isdigit() and (position.isdigit() or position in ('중지','실격','주행중지')):
+                starters.append(int(number))
+    return {'status': 'confirmed' if all(v['status'] == 'confirmed' for v in markets.values()) else 'partial', 'starters': sorted(set(starters)) or None, **markets}
 
 
 def attach_results(races, previous, now, session, decode):
@@ -67,7 +76,7 @@ def attach_results(races, previous, now, session, decode):
             start = datetime.strptime(date + ' ' + (race.get('start_time') or '23:59'), '%Y%m%d %H:%M').replace(tzinfo=now.tzinfo)
             if start > now:
                 continue
-            if old and old.get('version') == 1 and old.get('status') == 'confirmed':
+            if old and old.get('version') == 2 and old.get('status') == 'confirmed':
                 checked = datetime.fromisoformat(old['checked_at'])
                 if timedelta(0) <= now - checked < timedelta(hours=6):
                     race['official_result'] = old
@@ -77,11 +86,11 @@ def attach_results(races, previous, now, session, decode):
             response = session.get(url, timeout=(10, 25))
             response.raise_for_status()
             result = parse_result(decode(response), race)
-            result.update(version=1, source=url, checked_at=now.isoformat(timespec='seconds'))
+            result.update(version=2, source=url, checked_at=now.isoformat(timespec='seconds'))
             race['official_result'] = result
             stats['confirmed' if result['status'] == 'confirmed' else 'pending'] += 1
         except Exception as exc:
-            race['official_result'] = old if old and old.get('version') == 1 and old.get('status') == 'confirmed' else {'status': 'unavailable', 'source': result_url(race)}
+            race['official_result'] = old if old and old.get('version') == 2 and old.get('status') == 'confirmed' else {'status': 'unavailable', 'source': result_url(race)}
             stats['errors'] += 1
             print(f"Result unavailable {date} {race['venue']} {race['race_no']}: {exc}")
     return stats
