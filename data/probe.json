@@ -1,0 +1,33 @@
+{
+  "weight": {
+    "url": "https://todayrace.kra.co.kr/racing/weight/selectWeightList.do",
+    "forms": [],
+    "interesting_js_tokens": [
+      "Date",
+      "rcNo",
+      "search",
+      "toLowerCase"
+    ],
+    "title": ""
+  },
+  "jockey": {
+    "url": "https://todayrace.kra.co.kr/score/statu/selectTop10JockeysList.do",
+    "forms": [],
+    "interesting_js_tokens": [
+      "Date",
+      "search",
+      "toLowerCase"
+    ],
+    "title": ""
+  },
+  "trainer": {
+    "url": "https://todayrace.kra.co.kr/score/statu/selectTop10TrainersList.do",
+    "forms": [],
+    "interesting_js_tokens": [
+      "Date",
+      "search",
+      "toLowerCase"
+    ],
+    "title": ""
+  }
+}
