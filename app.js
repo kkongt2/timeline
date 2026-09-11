@@ -37,7 +37,7 @@ function score(h,f){
   return{raw,re,completeness}
 }
 function probs(st,k){let n=st.length,p=Array(n).fill(0),q={};for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)q[i+'-'+j]=0;let T=st.reduce((a,b)=>a+b,0),add=(o,x)=>{o.forEach(i=>p[i]+=x);for(let a=0;a<o.length;a++)for(let b=a+1;b<o.length;b++){let i=Math.min(o[a],o[b]),j=Math.max(o[a],o[b]);q[i+'-'+j]+=x}};for(let i=0;i<n;i++){let x=st[i]/T,r1=T-st[i];for(let j=0;j<n;j++)if(j!==i){let y=x*st[j]/r1;if(k===2)add([i,j],y);else{let r2=r1-st[j];for(let z=0;z<n;z++)if(z!==i&&z!==j)add([i,j,z],y*st[z]/r2)}}}return{p,q}}
-function rank(r,o={}){let h=(r.horses||[]).map(x=>({...x})),sc=h.map(x=>score(x,h)),raw=sc.map(x=>x.raw),m=raw.reduce((a,b)=>a+b,0)/raw.length,st=raw.map(x=>Math.exp(clamp((x-m)*.6,-4,4))),k=h.length<=7?2:3,{p,q}=probs(st,k),mn=Math.min(...raw),mx=Math.max(...raw);h.forEach((x,i)=>{x.score=Math.round(1000*(mx>mn?(raw[i]-mn)/(mx-mn):.5))/10;x.place_prob=p[i];x.reasons=sc[i].re;x.data_completeness=sc[i].completeness});let po=o.place||{},qo=o.qpl||{},pr=h.map(x=>{let odd=+po[x.number]||null,ev=odd?x.place_prob*odd-1:null;return{number:x.number,name:x.name,prob:x.place_prob,score:x.score,odds:odd,ev}}).sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob)).slice(0,5),qr=[];for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++){let a=h[i],b=h[j],odd=+qo[a.number+'-'+b.number]||+qo[b.number+'-'+a.number]||null,p=q[i+'-'+j],ev=odd?p*odd-1:null;qr.push({numbers:[a.number,b.number],names:[a.name,b.name],prob:p,odds:odd,ev})}qr.sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob));return{...r,place_rule:k+'착 이내',horses:h.sort((a,b)=>b.place_prob-a.place_prob),place_recommendations:pr,qpl_recommendations:qr.slice(0,7)}}
+function rank(r,o={}){let h=(r.horses||[]).map(x=>({...x})),sc=h.map(x=>score(x,h)),raw=sc.map(x=>x.raw),m=raw.reduce((a,b)=>a+b,0)/raw.length,st=raw.map(x=>Math.exp(clamp((x-m)*.6,-4,4))),k=h.length<=7?2:3,{p,q}=probs(st,k),mn=Math.min(...raw),mx=Math.max(...raw);h.forEach((x,i)=>{x.score=Math.round(1000*(mx>mn?(raw[i]-mn)/(mx-mn):.5))/10;x.place_prob=p[i];x.reasons=sc[i].re;x.data_completeness=sc[i].completeness});let po=o.place||{},qo=o.qpl||{},pr=h.map(x=>{let odd=+po[x.number]||null,ev=odd?x.place_prob*odd-1:null;return{number:x.number,name:x.name,prob:x.place_prob,score:x.score,odds:odd,ev,quality:x.data_completeness,fair:1/x.place_prob,min_odds:1.10/x.place_prob}}).sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob)).slice(0,5),qr=[];for(let i=0;i<h.length;i++)for(let j=i+1;j<h.length;j++){let a=h[i],b=h[j],odd=+qo[a.number+'-'+b.number]||+qo[b.number+'-'+a.number]||null,p=q[i+'-'+j],ev=odd?p*odd-1:null;qr.push({numbers:[a.number,b.number],names:[a.name,b.name],prob:p,odds:odd,ev,quality:(a.data_completeness+b.data_completeness)/2,fair:1/p,min_odds:1.15/p})}qr.sort((a,b)=>(b.ev??b.prob)-(a.ev??a.prob));return{...r,place_rule:k+'착 이내',horses:h.sort((a,b)=>b.place_prob-a.place_prob),place_recommendations:pr,qpl_recommendations:qr.slice(0,7)}}
 const pct=x=>(x*100).toFixed(1)+'%',ev=x=>x==null?'':'<span class="'+(x>=0?'positive':'negative')+'">EV '+(x*100).toFixed(1)+'%</span>',od=s=>{let o={};s.split(',').forEach(x=>{let[k,v]=x.split('=').map(y=>y?.trim());if(k&&+v>0)o[k]=+v});return o};
 function render(r){
   cur=r;
@@ -47,8 +47,18 @@ function render(r){
   $('#raceMeta').textContent=meta.filter(Boolean).join(' · ');
   $('#placeRule').textContent='연승 '+r.place_rule;
   $('#horseCount').textContent=r.horses.length+'두';
-  $('#placeList').innerHTML=r.place_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.number+' '+x.name+'</b><span>입상 '+pct(x.prob)+' · 점수 '+x.score+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
-  $('#qplList').innerHTML=r.qpl_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.numbers.join('-')+' '+x.names.join(' × ')+'</b><span>동반입상 '+pct(x.prob)+'</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
+  $('#placeList').innerHTML=r.place_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.number+' '+x.name+'</b><span>입상 '+pct(x.prob)+' · 모델공정 '+x.fair.toFixed(2)+'배 · 최소검토 '+x.min_odds.toFixed(2)+'배</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
+  $('#qplList').innerHTML=r.qpl_recommendations.map((x,i)=>'<div class="pick"><div class="rank">'+(i+1)+'</div><div class="pick-main"><b>'+x.numbers.join('-')+' '+x.names.join(' × ')+'</b><span>동반입상 '+pct(x.prob)+' · 모델공정 '+x.fair.toFixed(2)+'배 · 최소검토 '+x.min_odds.toFixed(2)+'배</span></div><div class="pick-val">'+(x.odds?x.odds+'배':'')+ev(x.ev)+'</div></div>').join('');
+  let pb=r.place_recommendations[0],qb=r.qpl_recommendations[0];
+  function decision(el,x,threshold,label){
+    if(!x){el.className='decision muted-box';el.innerHTML=label+': 데이터 없음';return}
+    if(!x.odds){el.className='decision muted-box';el.innerHTML='<b>'+label+' '+(x.number??x.numbers.join('-'))+'</b>배당 입력 전 · 최소검토 '+x.min_odds.toFixed(2)+'배';return}
+    let ok=x.ev>=threshold&&x.quality>=.66;
+    el.className='decision '+(ok?'bet-box':'pass-box');
+    el.innerHTML='<b>'+(ok?'BET 후보':'PASS')+' · '+label+' '+(x.number??x.numbers.join('-'))+'</b>배당 '+x.odds.toFixed(2)+' · EV '+(x.ev*100).toFixed(1)+'% · 데이터 '+Math.round(x.quality*100)+'%';
+  }
+  decision($('#placeDecision'),pb,.10,'연승');
+  decision($('#qplDecision'),qb,.15,'복연승');
   $('#horseCards').innerHTML=r.horses.map(x=>{
     let jp=x.jockey_stats_1y?.place_rate,tp=x.trainer_stats_1y?.place_rate;
     let body=x.horse_weight?x.horse_weight+'kg'+(x.horse_weight_change!=null?' ('+(x.horse_weight_change>0?'+':'')+x.horse_weight_change+')':''):'대기';
