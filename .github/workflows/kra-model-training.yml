@@ -1,0 +1,41 @@
+name: Train KRA historical model
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/kra-model-training.yml', 'scripts/model-research/**']
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - name: Inspect official historical data
+        run: |
+          python - <<'PY'
+          import requests, json
+          from bs4 import BeautifulSoup
+          urls=[
+            'https://race.kra.co.kr/raceScore/ScoretableDetailList.do?meet=1&realRcDate=20250907&realRcNo=1',
+            'https://race.kra.co.kr/dbdata/textDataList.do?meet=1',
+            'https://race.kra.co.kr/chulmainfo/chulmaDetailInfoChulmapyo.do?meet=1&rcDate=20250907&rcNo=1&Act=02&Sub=1'
+          ]
+          for url in urls:
+            try:
+              r=requests.get(url,timeout=35);r.raise_for_status()
+              r.encoding=r.apparent_encoding
+              soup=BeautifulSoup(r.text,'html.parser')
+              print('SOURCE',url)
+              print(soup.get_text(' ',strip=True)[:2500])
+              for table in soup.find_all('table'):
+                rows=[[c.get_text(' ',strip=True) for c in tr.find_all(['td','th'])] for tr in table.find_all('tr')]
+                if rows: print(json.dumps(rows[:5],ensure_ascii=False))
+              if 'dbdata' in url:
+                print(str(soup)[-18000:])
+            except Exception as e: print(type(e).__name__,str(e))
+          PY
