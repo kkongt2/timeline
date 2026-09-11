@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>KRA Mobile Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <strong>KRA Mobile Analyzer</strong>
+    <span class="badge">개인 분석용</span>
+  </div>
+  <button id="lockBtn" class="ghost">잠금</button>
+</header>
+
+<div id="lockScreen" class="lock hidden">
+  <div class="lock-card">
+    <h1>잠금 해제</h1>
+    <p>이 잠금은 기기 내 간단한 화면 잠금입니다. GitHub Pages 자체를 비공개로 만들지는 않습니다.</p>
+    <input id="pinInput" inputmode="numeric" maxlength="8" placeholder="PIN" />
+    <button id="unlockBtn">열기</button>
+  </div>
+</div>
+
+<main>
+  <section class="card controls">
+    <div class="venue-row">
+      <button class="venue active" data-v="seoul">서울</button>
+      <button class="venue" data-v="busan">부경</button>
+      <button class="venue" data-v="jeju">제주</button>
+    </div>
+    <div class="row">
+      <label>날짜<input id="date" type="date" /></label>
+      <label>경주<select id="raceNo"></select></label>
+    </div>
+    <div class="row actions">
+      <button id="loadBtn">저장 데이터 불러오기</button>
+      <button id="demoBtn" class="secondary">데모</button>
+    </div>
+    <p class="hint">GitHub Actions가 생성한 <code>data/latest.json</code>을 우선 사용합니다. 데이터가 없으면 직접 입력할 수 있습니다.</p>
+  </section>
+
+  <section class="card hero">
+    <div>
+      <span class="muted">선택 경주</span>
+      <h1 id="raceTitle">데이터를 불러오세요</h1>
+      <p id="raceMeta" class="muted"></p>
+    </div>
+    <div id="placeRule" class="rule"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2>연승 분석</h2><span>확률/EV</span></div>
+    <div id="placeList" class="pick-list empty">데이터 없음</div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2>복연승 분석</h2><span>동반입상 확률/EV</span></div>
+    <div id="qplList" class="pick-list empty">데이터 없음</div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2>배당 입력</h2><span>선택 사항</span></div>
+    <label>연승 배당<input id="placeOdds" placeholder="예: 2=1.5, 7=2.1" /></label>
+    <label>복연승 배당<input id="qplOdds" placeholder="예: 2-7=3.4, 2-4=4.1" /></label>
+    <button id="applyOddsBtn">EV 다시 계산</button>
+    <p class="hint">EV = 모델 추정확률 × 배당 − 1. 양수라고 수익을 보장하지 않습니다.</p>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary>직접 출전마 입력</summary>
+      <p class="hint">자동 데이터가 없을 때 사용할 수 있습니다. JSON 형식으로 붙여넣으세요.</p>
+      <textarea id="manualJson" rows="12" spellcheck="false" placeholder='{"venue_name":"부경","race_no":1,"horses":[{"number":1,"name":"말1","rating":50,"burden":55,"starts_1y":8,"wins_1y":1,"seconds_1y":2,"thirds_1y":1,"recent_finishes":[2,4,3]}]}'></textarea>
+      <button id="manualBtn">직접 데이터 분석</button>
+    </details>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h2>출전마</h2><span id="horseCount"></span></div>
+    <div id="horseCards" class="horse-cards empty">데이터 없음</div>
+  </section>
+
+  <section class="card note">
+    <b>주의</b>
+    <p>이 페이지는 공개 경주정보를 단순 휴리스틱으로 분석하는 도구입니다. 특정 베팅 결과나 수익을 보장하지 않으며, 실제 배당과 출전 취소·마체중·주로상태 등 직전 정보는 별도로 확인해야 합니다.</p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
