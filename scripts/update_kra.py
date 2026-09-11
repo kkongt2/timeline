@@ -193,7 +193,8 @@ def enrich_record(race, date, rc_no, meet, debug):
         samples = []
         for t in soup.find_all("table"):
             rows = table_rows(t)
-            if not rows: continue
+            if not rows:
+                continue
             head = clean(t.get_text(" ", strip=True))[:300]
             if "전적" not in head and "승률" not in head and "복승률" not in head:
                 continue
@@ -201,18 +202,23 @@ def enrich_record(race, date, rc_no, meet, debug):
                 samples.append({"headers": table_headers(t), "rows": rows[:3]})
             for row in rows:
                 h = match_horse(row, by_name, by_no)
-                if not h: continue
-                # Parse compact forms such as 12(3/2) = starts(wins/seconds).
+                if not h:
+                    continue
+                # Current KRA compact form: starts(wins/seconds/thirds), e.g. 12(3/2/1).
                 compact = []
                 for cell in row:
-                    m = re.search(r"(\d+)\s*\(\s*(\d+)\s*/\s*(\d+)\s*\)", cell)
+                    m = re.search(r"(\d+)\s*\(\s*(\d+)\s*/\s*(\d+)\s*/\s*(\d+)\s*\)", cell)
                     if m:
                         compact.append(tuple(map(int, m.groups())))
                 if compact:
-                    starts, wins, seconds = compact[-1]  # usually recent/1-year block is last
-                    if starts >= wins + seconds:
-                        h["starts_1y"], h["wins_1y"], h["seconds_1y"] = starts, wins, seconds
-                # Some table variants expose W/S/T in separate cells; top3 rate is recovered later.
+                    # The record page currently exposes two blocks. Use the latter,
+                    # which is the recent-period block on the live page.
+                    starts, wins, seconds, thirds = compact[-1]
+                    if starts >= wins + seconds + thirds:
+                        h["starts_1y"] = starts
+                        h["wins_1y"] = wins
+                        h["seconds_1y"] = seconds
+                        h["thirds_1y"] = thirds
         debug["record_samples"] = samples
     except Exception as e:
         debug["record_error"] = repr(e)
@@ -226,7 +232,8 @@ def enrich_distance(race, date, rc_no, meet, debug):
         samples = []
         for t in soup.find_all("table"):
             rows = table_rows(t)
-            if not rows: continue
+            if not rows:
+                continue
             txt = clean(t.get_text(" ", strip=True))
             if "거리" not in txt and "전적" not in txt:
                 continue
@@ -234,15 +241,17 @@ def enrich_distance(race, date, rc_no, meet, debug):
                 samples.append({"headers": table_headers(t), "rows": rows[:3]})
             for row in rows:
                 h = match_horse(row, by_name, by_no)
-                if not h: continue
+                if not h:
+                    continue
                 compact = []
                 for cell in row:
-                    m = re.search(r"(\d+)\s*\(\s*(\d+)\s*/\s*(\d+)\s*\)", cell)
-                    if m: compact.append(tuple(map(int, m.groups())))
+                    m = re.search(r"(\d+)\s*\(\s*(\d+)\s*/\s*(\d+)\s*/\s*(\d+)\s*\)", cell)
+                    if m:
+                        compact.append(tuple(map(int, m.groups())))
                 if compact:
-                    starts, wins, seconds = compact[0]
+                    starts, wins, seconds, thirds = compact[0]
                     h["distance_starts"] = starts
-                    h["distance_top3"] = min(starts, wins + seconds)
+                    h["distance_top3"] = min(starts, wins + seconds + thirds)
         debug["distance_samples"] = samples
     except Exception as e:
         debug["distance_error"] = repr(e)
@@ -255,21 +264,32 @@ def enrich_recent(race, date, rc_no, meet, debug):
         samples = []
         for t in soup.find_all("table"):
             txt = clean(t.get_text(" ", strip=True))
-            h = next((v for n,v in by_name.items() if n and n in txt[:180]), None)
+            h = next((v for n, v in by_name.items() if n and n in txt[:180]), None)
             rows = table_rows(t)
-            if not h or not rows: continue
+            if not h or not rows:
+                continue
             finishes = []
             for row in rows:
-                # Historical rows contain an ordinal column. Prefer a standalone 1..20 value
-                # after date-like cells and avoid gate numbers where possible.
-                vals = [inum(c, -1) for c in row]
-                candidates = [v for v in vals[1:8] if 1 <= v <= 20]
-                if candidates:
-                    finishes.append(candidates[-1])
+                # Current recent-race table exposes finish/field-size as "8/10".
+                # This avoids mistaking age, distance, gate, etc. for finish position.
+                finish = None
+                for cell in row:
+                    m = re.fullmatch(r"\s*(\d{1,2})\s*/\s*(\d{1,2})\s*", cell)
+                    if m:
+                        pos, field_size = map(int, m.groups())
+                        if 1 <= pos <= field_size <= 20:
+                            finish = pos
+                            break
+                if finish is not None:
+                    finishes.append(finish)
             if finishes:
                 h["recent_finishes"] = finishes[:5]
                 if len(samples) < 2:
-                    samples.append({"horse": h["name"], "rows": rows[:2], "finishes": h["recent_finishes"]})
+                    samples.append({
+                        "horse": h["name"],
+                        "rows": rows[:2],
+                        "finishes": h["recent_finishes"],
+                    })
         debug["recent_samples"] = samples
     except Exception as e:
         debug["recent_error"] = repr(e)
