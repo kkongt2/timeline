@@ -7,7 +7,7 @@ on:
     paths:
       - ".github/workflows/kra-mobile-update.yml"
   schedule:
-    # Fri/Sat/Sun, 09:00-21:59 KST (UTC 00:00-12:59), every 10 minutes. Historical context v6.
+    # Fri/Sat/Sun, 09:00-21:59 KST (UTC 00:00-12:59), every 10 minutes. Historical context v6; previous 2 KST days retained.
     - cron: "*/10 0-12 * * 5,6,0"
 
 permissions:
