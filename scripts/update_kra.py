@@ -466,7 +466,10 @@ def probe_todayrace_forms():
                 for el in form.find_all(["input","select"]):
                     fields.append({"tag":el.name,"name":el.get("name"),"id":el.get("id"),"value":el.get("value")})
                 forms.append({"action":form.get("action"),"method":form.get("method"),"fields":fields[:80]})
-            weekly[str(meet)]={"url":str(r.url),"anchors":anchors[:120],"forms":forms[:10]}
+            scripts = "\n".join(x.get_text("\n", strip=False) for x in soup.find_all("script"))
+            gi = scripts.find("goDetail")
+            excerpt = scripts[max(0, gi-700):gi+1700] if gi >= 0 else ""
+            weekly[str(meet)]={"url":str(r.url),"anchors":anchors[:120],"forms":forms[:10],"goDetail_excerpt":excerpt}
         except Exception as e:
             weekly[str(meet)]={"error":repr(e)}
     out["weekly_weight"] = weekly
@@ -508,8 +511,7 @@ def main():
                     errors.append({"date":date,"meet":meet,"race_no":rc_no,"error":repr(e)})
                     print(f"ERR {date} meet={meet} race={rc_no}: {e}", file=sys.stderr)
                     time.sleep(0.3)
-    out = {
-        "updated_at": now.isoformat(timespec="seconds"),
+    attach_live_context(races, jockey_stats, trainer_stats, tracks)\n    out = {
         "races": races,
         "status": {
             "race_count": len(races),
