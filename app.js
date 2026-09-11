@@ -4,7 +4,7 @@ const pct=x=>(x*100).toFixed(1)+'%',names={seoul:'서울',busan:'부경',jeju:'�
 let races=[],source=null,current=null,ranked=null,venue='seoul',odds={place:{},qpl:{}},manual=false,requestId=0,advancedReport=null;
 const day=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 function breakEvenOdds(p){const odds=1/p;return Number.isFinite(p)&&p>0&&p<=1+1e-9&&Number.isFinite(odds)?Math.max(1,odds).toFixed(2):null;}
-function probabilityHTML(p){const odds=breakEvenOdds(p);return '<span class="probability-values"><span class="probability-rate">'+(odds?pct(p):'—')+'</span><span class="break-even">손익분기 '+(odds?'약 '+odds+'배':'—')+'</span></span>';}
+function probabilityHTML(p){const odds=breakEvenOdds(p);return '<span class="probability-values"><span class="probability-rate">'+(odds?pct(p):'—')+'</span><span class="break-even">손익분기배당 '+(odds?'약 '+odds+'배':'—')+'</span></span>';}
 function start(r){const d=String(r.date||'').replaceAll('-','');return /^\d{8}$/.test(d)&&/^\d{2}:\d{2}$/.test(r.start_time||'')?Date.parse(`${d.slice(0,4)}-${d.slice(4,6)}-${d.slice(6,8)}T${r.start_time}:00+09:00`):NaN;}
 function setVenue(v){venue=v;document.querySelectorAll('[data-venue]').forEach(b=>{b.classList.toggle('active',b.dataset.venue===v);b.setAttribute('aria-pressed',b.dataset.venue===v)});}
 function records(){try{let a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a:[]}catch{return []}}
@@ -15,7 +15,7 @@ function isSelected(r,type){return !manual&&r.mode==='accuracy'&&r.selection?.[t
 function pickHTML(x,r,type,lead=false){
  if(!x)return '<p class="hint">후보 없음</p>';
  const reasons=why(r,x,type),name=x.names.map(esc).join(' · '),num=x.numbers.join(' – '),selected=false;
- if(!lead)return `<div class="candidate"><span><b>${num}</b> ${name}${x.odds?`<br>${x.odds}배 · 추정 EV ${pct(x.ev)}`:''}</span><span class="candidate-metrics">${probabilityHTML(x.prob)}</span></div>`;
+ if(!lead)return `<div class="candidate"><span><b>${num}</b> ${name}${x.odds?`<br>${x.odds}배 · 추정 EV ${pct(x.ev)}`:''}</span><span class="candidate-metrics"><span class="candidate-probability-label">추정확률</span>${probabilityHTML(x.prob)}</span></div>`;
  const status=selected?'선별 후보':reasons.length?'확인 필요 · 후보 제공':'일반 후보';
  const explanation=reasons.length?reasons.join(' · '):'전체 경주용 모델의 1순위 후보';
  const pick=isSelected(r,type)?r.selectivePicks[type]:null;
