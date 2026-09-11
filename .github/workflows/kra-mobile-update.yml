@@ -7,7 +7,7 @@ on:
     paths:
       - ".github/workflows/kra-mobile-update.yml"
   schedule:
-    # Fri/Sat/Sun, 09:00-21:59 KST (UTC 00:00-12:59), every 10 minutes. Context v3.
+    # Fri/Sat/Sun, 09:00-21:59 KST (UTC 00:00-12:59), every 10 minutes. Context v3.1.
     - cron: "*/10 0-12 * * 5,6,0"
 
 permissions:
@@ -38,6 +38,9 @@ jobs:
 
       - name: Install collector dependencies
         run: python -m pip install --disable-pip-version-check requests beautifulsoup4 charset-normalizer
+
+      - name: Validate collector
+        run: python -m py_compile scripts/update_kra.py
 
       - name: Collect KRA race cards
         run: python scripts/update_kra.py
