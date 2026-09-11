@@ -295,6 +295,107 @@ def enrich_recent(race, date, rc_no, meet, debug):
         debug["recent_error"] = repr(e)
 
 
+def decode_response(r):
+    for enc in (r.apparent_encoding, "cp949", "euc-kr", "utf-8"):
+        if not enc:
+            continue
+        try:
+            return r.content.decode(enc, errors="strict")
+        except Exception:
+            pass
+    return r.content.decode("utf-8", errors="ignore")
+
+def norm_person_name(name):
+    # Apprentice allowance is sometimes rendered as "(-1)우인철".
+    return re.sub(r"^\([^)]*\)\s*", "", clean(name))
+
+def fetch_person_stats(kind, meet):
+    if kind == "jockey":
+        url = "https://race.kra.co.kr/jockey/RankScoreYearCompare.do"
+        qs = {"Act":"08","Sub":"2","meet":meet}
+        key = "기수명"
+    else:
+        url = "https://race.kra.co.kr/trainer/trainerScoreYearRecord.do"
+        qs = {"Act":"10","Sub":"2","meet":meet}
+        key = "조교사명"
+    try:
+        r = S.get(url, params=qs, timeout=25)
+        r.raise_for_status()
+        soup = BeautifulSoup(decode_response(r), "html.parser")
+        table = None
+        for t in soup.find_all("table"):
+            txt = clean(t.get_text(" ", strip=True))
+            if key in txt and "총" in txt and "승률" in txt:
+                table = t
+                break
+        if table is None:
+            return {}
+        out = {}
+        for row in table_rows(table):
+            if len(row) < 8 or not row[0].isdigit():
+                continue
+            name = norm_person_name(row[1])
+            wins, seconds, thirds, starts = map(inum, row[2:6])
+            if not name or starts < 0:
+                continue
+            out[name] = {
+                "starts": starts,
+                "wins": wins,
+                "seconds": seconds,
+                "thirds": thirds,
+                "win_rate": wins / starts if starts else 0.0,
+                "quinella_rate": (wins + seconds) / starts if starts else 0.0,
+                "place_rate": (wins + seconds + thirds) / starts if starts else 0.0,
+            }
+        return out
+    except Exception:
+        return {}
+
+def fetch_track_snapshot(meet):
+    sub = "10" if meet == 1 else "9"
+    url = "https://race.kra.co.kr/chulmainfo/trackView.do"
+    try:
+        r = S.get(url, params={"Act":"02","Sub":sub,"meet":meet}, timeout=25)
+        r.raise_for_status()
+        soup = BeautifulSoup(decode_response(r), "html.parser")
+        txt = clean(soup.get_text(" ", strip=True))
+        dm = re.search(r"(20\d{2})년\s*(\d{1,2})월\s*(\d{1,2})일(?:\([^)]*\))?\s*(\d{1,2})시\s*(\d{1,2})분", txt)
+        mm = re.search(r"함수율\s*:\s*(\d+)\s*%\s*\(([^)]+)\)", txt)
+        sm = re.search(r"모래두께\s*:\s*평균\s*([\d.]+)\s*cm", txt)
+        if not dm and not mm:
+            return None
+        date = None
+        observed_at = None
+        if dm:
+            y, mo, da, hh, mi = map(int, dm.groups())
+            date = f"{y:04d}{mo:02d}{da:02d}"
+            observed_at = f"{y:04d}-{mo:02d}-{da:02d}T{hh:02d}:{mi:02d}:00+09:00"
+        return {
+            "date": date,
+            "observed_at": observed_at,
+            "moisture_pct": int(mm.group(1)) if mm else None,
+            "condition": clean(mm.group(2)) if mm else None,
+            "sand_cm": float(sm.group(1)) if sm else None,
+        }
+    except Exception:
+        return None
+
+def attach_live_context(races, jockey_stats, trainer_stats, tracks):
+    for race in races:
+        meet = next((m for m, v in MEETS.items() if v[0] == race.get("venue")), None)
+        if meet is None:
+            continue
+        tr = tracks.get(meet)
+        # Never attach a stale track snapshot to another date.
+        race["track"] = tr if tr and tr.get("date") == race.get("date") else None
+        for h in race.get("horses", []):
+            jn = norm_person_name(h.get("jockey", ""))
+            tn = norm_person_name(h.get("trainer", ""))
+            h["jockey_stats_1y"] = jockey_stats.get(meet, {}).get(jn)
+            h["trainer_stats_1y"] = trainer_stats.get(meet, {}).get(tn)
+            h.setdefault("horse_weight", None)
+            h.setdefault("horse_weight_change", None)
+
 def probe_todayrace_forms():
     """Capture form/input metadata needed for reliable todayrace venue/date selection."""
     out = {}
@@ -378,6 +479,9 @@ def main():
     # Race cards are published before the meeting; keep today plus the next 2 days
     # so Fri/Sat/Sun can be selected from the mobile UI.
     dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(3)]
+    jockey_stats = {meet: fetch_person_stats("jockey", meet) for meet in MEETS}
+    trainer_stats = {meet: fetch_person_stats("trainer", meet) for meet in MEETS}
+    tracks = {meet: fetch_track_snapshot(meet) for meet in MEETS}
     races, errors, debug_race = [], [], None
     for date in dates:
         for meet in MEETS:
