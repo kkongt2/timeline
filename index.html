@@ -1,104 +1,13 @@
 <!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0f172a" />
-  <title>KRA Mobile Analyzer</title>
-  <link rel="stylesheet" href="style.css?v=20260911-2154" />
-</head>
-<body>
-<header class="topbar">
-  <div>
-    <strong>KRA Mobile Analyzer</strong>
-    <span class="badge">개인 분석용</span>
-  </div>
-  <button id="lockBtn" class="ghost">잠금</button>
-</header>
-
-<div id="lockScreen" class="lock hidden">
-  <div class="lock-card">
-    <h1>잠금 해제</h1>
-    <p>이 잠금은 기기 내 간단한 화면 잠금입니다. GitHub Pages 자체를 비공개로 만들지는 않습니다.</p>
-    <input id="pinInput" inputmode="numeric" maxlength="8" placeholder="PIN" />
-    <button id="unlockBtn">열기</button>
-  </div>
-</div>
-
-<main>
-  <section class="card controls">
-    <div class="venue-row">
-      <button class="venue active" data-v="seoul">서울</button>
-      <button class="venue" data-v="busan">부경</button>
-      <button class="venue" data-v="jeju">제주</button>
-    </div>
-    <div class="row">
-      <label>날짜<input id="date" type="date" /></label>
-      <label>경주<select id="raceNo"></select></label>
-    </div>
-    <div class="row actions">
-      <button id="nextBtn">가장 가까운 경주</button>
-      <button id="loadBtn" class="secondary">선택 경주</button>
-    </div>
-    <button id="demoBtn" class="ghost" style="width:100%;margin-top:8px">데모 데이터</button>
-    <p id="dataStatus" class="hint">자동 데이터를 확인하는 중입니다.</p>
-  </section>
-
-  <section class="card hero">
-    <div>
-      <span class="muted">선택 경주</span>
-      <h1 id="raceTitle">데이터를 불러오세요</h1>
-      <p id="raceMeta" class="muted"></p>
-    </div>
-    <div id="placeRule" class="rule"></div>
-  </section>
-
-  <section class="card">
-    <div class="section-head"><h2>이번 경주 판단</h2><span>안전마진 적용</span></div>
-    <div class="decision-grid">
-      <div id="placeDecision" class="decision muted-box">연승: 배당 입력 전</div>
-      <div id="qplDecision" class="decision muted-box">복연승: 배당 입력 전</div>
-    </div>
-    <p class="hint">연승은 모델 EV +10%p, 복연승은 +15%p 이상이면서 데이터 충실도가 충분할 때만 ‘BET 후보’로 표시합니다. 그 외는 PASS입니다.</p>
-  </section>
-
-  <section class="card">
-    <div class="section-head"><h2>연승 분석</h2><span>확률/EV</span></div>
-    <div id="placeList" class="pick-list empty">데이터 없음</div>
-  </section>
-
-  <section class="card">
-    <div class="section-head"><h2>복연승 분석</h2><span>동반입상 확률/EV</span></div>
-    <div id="qplList" class="pick-list empty">데이터 없음</div>
-  </section>
-
-  <section class="card">
-    <div class="section-head"><h2>배당 입력</h2><span>선택 사항</span></div>
-    <label>연승 배당<input id="placeOdds" placeholder="예: 2=1.5, 7=2.1" /></label>
-    <label>복연승 배당<input id="qplOdds" placeholder="예: 2-7=3.4, 2-4=4.1" /></label>
-    <button id="applyOddsBtn">EV 다시 계산</button>
-    <p class="hint">EV = 모델 추정확률 × 배당 − 1. 양수라고 수익을 보장하지 않습니다.</p>
-  </section>
-
-  <section class="card">
-    <details>
-      <summary>직접 출전마 입력</summary>
-      <p class="hint">자동 데이터가 없을 때 사용할 수 있습니다. JSON 형식으로 붙여넣으세요.</p>
-      <textarea id="manualJson" rows="12" spellcheck="false" placeholder='{"venue_name":"부경","race_no":1,"horses":[{"number":1,"name":"말1","rating":50,"burden":55,"starts_1y":8,"wins_1y":1,"seconds_1y":2,"thirds_1y":1,"recent_finishes":[2,4,3]}]}'></textarea>
-      <button id="manualBtn">직접 데이터 분석</button>
-    </details>
-  </section>
-
-  <section class="card">
-    <div class="section-head"><h2>출전마</h2><span id="horseCount"></span></div>
-    <div id="horseCards" class="horse-cards empty">데이터 없음</div>
-  </section>
-
-  <section class="card note">
-    <b>주의</b>
-    <p>이 페이지는 공개 경주정보를 확률모형으로 분석하는 개인용 보조 도구입니다. 특정 베팅 결과나 수익을 보장하지 않으며, 실제 배당과 출전 취소·마체중·주로상태 등 직전 정보는 별도로 확인해야 합니다.</p>
-  </section>
-</main>
-<script src="app.js?v=20260911-2154"></script>
-</body>
-</html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#f5f7fa"><title>경주 노트 · 연승과 복연승</title><link rel="stylesheet" href="style.css?v=4.0"></head>
+<body><header><a class="brand" href="./">경주 노트<span>연승 · 복연승</span></a><button id="lockBtn" class="quiet">잠금</button></header>
+<main><section class="card controls"><div class="venues" aria-label="경마장"><button data-venue="seoul" class="active" aria-pressed="true">서울</button><button data-venue="busan" aria-pressed="false">부경</button><button data-venue="jeju" aria-pressed="false">제주</button></div><div class="fields"><label>날짜<input id="date" type="date"></label><label>경주<select id="raceNo"></select></label></div><div class="actions"><button id="loadBtn">경주 보기</button><button id="nextBtn" class="secondary">다음 경주</button></div><p id="dataStatus" class="hint" role="status">경주 정보를 불러오는 중…</p></section>
+<section id="analysis" hidden><div class="race-heading"><div><p class="eyebrow" id="raceMeta"></p><h1 id="raceTitle"></h1></div><span id="horseCount" class="pill"></span></div><div class="mode"><label for="mode">추천 기준</label><select id="mode"><option value="accuracy">적중률 우선</option><option value="value">수익성 검토</option></select></div><p class="hint" id="modeHelp"></p><p id="raceWarning" class="notice" hidden></p>
+<div class="recommendations"><section class="card"><div class="section-head"><h2>연승</h2><span id="placeRule"></span></div><div id="placeLead"></div><details><summary>다른 후보</summary><div id="placeList"></div></details></section><section class="card"><div class="section-head"><h2>복연승</h2><span>두 말 모두 3착 이내</span></div><div id="pairLead"></div><details><summary>다른 조합</summary><div id="pairList"></div></details></section></div>
+<p class="hint">확률은 학습·실적 보정 전 모델 추정치입니다. 실제 적중률과 다르며, 추천 보류 기준도 검증 중입니다.</p><button id="savePrediction" class="secondary full">이 추천 기록하기</button><p id="saveStatus" class="hint" role="status">경주 시작 전 추천만 기록할 수 있습니다.</p>
+<details class="card"><summary>배당 입력 <span>선택 사항</span></summary><p class="hint">현재 경주의 배당만 입력하세요. 입력하지 않은 후보는 수익성 순위 뒤에 표시됩니다.</p><label>연승 배당<input id="placeOdds" placeholder="예: 2=1.5, 7=2.1"></label><label>복연승 배당<input id="pairOdds" placeholder="예: 2-7=3.4, 2-4=4.1"></label><button id="applyOdds">배당 반영</button><p class="hint">추정 기대수익률 = 추정확률 × 배당 − 1. 양수여도 수익을 보장하지 않습니다.</p></details>
+<details class="card"><summary>출전마와 판단 근거</summary><div id="horses"></div></details></section>
+<section class="card"><div class="section-head"><h2>내 예측 기록</h2><span>이 기기에 저장</span></div><p class="hint">경주·추천 기준별 최초 기록을 보존합니다. 공식 결과를 직접 입력하면 1순위 적중률을 계산합니다. 보류 경주는 집계에서 제외됩니다.</p><div id="stats" class="stats"></div><div id="history"></div><p class="hint">기기·브라우저를 바꾸거나 사이트 데이터를 삭제하면 기록이 이어지지 않습니다. 환수율은 확정 배당을 입력한 기록만 계산합니다.</p></section>
+<details class="card"><summary>직접 입력 · 데모</summary><p class="hint">직접 입력과 데모는 실적에 기록되지 않습니다.</p><textarea id="manualJson" rows="5" aria-label="출전마 JSON" placeholder="경주 JSON을 붙여넣으세요"></textarea><div class="actions"><button id="manualBtn">분석</button><button id="demoBtn" class="secondary">데모 보기</button></div></details>
+<footer>공개 경주정보 기반 개인 분석 도구 · v4.0<br>출전 취소와 최종 배당은 <a href="https://race.kra.co.kr/" target="_blank" rel="noopener">한국마사회</a>에서 확인하세요.</footer></main>
+<div id="lockScreen" class="lock" hidden><section class="card"><h2>화면 잠금</h2><p>기기 내 화면 잠금입니다. 사이트를 비공개로 만들지는 않습니다.</p><label>PIN<input id="pinInput" type="password" inputmode="numeric" maxlength="8"></label><button id="unlockBtn">열기</button><p id="lockError" role="status"></p></section></div><script src="model.js?v=4.0"></script><script src="app.js?v=4.0"></script></body></html>
