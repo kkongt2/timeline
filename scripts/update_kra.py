@@ -531,6 +531,8 @@ def main():
         history_status = refresh_and_attach(races)
     except Exception as e:
         history_status = {"status": "error", "error": str(e)}
+    from results_kra import attach_results
+    result_status = attach_results(races, previous_map, now, S, decode_response)
     out = {
         "updated_at": now.isoformat(timespec="seconds"),
         "races": races,
@@ -539,6 +541,7 @@ def main():
             "error_count": len(errors),
             "dates": dates,
             "history": history_status,
+            "results": result_status,
             "note": "Auto-collected from KRA public race pages; odds may require manual entry.",
         },
     }

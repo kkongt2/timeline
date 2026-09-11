@@ -12,6 +12,15 @@ function put(a){try{localStorage.setItem(KEY,JSON.stringify(a));return true}catc
 function timingReasons(r){const why=[];if(!Number.isFinite(start(r)))why.push('출발 시각 확인 필요');else if(start(r)<=Date.now())why.push(String(r.date)<day().replaceAll('-','')?'지난 경주 조회 · 현재 정보로 재계산한 후보':'이미 출발한 경주');if(!manual&&(!source?.updated_at||Date.now()-Date.parse(source.updated_at)>30*60000||!Number.isFinite(Date.parse(source.updated_at))))why.push('갱신 후 30분 경과 · 최신 출전정보 확인 필요');return why;}
 function why(r,x,type){return [...candidateReasons(r,x,type),...timingReasons(r),...(manual?['직접 입력 / 데모']:[])];}
 function isSelected(r,type){return !manual&&r.mode==='accuracy'&&r.selection?.[type]?.qualified===true&&timingReasons(r).length===0;}
+function officialResultHTML(r,type){
+ if(!Number.isFinite(start(r))||start(r)>Date.now())return '';
+ const result=r.official_result,market=result?.[type];
+ const title='<span class="result-label">실제 결과 · 확정 배당</span>';
+ if(market?.status==='confirmed'&&market.payouts?.length){
+  return '<span class="official-result">'+title+market.payouts.map(x=>'<span class="result-line"><strong>'+x.numbers.map(n=>esc(n)).join('–')+(type==='place'?'번':'')+'</strong><span>'+Number(x.odds).toFixed(1)+'배</span></span>').join('')+'</span>';
+ }
+ return '<span class="official-result">'+title+'<span class="result-pending">'+(market?.status==='refunded'?'환불':result?.status==='unavailable'?'결과 불러오기 대기':'공식 결과 확인 중')+'</span></span>';
+}
 function pickHTML(x,r,type,lead=false){
  if(!x)return '<p class="hint">후보 없음</p>';
  const reasons=why(r,x,type),name=x.names.map(esc).join(' · '),num=x.numbers.join(' – '),selected=false;
@@ -20,7 +29,7 @@ function pickHTML(x,r,type,lead=false){
  const explanation=reasons.length?reasons.join(' · '):'전체 경주용 모델의 1순위 후보';
  const pick=isSelected(r,type)?r.selectivePicks[type]:null;
  const selectionHTML=pick?'<div class="selective-pick"><span class="selected-tag">선별용 모델 후보</span><strong>'+pick.numbers.join(' – ')+'</strong><span>'+pick.names.map(esc).join(' · ')+'</span><small>추정 '+probabilityHTML(pick.prob)+'</small><small>검증 기준 충족</small></div>':'<p class="hint">'+esc(r.selection?.[type]?.reason||'선별 검증 대기')+'</p>';
- return `<div class="status ${selected?'selected':reasons.length?'hold':''}">${status}</div><div class="lead-number">${num}</div><p class="lead-name">${name}</p><div class="prob"><small>추정 ${type==='place'?'입상':'동반입상'}</small>${probabilityHTML(x.prob)}</div><p class="hint">${esc(explanation)}</p>${selectionHTML}${x.odds?`<p class="hint">${x.odds}배 · 추정 EV ${pct(x.ev)}</p>`:''}`;
+ return `<div class="status ${selected?'selected':reasons.length?'hold':''}">${status}</div><div class="lead-number">${num}</div><p class="lead-name">${name}</p><div class="prob"><small>추정 ${type==='place'?'입상':'동반입상'}</small>${probabilityHTML(x.prob)}</div><p class="hint">${esc(explanation)}</p>${selectionHTML}${manual?'':officialResultHTML(r,type)}${x.odds?`<p class="hint">${x.odds}배 · 추정 EV ${pct(x.ev)}</p>`:''}`;
 }
 function render(){if(!current)return;ranked=analyze(current,$('#mode').value,odds);const r=ranked;$('#analysis').hidden=false;$('#raceTitle').textContent=(names[r.venue]||r.venue_name||'직접 입력')+' '+r.race_no+'R';$('#raceMeta').textContent=[r.date,r.title,manual?'직접 입력 / 데모':''].filter(Boolean).join(' · ');$('#horseCount').textContent=r.horses.length+'두';$('#placeRule').textContent=r.k+'착 이내';$('#modeHelp').textContent=r.mode==='accuracy'?'추정 적중확률 순으로 추천합니다. 배당을 입력해도 순위는 바뀌지 않습니다.':'배당을 입력한 후보를 추정 기대수익률 순으로 정렬합니다. 적중확률은 낮아질 수 있습니다.';const warning=timingReasons(r);$('#raceWarning').hidden=!warning.length;$('#raceWarning').textContent=warning.join(' · ');$('#placeLead').innerHTML=pickHTML(r.places[0],r,'place',true);$('#pairLead').innerHTML=pickHTML(r.pairs[0],r,'pair',true);$('#placeList').innerHTML=r.places.slice(1,5).map(x=>pickHTML(x,r,'place')).join('');$('#pairList').innerHTML=r.pairs.slice(1,5).map(x=>pickHTML(x,r,'pair')).join('');$('#horses').innerHTML=r.horses.map(h=>`<div class="horse"><strong>${h.number} ${esc(h.name)} · ${probabilityHTML(h.prob)}</strong><p class="hint">${h.reasons.map(esc).join(' · ')}</p><p class="hint">레이팅 ${esc(h.rating??'—')} · 부담 ${esc(h.burden??'—')}kg · 마체중 ${esc(h.horse_weight??'미발표')} · 데이터 ${Math.round(h.quality*100)}%</p></div>`).join('');$('#savePrediction').disabled=manual||!Number.isFinite(start(r))||start(r)<=Date.now()||warning.length>0;renderOverview();}
 function select(r,isManual=false){current=r;manual=isManual;odds={place:{},qpl:{}};$('#placeOdds').value='';$('#pairOdds').value='';if(names[r.venue])setVenue(r.venue);const d=String(r.date||'');if(/^\d{8}$/.test(d))$('#date').value=d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8);if(r.race_no)$('#raceNo').value=r.race_no;$('#saveStatus').textContent='경주·추천 기준별 최초 기록을 보존합니다.';renderSelectors();render();}
@@ -47,7 +56,7 @@ function renderOverview(){
    const r=analyze(card,'accuracy'),fresh=timingReasons(r).length===0;
    const has=kind=>fresh&&r.selection?.[kind]?.qualified;
    if(has('place')||has('pair'))selected++;
-   const cell=kind=>{const x=kind==='place'?r.places[0]:r.pairs[0];return '<span><small>'+(kind==='place'?'연승':'복연승')+'</small><b>'+x.numbers.join(' – ')+'</b><small>'+probabilityHTML(x.prob)+'</small>'+(has(kind)?'<small class="selected-tag">선별 '+r.selectivePicks[kind].numbers.join('–')+'</small>':'')+'</span>'};
+   const cell=kind=>{const x=kind==='place'?r.places[0]:r.pairs[0];return '<span><small>'+(kind==='place'?'연승':'복연승')+'</small><b>'+x.numbers.join(' – ')+'</b><small>'+probabilityHTML(x.prob)+'</small>'+(has(kind)?'<small class="selected-tag">선별 '+r.selectivePicks[kind].numbers.join('–')+'</small>':'')+officialResultHTML(card,kind)+'</span>'};
    return '<button type="button" class="overview-row '+(!manual&&current?.date===r.date&&+current?.race_no===+r.race_no?'active':'')+'" data-overview-race="'+Number(r.race_no)+'"><span><b>'+Number(r.race_no)+'R</b><small>'+esc(r.start_time||'')+'</small></span>'+cell('place')+cell('pair')+'</button>';
   }catch{return '<p class="hint">'+Number(card.race_no)+'R · 출전정보 확인 필요</p>'}
  }).join('');
