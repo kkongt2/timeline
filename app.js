@@ -9,7 +9,7 @@ function start(r){const d=String(r.date||'').replaceAll('-','');return /^\d{8}$/
 function setVenue(v){venue=v;document.querySelectorAll('[data-venue]').forEach(b=>{b.classList.toggle('active',b.dataset.venue===v);b.setAttribute('aria-pressed',b.dataset.venue===v)});}
 function records(){try{let a=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(a)?a:[]}catch{return []}}
 function put(a){try{localStorage.setItem(KEY,JSON.stringify(a));return true}catch{$('#saveStatus').textContent='기기에 저장하지 못했습니다. 브라우저 저장 공간을 확인하세요.';return false}}
-function timingReasons(r){const why=[];if(!Number.isFinite(start(r)))why.push('출발 시각 확인 필요');else if(start(r)<=Date.now())why.push('이미 출발한 경주');if(!manual&&(!source?.updated_at||Date.now()-Date.parse(source.updated_at)>30*60000||!Number.isFinite(Date.parse(source.updated_at))))why.push('갱신 후 30분 경과 · 최신 출전정보 확인 필요');return why;}
+function timingReasons(r){const why=[];if(!Number.isFinite(start(r)))why.push('출발 시각 확인 필요');else if(start(r)<=Date.now())why.push(String(r.date)<day().replaceAll('-','')?'지난 경주 조회 · 현재 정보로 재계산한 후보':'이미 출발한 경주');if(!manual&&(!source?.updated_at||Date.now()-Date.parse(source.updated_at)>30*60000||!Number.isFinite(Date.parse(source.updated_at))))why.push('갱신 후 30분 경과 · 최신 출전정보 확인 필요');return why;}
 function why(r,x,type){return [...candidateReasons(r,x,type),...timingReasons(r),...(manual?['직접 입력 / 데모']:[])];}
 function isSelected(r,type){return !manual&&r.mode==='accuracy'&&r.selection?.[type]?.qualified===true&&timingReasons(r).length===0;}
 function pickHTML(x,r,type,lead=false){

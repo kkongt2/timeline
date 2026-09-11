@@ -469,12 +469,14 @@ def enrich_weight(race, date, rc_no, meet, debug):
 def main():
     kst = ZoneInfo("Asia/Seoul")
     now = datetime.now(kst)
-    # Race cards are published before the meeting; keep today plus the next 2 days
-    # so Fri/Sat/Sun can be selected from the mobile UI.
-    dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(3)]
+    # Keep the previous two KST dates as well as today's and upcoming race cards.
+    today = now.strftime("%Y%m%d")
+    dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(-2, 3)]
     previous_map = {}
+    previous_complete = False
     try:
         previous_doc = json.loads(Path("data/latest.json").read_text(encoding="utf-8"))
+        previous_complete = previous_doc.get("status", {}).get("error_count") == 0
         for r in previous_doc.get("races", []):
             previous_map[(str(r.get("date")), r.get("venue"), int(r.get("race_no") or 0))] = r
     except Exception:
@@ -485,6 +487,11 @@ def main():
     races, errors, debug_race = [], [], None
     for date in dates:
         for meet in MEETS:
+            archived = [r for (d, v, _), r in previous_map.items()
+                        if d == date and v == MEETS[meet][0] and r.get("historical_view")]
+            if date < today and previous_complete and archived:
+                races.extend(sorted(archived, key=lambda r: r["race_no"]))
+                continue
             misses = 0
             for rc_no in range(1, 17):
                 try:
@@ -503,8 +510,10 @@ def main():
                         enrich_distance(race, date, rc_no, meet, dbg)
                         enrich_recent(race, date, rc_no, meet, dbg)
                     dbg["static_reused"] = reused
-                    if date == dates[0]:
+                    if date == today:
                         enrich_weight(race, date, rc_no, meet, dbg)
+                    if date < today:
+                        race["historical_view"] = True
                     races.append(race)
                     if debug_race is None:
                         debug_race = {"date":date,"meet":meet,"rc_no":rc_no,**dbg}
@@ -514,7 +523,7 @@ def main():
                     errors.append({"date":date,"meet":meet,"race_no":rc_no,"error":repr(e)})
                     print(f"ERR {date} meet={meet} race={rc_no}: {e}", file=sys.stderr)
                     time.sleep(0.3)
-    attach_live_context(races, jockey_stats, trainer_stats, tracks)
+    attach_live_context([r for r in races if not r.get("historical_view")], jockey_stats, trainer_stats, tracks)
     history_status = {"status": "unavailable"}
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent / 'model-research'))
