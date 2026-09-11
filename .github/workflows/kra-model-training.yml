@@ -18,9 +18,9 @@ jobs:
       - name: Inspect official historical data
         run: |
           python - <<'PY'
-          import requests, json, re
+          import requests, json
           from bs4 import BeautifulSoup
-          urls=['https://race.kra.co.kr/dbdata/textDataList.do?meet=1&fileType=dacom11&fileSearchName=202509']
+          urls=['https://race.kra.co.kr/dbdata/fileDownLoad.do?fn=chollian/seoul/jungbo/rcresult/20250928dacom11.rpt&meet=1']
           for url in urls:
             try:
               r=requests.get(url,timeout=35,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'});r.raise_for_status()
@@ -32,12 +32,6 @@ jobs:
                 rows=[[c.get_text(' ',strip=True) for c in tr.find_all(['td','th'])] for tr in table.find_all('tr')]
                 if rows: print(json.dumps(rows[:5],ensure_ascii=False))
               if 'dbdata' in url:
-                print(str(soup)[-26000:])
-                links=re.findall(r"dataViewFile\('([^']+)'",str(soup))
-                if links:
-                  u='https://race.kra.co.kr/dbdata/dataViewFile.do'
-                  z=requests.get(u,params={'fn':links[0],'meet':1},headers={'User-Agent':'Mozilla/5.0','Referer':url},timeout=35)
-                  z.encoding=z.apparent_encoding
-                  print('BULK SAMPLE',links[0],z.status_code,z.text[:22000])
+                print(r.text[:22000])
             except Exception as e: print(type(e).__name__,str(e))
           PY
