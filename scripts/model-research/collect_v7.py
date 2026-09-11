@@ -71,18 +71,20 @@ def parse_report(text, meet, expected):
 
 
 def run():
-    manifest = json.loads(Path('training/manifest.json').read_text()); rows = []; issues = []; errors = []
+    manifest = json.loads(Path('training/manifest.json').read_text()); rows = []; issues = []; errors = []; samples = {}
     for i, report in enumerate(manifest['reports']):
         try:
             path = Path('training/raw') / str(report['meet']) / (report['date']+'.txt.gz')
             if not path.exists():
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_bytes(gzip.compress(get(report['source']).encode(), mtime=0))
-            result, skipped = parse_report(gzip.decompress(path.read_bytes()).decode(), report['meet'], report['date'])
+            text = gzip.decompress(path.read_bytes()).decode()
+            result, skipped = parse_report(text, report['meet'], report['date'])
+            if report['date'] >= '20260901': samples[str(report['meet'])] = text.splitlines()[:65]
             rows.extend(result); issues.extend(skipped)
         except Exception as exc: errors.append({'source': report['source'], 'error': str(exc)})
         if i % 100 == 0: print('reparsed', i+1, 'races', len(rows), 'errors', len(errors), flush=True)
-    quality = dict(races=len(rows), reports=len(manifest['reports']), errors=errors, exclusions=issues,
+    quality = dict(samples=samples, races=len(rows), reports=len(manifest['reports']), errors=errors, exclusions=issues,
         early_positions=sum('early_position' in h for r in rows for h in r['horses']),
         sectionals=sum('early_seconds' in h for r in rows for h in r['horses']),
         nonfinishers=sum(h.get('finish_status') in ('中止','중지','실격') for r in rows for h in r['horses']))
