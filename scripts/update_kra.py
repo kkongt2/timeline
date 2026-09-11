@@ -513,6 +513,7 @@ def main():
                     time.sleep(0.3)
     attach_live_context(races, jockey_stats, trainer_stats, tracks)
     out = {
+        "updated_at": now.isoformat(timespec="seconds"),
         "races": races,
         "status": {
             "race_count": len(races),
