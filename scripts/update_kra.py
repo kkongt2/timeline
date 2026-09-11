@@ -346,7 +346,8 @@ def probe_todayrace_forms():
     Path("data/probe.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
 def main():
-    probe_todayrace_forms()\n    kst = ZoneInfo("Asia/Seoul")
+    probe_todayrace_forms()
+    kst = ZoneInfo("Asia/Seoul")
     now = datetime.now(kst)
     # Race cards are published before the meeting; keep today plus the next 2 days
     # so Fri/Sat/Sun can be selected from the mobile UI.
