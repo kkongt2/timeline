@@ -65,19 +65,22 @@ def parse_report(text,meet,expected):
     match=re.match(r'^\s*(\d+)\s+(\d+)\s+(\S+)\s+(\S+)\s+([암수거])\s+(\d+)\s+([\d.]+)\s+(\S+)\s+(\S+)\s+(.*)$',line)
     if match:
      pos,no,name,origin,sex,age,burden,jockey,trainer,tail=match.groups();rt=re.search(r'\s+(\d+)\s*$',tail)
-     hs[int(no)]={'number':int(no),'name':name,'finish':int(pos),'burden':float(burden),'rating':int(rt[1]) if rt else 0,'jockey':jockey,'trainer':trainer,'horse_weight':None,'horse_weight_change':None}
+     hs[int(no)]={'number':int(no),'name':name,'finish':int(pos),'burden':float(burden),'rating':int(rt[1]) if rt else 0,'jockey':re.sub(r'^\([^)]*\)','',jockey),'trainer':trainer,'age':int(age),'sex':sex,'horse_weight':None,'horse_weight_change':None}
     elif re.match(r'^\s*\S+\s+\d+\s+\S+',line) and not line.strip().startswith('순위'):
      # Never silently remove a DNF, DQ, or unparsed starter from a field.
      ambiguous=True
    elif section=='weight':
     wm=re.match(r'^\s*\d+\s+(\d+)\s+\S+\s+(\d+)\(\s*([+-]?\d+)\)',line)
-    if wm and int(wm[1]) in hs:hs[int(wm[1])].update(horse_weight=int(wm[2]),horse_weight_change=int(wm[3]))
+    if wm and int(wm[1]) in hs:
+     hs[int(wm[1])].update(horse_weight=int(wm[2]),horse_weight_change=int(wm[3]))
+     tm=re.search(r'\)\s+(\d+):(\d+\.\d+)',line)
+     if tm:hs[int(wm[1])]['race_seconds']=60*int(tm[1])+float(tm[2])
   pp=re.search(r'배당률\s+단:.*?\s연:\s*(.*?)\s+복:',block)
   winners=[CIRCLES[c] for c in pp[1] if c in CIRCLES] if pp else []
   order=sorted(hs.values(),key=lambda h:h['finish']);positions=[h['finish'] for h in order]
   if ambiguous or not 3<=len(hs)<=16 or positions!=list(range(1,len(hs)+1)) or len(winners) not in (2,3) or winners!=[h['number'] for h in order[:len(winners)]]:
    skips.append([rn,'ambiguous_field_or_payout']);continue
-  out.append({'date':dt,'venue':VENUES[meet],'race_no':rn,'distance':int(dist[1]),'place_k':len(winners),'horses':order})
+  out.append({'date':dt,'venue':VENUES[meet],'race_no':rn,'distance':int(dist[1]),'place_k':len(winners),'track_condition':(re.search(r'주로:\s*(\S+)',block)[1] if re.search(r'주로:\s*(\S+)',block) else None),'horses':order})
  return out,skips
 
 def download(args):
@@ -88,13 +91,13 @@ def download(args):
  races,skips=parse_report(txt,meet,dt)
  return {'source':url,'date':dt,'meet':meet,'sha256':hashlib.sha256(txt.encode()).hexdigest(),'races':races,'skips':skips}
 
-def run(end):
- jobs=[(v,f'{y}{m:02d}') for v in VENUES for y in range(2024,int(end[:4])+1) for m in range(1,13) if f'{y}{m:02d}'<=end[:6]]
+def run(end,start='20210101'):
+ jobs=[(v,f'{y}{m:02d}') for v in VENUES for y in range(int(start[:4]),int(end[:4])+1) for m in range(1,13) if start[:6]<=f'{y}{m:02d}'<=end[:6]]
  urls=[];errors=[]
  with ThreadPoolExecutor(max_workers=2) as ex:
   for job,result in zip(jobs,ex.map(catalog,jobs)):
    urls.extend(result);print('catalog',job,'reports',len(result),flush=True)
- urls=sorted(set((v,u) for v,u in urls if re.search(r'(20\d{6})[^/]*\.(?:rpt|txt)',u)[1]<=end))
+ urls=sorted(set((v,u) for v,u in urls if start<=re.search(r'(20\d{6})[^/]*\.(?:rpt|txt)',u)[1]<=end))
  print('daily_reports',len(urls),flush=True);out={};manifest=[]
  def safe(job):
   try:return download(job)
@@ -112,4 +115,4 @@ def run(end):
  if len(out)<3000:raise ValueError('Fewer than 3000 validated races')
 
 if __name__=='__main__':
- p=argparse.ArgumentParser();p.add_argument('--end',default='20260910');a=p.parse_args();run(a.end)
+ p=argparse.ArgumentParser();p.add_argument('--end',default='20260910');p.add_argument('--start',default='20210101');a=p.parse_args();run(a.end,a.start)

@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['.github/workflows/kra-model-training.yml', 'scripts/model-research/**']
+    paths: ['.github/workflows/kra-model-training.yml', 'scripts/model-research/collect.py']
 permissions:
   contents: write
 concurrency:
@@ -12,7 +12,7 @@ concurrency:
 jobs:
   train:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     env:
       OPENBLAS_NUM_THREADS: '1'
       PYTHONUNBUFFERED: '1'
@@ -27,10 +27,8 @@ jobs:
           path: training/raw
           key: kra-history-v1-${{ github.run_id }}
           restore-keys: kra-history-v1-
-      - name: Collect validated daily results from 2024
-        run: python scripts/model-research/collect.py --end 20260910
-      - name: Train and evaluate on held-out dates
-        run: python scripts/model-research/train.py --input training/history.jsonl --output data
+      - name: Collect validated daily results from 2021
+        run: python scripts/model-research/collect.py --start 20210101 --end 20260910
       - name: Preserve research dataset and evaluation
         run: |
           python - <<'PY'
