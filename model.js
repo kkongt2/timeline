@@ -25,15 +25,22 @@ function score(h,f){
   if(iw>14)re.push('장기 휴양 '+iw+'주');
   if(!re.length)re.push('상대지표 종합');
   let completeness=[n>0,ds>0,rec.length>0,Number.isFinite(jp),Number.isFinite(tp),bw>0].filter(Boolean).length/6;
-  return{raw,re,completeness}
+  return{raw,re,completeness,features:[r3,wr,dr,rn,rg,jn,tn,ba,body,interval]}
 }
 function probs(st,k){if(st.length<k||k<2) return {p:st.map(()=>0),q:{}};let n=st.length,p=Array(n).fill(0),q={};for(let i=0;i<n;i++)for(let j=i+1;j<n;j++)q[i+'-'+j]=0;let T=st.reduce((a,b)=>a+b,0),add=(o,x)=>{o.forEach(i=>p[i]+=x);for(let a=0;a<o.length;a++)for(let b=a+1;b<o.length;b++){let i=Math.min(o[a],o[b]),j=Math.max(o[a],o[b]);q[i+'-'+j]+=x}};for(let i=0;i<n;i++){let x=st[i]/T,r1=T-st[i];for(let j=0;j<n;j++)if(j!==i){let y=x*st[j]/r1;if(k===2)add([i,j],y);else{let r2=r1-st[j];for(let z=0;z<n;z++)if(z!==i&&z!==j)add([i,j,z],y*st[z]/r2)}}}return{p,q}}
 
 const MODEL_VERSION='4.0';
+let learnedModel=null;
+function setTrainedModel(report){
+ const expected=['place_1y','win_1y','distance_place','relative_rating','recent_form','jockey_place','trainer_place','relative_burden','body_change','interval'];
+ learnedModel=report&&report.approved===true&&JSON.stringify(report.features)===JSON.stringify(expected)&&Array.isArray(report.weights)&&report.weights.length===10&&report.weights.every(x=>Number.isFinite(x)&&Math.abs(x)<=6)&&Array.isArray(report.approved_venues)?report:null;
+}
+
 function analyze(r,mode='accuracy',odds={place:{},qpl:{}}){
  const h=(r.horses||[]).filter(x=>!x.withdrawn&&!/출전취소|출전제외|경주취소/.test(x.note||'')).map(x=>({...x}));
  if(h.length<3||h.length>20||new Set(h.map(x=>+x.number)).size!==h.length||h.some(x=>!Number.isInteger(+x.number)||+x.number<1))throw Error('서로 다른 출전마 3~20두가 필요합니다.');
- const sc=h.map(x=>score(x,h)),raw=sc.map(x=>x.raw),mean=raw.reduce((a,b)=>a+b,0)/h.length;
+ const trained=learnedModel&&learnedModel.approved_venues.includes(r.venue);
+ const sc=h.map(x=>score(x,h)),raw=sc.map(x=>trained?x.features.reduce((a,v,i)=>a+v*learnedModel.weights[i],0)/.6:x.raw),mean=raw.reduce((a,b)=>a+b,0)/h.length;
  const st=raw.map(x=>Math.exp(clamp((x-mean)*.6,-4,4))),k=h.length<=7?2:3,place=probs(st,k),pair=probs(st,3);
  h.forEach((x,i)=>{x.prob=place.p[i];x.reasons=sc[i].re;x.quality=sc[i].completeness;});
  const item=(numbers,p,quality,market)=>{const key=numbers.join('-'),odd=Number(market[key]??market[[...numbers].reverse().join('-')]);return {numbers,prob:p,quality,odds:Number.isFinite(odd)&&odd>=1?odd:null,ev:Number.isFinite(odd)&&odd>=1?p*odd-1:null};};
@@ -44,12 +51,12 @@ function analyze(r,mode='accuracy',odds={place:{},qpl:{}}){
  const sparse=h.filter(x=>(+x.starts_1y||0)<3).length/h.length;
  const reasons=[];if(sparse>=.3)reasons.push('전적 3회 미만 출전마가 30% 이상');
  if(h.filter(x=>x.quality<.5).length/h.length>=.3)reasons.push('출전마 정보 부족');
- return {...r,horses:h.sort((a,b)=>b.prob-a.prob),places,pairs,k,mode,reasons,model:MODEL_VERSION};
+ return {...r,horses:h.sort((a,b)=>b.prob-a.prob),places,pairs,k,mode,reasons,model:trained?learnedModel.model:MODEL_VERSION};
 }
 function candidateReasons(r,x,type){
  const why=[...r.reasons];if(!x)return ['후보 없음'];if(x.quality<2/3)why.push('후보 데이터 부족');
  if(r.mode==='value'&&(x.ev===null||x.ev<(type==='place'?.1:.15)))why.push(x.ev===null?'배당 입력 필요':'검토 기준 미달');
  return why;
 }
-if(typeof module!=='undefined')module.exports={analyze,probs,candidateReasons,MODEL_VERSION};
+if(typeof module!=='undefined')module.exports={analyze,probs,candidateReasons,MODEL_VERSION,setTrainedModel};
 
