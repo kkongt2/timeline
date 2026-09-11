@@ -511,7 +511,8 @@ def main():
                     errors.append({"date":date,"meet":meet,"race_no":rc_no,"error":repr(e)})
                     print(f"ERR {date} meet={meet} race={rc_no}: {e}", file=sys.stderr)
                     time.sleep(0.3)
-    attach_live_context(races, jockey_stats, trainer_stats, tracks)\n    out = {
+    attach_live_context(races, jockey_stats, trainer_stats, tracks)
+    out = {
         "races": races,
         "status": {
             "race_count": len(races),
