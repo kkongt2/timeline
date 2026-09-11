@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T10:21:02+09:00",
+  "updated_at": "2026-09-11T19:01:59+09:00",
   "races": [
     {
       "venue": "jeju",
@@ -386,8 +386,8 @@
             5,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 265.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 267.0,
           "average_weight": 265.0,
           "jockey_stats_1y": {
@@ -434,8 +434,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 245.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 246.0,
           "average_weight": 237.0,
           "jockey_stats_1y": {
@@ -482,8 +482,8 @@
             6,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 282.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 286.0,
           "average_weight": 288.0,
           "jockey_stats_1y": {
@@ -530,8 +530,8 @@
             6,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 267.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 262.0,
           "average_weight": 265.0,
           "jockey_stats_1y": {
@@ -578,8 +578,8 @@
             4,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 279.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 281.0,
           "average_weight": 283.0,
           "jockey_stats_1y": {
@@ -626,8 +626,8 @@
             5,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 271.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 266.0,
           "average_weight": 269.0,
           "jockey_stats_1y": {
@@ -674,8 +674,8 @@
             6,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 309.0,
+          "horse_weight_change": 12.0,
           "previous_weight": 297.0,
           "average_weight": 307.0,
           "jockey_stats_1y": {
@@ -722,8 +722,8 @@
             1,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 258.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 255.0,
           "average_weight": 271.0,
           "jockey_stats_1y": {
@@ -790,8 +790,8 @@
             5,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 273.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 268.0,
           "average_weight": 283.0,
           "jockey_stats_1y": {
@@ -838,8 +838,8 @@
             10,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 270.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 264.0,
           "average_weight": 272.0,
           "jockey_stats_1y": {
@@ -886,8 +886,8 @@
             3,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 301.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 297.0,
           "average_weight": 302.0,
           "jockey_stats_1y": {
@@ -934,8 +934,8 @@
             8,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 253.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 250.0,
           "average_weight": 240.0,
           "jockey_stats_1y": {
@@ -982,8 +982,8 @@
             8,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 259.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 261.0,
           "average_weight": 253.0,
           "jockey_stats_1y": {
@@ -1030,8 +1030,8 @@
             7,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 270.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 272.0,
           "average_weight": 262.0,
           "jockey_stats_1y": {
@@ -1078,8 +1078,8 @@
             1,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 288.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 283.0,
           "average_weight": 286.0,
           "jockey_stats_1y": {
@@ -1126,8 +1126,8 @@
             9,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 288.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 287.0,
           "average_weight": 282.0,
           "jockey_stats_1y": {
@@ -1194,8 +1194,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 266.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 269.0,
           "average_weight": 284.0,
           "jockey_stats_1y": {
@@ -1242,8 +1242,8 @@
             1,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 246.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 247.0,
           "average_weight": 257.0,
           "jockey_stats_1y": {
@@ -1289,8 +1289,8 @@
             2,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 240.0,
+          "horse_weight_change": -8.0,
           "previous_weight": 248.0,
           "average_weight": 249.0,
           "jockey_stats_1y": {
@@ -1318,12 +1318,12 @@
           "rating": 40,
           "burden": 60.0,
           "burden_change": 5.5,
-          "jockey": "임재광",
+          "jockey": "전현준",
           "trainer": "심도연",
           "training_count": 9,
           "interval_weeks": 3,
           "gear": "",
-          "note": "",
+          "note": "기수변경",
           "starts_1y": 79,
           "wins_1y": 5,
           "seconds_1y": 10,
@@ -1337,18 +1337,18 @@
             7,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 272.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 269.0,
           "average_weight": 273.0,
           "jockey_stats_1y": {
-            "starts": 472,
-            "wins": 83,
-            "seconds": 78,
-            "thirds": 63,
-            "win_rate": 0.17584745762711865,
-            "quinella_rate": 0.3411016949152542,
-            "place_rate": 0.4745762711864407
+            "starts": 446,
+            "wins": 55,
+            "seconds": 69,
+            "thirds": 47,
+            "win_rate": 0.12331838565022421,
+            "quinella_rate": 0.27802690582959644,
+            "place_rate": 0.3834080717488789
           },
           "trainer_stats_1y": {
             "starts": 410,
@@ -1385,8 +1385,8 @@
             3,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 267.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 266.0,
           "average_weight": 256.0,
           "jockey_stats_1y": {
@@ -1433,8 +1433,8 @@
             5,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 286.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 286.0,
           "average_weight": 287.0,
           "jockey_stats_1y": {
@@ -1481,8 +1481,8 @@
             4,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 268.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 265.0,
           "average_weight": 271.0,
           "jockey_stats_1y": {
@@ -1549,8 +1549,8 @@
             1,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 270.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 267.0,
           "average_weight": 275.0,
           "jockey_stats_1y": {
@@ -1597,8 +1597,8 @@
             6,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 272.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 265.0,
           "average_weight": 273.0,
           "jockey_stats_1y": {
@@ -1645,8 +1645,8 @@
             9,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 277.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 275.0,
           "average_weight": 285.0,
           "jockey_stats_1y": {
@@ -1693,8 +1693,8 @@
             2,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 277.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 271.0,
           "average_weight": 280.0,
           "jockey_stats_1y": {
@@ -1741,8 +1741,8 @@
             9,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 268.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 271.0,
           "average_weight": 276.0,
           "jockey_stats_1y": {
@@ -1789,8 +1789,8 @@
             10,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 285.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 286.0,
           "average_weight": 284.0,
           "jockey_stats_1y": {
@@ -1837,8 +1837,8 @@
             2,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 287.0,
+          "horse_weight_change": 6.0,
           "previous_weight": 281.0,
           "average_weight": 289.0,
           "jockey_stats_1y": {
@@ -1905,8 +1905,8 @@
             5,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 302.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 305.0,
           "average_weight": 308.0,
           "jockey_stats_1y": {
@@ -1953,8 +1953,8 @@
             7,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 294.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 289.0,
           "average_weight": 288.0,
           "jockey_stats_1y": {
@@ -2049,8 +2049,8 @@
             3,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 271.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 274.0,
           "average_weight": 273.0,
           "jockey_stats_1y": {
@@ -2097,8 +2097,8 @@
             1,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 276.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 277.0,
           "average_weight": 282.0,
           "jockey_stats_1y": {
@@ -2145,8 +2145,8 @@
             9,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 262.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 263.0,
           "average_weight": 265.0,
           "jockey_stats_1y": {
@@ -2193,8 +2193,8 @@
             7,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 256.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 254.0,
           "average_weight": 258.0,
           "jockey_stats_1y": {
@@ -2222,12 +2222,12 @@
           "rating": 51,
           "burden": 56.0,
           "burden_change": -0.5,
-          "jockey": "임재광",
+          "jockey": "박재희",
           "trainer": "심도연",
           "training_count": 7,
           "interval_weeks": 11,
           "gear": "눈가면",
-          "note": "",
+          "note": "기수변경",
           "starts_1y": 24,
           "wins_1y": 5,
           "seconds_1y": 4,
@@ -2241,18 +2241,18 @@
             9,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 267.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 267.0,
           "average_weight": 271.0,
           "jockey_stats_1y": {
-            "starts": 472,
-            "wins": 83,
-            "seconds": 78,
-            "thirds": 63,
-            "win_rate": 0.17584745762711865,
-            "quinella_rate": 0.3411016949152542,
-            "place_rate": 0.4745762711864407
+            "starts": 292,
+            "wins": 15,
+            "seconds": 21,
+            "thirds": 28,
+            "win_rate": 0.05136986301369863,
+            "quinella_rate": 0.1232876712328767,
+            "place_rate": 0.2191780821917808
           },
           "trainer_stats_1y": {
             "starts": 410,
@@ -2289,8 +2289,8 @@
             4,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 268.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 273.0,
           "average_weight": 271.0,
           "jockey_stats_1y": {
@@ -2337,8 +2337,8 @@
             7,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 278.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 276.0,
           "average_weight": 276.0,
           "jockey_stats_1y": {
@@ -2405,8 +2405,8 @@
             7,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 261.0,
+          "horse_weight_change": -6.0,
           "previous_weight": 267.0,
           "average_weight": 270.0,
           "jockey_stats_1y": {
@@ -2453,8 +2453,8 @@
             4,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 276.0,
+          "horse_weight_change": 9.0,
           "previous_weight": 267.0,
           "average_weight": 264.0,
           "jockey_stats_1y": {
@@ -2501,8 +2501,8 @@
             6,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 266.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 269.0,
           "average_weight": 266.0,
           "jockey_stats_1y": {
@@ -2549,8 +2549,8 @@
             5,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 261.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 260.0,
           "average_weight": 272.0,
           "jockey_stats_1y": {
@@ -2597,8 +2597,8 @@
             6,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 293.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 296.0,
           "average_weight": 290.0,
           "jockey_stats_1y": {
@@ -2626,12 +2626,12 @@
           "rating": 61,
           "burden": 52.0,
           "burden_change": -7.5,
-          "jockey": "임재광",
+          "jockey": "이성민",
           "trainer": "심도연",
           "training_count": 7,
           "interval_weeks": 3,
           "gear": "눈가면,혀보정끈",
-          "note": "",
+          "note": "기수변경",
           "starts_1y": 28,
           "wins_1y": 4,
           "seconds_1y": 5,
@@ -2645,18 +2645,18 @@
             3,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 273.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 277.0,
           "average_weight": 276.0,
           "jockey_stats_1y": {
-            "starts": 472,
-            "wins": 83,
-            "seconds": 78,
-            "thirds": 63,
-            "win_rate": 0.17584745762711865,
-            "quinella_rate": 0.3411016949152542,
-            "place_rate": 0.4745762711864407
+            "starts": 403,
+            "wins": 39,
+            "seconds": 33,
+            "thirds": 44,
+            "win_rate": 0.0967741935483871,
+            "quinella_rate": 0.17866004962779156,
+            "place_rate": 0.2878411910669975
           },
           "trainer_stats_1y": {
             "starts": 410,
@@ -2693,8 +2693,8 @@
             7,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 254.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 256.0,
           "average_weight": 258.0,
           "jockey_stats_1y": {
@@ -2741,8 +2741,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 296.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 299.0,
           "average_weight": 297.0,
           "jockey_stats_1y": {
@@ -2789,8 +2789,8 @@
             8,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 250.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 252.0,
           "average_weight": 260.0,
           "jockey_stats_1y": {
@@ -2854,8 +2854,8 @@
             4,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 504.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 505.0,
           "average_weight": 505.0,
           "jockey_stats_1y": {
@@ -2898,8 +2898,8 @@
           "recent_finishes": [
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 496.0,
+          "horse_weight_change": 15.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -2944,8 +2944,8 @@
             6,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 463.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 460.0,
           "average_weight": 460.0,
           "jockey_stats_1y": {
@@ -2989,8 +2989,8 @@
             3,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 532.0,
+          "horse_weight_change": 18.0,
           "previous_weight": 514.0,
           "average_weight": 514.0,
           "jockey_stats_1y": {
@@ -3034,8 +3034,8 @@
             1,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 509.0,
+          "horse_weight_change": 16.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3078,8 +3078,8 @@
           "recent_finishes": [
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 539.0,
+          "horse_weight_change": 11.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3123,8 +3123,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 497.0,
+          "horse_weight_change": -9.0,
           "previous_weight": 506.0,
           "average_weight": 506.0,
           "jockey_stats_1y": null,
@@ -3180,8 +3180,8 @@
             3,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 486.0,
+          "horse_weight_change": 6.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3224,8 +3224,8 @@
           "recent_finishes": [
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 469.0,
+          "horse_weight_change": -4.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3268,8 +3268,8 @@
           "recent_finishes": [
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 485.0,
+          "horse_weight_change": -1.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3312,8 +3312,8 @@
           "recent_finishes": [
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 489.0,
+          "horse_weight_change": 7.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3357,8 +3357,8 @@
             5,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 466.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 470.0,
           "average_weight": 470.0,
           "jockey_stats_1y": {
@@ -3402,8 +3402,8 @@
             5,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 481.0,
+          "horse_weight_change": 15.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3447,8 +3447,8 @@
             3,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 476.0,
+          "horse_weight_change": -18.0,
           "previous_weight": 494.0,
           "average_weight": 494.0,
           "jockey_stats_1y": {
@@ -3492,8 +3492,8 @@
             3,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 456.0,
+          "horse_weight_change": 1.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3537,8 +3537,8 @@
             5,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 476.0,
+          "horse_weight_change": -17.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3582,8 +3582,8 @@
             8,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 482.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 481.0,
           "average_weight": 481.0,
           "jockey_stats_1y": {
@@ -3627,8 +3627,8 @@
             8,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 459.0,
+          "horse_weight_change": 1.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": {
@@ -3694,8 +3694,8 @@
             6,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 473.0,
+          "horse_weight_change": 3.0,
           "previous_weight": 470.0,
           "average_weight": 468.0,
           "jockey_stats_1y": {
@@ -3740,8 +3740,8 @@
             1,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 451.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 453.0,
           "average_weight": 453.0,
           "jockey_stats_1y": {
@@ -3787,8 +3787,8 @@
             2,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 488.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 492.0,
           "average_weight": 487.0,
           "jockey_stats_1y": {
@@ -3832,8 +3832,8 @@
             5,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 507.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 500.0,
           "average_weight": 500.0,
           "jockey_stats_1y": {
@@ -3878,8 +3878,8 @@
             9,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 452.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 453.0,
           "average_weight": 453.0,
           "jockey_stats_1y": {
@@ -3926,8 +3926,8 @@
             8,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 477.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 480.0,
           "average_weight": 475.0,
           "jockey_stats_1y": {
@@ -3970,8 +3970,8 @@
           "recent_finishes": [
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 465.0,
+          "horse_weight_change": -2.0,
           "previous_weight": null,
           "average_weight": null,
           "jockey_stats_1y": null,
@@ -4007,8 +4007,8 @@
             9,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 425.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 432.0,
           "average_weight": 432.0,
           "jockey_stats_1y": {
@@ -4052,8 +4052,8 @@
             10,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 455.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 456.0,
           "average_weight": 456.0,
           "jockey_stats_1y": {
@@ -4098,8 +4098,8 @@
             4,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 442.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 449.0,
           "average_weight": 451.0,
           "jockey_stats_1y": {
@@ -4146,8 +4146,8 @@
             5,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 452.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 455.0,
           "average_weight": 455.0,
           "jockey_stats_1y": {
@@ -4213,8 +4213,8 @@
             4,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 527.0,
+          "horse_weight_change": -22.0,
           "previous_weight": 549.0,
           "average_weight": 549.0,
           "jockey_stats_1y": {
@@ -4259,8 +4259,8 @@
             3,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 474.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 474.0,
           "average_weight": 474.0,
           "jockey_stats_1y": {
@@ -4307,8 +4307,8 @@
             8,
             11
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 446.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 447.0,
           "average_weight": 443.0,
           "jockey_stats_1y": {
@@ -4355,8 +4355,8 @@
             6,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 514.0,
+          "horse_weight_change": 17.0,
           "previous_weight": 497.0,
           "average_weight": 497.0,
           "jockey_stats_1y": {
@@ -4401,8 +4401,8 @@
             3,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 528.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 528.0,
           "average_weight": 528.0,
           "jockey_stats_1y": {
@@ -4449,8 +4449,8 @@
             7,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 456.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 456.0,
           "average_weight": 458.0,
           "jockey_stats_1y": {
@@ -4496,8 +4496,8 @@
             9,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 426.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 433.0,
           "average_weight": 439.0,
           "jockey_stats_1y": {
@@ -4542,8 +4542,8 @@
             5,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 472.0,
+          "horse_weight_change": 13.0,
           "previous_weight": 459.0,
           "average_weight": 459.0,
           "jockey_stats_1y": {
@@ -4589,8 +4589,8 @@
             8,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 488.0,
+          "horse_weight_change": 9.0,
           "previous_weight": 479.0,
           "average_weight": 478.0,
           "jockey_stats_1y": {
@@ -4637,8 +4637,8 @@
             4,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 517.0,
+          "horse_weight_change": 28.0,
           "previous_weight": 489.0,
           "average_weight": 498.0,
           "jockey_stats_1y": {
@@ -4685,8 +4685,8 @@
             7,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 471.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 476.0,
           "average_weight": 461.0,
           "jockey_stats_1y": {
@@ -4753,8 +4753,8 @@
             3,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 456.0,
           "average_weight": 453.0,
           "jockey_stats_1y": {
@@ -4800,8 +4800,8 @@
             1,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 528.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 532.0,
           "average_weight": 526.0,
           "jockey_stats_1y": {
@@ -4848,8 +4848,8 @@
             8,
             11
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 512.0,
+          "horse_weight_change": -11.0,
           "previous_weight": 523.0,
           "average_weight": 517.0,
           "jockey_stats_1y": {
@@ -4896,8 +4896,8 @@
             3,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 471.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 471.0,
           "average_weight": 464.0,
           "jockey_stats_1y": {
@@ -4944,8 +4944,8 @@
             3,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 475.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 476.0,
           "average_weight": 480.0,
           "jockey_stats_1y": {
@@ -4992,8 +4992,8 @@
             3,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 447.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 446.0,
           "average_weight": 445.0,
           "jockey_stats_1y": {
@@ -5040,8 +5040,8 @@
             3,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": 5.0,
           "previous_weight": 455.0,
           "average_weight": 454.0,
           "jockey_stats_1y": {
@@ -5088,8 +5088,8 @@
             6,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 472.0,
+          "horse_weight_change": -2.0,
           "previous_weight": 474.0,
           "average_weight": 467.0,
           "jockey_stats_1y": {
@@ -5135,8 +5135,8 @@
             3,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 509.0,
+          "horse_weight_change": -8.0,
           "previous_weight": 517.0,
           "average_weight": 513.0,
           "jockey_stats_1y": {
@@ -5183,8 +5183,8 @@
             8,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 443.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 439.0,
           "average_weight": 449.0,
           "jockey_stats_1y": {
@@ -5231,8 +5231,8 @@
             10,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 501.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 499.0,
           "average_weight": 482.0,
           "jockey_stats_1y": {
@@ -5297,8 +5297,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 451.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 456.0,
           "average_weight": 453.0,
           "jockey_stats_1y": {
@@ -5345,8 +5345,8 @@
             8,
             9
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 497.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 498.0,
           "average_weight": 494.0,
           "jockey_stats_1y": {
@@ -5390,8 +5390,8 @@
             1,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 501.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 505.0,
           "average_weight": 505.0,
           "jockey_stats_1y": {
@@ -5435,8 +5435,8 @@
             1,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 501.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 494.0,
           "average_weight": 494.0,
           "jockey_stats_1y": {
@@ -5481,8 +5481,8 @@
             4,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 489.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 490.0,
           "average_weight": 489.0,
           "jockey_stats_1y": null,
@@ -5519,8 +5519,8 @@
             1,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 473.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 477.0,
           "average_weight": 473.0,
           "jockey_stats_1y": {
@@ -5564,8 +5564,8 @@
             3,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 493.0,
+          "horse_weight_change": 13.0,
           "previous_weight": 480.0,
           "average_weight": 480.0,
           "jockey_stats_1y": {
@@ -5610,8 +5610,8 @@
             1,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 470.0,
+          "horse_weight_change": 8.0,
           "previous_weight": 462.0,
           "average_weight": 461.0,
           "jockey_stats_1y": {
@@ -5657,8 +5657,8 @@
             2,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 488.0,
+          "horse_weight_change": -14.0,
           "previous_weight": 502.0,
           "average_weight": 490.0,
           "jockey_stats_1y": {
@@ -5773,8 +5773,8 @@
             9,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 495.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 488.0,
           "average_weight": 480.0,
           "jockey_stats_1y": {
@@ -5821,8 +5821,8 @@
             8,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 459.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 460.0,
           "average_weight": 450.0,
           "jockey_stats_1y": {
@@ -5869,8 +5869,8 @@
             2,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 490.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 489.0,
           "average_weight": 485.0,
           "jockey_stats_1y": {
@@ -5917,8 +5917,8 @@
             11,
             1
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 485.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 485.0,
           "average_weight": 470.0,
           "jockey_stats_1y": {
@@ -5964,8 +5964,8 @@
             3,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 450.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 448.0,
           "average_weight": 448.0,
           "jockey_stats_1y": {
@@ -6012,8 +6012,8 @@
             10,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 489.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 493.0,
           "average_weight": 507.0,
           "jockey_stats_1y": {
@@ -6060,8 +6060,8 @@
             5,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 448.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 448.0,
           "average_weight": 447.0,
           "jockey_stats_1y": null,
@@ -6100,8 +6100,8 @@
             6,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 466.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 466.0,
           "average_weight": 455.0,
           "jockey_stats_1y": {
@@ -6148,8 +6148,8 @@
             1,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 464.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 462.0,
           "average_weight": 463.0,
           "jockey_stats_1y": {
@@ -6196,8 +6196,8 @@
             9,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 445.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 446.0,
           "average_weight": 439.0,
           "jockey_stats_1y": {
@@ -6264,8 +6264,8 @@
             7,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 469.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 470.0,
           "average_weight": 465.0,
           "jockey_stats_1y": null,
@@ -6304,8 +6304,8 @@
             4,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 497.0,
+          "horse_weight_change": -4.0,
           "previous_weight": 501.0,
           "average_weight": 489.0,
           "jockey_stats_1y": {
@@ -6352,8 +6352,8 @@
             1,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 461.0,
           "average_weight": 457.0,
           "jockey_stats_1y": {
@@ -6400,8 +6400,8 @@
             2,
             6
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 437.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 442.0,
           "average_weight": 454.0,
           "jockey_stats_1y": {
@@ -6448,8 +6448,8 @@
             12,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 496.0,
+          "horse_weight_change": 2.0,
           "previous_weight": 494.0,
           "average_weight": 505.0,
           "jockey_stats_1y": {
@@ -6496,8 +6496,8 @@
             5,
             7
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 480.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 481.0,
           "average_weight": 476.0,
           "jockey_stats_1y": {
@@ -6544,8 +6544,8 @@
             1,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 460.0,
           "average_weight": 461.0,
           "jockey_stats_1y": {
@@ -6592,8 +6592,8 @@
             9,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 505.0,
+          "horse_weight_change": 4.0,
           "previous_weight": 501.0,
           "average_weight": 498.0,
           "jockey_stats_1y": {
@@ -6640,8 +6640,8 @@
             5,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 464.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 457.0,
           "average_weight": 456.0,
           "jockey_stats_1y": {
@@ -6688,8 +6688,8 @@
             7,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 496.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 499.0,
           "average_weight": 500.0,
           "jockey_stats_1y": {
@@ -6736,8 +6736,8 @@
             2,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 467.0,
+          "horse_weight_change": -7.0,
           "previous_weight": 474.0,
           "average_weight": 481.0,
           "jockey_stats_1y": {
@@ -6804,8 +6804,8 @@
             9,
             11
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 464.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 464.0,
           "average_weight": 458.0,
           "jockey_stats_1y": {
@@ -6852,8 +6852,8 @@
             6,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 461.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 460.0,
           "average_weight": 465.0,
           "jockey_stats_1y": {
@@ -6900,8 +6900,8 @@
             5,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 495.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 494.0,
           "average_weight": 502.0,
           "jockey_stats_1y": {
@@ -6948,8 +6948,8 @@
             9,
             2
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 508.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 509.0,
           "average_weight": 515.0,
           "jockey_stats_1y": {
@@ -6996,8 +6996,8 @@
             4,
             5
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 432.0,
+          "horse_weight_change": 1.0,
           "previous_weight": 431.0,
           "average_weight": 422.0,
           "jockey_stats_1y": {
@@ -7044,8 +7044,8 @@
             12,
             4
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 441.0,
+          "horse_weight_change": -1.0,
           "previous_weight": 442.0,
           "average_weight": 447.0,
           "jockey_stats_1y": {
@@ -7092,8 +7092,8 @@
             9,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 475.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 475.0,
           "average_weight": 467.0,
           "jockey_stats_1y": {
@@ -7140,8 +7140,8 @@
             5,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 467.0,
+          "horse_weight_change": 0.0,
           "previous_weight": 467.0,
           "average_weight": 454.0,
           "jockey_stats_1y": {
@@ -7188,8 +7188,8 @@
             7,
             10
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 465.0,
+          "horse_weight_change": -5.0,
           "previous_weight": 470.0,
           "average_weight": 462.0,
           "jockey_stats_1y": {
@@ -7236,8 +7236,8 @@
             6,
             3
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 445.0,
+          "horse_weight_change": -3.0,
           "previous_weight": 448.0,
           "average_weight": 458.0,
           "jockey_stats_1y": {
@@ -7284,8 +7284,8 @@
             5,
             8
           ],
-          "horse_weight": null,
-          "horse_weight_change": null,
+          "horse_weight": 460.0,
+          "horse_weight_change": 7.0,
           "previous_weight": 453.0,
           "average_weight": 438.0,
           "jockey_stats_1y": {
@@ -14853,7 +14853,7 @@
           "training_count": 11,
           "interval_weeks": 0,
           "gear": "망사",
-          "note": "",
+          "note": "말취소",
           "starts_1y": 0,
           "wins_1y": 0,
           "seconds_1y": 0,
