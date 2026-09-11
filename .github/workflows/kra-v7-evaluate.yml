@@ -1,0 +1,45 @@
+name: Evaluate KRA v7 outcome and pace models
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/kra-v7-evaluate.yml', 'scripts/model-research/train_v7.py', 'scripts/model-research/features_v7.py']
+permissions:
+  contents: write
+concurrency:
+  group: kra-v7-evaluate
+  cancel-in-progress: false
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install numpy scipy scikit-learn==1.8.0
+      - run: python tests/test_v7.py
+      - run: python scripts/model-research/train_v7.py
+      - name: Preserve model and comparison
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/model-v7.json data/evaluation-v7.json data/parity-v7.json data/history-context-v7.json.gz
+          if ! git diff --cached --quiet; then
+            git commit -m 'Save v7 feature ablation and reused historical evaluation'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kra-v7-evidence
+          path: |
+            data/model-v7.json
+            data/evaluation-v7.json
+            data/parity-v7.json
