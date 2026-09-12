@@ -16,7 +16,7 @@ permissions:
 
 concurrency:
   group: kra-mobile-data
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 env:
   PYTHONUNBUFFERED: "1"
