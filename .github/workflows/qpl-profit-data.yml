@@ -1,0 +1,33 @@
+name: QPL settled dividend research
+on:
+  push:
+    branches: [qpl-profit-research]
+    paths: ['scripts/model-research/collect_payouts.py', '.github/workflows/qpl-profit-data.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - uses: actions/cache/restore@v4
+        with:
+          path: training/raw
+          key: kra-history-v1-profit-${{ github.run_id }}
+          restore-keys: kra-history-v1-
+      - run: python scripts/model-research/collect_payouts.py
+      - name: Save settled payout targets
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add training/payouts.json.gz training/payout-quality.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Extract official QPL return targets without pre-race odds leakage'
+            git push origin HEAD:qpl-profit-research
+          fi
