@@ -1,0 +1,32 @@
+{
+  "reports": 1620,
+  "eligible_history": 12903,
+  "with_payouts": 12899,
+  "missing_reports": 0,
+  "exclusions": [
+    {
+      "date": "20231217",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "unparsed place text"
+    },
+    {
+      "date": "20230709",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "unparsed place text"
+    },
+    {
+      "date": "20260405",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "unparsed place text"
+    },
+    {
+      "date": "20260524",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "unparsed place text"
+    }
+  ]
+}
