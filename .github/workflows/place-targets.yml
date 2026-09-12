@@ -1,0 +1,31 @@
+name: Extract verified PLACE targets
+on:
+  push:
+    branches: [place-profit-research]
+    paths: ['scripts/collect_place_payouts.py', '.github/workflows/place-targets.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: place-profit-research
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache/restore@v4
+        with:
+          path: training/raw
+          key: kra-history-v1-place-${{ github.run_id }}
+          restore-keys: kra-history-v1-
+      - run: python scripts/collect_place_payouts.py
+      - name: Preserve verified targets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add training/payouts.json.gz training/payout-quality.json
+          git commit -m "Extract official PLACE dividends with winner validation"
+          git push origin HEAD:place-profit-research
