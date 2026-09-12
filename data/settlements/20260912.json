@@ -500,9 +500,135 @@
     "checked_at": "2026-09-12T14:33:39+09:00"
   },
   "20260912:seoul:5": {
-    "status": "pending",
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            11
+          ],
+          "odds": 7.3
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "odds": 2.5
+        },
+        {
+          "numbers": [
+            10
+          ],
+          "odds": 2.2
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            11
+          ],
+          "odds": 30.9
+        },
+        {
+          "numbers": [
+            10,
+            11
+          ],
+          "odds": 29.7
+        },
+        {
+          "numbers": [
+            1,
+            10
+          ],
+          "odds": 9.8
+        }
+      ]
+    },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=5",
-    "checked_at": "2026-09-12T14:33:39+09:00"
+    "checked_at": "2026-09-12T15:32:45+09:00"
+  },
+  "20260912:jeju:5": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            7
+          ],
+          "odds": 2.5
+        },
+        {
+          "numbers": [
+            3
+          ],
+          "odds": 1.6
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            3,
+            7
+          ],
+          "odds": 2.5
+        },
+        {
+          "numbers": [
+            5,
+            7
+          ],
+          "odds": 3.2
+        },
+        {
+          "numbers": [
+            3,
+            5
+          ],
+          "odds": 2
+        }
+      ]
+    },
+    "version": 2,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=5",
+    "checked_at": "2026-09-12T15:32:45+09:00"
+  },
+  "20260912:seoul:6": {
+    "status": "pending",
+    "version": 2,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=6",
+    "checked_at": "2026-09-12T15:32:45+09:00"
   }
 }
