@@ -26,5 +26,7 @@ nodes['#dateCalendar'].click({target:{closest:()=>({dataset:{date:'20300201'}})}
 venues[1].onclick();assert.equal(nodes['#date'].value,'2030-02-02');assert.equal(vm.runInContext('current.race_no',sandbox),5);assert(!nodes['#dateCalendar'].innerHTML.includes('20300131'));
 venues[2].onclick();assert(nodes['#analysis'].hidden);assert.equal(nodes['#date'].value,'');assert(!nodes['#raceButtons'].innerHTML.includes('data-race='));
 nodes['#raceOverview'].click({target:{closest:()=>({dataset:{overviewRace:'5'}})}});
+sandbox.archiveFixture={...r,date:'20000101',start_time:'',historical_view:true,official_result:{status:'confirmed',place:{status:'confirmed',payouts:[{numbers:[1],odds:1.5}]},pair:{status:'confirmed',payouts:[{numbers:[1,2],odds:3.2}]}}};
+vm.runInContext('select(archiveFixture)',sandbox);assert(nodes['#placeLead'].innerHTML.includes('1.5배'));assert(nodes['#pairLead'].innerHTML.includes('3.2배'));assert(nodes['#savePrediction'].disabled);
 console.log('PASS one-click race/date selection, month boundary, region-specific days, automatic valid selection, empty venue');
 console.log('PASS: probability normalization, small-field pairs, '+doc.races.length+' live race cards, partial odds ordering, DOM bindings, demo exclusion, duplicate records, separate modes, past/stale recording guards');})().catch(e=>{console.error(e);process.exitCode=1});
