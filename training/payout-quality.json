@@ -1,0 +1,1142 @@
+{
+  "reports": 1620,
+  "eligible_history": 12903,
+  "with_payouts": 12714,
+  "missing_reports": 0,
+  "exclusions": [
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 12,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 13,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 14,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "seoul",
+      "race_no": 15,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210815",
+      "venue": "seoul",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210822",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210828",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "seoul",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20231217",
+      "venue": "seoul",
+      "race_no": 8,
+      "reason": "unparsed QPL text"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210115",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210129",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210205",
+      "venue": "jeju",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210821",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210828",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210904",
+      "venue": "jeju",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210108",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210122",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 7,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 8,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 9,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 10,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 11,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210813",
+      "venue": "busan",
+      "race_no": 12,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210814",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210820",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210822",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210827",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210829",
+      "venue": "busan",
+      "race_no": 5,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210903",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 1,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 2,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20210905",
+      "venue": "busan",
+      "race_no": 4,
+      "reason": "no QPL dividends"
+    },
+    {
+      "date": "20230709",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "unparsed QPL text"
+    },
+    {
+      "date": "20260405",
+      "venue": "busan",
+      "race_no": 6,
+      "reason": "unparsed QPL text"
+    },
+    {
+      "date": "20260524",
+      "venue": "busan",
+      "race_no": 3,
+      "reason": "unparsed QPL text"
+    }
+  ]
+}
