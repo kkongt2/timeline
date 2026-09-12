@@ -498,7 +498,10 @@ def main():
     jockey_stats = {meet: fetch_person_stats("jockey", meet) for meet in MEETS}
     trainer_stats = {meet: fetch_person_stats("trainer", meet) for meet in MEETS}
     tracks = {meet: fetch_track_snapshot(meet) for meet in MEETS}
-    races, errors, debug_race = [], [], None
+    from calendar_archive import window_start, extend
+    floor=window_start(now);recent_start=dates[0]
+    races=[r for (d,_,_),r in previous_map.items() if floor<=d<recent_start]
+    errors, debug_race = [], None
     for date in dates:
         for meet in MEETS:
             archived = [r for (d, v, _), r in previous_map.items()
@@ -542,6 +545,7 @@ def main():
                     if consecutive_errors >= 2:
                         raise RuntimeError("Repeated card failures; preserving the last published data") from e
                     time.sleep(0.3)
+    races=extend(races,now)
     attach_live_context([r for r in races if not r.get("historical_view")], jockey_stats, trainer_stats, tracks)
     print("Refreshing historical context", flush=True)
     history_status = {"status": "unavailable"}
@@ -560,14 +564,16 @@ def main():
         v7_status = {"status": "error", "error": str(e)}
     from results_kra import attach_results
     print("Refreshing official dividends", flush=True)
-    result_status = attach_results(races, previous_map, now, S, decode_response)
+    result_status = attach_results([r for r in races if r["date"]>=recent_start], previous_map, now, S, decode_response)
+    result_status["confirmed"]+=sum(r["date"]<recent_start and r.get("official_result",{}).get("status")=="confirmed" for r in races)
     out = {
         "updated_at": now.isoformat(timespec="seconds"),
         "races": races,
         "status": {
             "race_count": len(races),
             "error_count": len(errors),
-            "dates": dates,
+            "dates": sorted({r["date"] for r in races}),
+            "browse_from": floor,
             "history": history_status,
             "results": result_status,
             "history_v7": v7_status,
