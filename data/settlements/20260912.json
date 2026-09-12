@@ -1,1 +1,8 @@
-{}
+{
+  "20260912:seoul:1": {
+    "status": "pending",
+    "version": 2,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260912&realRcNo=1",
+    "checked_at": "2026-09-12T10:49:03+09:00"
+  }
+}

@@ -2285,6 +2285,3798 @@
           ]
         }
       }
+    },
+    "20260912:seoul:2": {
+      "id": "20260912:seoul:2",
+      "saved_at": "2026-09-12T01:49:34.000Z",
+      "source_updated_at": "2026-09-12T10:49:03+09:00",
+      "start_at": "2026-09-12T02:25:00.000Z",
+      "input_hash": "d8963c5bdb1deb863bd8d5d22980061c79fc3f96ee1c57a58ddf60dd9e196de1",
+      "code_hash": "b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
+      "input": {
+        "venue": "seoul",
+        "venue_name": "서울",
+        "date": "20260912",
+        "race_no": 2,
+        "distance": 1200,
+        "start_time": "11:25",
+        "grade": "국6등급",
+        "title": "국6등급 · 1200M · 11:25",
+        "horses": [
+          {
+            "number": 1,
+            "name": "환상의루나",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "푸르칸",
+            "trainer": "안병기",
+            "training_count": 8,
+            "interval_weeks": 5,
+            "gear": "계란형큰,망사눈",
+            "note": "",
+            "starts_1y": 2,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 1,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              5,
+              3,
+              1,
+              4
+            ],
+            "horse_id": "0055287",
+            "horse_weight": 472,
+            "horse_weight_change": 5,
+            "previous_weight": 467,
+            "average_weight": 467,
+            "jockey_stats_1y": {
+              "starts": 347,
+              "wins": 32,
+              "seconds": 49,
+              "thirds": 32,
+              "win_rate": 0.09221902017291066,
+              "quinella_rate": 0.2334293948126801,
+              "place_rate": 0.3256484149855908
+            },
+            "trainer_stats_1y": {
+              "starts": 329,
+              "wins": 37,
+              "seconds": 36,
+              "thirds": 30,
+              "win_rate": 0.11246200607902736,
+              "quinella_rate": 0.22188449848024316,
+              "place_rate": 0.3130699088145897
+            },
+            "features_v6": [
+              0.3666666667,
+              0.0583333333,
+              0.2666666667,
+              0.5,
+              0.564697083,
+              0.5473265835,
+              0.1443559468,
+              0,
+              0.095890411,
+              0.1,
+              0.6666666667,
+              0.2666666667,
+              0.1111111111,
+              0.2,
+              0,
+              0.21,
+              0.7838745211,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.4,
+              0.4,
+              0.7905759162,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 2,
+              "sparse": 1,
+              "history": 2
+            },
+            "features_v7": [
+              0.3666666667,
+              0.0583333333,
+              0.2666666667,
+              0.5,
+              0.564697083,
+              0.5473265835,
+              0.1443559468,
+              0,
+              0.095890411,
+              0.1,
+              0.6666666667,
+              0.2666666667,
+              0.1111111111,
+              0.2,
+              0,
+              0.21,
+              0.7838745211,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.4,
+              0.4,
+              0.7905759162,
+              0,
+              0,
+              0.3666666667,
+              0.2666666667,
+              0.3187134503,
+              0.3055555556,
+              0.6666666667,
+              0,
+              0,
+              0.21,
+              0.8333333333,
+              -0.1666666667,
+              0.5,
+              0.9230769231,
+              0.5,
+              0.4,
+              0.4,
+              0,
+              0,
+              0.2,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 2,
+              "sparse": 1,
+              "history": 2,
+              "pace_starts": 2,
+              "sectional_starts": 2,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 2,
+            "name": "명뷰티풀",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "송재철",
+            "trainer": "문병기",
+            "training_count": 10,
+            "interval_weeks": 0,
+            "gear": "망사+,양털코+",
+            "note": "",
+            "starts_1y": 0,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              4
+            ],
+            "horse_id": "0055355",
+            "horse_weight": 471,
+            "horse_weight_change": 3,
+            "previous_weight": null,
+            "average_weight": null,
+            "jockey_stats_1y": {
+              "starts": 473,
+              "wins": 42,
+              "seconds": 34,
+              "thirds": 46,
+              "win_rate": 0.08879492600422834,
+              "quinella_rate": 0.160676532769556,
+              "place_rate": 0.25792811839323465
+            },
+            "trainer_stats_1y": {
+              "starts": 395,
+              "wins": 56,
+              "seconds": 42,
+              "thirds": 38,
+              "win_rate": 0.14177215189873418,
+              "quinella_rate": 0.2481012658227848,
+              "place_rate": 0.34430379746835443
+            },
+            "features_v6": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3242189083,
+              0.2943326549,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1
+            ],
+            "quality_v6": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0
+            },
+            "features_v7": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3242189083,
+              0.2943326549,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1,
+              0.3,
+              0.2666666667,
+              0.2634989201,
+              0.3472584856,
+              0.4,
+              0,
+              0,
+              0,
+              0.5,
+              0,
+              0.2,
+              0.5,
+              0.5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.1333333333,
+              0
+            ],
+            "quality_v7": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0,
+              "pace_starts": 0,
+              "sectional_starts": 0,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 3,
+            "name": "푸른돌풍",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": -1,
+            "jockey": "조한별",
+            "trainer": "이관호",
+            "training_count": 10,
+            "interval_weeks": 7,
+            "gear": "망사",
+            "note": "",
+            "starts_1y": 1,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              6,
+              8,
+              10
+            ],
+            "horse_id": "0055383",
+            "horse_weight": 431,
+            "horse_weight_change": 5,
+            "previous_weight": 426,
+            "average_weight": 426,
+            "jockey_stats_1y": {
+              "starts": 342,
+              "wins": 16,
+              "seconds": 25,
+              "thirds": 20,
+              "win_rate": 0.04678362573099415,
+              "quinella_rate": 0.11988304093567251,
+              "place_rate": 0.1783625730994152
+            },
+            "trainer_stats_1y": {
+              "starts": 468,
+              "wins": 38,
+              "seconds": 59,
+              "thirds": 45,
+              "win_rate": 0.0811965811965812,
+              "quinella_rate": 0.20726495726495728,
+              "place_rate": 0.3034188034188034
+            },
+            "features_v6": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.2857142857,
+              0,
+              0.1290877655,
+              0,
+              0.1315068493,
+              0.05,
+              0.5,
+              0.1,
+              0,
+              0.2,
+              -0.2,
+              0.36,
+              0.6918332186,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0.4,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1
+            },
+            "features_v7": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.2857142857,
+              0,
+              0.1290877655,
+              0,
+              0.1315068493,
+              0.05,
+              0.5,
+              0.1,
+              0,
+              0.2,
+              -0.2,
+              0.36,
+              0.6918332186,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0.4,
+              0,
+              0,
+              0.24,
+              0.2666666667,
+              0.1790123457,
+              0.2991266376,
+              0.5,
+              0,
+              0,
+              0.36,
+              0.6,
+              -0.1,
+              0,
+              0.6153846154,
+              0,
+              0.2,
+              0.2,
+              0,
+              0,
+              0.1,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1,
+              "pace_starts": 1,
+              "sectional_starts": 1,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 4,
+            "name": "상상속그대",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "장추열",
+            "trainer": "문병기",
+            "training_count": 15,
+            "interval_weeks": 0,
+            "gear": "망사+",
+            "note": "",
+            "starts_1y": 0,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              4
+            ],
+            "horse_id": "0055797",
+            "horse_weight": 496,
+            "horse_weight_change": -1,
+            "previous_weight": null,
+            "average_weight": null,
+            "jockey_stats_1y": {
+              "starts": 407,
+              "wins": 62,
+              "seconds": 55,
+              "thirds": 45,
+              "win_rate": 0.15233415233415235,
+              "quinella_rate": 0.28746928746928746,
+              "place_rate": 0.39803439803439805
+            },
+            "trainer_stats_1y": {
+              "starts": 395,
+              "wins": 56,
+              "seconds": 42,
+              "thirds": 38,
+              "win_rate": 0.14177215189873418,
+              "quinella_rate": 0.2481012658227848,
+              "place_rate": 0.34430379746835443
+            },
+            "features_v6": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.8308615903,
+              0.2943326549,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1
+            ],
+            "quality_v6": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0
+            },
+            "features_v7": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.8308615903,
+              0.2943326549,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1,
+              0.3,
+              0.2666666667,
+              0.3930348259,
+              0.3472584856,
+              0.4,
+              0,
+              0,
+              0,
+              0.5,
+              0,
+              0.2,
+              0.5,
+              0.5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.1333333333,
+              0
+            ],
+            "quality_v7": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0,
+              "pace_starts": 0,
+              "sectional_starts": 0,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 5,
+            "name": "캔들스스타",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "김효정",
+            "trainer": "서인석",
+            "training_count": 11,
+            "interval_weeks": 0,
+            "gear": "눈가면+",
+            "note": "",
+            "starts_1y": 0,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              6
+            ],
+            "horse_id": "0055474",
+            "horse_weight": 473,
+            "horse_weight_change": 12,
+            "previous_weight": null,
+            "average_weight": null,
+            "jockey_stats_1y": {
+              "starts": 367,
+              "wins": 31,
+              "seconds": 27,
+              "thirds": 39,
+              "win_rate": 0.08446866485013624,
+              "quinella_rate": 0.15803814713896458,
+              "place_rate": 0.26430517711171664
+            },
+            "trainer_stats_1y": {
+              "starts": 543,
+              "wins": 46,
+              "seconds": 42,
+              "thirds": 58,
+              "win_rate": 0.0847145488029466,
+              "quinella_rate": 0.16206261510128914,
+              "place_rate": 0.26887661141804786
+            },
+            "features_v6": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3363751987,
+              0.0007532488,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1
+            ],
+            "quality_v6": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0
+            },
+            "features_v7": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3363751987,
+              0.0007532488,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1,
+              0.3,
+              0.2666666667,
+              0.2666666667,
+              0.265625,
+              0.4,
+              0,
+              0,
+              0,
+              0.5,
+              0,
+              0.2,
+              0.5,
+              0.5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.1333333333,
+              0
+            ],
+            "quality_v7": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0,
+              "pace_starts": 0,
+              "sectional_starts": 0,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 6,
+            "name": "툰테자",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "정정희",
+            "trainer": "리카디",
+            "training_count": 12,
+            "interval_weeks": 2,
+            "gear": "계란형큰,망사눈,혀끈",
+            "note": "",
+            "starts_1y": 1,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              7,
+              8
+            ],
+            "horse_id": "0056227",
+            "horse_weight": 525,
+            "horse_weight_change": -7,
+            "previous_weight": 532,
+            "average_weight": 532,
+            "jockey_stats_1y": {
+              "starts": 395,
+              "wins": 46,
+              "seconds": 31,
+              "thirds": 40,
+              "win_rate": 0.11645569620253164,
+              "quinella_rate": 0.1949367088607595,
+              "place_rate": 0.29620253164556964
+            },
+            "trainer_stats_1y": {
+              "starts": 299,
+              "wins": 61,
+              "seconds": 40,
+              "thirds": 34,
+              "win_rate": 0.2040133779264214,
+              "quinella_rate": 0.3377926421404682,
+              "place_rate": 0.451505016722408
+            },
+            "features_v6": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.1428571429,
+              0.4265138348,
+              0.6249440595,
+              0,
+              0.0383561644,
+              0.05,
+              0.1428571429,
+              -0.2571428571,
+              0,
+              0.2,
+              0,
+              0.348,
+              0.8065048184,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0.2,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1
+            },
+            "features_v7": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.1428571429,
+              0.4265138348,
+              0.6249440595,
+              0,
+              0.0383561644,
+              0.05,
+              0.1428571429,
+              -0.2571428571,
+              0,
+              0.2,
+              0,
+              0.348,
+              0.8065048184,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0.2,
+              0,
+              0,
+              0.24,
+              0.2666666667,
+              0.2901554404,
+              0.4391891892,
+              0.1428571429,
+              0,
+              0,
+              0.348,
+              0,
+              0.1428571429,
+              0,
+              0,
+              0.2222222222,
+              0.2,
+              0.2,
+              0,
+              0,
+              0.1,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1,
+              "pace_starts": 1,
+              "sectional_starts": 1,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 7,
+            "name": "안양에이스",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": -1,
+            "jockey": "다실바",
+            "trainer": "서인석",
+            "training_count": 5,
+            "interval_weeks": 8,
+            "gear": "망사눈+",
+            "note": "",
+            "starts_1y": 1,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              10,
+              6,
+              8,
+              8
+            ],
+            "horse_id": "0055785",
+            "horse_weight": 443,
+            "horse_weight_change": 20,
+            "previous_weight": 423,
+            "average_weight": 423,
+            "jockey_stats_1y": null,
+            "trainer_stats_1y": {
+              "starts": 543,
+              "wins": 46,
+              "seconds": 42,
+              "thirds": 58,
+              "win_rate": 0.0847145488029466,
+              "quinella_rate": 0.16206261510128914,
+              "place_rate": 0.26887661141804786
+            },
+            "features_v6": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0,
+              0.3875421304,
+              0.0007532488,
+              0,
+              0.1534246575,
+              0.05,
+              0.1,
+              -0.3,
+              0,
+              0.2,
+              -0.2,
+              0.504,
+              0,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1
+            },
+            "features_v7": [
+              0.24,
+              0.07,
+              0.2666666667,
+              0.5,
+              0,
+              0.3875421304,
+              0.0007532488,
+              0,
+              0.1534246575,
+              0.05,
+              0.1,
+              -0.3,
+              0,
+              0.2,
+              -0.2,
+              0.504,
+              0,
+              0,
+              0.24,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              0,
+              0,
+              0,
+              0.24,
+              0.2666666667,
+              0.28,
+              0.265625,
+              0.1,
+              0,
+              0,
+              0.504,
+              0.4,
+              -0.3,
+              0,
+              0,
+              0,
+              0.2,
+              0.2,
+              0,
+              0,
+              0.1,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1,
+              "pace_starts": 1,
+              "sectional_starts": 1,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 8,
+            "name": "시티오브드림",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "코지",
+            "trainer": "박재우",
+            "training_count": 9,
+            "interval_weeks": 4,
+            "gear": "망사",
+            "note": "",
+            "starts_1y": 2,
+            "wins_1y": 0,
+            "seconds_1y": 1,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              2,
+              8,
+              5
+            ],
+            "horse_id": "0055348",
+            "horse_weight": 449,
+            "horse_weight_change": 4,
+            "previous_weight": 445,
+            "average_weight": 443,
+            "jockey_stats_1y": {
+              "starts": 299,
+              "wins": 48,
+              "seconds": 45,
+              "thirds": 39,
+              "win_rate": 0.1605351170568562,
+              "quinella_rate": 0.3110367892976589,
+              "place_rate": 0.4414715719063545
+            },
+            "trainer_stats_1y": {
+              "starts": 382,
+              "wins": 34,
+              "seconds": 38,
+              "thirds": 28,
+              "win_rate": 0.08900523560209424,
+              "quinella_rate": 0.18848167539267016,
+              "place_rate": 0.2617801047120419
+            },
+            "features_v6": [
+              0.3666666667,
+              0.0583333333,
+              0.2666666667,
+              0.5,
+              0.4487658938,
+              1,
+              0,
+              0,
+              0.0767123288,
+              0.1,
+              0.5944444444,
+              0.1944444444,
+              0.2944444444,
+              0.2,
+              0,
+              0.18,
+              0.8330863705,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.4,
+              0.4,
+              0.6282722513,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 2,
+              "sparse": 1,
+              "history": 2
+            },
+            "features_v7": [
+              0.3666666667,
+              0.0583333333,
+              0.2666666667,
+              0.5,
+              0.4487658938,
+              1,
+              0,
+              0,
+              0.0767123288,
+              0.1,
+              0.5944444444,
+              0.1944444444,
+              0.2944444444,
+              0.2,
+              0,
+              0.18,
+              0.8330863705,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.4,
+              0.4,
+              0.6282722513,
+              0,
+              0,
+              0.3666666667,
+              0.2666666667,
+              0.4395973154,
+              0.2654155496,
+              0.5944444444,
+              0,
+              0,
+              0.18,
+              0.8,
+              -0.2055555556,
+              0.5,
+              1,
+              0.1111111111,
+              0.4,
+              0.4,
+              0,
+              0,
+              0.2,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 2,
+              "sparse": 1,
+              "history": 2,
+              "pace_starts": 2,
+              "sectional_starts": 2,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 9,
+            "name": "대한여전사",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "김태훈",
+            "trainer": "서홍수",
+            "training_count": 12,
+            "interval_weeks": 0,
+            "gear": "망사+",
+            "note": "",
+            "starts_1y": 0,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              7
+            ],
+            "horse_id": "0055190",
+            "horse_weight": 465,
+            "horse_weight_change": 0,
+            "previous_weight": null,
+            "average_weight": null,
+            "jockey_stats_1y": {
+              "starts": 314,
+              "wins": 33,
+              "seconds": 18,
+              "thirds": 35,
+              "win_rate": 0.10509554140127389,
+              "quinella_rate": 0.1624203821656051,
+              "place_rate": 0.27388535031847133
+            },
+            "trainer_stats_1y": {
+              "starts": 316,
+              "wins": 25,
+              "seconds": 26,
+              "thirds": 31,
+              "win_rate": 0.07911392405063292,
+              "quinella_rate": 0.16139240506329114,
+              "place_rate": 0.25949367088607594
+            },
+            "features_v6": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3776388533,
+              0.0283977218,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1
+            ],
+            "quality_v6": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0
+            },
+            "features_v7": [
+              0.3,
+              0.0875,
+              0.2666666667,
+              0.5,
+              0.35,
+              0.3776388533,
+              0.0283977218,
+              0,
+              1,
+              0,
+              0.4,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.7316572559,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0.49,
+              0,
+              1,
+              0.3,
+              0.2666666667,
+              0.2774193548,
+              0.2733118971,
+              0.4,
+              0,
+              0,
+              0,
+              0.5,
+              0,
+              0.2,
+              0.5,
+              0.5,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0.1333333333,
+              0
+            ],
+            "quality_v7": {
+              "starts": 0,
+              "sparse": 1,
+              "history": 0,
+              "pace_starts": 0,
+              "sectional_starts": 0,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 10,
+            "name": "라온폴리스",
+            "age": 2,
+            "sex": "암",
+            "rating": 0,
+            "burden": 52.5,
+            "burden_change": 0,
+            "jockey": "서승운",
+            "trainer": "이강서",
+            "training_count": 11,
+            "interval_weeks": 4,
+            "gear": "",
+            "note": "",
+            "starts_1y": 1,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 1,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              3,
+              5
+            ],
+            "horse_id": "0056213",
+            "horse_weight": 478,
+            "horse_weight_change": 6,
+            "previous_weight": 472,
+            "average_weight": 472,
+            "jockey_stats_1y": null,
+            "trainer_stats_1y": {
+              "starts": 37,
+              "wins": 8,
+              "seconds": 12,
+              "thirds": 2,
+              "win_rate": 0.21621621621621623,
+              "quinella_rate": 0.5405405405405406,
+              "place_rate": 0.5945945945945946
+            },
+            "features_v6": [
+              0.44,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.7142857143,
+              0.6133532171,
+              1,
+              0,
+              0.0767123288,
+              0.05,
+              0.7777777778,
+              0.3777777778,
+              0,
+              0.2,
+              0,
+              0.108,
+              1,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              1,
+              0,
+              0
+            ],
+            "quality_v6": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1
+            },
+            "features_v7": [
+              0.44,
+              0.07,
+              0.2666666667,
+              0.5,
+              0.7142857143,
+              0.6133532171,
+              1,
+              0,
+              0.0767123288,
+              0.05,
+              0.7777777778,
+              0.3777777778,
+              0,
+              0.2,
+              0,
+              0.108,
+              1,
+              0,
+              0.3,
+              0,
+              0.5,
+              1,
+              0.48,
+              1,
+              0,
+              0,
+              1,
+              0.2,
+              0.2,
+              1,
+              0,
+              0,
+              0.44,
+              0.2666666667,
+              0.3388429752,
+              0.5434782609,
+              0.7777777778,
+              0,
+              0,
+              0.108,
+              0.3333333333,
+              0.4444444444,
+              0,
+              0.1538461538,
+              1,
+              0.2,
+              0.2,
+              0,
+              0,
+              0.1,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 1,
+              "sparse": 1,
+              "history": 1,
+              "pace_starts": 1,
+              "sectional_starts": 1,
+              "identity": "official_id_checked"
+            }
+          }
+        ],
+        "source": "KRA public race page",
+        "track": {
+          "date": "20260912",
+          "observed_at": "2026-09-12T09:00:00+09:00",
+          "moisture_pct": 3,
+          "condition": "건조",
+          "sand_cm": 8
+        },
+        "feature_version": "6.0-conditions",
+        "history_through": "20260911",
+        "feature_version_v7": "7.0-race-pace",
+        "history_through_v7": "20260911"
+      },
+      "tracks": {
+        "general": {
+          "model": {
+            "place": "5.0-history",
+            "pair": "5.0-history"
+          },
+          "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
+          "place": [
+            {
+              "numbers": [
+                10
+              ],
+              "prob": 0.5122272291133624
+            },
+            {
+              "numbers": [
+                4
+              ],
+              "prob": 0.4701752648048779
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "prob": 0.46419377264866707
+            },
+            {
+              "numbers": [
+                8
+              ],
+              "prob": 0.4285266347230631
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "prob": 0.3354160183861013
+            },
+            {
+              "numbers": [
+                6
+              ],
+              "prob": 0.18770491683452123
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "prob": 0.18759126330717435
+            },
+            {
+              "numbers": [
+                9
+              ],
+              "prob": 0.16392532117229655
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "prob": 0.12824838133967897
+            },
+            {
+              "numbers": [
+                3
+              ],
+              "prob": 0.12199119767025655
+            }
+          ],
+          "pair": [
+            {
+              "numbers": [
+                4,
+                10
+              ],
+              "prob": 0.20259752180722002
+            },
+            {
+              "numbers": [
+                1,
+                10
+              ],
+              "prob": 0.19952369963018854
+            },
+            {
+              "numbers": [
+                8,
+                10
+              ],
+              "prob": 0.18149398676257
+            },
+            {
+              "numbers": [
+                1,
+                4
+              ],
+              "prob": 0.1796732583858735
+            },
+            {
+              "numbers": [
+                4,
+                8
+              ],
+              "prob": 0.1632488250305022
+            },
+            {
+              "numbers": [
+                1,
+                8
+              ],
+              "prob": 0.16071010091031113
+            },
+            {
+              "numbers": [
+                2,
+                10
+              ],
+              "prob": 0.1369320554519442
+            },
+            {
+              "numbers": [
+                2,
+                4
+              ],
+              "prob": 0.12288095593218404
+            },
+            {
+              "numbers": [
+                1,
+                2
+              ],
+              "prob": 0.12093455979743611
+            },
+            {
+              "numbers": [
+                2,
+                8
+              ],
+              "prob": 0.1096023874677811
+            },
+            {
+              "numbers": [
+                6,
+                10
+              ],
+              "prob": 0.07280950407147475
+            },
+            {
+              "numbers": [
+                5,
+                10
+              ],
+              "prob": 0.07276279121554631
+            },
+            {
+              "numbers": [
+                4,
+                6
+              ],
+              "prob": 0.06517420700327856
+            },
+            {
+              "numbers": [
+                4,
+                5
+              ],
+              "prob": 0.06513228967661097
+            },
+            {
+              "numbers": [
+                1,
+                6
+              ],
+              "prob": 0.06412138677818392
+            },
+            {
+              "numbers": [
+                1,
+                5
+              ],
+              "prob": 0.06408013364917396
+            },
+            {
+              "numbers": [
+                9,
+                10
+              ],
+              "prob": 0.06311322766724499
+            },
+            {
+              "numbers": [
+                6,
+                8
+              ],
+              "prob": 0.05801149495247788
+            },
+            {
+              "numbers": [
+                5,
+                8
+              ],
+              "prob": 0.0579741085306478
+            },
+            {
+              "numbers": [
+                4,
+                9
+              ],
+              "prob": 0.056476544572098955
+            },
+            {
+              "numbers": [
+                1,
+                9
+              ],
+              "prob": 0.05556194180401951
+            },
+            {
+              "numbers": [
+                8,
+                9
+              ],
+              "prob": 0.05025631522789759
+            },
+            {
+              "numbers": [
+                7,
+                10
+              ],
+              "prob": 0.048845487903147945
+            },
+            {
+              "numbers": [
+                3,
+                10
+              ],
+              "prob": 0.04637618371738807
+            },
+            {
+              "numbers": [
+                4,
+                7
+              ],
+              "prob": 0.04368935882462541
+            },
+            {
+              "numbers": [
+                2,
+                6
+              ],
+              "prob": 0.043285338053543655
+            },
+            {
+              "numbers": [
+                2,
+                5
+              ],
+              "prob": 0.04325734223799534
+            },
+            {
+              "numbers": [
+                1,
+                7
+              ],
+              "prob": 0.0429793530075411
+            },
+            {
+              "numbers": [
+                3,
+                4
+              ],
+              "prob": 0.04147756837736271
+            },
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "prob": 0.04080311133460641
+            },
+            {
+              "numbers": [
+                7,
+                8
+              ],
+              "prob": 0.038862911255974436
+            },
+            {
+              "numbers": [
+                2,
+                9
+              ],
+              "prob": 0.037481144351336065
+            },
+            {
+              "numbers": [
+                3,
+                8
+              ],
+              "prob": 0.03689313930796412
+            },
+            {
+              "numbers": [
+                2,
+                7
+              ],
+              "prob": 0.028964701904476794
+            },
+            {
+              "numbers": [
+                2,
+                3
+              ],
+              "prob": 0.027493551575505273
+            },
+            {
+              "numbers": [
+                5,
+                6
+              ],
+              "prob": 0.02271973811661801
+            },
+            {
+              "numbers": [
+                6,
+                9
+              ],
+              "prob": 0.019675385176812415
+            },
+            {
+              "numbers": [
+                5,
+                9
+              ],
+              "prob": 0.01966260084804451
+            },
+            {
+              "numbers": [
+                6,
+                7
+              ],
+              "prob": 0.015193156074450783
+            },
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "prob": 0.015183276591495997
+            },
+            {
+              "numbers": [
+                3,
+                6
+              ],
+              "prob": 0.01441962344220226
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "prob": 0.014410245748215735
+            },
+            {
+              "numbers": [
+                7,
+                9
+              ],
+              "prob": 0.013146513988757989
+            },
+            {
+              "numbers": [
+                3,
+                9
+              ],
+              "prob": 0.01247696870838092
+            },
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "prob": 0.009632003128887522
+            }
+          ]
+        },
+        "challenger": {
+          "model": {
+            "place": "7.0-race-pace",
+            "pair": "7.0-race-pace"
+          },
+          "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
+          "place": [
+            {
+              "numbers": [
+                10
+              ],
+              "prob": 0.6915366857518714
+            },
+            {
+              "numbers": [
+                8
+              ],
+              "prob": 0.5770995263224075
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "prob": 0.5429009432850552
+            },
+            {
+              "numbers": [
+                4
+              ],
+              "prob": 0.30157840768224525
+            },
+            {
+              "numbers": [
+                9
+              ],
+              "prob": 0.21864598037916297
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "prob": 0.21332682571668765
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "prob": 0.1988923137605877
+            },
+            {
+              "numbers": [
+                3
+              ],
+              "prob": 0.17459671324700557
+            },
+            {
+              "numbers": [
+                6
+              ],
+              "prob": 0.14228632658619636
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "prob": 0.09762276623035777
+            }
+          ],
+          "pair": [
+            {
+              "numbers": [
+                1,
+                10
+              ],
+              "prob": 0.2732585972546111
+            },
+            {
+              "numbers": [
+                8,
+                10
+              ],
+              "prob": 0.2697547093722082
+            },
+            {
+              "numbers": [
+                1,
+                8
+              ],
+              "prob": 0.2460827548911438
+            },
+            {
+              "numbers": [
+                4,
+                10
+              ],
+              "prob": 0.16750408929407123
+            },
+            {
+              "numbers": [
+                3,
+                10
+              ],
+              "prob": 0.13732187136111895
+            },
+            {
+              "numbers": [
+                1,
+                4
+              ],
+              "prob": 0.1368623656534684
+            },
+            {
+              "numbers": [
+                2,
+                10
+              ],
+              "prob": 0.12127516362944918
+            },
+            {
+              "numbers": [
+                5,
+                10
+              ],
+              "prob": 0.10731121765331722
+            },
+            {
+              "numbers": [
+                9,
+                10
+              ],
+              "prob": 0.10731121765331722
+            },
+            {
+              "numbers": [
+                4,
+                8
+              ],
+              "prob": 0.10386206491276885
+            },
+            {
+              "numbers": [
+                3,
+                8
+              ],
+              "prob": 0.10191429319274717
+            },
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "prob": 0.0960094679711769
+            },
+            {
+              "numbers": [
+                1,
+                9
+              ],
+              "prob": 0.095899377541657
+            },
+            {
+              "numbers": [
+                8,
+                9
+              ],
+              "prob": 0.08721944252791262
+            },
+            {
+              "numbers": [
+                1,
+                2
+              ],
+              "prob": 0.08720586241157025
+            },
+            {
+              "numbers": [
+                1,
+                5
+              ],
+              "prob": 0.08565766800323514
+            },
+            {
+              "numbers": [
+                6,
+                10
+              ],
+              "prob": 0.08272260616173618
+            },
+            {
+              "numbers": [
+                2,
+                8
+              ],
+              "prob": 0.07991553077006075
+            },
+            {
+              "numbers": [
+                5,
+                8
+              ],
+              "prob": 0.07991553077006075
+            },
+            {
+              "numbers": [
+                2,
+                4
+              ],
+              "prob": 0.054163983787142704
+            },
+            {
+              "numbers": [
+                4,
+                9
+              ],
+              "prob": 0.05279366310983865
+            },
+            {
+              "numbers": [
+                6,
+                8
+              ],
+              "prob": 0.05034028300946058
+            },
+            {
+              "numbers": [
+                4,
+                5
+              ],
+              "prob": 0.048869171192364703
+            },
+            {
+              "numbers": [
+                7,
+                10
+              ],
+              "prob": 0.04561449522528363
+            },
+            {
+              "numbers": [
+                1,
+                6
+              ],
+              "prob": 0.044744190950671545
+            },
+            {
+              "numbers": [
+                2,
+                5
+              ],
+              "prob": 0.03645975285464441
+            },
+            {
+              "numbers": [
+                2,
+                9
+              ],
+              "prob": 0.03645975285464441
+            },
+            {
+              "numbers": [
+                5,
+                9
+              ],
+              "prob": 0.03645975285464441
+            },
+            {
+              "numbers": [
+                4,
+                6
+              ],
+              "prob": 0.03427980652404174
+            },
+            {
+              "numbers": [
+                3,
+                4
+              ],
+              "prob": 0.033191894232443134
+            },
+            {
+              "numbers": [
+                7,
+                8
+              ],
+              "prob": 0.02818500857044495
+            },
+            {
+              "numbers": [
+                2,
+                3
+              ],
+              "prob": 0.0274054407942554
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "prob": 0.0274054407942554
+            },
+            {
+              "numbers": [
+                3,
+                9
+              ],
+              "prob": 0.0274054407942554
+            },
+            {
+              "numbers": [
+                2,
+                6
+              ],
+              "prob": 0.023854607887938157
+            },
+            {
+              "numbers": [
+                1,
+                7
+              ],
+              "prob": 0.02272522343654388
+            },
+            {
+              "numbers": [
+                6,
+                9
+              ],
+              "prob": 0.021562928966959063
+            },
+            {
+              "numbers": [
+                4,
+                7
+              ],
+              "prob": 0.02088161354188592
+            },
+            {
+              "numbers": [
+                5,
+                6
+              ],
+              "prob": 0.020174868666907424
+            },
+            {
+              "numbers": [
+                3,
+                6
+              ],
+              "prob": 0.01675601874049147
+            },
+            {
+              "numbers": [
+                2,
+                7
+              ],
+              "prob": 0.014301144763280427
+            },
+            {
+              "numbers": [
+                7,
+                9
+              ],
+              "prob": 0.014301144763280427
+            },
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "prob": 0.014157190837593927
+            },
+            {
+              "numbers": [
+                6,
+                7
+              ],
+              "prob": 0.013959993592508785
+            },
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "prob": 0.011210003516115893
+            }
+          ]
+        },
+        "selective": {
+          "model": {
+            "place": "6.0-conditions",
+            "pair": "6.0-conditions"
+          },
+          "bundle_hash": "6da398f5f9bcfd8f0464ae58970d3048e8686e54c3060af33030d4a9beac13d9",
+          "place": [
+            {
+              "numbers": [
+                10
+              ],
+              "prob": 0.7271666456662119
+            }
+          ]
+        }
+      }
+    },
+    "20260912:jeju:2": {
+      "id": "20260912:jeju:2",
+      "saved_at": "2026-09-12T01:49:34.000Z",
+      "source_updated_at": "2026-09-12T10:49:03+09:00",
+      "start_at": "2026-09-12T03:05:00.000Z",
+      "input_hash": "1746b2beae2f7d335efc195ae24b8f4ec304987c18b4b13834ad459fb22f4610",
+      "code_hash": "b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
+      "input": {
+        "venue": "jeju",
+        "venue_name": "제주",
+        "date": "20260912",
+        "race_no": 2,
+        "distance": 1000,
+        "start_time": "12:05",
+        "grade": "제5등급",
+        "title": "제5등급 · 1000M · 12:05",
+        "horses": [
+          {
+            "number": 1,
+            "name": "제성백호",
+            "age": 2,
+            "sex": "수",
+            "rating": 5,
+            "burden": 53,
+            "burden_change": -2,
+            "jockey": "전현준",
+            "trainer": "한상배",
+            "training_count": 5,
+            "interval_weeks": 3,
+            "gear": "",
+            "note": "",
+            "starts_1y": 1,
+            "wins_1y": 1,
+            "seconds_1y": 0,
+            "thirds_1y": 0,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              1,
+              2
+            ],
+            "horse_id": "3109183",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 294,
+            "average_weight": 294,
+            "jockey_stats_1y": {
+              "starts": 446,
+              "wins": 55,
+              "seconds": 69,
+              "thirds": 47,
+              "win_rate": 0.12331838565022421,
+              "quinella_rate": 0.27802690582959644,
+              "place_rate": 0.3834080717488789
+            },
+            "trainer_stats_1y": {
+              "starts": 400,
+              "wins": 18,
+              "seconds": 24,
+              "thirds": 33,
+              "win_rate": 0.045,
+              "quinella_rate": 0.105,
+              "place_rate": 0.1875
+            },
+            "features_v6": [
+              0.44,
+              0.27,
+              0.2666666667,
+              0.2857142857,
+              1,
+              0.5956706681,
+              0,
+              0.2142857143,
+              0.0575342466,
+              0.05,
+              1,
+              0.6,
+              0,
+              0.1,
+              -0.4,
+              0,
+              0.5,
+              0,
+              0.44,
+              0,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              1,
+              0.0333333333,
+              0
+            ],
+            "quality_v6": {
+              "starts": 1,
+              "sparse": 0.14285714285714285,
+              "history": 1
+            },
+            "features_v7": [
+              0.44,
+              0.27,
+              0.2666666667,
+              0.2857142857,
+              1,
+              0.5956706681,
+              0,
+              0.2142857143,
+              0.0575342466,
+              0.05,
+              1,
+              0.6,
+              0,
+              0.1,
+              -0.4,
+              0,
+              1,
+              0,
+              0.44,
+              0,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              0.2,
+              0.2,
+              1,
+              0.0333333333,
+              0,
+              0.44,
+              0.2666666667,
+              0.37995338,
+              0.1851851852,
+              1,
+              0.1666666667,
+              0.2,
+              0,
+              0.7777777778,
+              0.2222222222,
+              0,
+              0.625,
+              1,
+              0.2,
+              0.2,
+              0,
+              0.5714285714,
+              0.1,
+              0.1333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 1,
+              "sparse": 0.2857142857142857,
+              "history": 1,
+              "pace_starts": 1,
+              "sectional_starts": 1,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 2,
+            "name": "비룡신공",
+            "age": 6,
+            "sex": "거",
+            "rating": 2,
+            "burden": 51.5,
+            "burden_change": 0.5,
+            "jockey": "한영민",
+            "trainer": "김태준",
+            "training_count": 6,
+            "interval_weeks": 2,
+            "gear": "",
+            "note": "",
+            "starts_1y": 41,
+            "wins_1y": 2,
+            "seconds_1y": 1,
+            "thirds_1y": 1,
+            "distance_starts": 26,
+            "distance_top3": 2,
+            "recent_finishes": [
+              4,
+              2,
+              7,
+              8,
+              8
+            ],
+            "horse_id": "3102610",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 251,
+            "average_weight": 263,
+            "jockey_stats_1y": {
+              "starts": 423,
+              "wins": 33,
+              "seconds": 30,
+              "thirds": 37,
+              "win_rate": 0.07801418439716312,
+              "quinella_rate": 0.14893617021276595,
+              "place_rate": 0.2364066193853428
+            },
+            "trainer_stats_1y": {
+              "starts": 396,
+              "wins": 30,
+              "seconds": 23,
+              "thirds": 34,
+              "win_rate": 0.07575757575757576,
+              "quinella_rate": 0.13383838383838384,
+              "place_rate": 0.2196969696969697
+            },
+            "features_v6": [
+              0.1,
+              0.0291666667,
+              0.0888888889,
+              0.0714285714,
+              0.2156794425,
+              0.2109077253,
+              0.1168633935,
+              0.5142857143,
+              0.0410958904,
+              0.5,
+              0.3777777778,
+              0.2037037037,
+              0.1662958839,
+              0,
+              0.1,
+              0,
+              0.5,
+              0.082,
+              0.12,
+              0.6,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0.1594473488,
+              0.0133333333,
+              0
+            ],
+            "quality_v6": {
+              "starts": 8,
+              "sparse": 0.14285714285714285,
+              "history": 10
+            },
+            "features_v7": [
+              0.1,
+              0.0291666667,
+              0.0888888889,
+              0.0714285714,
+              0.2156794425,
+              0.2109077253,
+              0.1168633935,
+              0.5142857143,
+              0.0410958904,
+              0.5,
+              0.3777777778,
+              0.2037037037,
+              0.1662958839,
+              0,
+              0.1,
+              0.2541333333,
+              0.6862607886,
+              0.082,
+              0.12,
+              0.6,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              1,
+              1,
+              0.2156794425,
+              0.0133333333,
+              0,
+              0.1,
+              0.0888888889,
+              0.2345679012,
+              0.2146596859,
+              0.4166666667,
+              0.0333333333,
+              0,
+              0.2241333333,
+              0.1777777778,
+              0.2,
+              0,
+              0.40625,
+              0.1058823529,
+              1,
+              1,
+              0,
+              0.7142857143,
+              1,
+              0.4,
+              1
+            ],
+            "quality_v7": {
+              "starts": 8,
+              "sparse": 0.2857142857142857,
+              "history": 10,
+              "pace_starts": 5,
+              "sectional_starts": 5,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 3,
+            "name": "스타덤",
+            "age": 4,
+            "sex": "암",
+            "rating": 7,
+            "burden": 54,
+            "burden_change": 2.5,
+            "jockey": "김준호",
+            "trainer": "윤덕상",
+            "training_count": 10,
+            "interval_weeks": 12,
+            "gear": "계란형큰고리재갈,눈가면",
+            "note": "",
+            "starts_1y": 14,
+            "wins_1y": 1,
+            "seconds_1y": 2,
+            "thirds_1y": 1,
+            "distance_starts": 9,
+            "distance_top3": 2,
+            "recent_finishes": [
+              2,
+              7,
+              3,
+              5,
+              5
+            ],
+            "horse_id": "3104108",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 291,
+            "average_weight": 293,
+            "jockey_stats_1y": {
+              "starts": 492,
+              "wins": 73,
+              "seconds": 61,
+              "thirds": 65,
+              "win_rate": 0.1483739837398374,
+              "quinella_rate": 0.27235772357723576,
+              "place_rate": 0.40447154471544716
+            },
+            "trainer_stats_1y": {
+              "starts": 431,
+              "wins": 28,
+              "seconds": 36,
+              "thirds": 33,
+              "win_rate": 0.06496519721577726,
+              "quinella_rate": 0.14849187935034802,
+              "place_rate": 0.22505800464037123
+            },
+            "features_v6": [
+              0.4,
+              0.04375,
+              0.2545454545,
+              0.4285714286,
+              0.4599303136,
+              0.6350512762,
+              0.1564748497,
+              0.0142857143,
+              0.2301369863,
+              0.5,
+              0.5103174603,
+              0.0720899471,
+              0.2901724494,
+              0,
+              0.5,
+              0,
+              0.5,
+              0.0916468254,
+              0.44,
+              0.8,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0.4212098581,
+              0.0466666667,
+              0
+            ],
+            "quality_v6": {
+              "starts": 4,
+              "sparse": 0.14285714285714285,
+              "history": 10
+            },
+            "features_v7": [
+              0.4,
+              0.04375,
+              0.2545454545,
+              0.4285714286,
+              0.4599303136,
+              0.6350512762,
+              0.1564748497,
+              0.0142857143,
+              0.2301369863,
+              0.5,
+              0.5103174603,
+              0.0720899471,
+              0.2901724494,
+              0,
+              0.5,
+              0.18,
+              0.6356487712,
+              0.0916468254,
+              0.44,
+              0.8,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              1,
+              1,
+              0.4599303136,
+              0.0466666667,
+              0,
+              0.4,
+              0.2545454545,
+              0.3983050847,
+              0.2257281553,
+              0.4662698413,
+              0.1333333333,
+              0,
+              0.1451765873,
+              0.626984127,
+              -0.1166666667,
+              0.2,
+              0.96875,
+              0,
+              1,
+              1,
+              0,
+              0.4285714286,
+              1,
+              0.2666666667,
+              1
+            ],
+            "quality_v7": {
+              "starts": 4,
+              "sparse": 0.2857142857142857,
+              "history": 10,
+              "pace_starts": 5,
+              "sectional_starts": 5,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 4,
+            "name": "불꽃강자",
+            "age": 3,
+            "sex": "거",
+            "rating": 10,
+            "burden": 55.5,
+            "burden_change": 1,
+            "jockey": "임재광",
+            "trainer": "심도연",
+            "training_count": 5,
+            "interval_weeks": 2,
+            "gear": "눈가면+,혀보정끈",
+            "note": "",
+            "starts_1y": 3,
+            "wins_1y": 1,
+            "seconds_1y": 0,
+            "thirds_1y": 1,
+            "distance_starts": 0,
+            "distance_top3": 0,
+            "recent_finishes": [
+              3,
+              1,
+              5,
+              5,
+              3
+            ],
+            "horse_id": "3107556",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 284,
+            "average_weight": 287,
+            "jockey_stats_1y": {
+              "starts": 472,
+              "wins": 83,
+              "seconds": 78,
+              "thirds": 63,
+              "win_rate": 0.17584745762711865,
+              "quinella_rate": 0.3411016949152542,
+              "place_rate": 0.4745762711864407
+            },
+            "trainer_stats_1y": {
+              "starts": 410,
+              "wins": 71,
+              "seconds": 66,
+              "thirds": 56,
+              "win_rate": 0.17317073170731706,
+              "quinella_rate": 0.33414634146341465,
+              "place_rate": 0.47073170731707314
+            },
+            "features_v6": [
+              0.4571428571,
+              0.1928571429,
+              0.2666666667,
+              0.6428571429,
+              0.7237048666,
+              0.7857457417,
+              1,
+              -0.2857142857,
+              0.0410958904,
+              0.15,
+              0.7777777778,
+              0.3333333333,
+              0.1814436847,
+              -0.11,
+              0.2,
+              0,
+              0.5,
+              0.0351851852,
+              0.4571428571,
+              0,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0.7038958055,
+              0.0666666667,
+              0
+            ],
+            "quality_v6": {
+              "starts": 3,
+              "sparse": 0.14285714285714285,
+              "history": 3
+            },
+            "features_v7": [
+              0.5333333333,
+              0.225,
+              0.2666666667,
+              0.6428571429,
+              0.8504113687,
+              0.7857457417,
+              1,
+              -0.2857142857,
+              0.0410958904,
+              0.1,
+              0.8888888889,
+              0.4888888889,
+              0.1111111111,
+              -0.11,
+              0.2,
+              0.027027027,
+              0.6566954216,
+              0.0527777778,
+              0.5333333333,
+              0,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              0.4,
+              0.4,
+              0.8504113687,
+              0.0666666667,
+              0,
+              0.5333333333,
+              0.2666666667,
+              0.4622222222,
+              0.4572864322,
+              0.8888888889,
+              0.0666666667,
+              0,
+              0.0206381381,
+              0.5347222222,
+              0.3541666667,
+              0,
+              0,
+              0.5882352941,
+              0.4,
+              0.4,
+              0,
+              0.1428571429,
+              0.2,
+              0.2,
+              1
+            ],
+            "quality_v7": {
+              "starts": 2,
+              "sparse": 0.2857142857142857,
+              "history": 2,
+              "pace_starts": 2,
+              "sectional_starts": 2,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 5,
+            "name": "광해군",
+            "age": 7,
+            "sex": "거",
+            "rating": 15,
+            "burden": 58,
+            "burden_change": 0,
+            "jockey": "양민재",
+            "trainer": "변용호",
+            "training_count": 7,
+            "interval_weeks": 2,
+            "gear": "",
+            "note": "",
+            "starts_1y": 78,
+            "wins_1y": 4,
+            "seconds_1y": 3,
+            "thirds_1y": 7,
+            "distance_starts": 66,
+            "distance_top3": 12,
+            "recent_finishes": [
+              10,
+              9,
+              8,
+              8,
+              5
+            ],
+            "horse_id": "3019033",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 278,
+            "average_weight": 277,
+            "jockey_stats_1y": {
+              "starts": 195,
+              "wins": 5,
+              "seconds": 4,
+              "thirds": 20,
+              "win_rate": 0.02564102564102564,
+              "quinella_rate": 0.046153846153846156,
+              "place_rate": 0.14871794871794872
+            },
+            "trainer_stats_1y": {
+              "starts": 309,
+              "wins": 25,
+              "seconds": 28,
+              "thirds": 23,
+              "win_rate": 0.08090614886731391,
+              "quinella_rate": 0.1715210355987055,
+              "place_rate": 0.2459546925566343
+            },
+            "features_v6": [
+              0.2,
+              0.084375,
+              0.1866666667,
+              1,
+              0.0668989547,
+              0,
+              0.1707733712,
+              -0.7857142857,
+              0.0410958904,
+              0.65,
+              0.1968253968,
+              -0.2354497354,
+              0.1421853694,
+              0,
+              0,
+              0,
+              0.5,
+              0.0936190476,
+              0.1333333333,
+              1,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0,
+              0.1,
+              0
+            ],
+            "quality_v6": {
+              "starts": 12,
+              "sparse": 0.14285714285714285,
+              "history": 13
+            },
+            "features_v7": [
+              0.2,
+              0.084375,
+              0.1866666667,
+              1,
+              0.0668989547,
+              0,
+              0.1707733712,
+              -0.7857142857,
+              0.0410958904,
+              0.65,
+              0.1968253968,
+              -0.2354497354,
+              0.1421853694,
+              0,
+              0,
+              0.3864,
+              0.4778768309,
+              0.0936190476,
+              0.1333333333,
+              1,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              1,
+              1,
+              0.0668989547,
+              0.1,
+              0,
+              0.2,
+              0.1866666667,
+              0.1510416667,
+              0.2320819113,
+              0.3614163614,
+              0,
+              0,
+              0.4175904762,
+              0.4253968254,
+              -0.2285714286,
+              0,
+              1,
+              0.0588235294,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0.4666666667,
+              1
+            ],
+            "quality_v7": {
+              "starts": 12,
+              "sparse": 0.2857142857142857,
+              "history": 13,
+              "pace_starts": 5,
+              "sectional_starts": 5,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 6,
+            "name": "마인드퀸",
+            "age": 4,
+            "sex": "암",
+            "rating": 1,
+            "burden": 51,
+            "burden_change": -2,
+            "jockey": "김다영",
+            "trainer": "문성호",
+            "training_count": 7,
+            "interval_weeks": 2,
+            "gear": "계란형큰고리재갈",
+            "note": "",
+            "starts_1y": 16,
+            "wins_1y": 0,
+            "seconds_1y": 0,
+            "thirds_1y": 2,
+            "distance_starts": 4,
+            "distance_top3": 0,
+            "recent_finishes": [
+              8,
+              7,
+              4,
+              7,
+              7
+            ],
+            "horse_id": "3104580",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 262,
+            "average_weight": 263,
+            "jockey_stats_1y": {
+              "starts": 175,
+              "wins": 6,
+              "seconds": 14,
+              "thirds": 16,
+              "win_rate": 0.03428571428571429,
+              "quinella_rate": 0.11428571428571428,
+              "place_rate": 0.2057142857142857
+            },
+            "trainer_stats_1y": {
+              "starts": 317,
+              "wins": 14,
+              "seconds": 24,
+              "thirds": 28,
+              "win_rate": 0.04416403785488959,
+              "quinella_rate": 0.11987381703470032,
+              "place_rate": 0.2082018927444795
+            },
+            "features_v6": [
+              0.1692307692,
+              0.0269230769,
+              0.16,
+              0,
+              0.2128919861,
+              0.1440560382,
+              0.0732404101,
+              0.6142857143,
+              0.0383561644,
+              0.5,
+              0.3428571429,
+              -0.2671957672,
+              0.1825327811,
+              0.1,
+              -0.4,
+              0,
+              0.5,
+              0.0793650794,
+              0.3,
+              0.2,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0.1564600448,
+              0.0066666667,
+              0
+            ],
+            "quality_v6": {
+              "starts": 9,
+              "sparse": 0.14285714285714285,
+              "history": 10
+            },
+            "features_v7": [
+              0.1692307692,
+              0.0269230769,
+              0.16,
+              0,
+              0.2128919861,
+              0.1440560382,
+              0.0732404101,
+              0.6142857143,
+              0.0383561644,
+              0.5,
+              0.3428571429,
+              -0.2671957672,
+              0.1825327811,
+              0.1,
+              -0.4,
+              0.2561081081,
+              0.4731293325,
+              0.0793650794,
+              0.3,
+              0.2,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              1,
+              1,
+              0.2128919861,
+              0.0066666667,
+              0,
+              0.1692307692,
+              0.16,
+              0.2080924855,
+              0.2052980132,
+              0.4158730159,
+              -0.0333333333,
+              0,
+              0.2224255684,
+              0.4,
+              -0.0571428571,
+              0.2,
+              0.4375,
+              0.2235294118,
+              1,
+              1,
+              0,
+              0.8571428571,
+              1,
+              0.2666666667,
+              1
+            ],
+            "quality_v7": {
+              "starts": 9,
+              "sparse": 0.2857142857142857,
+              "history": 10,
+              "pace_starts": 5,
+              "sectional_starts": 5,
+              "identity": "official_id_checked"
+            }
+          },
+          {
+            "number": 7,
+            "name": "한라제패",
+            "age": 5,
+            "sex": "거",
+            "rating": 10,
+            "burden": 55.5,
+            "burden_change": -0.5,
+            "jockey": "박성광",
+            "trainer": "이준호",
+            "training_count": 5,
+            "interval_weeks": 2,
+            "gear": "눈가면",
+            "note": "",
+            "starts_1y": 21,
+            "wins_1y": 1,
+            "seconds_1y": 2,
+            "thirds_1y": 1,
+            "distance_starts": 13,
+            "distance_top3": 2,
+            "recent_finishes": [
+              10,
+              9,
+              7,
+              9,
+              10
+            ],
+            "horse_id": "3103652",
+            "horse_weight": null,
+            "horse_weight_change": null,
+            "previous_weight": 302,
+            "average_weight": 320,
+            "jockey_stats_1y": {
+              "starts": 410,
+              "wins": 105,
+              "seconds": 71,
+              "thirds": 52,
+              "win_rate": 0.25609756097560976,
+              "quinella_rate": 0.4292682926829268,
+              "place_rate": 0.5560975609756098
+            },
+            "trainer_stats_1y": {
+              "starts": 527,
+              "wins": 62,
+              "seconds": 70,
+              "thirds": 63,
+              "win_rate": 0.11764705882352941,
+              "quinella_rate": 0.2504743833017078,
+              "place_rate": 0.3700189753320683
+            },
+            "features_v6": [
+              0.12,
+              0.035,
+              0.08,
+              0.6428571429,
+              0.0891986063,
+              1,
+              0.6430974205,
+              -0.2857142857,
+              0.0410958904,
+              0.5,
+              0.2,
+              -0.2407407407,
+              0.2474561939,
+              -0.11,
+              -0.1,
+              0,
+              0.5,
+              0.0917777778,
+              0.3,
+              0.7,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.1428571429,
+              0,
+              0,
+              0.0238984317,
+              0.0666666667,
+              0
+            ],
+            "quality_v6": {
+              "starts": 6,
+              "sparse": 0.14285714285714285,
+              "history": 10
+            },
+            "features_v7": [
+              0.1714285714,
+              0.05,
+              0.2,
+              0.6428571429,
+              0,
+              1,
+              0.6430974205,
+              -0.2857142857,
+              0.0410958904,
+              0.15,
+              0.037037037,
+              0.0555555556,
+              0.0523782801,
+              -0.11,
+              -0.1,
+              0.3312792793,
+              0,
+              0.0796296296,
+              0.3,
+              0.1,
+              0.35,
+              0.6666666667,
+              0.4,
+              0,
+              0,
+              1,
+              0.2857142857,
+              0.6,
+              0.6,
+              0,
+              0.0666666667,
+              0,
+              0.1714285714,
+              0.2,
+              0.5445292621,
+              0.3577235772,
+              0.037037037,
+              -0.0333333333,
+              0,
+              0.3481311311,
+              0.5185185185,
+              -0.4814814815,
+              0.3333333333,
+              0.3125,
+              0.2156862745,
+              0.6,
+              0.6,
+              0,
+              0.1428571429,
+              0.3,
+              0.3333333333,
+              1
+            ],
+            "quality_v7": {
+              "starts": 3,
+              "sparse": 0.2857142857142857,
+              "history": 3,
+              "pace_starts": 3,
+              "sectional_starts": 3,
+              "identity": "official_id_checked"
+            }
+          }
+        ],
+        "source": "KRA public race page",
+        "track": {
+          "date": "20260912",
+          "observed_at": "2026-09-12T09:00:00+09:00",
+          "moisture_pct": 4,
+          "condition": "건조",
+          "sand_cm": 5
+        },
+        "feature_version": "6.0-conditions",
+        "history_through": "20260911",
+        "feature_version_v7": "7.0-race-pace",
+        "history_through_v7": "20260911"
+      },
+      "tracks": {
+        "general": {
+          "model": {
+            "place": "5.0-history",
+            "pair": "5.0-history"
+          },
+          "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
+          "place": [
+            {
+              "numbers": [
+                4
+              ],
+              "prob": 0.6179970102635155
+            },
+            {
+              "numbers": [
+                1
+              ],
+              "prob": 0.5634036138580055
+            },
+            {
+              "numbers": [
+                3
+              ],
+              "prob": 0.29130194389871766
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "prob": 0.20560012083943868
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "prob": 0.13251246329111652
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "prob": 0.09632982172214075
+            },
+            {
+              "numbers": [
+                6
+              ],
+              "prob": 0.09285502612706541
+            }
+          ],
+          "pair": [
+            {
+              "numbers": [
+                1,
+                4
+              ],
+              "prob": 0.6112828723216118
+            },
+            {
+              "numbers": [
+                3,
+                4
+              ],
+              "prob": 0.36298071161548756
+            },
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "prob": 0.33599539032949755
+            },
+            {
+              "numbers": [
+                4,
+                7
+              ],
+              "prob": 0.2557559681273041
+            },
+            {
+              "numbers": [
+                1,
+                7
+              ],
+              "prob": 0.23440658332900366
+            },
+            {
+              "numbers": [
+                2,
+                4
+              ],
+              "prob": 0.16407386306867544
+            },
+            {
+              "numbers": [
+                1,
+                2
+              ],
+              "prob": 0.1494264213572406
+            },
+            {
+              "numbers": [
+                4,
+                5
+              ],
+              "prob": 0.11892249943891559
+            },
+            {
+              "numbers": [
+                4,
+                6
+              ],
+              "prob": 0.11459841983362934
+            },
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "prob": 0.10824149455721775
+            },
+            {
+              "numbers": [
+                1,
+                5
+              ],
+              "prob": 0.10802044711722684
+            },
+            {
+              "numbers": [
+                1,
+                6
+              ],
+              "prob": 0.10406790722791681
+            },
+            {
+              "numbers": [
+                2,
+                3
+              ],
+              "prob": 0.06818353737684947
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "prob": 0.0490378245258939
+            },
+            {
+              "numbers": [
+                3,
+                6
+              ],
+              "prob": 0.04722131344551997
+            },
+            {
+              "numbers": [
+                2,
+                7
+              ],
+              "prob": 0.04651702465180428
+            },
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "prob": 0.03342584700095991
+            },
+            {
+              "numbers": [
+                6,
+                7
+              ],
+              "prob": 0.03218503993686804
+            },
+            {
+              "numbers": [
+                2,
+                5
+              ],
+              "prob": 0.020970713505457268
+            },
+            {
+              "numbers": [
+                2,
+                6
+              ],
+              "prob": 0.020191069398199566
+            },
+            {
+              "numbers": [
+                5,
+                6
+              ],
+              "prob": 0.01449505183472027
+            }
+          ]
+        },
+        "challenger": {
+          "model": {
+            "place": "7.0-race-pace",
+            "pair": "7.0-race-pace"
+          },
+          "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
+          "place": [
+            {
+              "numbers": [
+                1
+              ],
+              "prob": 0.6444729147253189
+            },
+            {
+              "numbers": [
+                4
+              ],
+              "prob": 0.6232572760518739
+            },
+            {
+              "numbers": [
+                3
+              ],
+              "prob": 0.4273207820224069
+            },
+            {
+              "numbers": [
+                7
+              ],
+              "prob": 0.21917439088083554
+            },
+            {
+              "numbers": [
+                2
+              ],
+              "prob": 0.21784713754495202
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "prob": 0.12404024172642175
+            },
+            {
+              "numbers": [
+                6
+              ],
+              "prob": 0.12389705726710667
+            }
+          ],
+          "pair": [
+            {
+              "numbers": [
+                1,
+                4
+              ],
+              "prob": 0.37705364864103286
+            },
+            {
+              "numbers": [
+                3,
+                4
+              ],
+              "prob": 0.2628669024039493
+            },
+            {
+              "numbers": [
+                1,
+                3
+              ],
+              "prob": 0.21320371615402664
+            },
+            {
+              "numbers": [
+                2,
+                4
+              ],
+              "prob": 0.15202163107656494
+            },
+            {
+              "numbers": [
+                4,
+                7
+              ],
+              "prob": 0.1208425095192289
+            },
+            {
+              "numbers": [
+                1,
+                2
+              ],
+              "prob": 0.1001082978101552
+            },
+            {
+              "numbers": [
+                4,
+                5
+              ],
+              "prob": 0.09504577614833772
+            },
+            {
+              "numbers": [
+                1,
+                6
+              ],
+              "prob": 0.09140516891010239
+            },
+            {
+              "numbers": [
+                4,
+                6
+              ],
+              "prob": 0.09091981371220205
+            },
+            {
+              "numbers": [
+                1,
+                7
+              ],
+              "prob": 0.09066147907452232
+            },
+            {
+              "numbers": [
+                1,
+                5
+              ],
+              "prob": 0.08257653310759476
+            },
+            {
+              "numbers": [
+                3,
+                7
+              ],
+              "prob": 0.061349603112900566
+            },
+            {
+              "numbers": [
+                2,
+                3
+              ],
+              "prob": 0.04133496754538423
+            },
+            {
+              "numbers": [
+                5,
+                7
+              ],
+              "prob": 0.040096268892524156
+            },
+            {
+              "numbers": [
+                2,
+                7
+              ],
+              "prob": 0.035910588243150784
+            },
+            {
+              "numbers": [
+                3,
+                6
+              ],
+              "prob": 0.03274883147653234
+            },
+            {
+              "numbers": [
+                3,
+                5
+              ],
+              "prob": 0.030624758098335755
+            },
+            {
+              "numbers": [
+                6,
+                7
+              ],
+              "prob": 0.022551386314905317
+            },
+            {
+              "numbers": [
+                2,
+                5
+              ],
+              "prob": 0.019135046364413197
+            },
+            {
+              "numbers": [
+                2,
+                6
+              ],
+              "prob": 0.01886533308693193
+            },
+            {
+              "numbers": [
+                5,
+                6
+              ],
+              "prob": 0.013910332942226948
+            }
+          ]
+        }
+      }
     }
   }
 }
