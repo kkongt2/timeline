@@ -69,7 +69,9 @@ def bootstrap():
             p=Path('training/raw')/str(report['meet'])/(r['date']+'.txt.gz')
             texts[source_key]=gzip.decompress(p.read_bytes()).decode()
         blocks=re.split(r'(?=제목\s*:\s*\d{2,4}년)',texts[source_key])
-        block=next(b for b in blocks if re.search(r'제목.*?제\s*'+str(r['race_no'])+r'경주',b))
+        matches=[b for b in blocks if (m:=re.search(r'제목\s*:\s*(\d{2,4})년\s*(\d+)월\s*(\d+)일.*?제\s*(\d+)경주',b)) and int(m[4])==r['race_no']]
+        if len(matches)!=1:raise ValueError(f'Expected one report block: {r["date"]} {r["venue"]} {r["race_no"]}; headings '+repr([b[:150] for b in blocks[:3]]))
+        block=matches[0]
         card={k:r[k] for k in ['date','venue','race_no','distance','grade']};card['start_time']=''
         card['horses']=[{k:h[k] for k in ['number','name','age','sex','rating','burden','jockey','trainer','horse_weight','horse_weight_change'] if k in h} for h in sorted(r['horses'],key=lambda h:h['number'])]
         winners=[h['number'] for h in sorted(r['horses'],key=lambda h:h['finish'])[:3]]
