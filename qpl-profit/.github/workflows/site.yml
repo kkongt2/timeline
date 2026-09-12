@@ -1,0 +1,61 @@
+name: Update and publish QPL page
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '7,27,47 0-12 * * 4,5,6,0'
+    - cron: '5 0 * * 1,2,3'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: qpl-page
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests beautifulsoup4
+      - name: Refresh official cards and past results
+        if: github.event_name != 'push'
+        run: python scripts/update_kra.py
+      - name: Validate published assets
+        run: |
+          node tests/model.cjs
+          node tests/ui.cjs
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Preserve latest public input data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/latest.json data/history-context-v7.json.gz
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh QPL race inputs and official outcomes'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - name: Build static artifact
+        run: |
+          mkdir -p public/data
+          cp index.html app.js model.js style.css public/
+          cp data/latest.json data/model.json data/backtest.json public/data/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

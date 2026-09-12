@@ -1,0 +1,32 @@
+name: Verify separate QPL profit project
+on:
+  push:
+    branches: [qpl-profit-research]
+    paths: ['qpl-profit/**', '.github/workflows/qpl-profit-check.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: pip install requests beautifulsoup4
+      - working-directory: qpl-profit
+        run: |
+          node tests/model.cjs
+          node tests/ui.cjs
+          python -m unittest discover -s tests -p 'test_*.py'
+          python -m compileall -q scripts
+      - name: Package independent repository
+        run: zip -qr qpl-profit.zip qpl-profit -x '*/__pycache__/*' '*.pyc'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qpl-profit-ready-repository
+          path: qpl-profit.zip

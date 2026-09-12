@@ -1,0 +1,28 @@
+name: Reproduce frozen profit experiment
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python scripts/train_profit.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reproduced-qpl-profit-evidence
+          path: |
+            data/model.json
+            data/backtest.json
+            data/backtest-bets.json
+            data/frozen-policy.json
+            data/parity.json

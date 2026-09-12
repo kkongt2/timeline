@@ -1,0 +1,1173 @@
+{
+  "experiment": {
+    "train": [
+      "20220101",
+      "20241231"
+    ],
+    "calibrate": [
+      "20250101",
+      "20250331"
+    ],
+    "selection": [
+      "20250401",
+      "20251231"
+    ],
+    "evaluation": [
+      "20260101",
+      "20260910"
+    ],
+    "dividend_losses": [
+      "gamma",
+      "poisson"
+    ],
+    "min_edges": [
+      0,
+      0.05,
+      0.1,
+      0.2,
+      0.35,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "max_per_race": [
+      1,
+      2,
+      3
+    ],
+    "min_selection_bets": 200,
+    "min_selection_dates": 60,
+    "unit_stake_krw": 1000,
+    "objective": "maximum total settled pre-tax net profit at equal stake per combination",
+    "deployment_gate": "selection profit > 0; evaluation >=200 bets and >=60 dates; date-bootstrap 95% ROI lower bound >0; profit remains >0 without best day"
+  },
+  "chosen": {
+    "policy": {
+      "dividend_loss": "gamma",
+      "min_edge": 0.1,
+      "max_per_race": 1
+    },
+    "eligible": true,
+    "selection": {
+      "bets": 447,
+      "races": 447,
+      "dates": 113,
+      "stake_krw": 447000,
+      "return_krw": 398100,
+      "profit_krw": -48900,
+      "profit_units": -48.9,
+      "roi": -0.10939597315436242,
+      "hit_rate": 0.12527964205816555,
+      "mean_hit_dividend": 7.108928571428572,
+      "daily_max_drawdown_krw": 86600,
+      "max_losing_bet_streak": 30,
+      "without_best_day_profit_krw": -100700
+    }
+  },
+  "options": [
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1014,
+        "races": 1014,
+        "dates": 114,
+        "stake_krw": 1014000,
+        "return_krw": 885000,
+        "profit_krw": -129000,
+        "profit_units": -129.0,
+        "roi": -0.12721893491124261,
+        "hit_rate": 0.1390532544378698,
+        "mean_hit_dividend": 6.276595744680851,
+        "daily_max_drawdown_krw": 157500,
+        "max_losing_bet_streak": 30,
+        "without_best_day_profit_krw": -177800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1626,
+        "races": 1014,
+        "dates": 114,
+        "stake_krw": 1626000,
+        "return_krw": 1447500,
+        "profit_krw": -178500,
+        "profit_units": -178.5,
+        "roi": -0.10977859778597786,
+        "hit_rate": 0.14145141451414514,
+        "mean_hit_dividend": 6.293478260869565,
+        "daily_max_drawdown_krw": 191900,
+        "max_losing_bet_streak": 34,
+        "without_best_day_profit_krw": -241400
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1992,
+        "races": 1014,
+        "dates": 114,
+        "stake_krw": 1992000,
+        "return_krw": 1687400,
+        "profit_krw": -304600,
+        "profit_units": -304.6,
+        "roi": -0.15291164658634537,
+        "hit_rate": 0.14206827309236947,
+        "mean_hit_dividend": 5.9625441696113075,
+        "daily_max_drawdown_krw": 309000,
+        "max_losing_bet_streak": 41,
+        "without_best_day_profit_krw": -362500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.05,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 705,
+        "races": 705,
+        "dates": 114,
+        "stake_krw": 705000,
+        "return_krw": 585300,
+        "profit_krw": -119700,
+        "profit_units": -119.7,
+        "roi": -0.1697872340425532,
+        "hit_rate": 0.13049645390070921,
+        "mean_hit_dividend": 6.361956521739131,
+        "daily_max_drawdown_krw": 137800,
+        "max_losing_bet_streak": 45,
+        "without_best_day_profit_krw": -170500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.05,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1056,
+        "races": 705,
+        "dates": 114,
+        "stake_krw": 1056000,
+        "return_krw": 893300,
+        "profit_krw": -162700,
+        "profit_units": -162.7,
+        "roi": -0.15407196969696968,
+        "hit_rate": 0.13446969696969696,
+        "mean_hit_dividend": 6.2908450704225345,
+        "daily_max_drawdown_krw": 176100,
+        "max_losing_bet_streak": 31,
+        "without_best_day_profit_krw": -212800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.05,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1231,
+        "races": 705,
+        "dates": 114,
+        "stake_krw": 1231000,
+        "return_krw": 1015900,
+        "profit_krw": -215100,
+        "profit_units": -215.1,
+        "roi": -0.17473598700243703,
+        "hit_rate": 0.1397238017871649,
+        "mean_hit_dividend": 5.906395348837208,
+        "daily_max_drawdown_krw": 220700,
+        "max_losing_bet_streak": 35,
+        "without_best_day_profit_krw": -264200
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.1,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 447,
+        "races": 447,
+        "dates": 113,
+        "stake_krw": 447000,
+        "return_krw": 398100,
+        "profit_krw": -48900,
+        "profit_units": -48.9,
+        "roi": -0.10939597315436242,
+        "hit_rate": 0.12527964205816555,
+        "mean_hit_dividend": 7.108928571428572,
+        "daily_max_drawdown_krw": 86600,
+        "max_losing_bet_streak": 30,
+        "without_best_day_profit_krw": -100700
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.1,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 618,
+        "races": 447,
+        "dates": 113,
+        "stake_krw": 618000,
+        "return_krw": 522800,
+        "profit_krw": -95200,
+        "profit_units": -95.2,
+        "roi": -0.1540453074433657,
+        "hit_rate": 0.1262135922330097,
+        "mean_hit_dividend": 6.702564102564104,
+        "daily_max_drawdown_krw": 119000,
+        "max_losing_bet_streak": 27,
+        "without_best_day_profit_krw": -150300
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.1,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 687,
+        "races": 447,
+        "dates": 113,
+        "stake_krw": 687000,
+        "return_krw": 557600,
+        "profit_krw": -129400,
+        "profit_units": -129.4,
+        "roi": -0.18835516739446873,
+        "hit_rate": 0.13100436681222707,
+        "mean_hit_dividend": 6.195555555555557,
+        "daily_max_drawdown_krw": 135800,
+        "max_losing_bet_streak": 32,
+        "without_best_day_profit_krw": -184500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.2,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 144,
+        "races": 144,
+        "dates": 79,
+        "stake_krw": 144000,
+        "return_krw": 118000,
+        "profit_krw": -26000,
+        "profit_units": -26.0,
+        "roi": -0.18055555555555555,
+        "hit_rate": 0.1388888888888889,
+        "mean_hit_dividend": 5.9,
+        "daily_max_drawdown_krw": 44800,
+        "max_losing_bet_streak": 23,
+        "without_best_day_profit_krw": -45000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.2,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 182,
+        "races": 144,
+        "dates": 79,
+        "stake_krw": 182000,
+        "return_krw": 127600,
+        "profit_krw": -54400,
+        "profit_units": -54.4,
+        "roi": -0.2989010989010989,
+        "hit_rate": 0.12087912087912088,
+        "mean_hit_dividend": 5.800000000000001,
+        "daily_max_drawdown_krw": 65000,
+        "max_losing_bet_streak": 32,
+        "without_best_day_profit_krw": -72400
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.2,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 194,
+        "races": 144,
+        "dates": 79,
+        "stake_krw": 194000,
+        "return_krw": 129400,
+        "profit_krw": -64600,
+        "profit_units": -64.6,
+        "roi": -0.33298969072164947,
+        "hit_rate": 0.11855670103092783,
+        "mean_hit_dividend": 5.626086956521739,
+        "daily_max_drawdown_krw": 75200,
+        "max_losing_bet_streak": 28,
+        "without_best_day_profit_krw": -81600
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.35,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 22,
+        "races": 22,
+        "dates": 18,
+        "stake_krw": 22000,
+        "return_krw": 15300,
+        "profit_krw": -6700,
+        "profit_units": -6.7,
+        "roi": -0.3045454545454545,
+        "hit_rate": 0.09090909090909091,
+        "mean_hit_dividend": 7.65,
+        "daily_max_drawdown_krw": 17600,
+        "max_losing_bet_streak": 14,
+        "without_best_day_profit_krw": -17600
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.35,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 30,
+        "races": 22,
+        "dates": 18,
+        "stake_krw": 30000,
+        "return_krw": 15300,
+        "profit_krw": -14700,
+        "profit_units": -14.7,
+        "roi": -0.49,
+        "hit_rate": 0.06666666666666667,
+        "mean_hit_dividend": 7.65,
+        "daily_max_drawdown_krw": 24600,
+        "max_losing_bet_streak": 21,
+        "without_best_day_profit_krw": -24600
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.35,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 30,
+        "races": 22,
+        "dates": 18,
+        "stake_krw": 30000,
+        "return_krw": 15300,
+        "profit_krw": -14700,
+        "profit_units": -14.7,
+        "roi": -0.49,
+        "hit_rate": 0.06666666666666667,
+        "mean_hit_dividend": 7.65,
+        "daily_max_drawdown_krw": 24600,
+        "max_losing_bet_streak": 21,
+        "without_best_day_profit_krw": -24600
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.5,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 5,
+        "races": 5,
+        "dates": 4,
+        "stake_krw": 5000,
+        "return_krw": 0,
+        "profit_krw": -5000,
+        "profit_units": -5.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 5000,
+        "max_losing_bet_streak": 5,
+        "without_best_day_profit_krw": -4000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.5,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 5,
+        "races": 5,
+        "dates": 4,
+        "stake_krw": 5000,
+        "return_krw": 0,
+        "profit_krw": -5000,
+        "profit_units": -5.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 5000,
+        "max_losing_bet_streak": 5,
+        "without_best_day_profit_krw": -4000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.5,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 5,
+        "races": 5,
+        "dates": 4,
+        "stake_krw": 5000,
+        "return_krw": 0,
+        "profit_krw": -5000,
+        "profit_units": -5.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 5000,
+        "max_losing_bet_streak": 5,
+        "without_best_day_profit_krw": -4000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.75,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.75,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 0.75,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 1.0,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 1.0,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "gamma",
+        "min_edge": 1.0,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 0,
+        "races": 0,
+        "dates": 0,
+        "stake_krw": 0,
+        "return_krw": 0,
+        "profit_krw": 0,
+        "profit_units": 0,
+        "roi": null,
+        "hit_rate": null,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 0,
+        "max_losing_bet_streak": 0,
+        "without_best_day_profit_krw": 0
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1387,
+        "races": 1387,
+        "dates": 114,
+        "stake_krw": 1387000,
+        "return_krw": 1059300,
+        "profit_krw": -327700,
+        "profit_units": -327.7,
+        "roi": -0.23626532083633742,
+        "hit_rate": 0.18529199711607786,
+        "mean_hit_dividend": 4.121789883268482,
+        "daily_max_drawdown_krw": 347700,
+        "max_losing_bet_streak": 29,
+        "without_best_day_profit_krw": -383900
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 2449,
+        "races": 1387,
+        "dates": 114,
+        "stake_krw": 2449000,
+        "return_krw": 1973100,
+        "profit_krw": -475900,
+        "profit_units": -475.9,
+        "roi": -0.1943242139648836,
+        "hit_rate": 0.1690485912617395,
+        "mean_hit_dividend": 4.765942028985507,
+        "daily_max_drawdown_krw": 519700,
+        "max_losing_bet_streak": 46,
+        "without_best_day_profit_krw": -575000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 3230,
+        "races": 1387,
+        "dates": 114,
+        "stake_krw": 3230000,
+        "return_krw": 2416200,
+        "profit_krw": -813800,
+        "profit_units": -813.8,
+        "roi": -0.2519504643962848,
+        "hit_rate": 0.15758513931888546,
+        "mean_hit_dividend": 4.746954813359528,
+        "daily_max_drawdown_krw": 821200,
+        "max_losing_bet_streak": 50,
+        "without_best_day_profit_krw": -910700
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.05,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1216,
+        "races": 1216,
+        "dates": 114,
+        "stake_krw": 1216000,
+        "return_krw": 937800,
+        "profit_krw": -278200,
+        "profit_units": -278.2,
+        "roi": -0.2287828947368421,
+        "hit_rate": 0.18585526315789475,
+        "mean_hit_dividend": 4.149557522123893,
+        "daily_max_drawdown_krw": 288700,
+        "max_losing_bet_streak": 27,
+        "without_best_day_profit_krw": -334400
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.05,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 2019,
+        "races": 1216,
+        "dates": 114,
+        "stake_krw": 2019000,
+        "return_krw": 1678900,
+        "profit_krw": -340100,
+        "profit_units": -340.1,
+        "roi": -0.16844972758791482,
+        "hit_rate": 0.16840019811788015,
+        "mean_hit_dividend": 4.937941176470589,
+        "daily_max_drawdown_krw": 424400,
+        "max_losing_bet_streak": 42,
+        "without_best_day_profit_krw": -437000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.05,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 2564,
+        "races": 1216,
+        "dates": 114,
+        "stake_krw": 2564000,
+        "return_krw": 1955900,
+        "profit_krw": -608100,
+        "profit_units": -608.1,
+        "roi": -0.23716848673946958,
+        "hit_rate": 0.15600624024961,
+        "mean_hit_dividend": 4.88975,
+        "daily_max_drawdown_krw": 630100,
+        "max_losing_bet_streak": 43,
+        "without_best_day_profit_krw": -702000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.1,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1000,
+        "races": 1000,
+        "dates": 114,
+        "stake_krw": 1000000,
+        "return_krw": 770700,
+        "profit_krw": -229300,
+        "profit_units": -229.3,
+        "roi": -0.22929999999999998,
+        "hit_rate": 0.19,
+        "mean_hit_dividend": 4.056315789473684,
+        "daily_max_drawdown_krw": 243800,
+        "max_losing_bet_streak": 27,
+        "without_best_day_profit_krw": -290500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.1,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1565,
+        "races": 1000,
+        "dates": 114,
+        "stake_krw": 1565000,
+        "return_krw": 1311200,
+        "profit_krw": -253800,
+        "profit_units": -253.8,
+        "roi": -0.16217252396166132,
+        "hit_rate": 0.16869009584664538,
+        "mean_hit_dividend": 4.966666666666666,
+        "daily_max_drawdown_krw": 365800,
+        "max_losing_bet_streak": 36,
+        "without_best_day_profit_krw": -349900
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.1,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1925,
+        "races": 1000,
+        "dates": 114,
+        "stake_krw": 1925000,
+        "return_krw": 1527200,
+        "profit_krw": -397800,
+        "profit_units": -397.8,
+        "roi": -0.20664935064935067,
+        "hit_rate": 0.15792207792207794,
+        "mean_hit_dividend": 5.023684210526316,
+        "daily_max_drawdown_krw": 473300,
+        "max_losing_bet_streak": 45,
+        "without_best_day_profit_krw": -492900
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.2,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 590,
+        "races": 590,
+        "dates": 114,
+        "stake_krw": 590000,
+        "return_krw": 419000,
+        "profit_krw": -171000,
+        "profit_units": -171.0,
+        "roi": -0.28983050847457625,
+        "hit_rate": 0.17796610169491525,
+        "mean_hit_dividend": 3.99047619047619,
+        "daily_max_drawdown_krw": 190000,
+        "max_losing_bet_streak": 29,
+        "without_best_day_profit_krw": -230100
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.2,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 855,
+        "races": 590,
+        "dates": 114,
+        "stake_krw": 855000,
+        "return_krw": 550300,
+        "profit_krw": -304700,
+        "profit_units": -304.7,
+        "roi": -0.35637426900584795,
+        "hit_rate": 0.1567251461988304,
+        "mean_hit_dividend": 4.106716417910448,
+        "daily_max_drawdown_krw": 314700,
+        "max_losing_bet_streak": 42,
+        "without_best_day_profit_krw": -363800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.2,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 1012,
+        "races": 590,
+        "dates": 114,
+        "stake_krw": 1012000,
+        "return_krw": 659400,
+        "profit_krw": -352600,
+        "profit_units": -352.6,
+        "roi": -0.34841897233201585,
+        "hit_rate": 0.15118577075098813,
+        "mean_hit_dividend": 4.309803921568627,
+        "daily_max_drawdown_krw": 370500,
+        "max_losing_bet_streak": 51,
+        "without_best_day_profit_krw": -411700
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.35,
+        "max_per_race": 1
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 248,
+        "races": 248,
+        "dates": 98,
+        "stake_krw": 248000,
+        "return_krw": 86000,
+        "profit_krw": -162000,
+        "profit_units": -162.0,
+        "roi": -0.6532258064516129,
+        "hit_rate": 0.14919354838709678,
+        "mean_hit_dividend": 2.324324324324324,
+        "daily_max_drawdown_krw": 176400,
+        "max_losing_bet_streak": 28,
+        "without_best_day_profit_krw": -175500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.35,
+        "max_per_race": 2
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 345,
+        "races": 248,
+        "dates": 98,
+        "stake_krw": 345000,
+        "return_krw": 101700,
+        "profit_krw": -243300,
+        "profit_units": -243.3,
+        "roi": -0.7052173913043479,
+        "hit_rate": 0.13333333333333333,
+        "mean_hit_dividend": 2.2108695652173913,
+        "daily_max_drawdown_krw": 254700,
+        "max_losing_bet_streak": 33,
+        "without_best_day_profit_krw": -255800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.35,
+        "max_per_race": 3
+      },
+      "eligible": true,
+      "selection": {
+        "bets": 383,
+        "races": 248,
+        "dates": 98,
+        "stake_krw": 383000,
+        "return_krw": 163000,
+        "profit_krw": -220000,
+        "profit_units": -220.0,
+        "roi": -0.5744125326370757,
+        "hit_rate": 0.13054830287206268,
+        "mean_hit_dividend": 3.2599999999999993,
+        "daily_max_drawdown_krw": 241300,
+        "max_losing_bet_streak": 35,
+        "without_best_day_profit_krw": -258500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.5,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 107,
+        "races": 107,
+        "dates": 65,
+        "stake_krw": 107000,
+        "return_krw": 9400,
+        "profit_krw": -97600,
+        "profit_units": -97.6,
+        "roi": -0.9121495327102803,
+        "hit_rate": 0.056074766355140186,
+        "mean_hit_dividend": 1.5666666666666667,
+        "daily_max_drawdown_krw": 97600,
+        "max_losing_bet_streak": 58,
+        "without_best_day_profit_krw": -98500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.5,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 137,
+        "races": 107,
+        "dates": 65,
+        "stake_krw": 137000,
+        "return_krw": 9400,
+        "profit_krw": -127600,
+        "profit_units": -127.6,
+        "roi": -0.9313868613138686,
+        "hit_rate": 0.043795620437956206,
+        "mean_hit_dividend": 1.5666666666666667,
+        "daily_max_drawdown_krw": 127600,
+        "max_losing_bet_streak": 75,
+        "without_best_day_profit_krw": -128500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.5,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 146,
+        "races": 107,
+        "dates": 65,
+        "stake_krw": 146000,
+        "return_krw": 9400,
+        "profit_krw": -136600,
+        "profit_units": -136.6,
+        "roi": -0.9356164383561644,
+        "hit_rate": 0.0410958904109589,
+        "mean_hit_dividend": 1.5666666666666667,
+        "daily_max_drawdown_krw": 136600,
+        "max_losing_bet_streak": 81,
+        "without_best_day_profit_krw": -137500
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.75,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 18,
+        "races": 18,
+        "dates": 14,
+        "stake_krw": 18000,
+        "return_krw": 1200,
+        "profit_krw": -16800,
+        "profit_units": -16.8,
+        "roi": -0.9333333333333333,
+        "hit_rate": 0.05555555555555555,
+        "mean_hit_dividend": 1.2,
+        "daily_max_drawdown_krw": 16800,
+        "max_losing_bet_streak": 14,
+        "without_best_day_profit_krw": -15800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.75,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 25,
+        "races": 18,
+        "dates": 14,
+        "stake_krw": 25000,
+        "return_krw": 1200,
+        "profit_krw": -23800,
+        "profit_units": -23.8,
+        "roi": -0.9520000000000001,
+        "hit_rate": 0.04,
+        "mean_hit_dividend": 1.2,
+        "daily_max_drawdown_krw": 23800,
+        "max_losing_bet_streak": 20,
+        "without_best_day_profit_krw": -22800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 0.75,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 26,
+        "races": 18,
+        "dates": 14,
+        "stake_krw": 26000,
+        "return_krw": 1200,
+        "profit_krw": -24800,
+        "profit_units": -24.8,
+        "roi": -0.9538461538461539,
+        "hit_rate": 0.038461538461538464,
+        "mean_hit_dividend": 1.2,
+        "daily_max_drawdown_krw": 24800,
+        "max_losing_bet_streak": 20,
+        "without_best_day_profit_krw": -23800
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 1.0,
+        "max_per_race": 1
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 6,
+        "races": 6,
+        "dates": 6,
+        "stake_krw": 6000,
+        "return_krw": 0,
+        "profit_krw": -6000,
+        "profit_units": -6.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 6000,
+        "max_losing_bet_streak": 6,
+        "without_best_day_profit_krw": -5000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 1.0,
+        "max_per_race": 2
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 7,
+        "races": 6,
+        "dates": 6,
+        "stake_krw": 7000,
+        "return_krw": 0,
+        "profit_krw": -7000,
+        "profit_units": -7.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 7000,
+        "max_losing_bet_streak": 7,
+        "without_best_day_profit_krw": -6000
+      }
+    },
+    {
+      "policy": {
+        "dividend_loss": "poisson",
+        "min_edge": 1.0,
+        "max_per_race": 3
+      },
+      "eligible": false,
+      "selection": {
+        "bets": 7,
+        "races": 6,
+        "dates": 6,
+        "stake_krw": 7000,
+        "return_krw": 0,
+        "profit_krw": -7000,
+        "profit_units": -7.0,
+        "roi": -1.0,
+        "hit_rate": 0.0,
+        "mean_hit_dividend": null,
+        "daily_max_drawdown_krw": 7000,
+        "max_losing_bet_streak": 7,
+        "without_best_day_profit_krw": -6000
+      }
+    }
+  ]
+}

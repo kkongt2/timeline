@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f6f2"><meta name="description" content="동일 금액의 장기 수익을 기준으로 복연승 조합을 분석합니다."><title>복연승 · 같은 금액, 누적 수익</title><link rel="stylesheet" href="style.css"></head>
+<body><main>
+<header><a class="brand" href="./" aria-label="복연승 홈"><span class="mark">↗</span><span>복연승<span class="brand-sub">QPL LAB</span></span></a><span class="pill">정액 수익 모델</span></header>
+<section class="intro"><p class="eyebrow">SAME STAKE. LONG VIEW.</p><h1>한 조합, 같은 금액.<br><span>누적 수익을 봅니다.</span></h1><p>조합마다 1,000원. 추정 기대수익으로 비교하고,<br class="desktop-break">기간을 분리한 백테스트로 검증합니다.</p></section>
+<section class="panel evidence" aria-labelledby="evidence-title"><div class="section-top"><h2 id="evidence-title">분리 평가 결과</h2><span id="verified" class="pill">계산 결과 불러오는 중</span></div><div id="metrics" class="metrics"></div><div id="chart"></div><p id="evaluation-note" class="small"></p><details><summary>월별 손익과 검증 내용</summary><div id="validation"></div></details></section>
+<section class="races" aria-labelledby="race-title"><div class="section-top"><h2 id="race-title">경주별 조합</h2><button id="refresh" class="text-button" type="button">새로고침 ↻</button></div><div id="venues" class="segments" role="group" aria-label="경마장"></div><div class="filter-label">경주일 <span>실제 경주가 있는 날짜만 표시</span></div><div id="dates" class="chips" role="group" aria-label="경주일"></div><div id="rounds" class="rounds" role="group" aria-label="경주 번호"></div><p id="freshness" class="small" role="status"></p><div id="race-content" aria-live="polite"><div class="empty">경주 데이터를 불러오고 있습니다.</div></div></section>
+<section class="panel rules"><p class="eyebrow">ONE CRITERION</p><h2>추천 기준은 하나입니다.</h2><p class="formula">추정 적중확률 × 예상 배당 − 1</p><p>이 값이 클수록 같은 금액을 걸었을 때의 추정 기대수익이 큽니다. 실제 확정 배당은 과거 손익 평가에만 사용합니다.</p><p id="policy"></p><details><summary>데이터와 계산 가정</summary><div id="method"></div></details></section>
+<footer>복연승 수익 연구 · 배당은 실시간 시세가 아닌 모델 추정치입니다.</footer>
+</main><script src="model.js"></script><script src="app.js"></script></body></html>
