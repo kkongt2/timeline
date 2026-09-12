@@ -480,6 +480,11 @@ def main():
     now = datetime.now(kst)
     # Keep the previous two KST dates as well as today's and upcoming race cards.
     today = now.strftime("%Y%m%d")
+    # Some hosted runners cannot reach KRA. Fail before repeatedly querying every
+    # race and before replacing the last successful data with a partial document.
+    probe = S.get(f"{BASE}/chulmaDetailInfoChulmapyo.do", params=params(today, 1, 1), timeout=(5, 10))
+    probe.raise_for_status()
+    print("KRA connectivity confirmed", flush=True)
     dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(-2, 3)]
     previous_map = {}
     previous_complete = False
@@ -502,9 +507,11 @@ def main():
                 races.extend(sorted(archived, key=lambda r: r["race_no"]))
                 continue
             misses = 0
+            consecutive_errors = 0
             for rc_no in range(1, 17):
                 try:
                     race, dbg = parse_card(date, rc_no, meet)
+                    consecutive_errors = 0
                     if not race:
                         misses += 1
                         # After several consecutive missing races, higher race numbers won't exist.
@@ -529,10 +536,14 @@ def main():
                     print(f"OK {date} meet={meet} race={rc_no} horses={len(race['horses'])}")
                     time.sleep(0.12)
                 except Exception as e:
+                    consecutive_errors += 1
                     errors.append({"date":date,"meet":meet,"race_no":rc_no,"error":repr(e)})
                     print(f"ERR {date} meet={meet} race={rc_no}: {e}", file=sys.stderr)
+                    if consecutive_errors >= 2:
+                        raise RuntimeError("Repeated card failures; preserving the last published data") from e
                     time.sleep(0.3)
     attach_live_context([r for r in races if not r.get("historical_view")], jockey_stats, trainer_stats, tracks)
+    print("Refreshing historical context", flush=True)
     history_status = {"status": "unavailable"}
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent / 'model-research'))
@@ -540,6 +551,7 @@ def main():
         history_status = refresh_and_attach(races)
     except Exception as e:
         history_status = {"status": "error", "error": str(e)}
+    print("Refreshing v7 historical context", flush=True)
     v7_status = {"status": "unavailable"}
     try:
         from refresh_v7 import refresh_and_attach as refresh_v7
@@ -547,6 +559,7 @@ def main():
     except Exception as e:
         v7_status = {"status": "error", "error": str(e)}
     from results_kra import attach_results
+    print("Refreshing official dividends", flush=True)
     result_status = attach_results(races, previous_map, now, S, decode_response)
     out = {
         "updated_at": now.isoformat(timespec="seconds"),

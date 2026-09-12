@@ -90,7 +90,7 @@ def attach_results(races, previous, now, session, decode):
             race['official_result'] = result
             stats['confirmed' if result['status'] == 'confirmed' else 'pending'] += 1
         except Exception as exc:
-            race['official_result'] = old if old and old.get('version') == 2 and old.get('status') == 'confirmed' else {'status': 'unavailable', 'source': result_url(race)}
+            race['official_result'] = old if old and old.get('version') in (1, 2) and old.get('status') == 'confirmed' else {'status': 'unavailable', 'source': result_url(race)}
             stats['errors'] += 1
             print(f"Result unavailable {date} {race['venue']} {race['race_no']}: {exc}")
     return stats
