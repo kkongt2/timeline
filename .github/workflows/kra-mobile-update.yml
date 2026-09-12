@@ -47,6 +47,40 @@ jobs:
       - name: Validate collector
         run: python -m py_compile scripts/update_kra.py
 
+      - name: Check historical calendar seed
+        id: archive
+        run: |
+          if test -f data/calendar-archive.json; then
+            echo "missing=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "missing=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.archive.outputs.missing == 'true'
+        with:
+          ref: main
+          path: _archive_seed
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /training/history-v7.jsonl.gz
+            /training/manifest.json
+          persist-credentials: false
+
+      - uses: actions/cache/restore@v4
+        if: steps.archive.outputs.missing == 'true'
+        with:
+          path: training/raw
+          key: kra-history-v1-calendar-${{ github.run_id }}
+          restore-keys: kra-history-v1-
+
+      - name: Prepare both-market historical calendar
+        if: steps.archive.outputs.missing == 'true'
+        run: python scripts/calendar_archive.py
+
+      - name: Verify historical calendar
+        run: python -m unittest discover -s tests -p 'test_calendar_archive.py'
+
       - name: Collect KRA race cards
         run: python scripts/update_kra.py
 
