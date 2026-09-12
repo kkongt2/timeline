@@ -13,7 +13,7 @@ jobs:
     steps:
       - run: |
           python - <<'PY'
-          import urllib.request,time
+          import urllib.request,time,re
           urls=[
             'https://race.kra.co.kr/chulmainfo/chulmaDetailInfoChulmapyo.do?meet=1&rcNo=1&rcDate=20260912&Act=02&Sub=1',
             'https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=1',
@@ -22,6 +22,10 @@ jobs:
               start=time.monotonic()
               try:
                   req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'})
-                  with urllib.request.urlopen(req,timeout=12) as r: print(r.status,len(r.read()),round(time.monotonic()-start,1),u,flush=True)
+                  with urllib.request.urlopen(req,timeout=12) as r:
+                      raw=r.read();print(r.status,len(raw),round(time.monotonic()-start,1),u,flush=True)
+                      if 'chulmainfo' in u:
+                          text=raw.decode('cp949',errors='ignore')
+                          print(re.findall(r'.{0,60}(?:[Hh]orse|hrNo).{0,160}',text)[:30],flush=True)
               except Exception as e:print(type(e).__name__,str(e),round(time.monotonic()-start,1),u,flush=True)
           PY
