@@ -35,7 +35,7 @@ def run(root=Path('.')):
             if date!=report['date']:raise ValueError('date mismatch')
             key=(date,VENUES[report['meet']],rn);r=index.get(key)
             if not r:continue
-            winners=r['place_winners']]
+            winners=r['place_winners']
             try:
                 pp=payouts(block,winners)
                 out.append(dict(date=date,venue=key[1],race_no=rn,payouts=pp,source=report['source'],source_sha256=hashlib.sha256(raw).hexdigest()))
