@@ -170,7 +170,7 @@ def parse_card(date: str, rc_no: int, meet: int):
         cells=tr.find_all('td')
         if len(cells)<2: continue
         number=inum(cells[0].get_text())
-        match=re.search(r"(?:hrNo[=\s'\":]+|goHorse\(['\"])([0-9]+)", str(cells[1]))
+        match=re.search(r"(?:hrNo[=\s'\":]+|(?:goHorse|goPage1)\(\s*['\"]?)([0-9]+)", str(cells[1]))
         if match:
             for horse in horses:
                 if horse['number']==number: horse['horse_id']=match[1]
