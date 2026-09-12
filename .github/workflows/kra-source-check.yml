@@ -1,0 +1,27 @@
+name: Check KRA source availability
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/kra-source-check.yml']
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - run: |
+          python - <<'PY'
+          import urllib.request,time
+          urls=[
+            'https://race.kra.co.kr/chulmainfo/chulmaDetailInfoChulmapyo.do?meet=1&rcNo=1&rcDate=20260912&Act=02&Sub=1',
+            'https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260910&realRcNo=1',
+            'https://race.kra.co.kr/dbdata/textDataList.do?meet=2&fileType=dacom11&fileSearchName=202609&pageIndex=1']
+          for u in urls:
+              start=time.monotonic()
+              try:
+                  req=urllib.request.Request(u,headers={'User-Agent':'Mozilla/5.0','Referer':'https://race.kra.co.kr/'})
+                  with urllib.request.urlopen(req,timeout=12) as r: print(r.status,len(r.read()),round(time.monotonic()-start,1),u,flush=True)
+              except Exception as e:print(type(e).__name__,str(e),round(time.monotonic()-start,1),u,flush=True)
+          PY
