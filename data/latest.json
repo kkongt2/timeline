@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-12T09:12:07+09:00",
+  "updated_at": "2026-09-12T09:14:18+09:00",
   "races": [
     {
       "venue": "jeju",
@@ -48616,7 +48616,7 @@
     "history_v7": {
       "status": "ready",
       "through": "20260911",
-      "added_races": 15
+      "added_races": 0
     },
     "note": "Auto-collected from KRA public race pages; odds may require manual entry."
   }
