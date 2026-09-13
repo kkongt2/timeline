@@ -38,6 +38,18 @@ def publish(races,now):
         if path.stem<floor:path.unlink()
     return [dict(date=date,venues=sorted({r['venue'] for r in cards}),races=len(cards)) for date,cards in sorted(groups.items())]
 
+def publish_saved():
+    """Publish completed history independently of live KRA network availability."""
+    now=datetime.now(ZoneInfo('Asia/Seoul'));path=Path('data/latest.json')
+    doc=json.loads(path.read_text(encoding='utf-8'));races=extend(doc['races'],now)
+    doc['calendar']=publish(races,now)
+    recent=(now-timedelta(days=2)).strftime('%Y%m%d')
+    doc['races']=[r for r in races if r['date']>=recent]
+    doc.setdefault('status',{}).update(browse_from=window_start(now),race_count=len(races),dates=sorted({r['date'] for r in races}))
+    # Keep updated_at unchanged: this operation does not refresh live race data.
+    path.write_text(json.dumps(doc,ensure_ascii=False,indent=2),encoding='utf-8')
+    print('Published calendar:',len(races),'races;',len(doc['calendar']),'days;',sum(r.get('official_result',{}).get('status')=='confirmed' for r in races),'confirmed results',flush=True)
+
 def dividends(block,kind,expected):
     circles={chr(0x2460+i):i+1 for i in range(20)}
     heading=re.search(r'배당률\s+단:',block)
@@ -121,4 +133,6 @@ def bootstrap():
     Path('data/calendar-archive.json').write_text(json.dumps(out,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     print('Archive ready:',len(cards),'races with place and QPL dividends',flush=True)
 
-if __name__=='__main__':bootstrap()
+if __name__=='__main__':
+    if '--publish-only' in sys.argv:publish_saved()
+    else:bootstrap()
