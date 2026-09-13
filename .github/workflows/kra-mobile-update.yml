@@ -24,7 +24,7 @@ env:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 35
     steps:
       - name: Checkout Pages branch
         uses: actions/checkout@v4
@@ -50,7 +50,7 @@ jobs:
       - name: Check historical calendar seed
         id: archive
         run: |
-          if test -f data/calendar-archive.json; then
+          if python -c "import json,sys; from datetime import datetime; from zoneinfo import ZoneInfo; sys.path.insert(0,'scripts'); from calendar_archive import window_start; from pathlib import Path; p=Path('data/calendar-archive.json'); sys.exit(0 if p.exists() and json.loads(p.read_text()).get('from_date','99999999')<=window_start(datetime.now(ZoneInfo('Asia/Seoul'))) else 1)"; then
             echo "missing=false" >> "$GITHUB_OUTPUT"
           else
             echo "missing=true" >> "$GITHUB_OUTPUT"
@@ -74,7 +74,7 @@ jobs:
           key: kra-history-v1-calendar-${{ github.run_id }}
           restore-keys: kra-history-v1-
 
-      - name: Prepare both-market historical calendar
+      - name: Prepare one-year historical calendar
         if: steps.archive.outputs.missing == 'true'
         run: python scripts/calendar_archive.py
 
