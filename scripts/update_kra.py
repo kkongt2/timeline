@@ -498,7 +498,7 @@ def main():
     jockey_stats = {meet: fetch_person_stats("jockey", meet) for meet in MEETS}
     trainer_stats = {meet: fetch_person_stats("trainer", meet) for meet in MEETS}
     tracks = {meet: fetch_track_snapshot(meet) for meet in MEETS}
-    from calendar_archive import window_start, extend
+    from calendar_archive import window_start, extend, publish
     floor=window_start(now);recent_start=dates[0]
     races=[r for (d,_,_),r in previous_map.items() if floor<=d<recent_start]
     errors, debug_race = [], None
@@ -566,9 +566,11 @@ def main():
     print("Refreshing official dividends", flush=True)
     result_status = attach_results([r for r in races if r["date"]>=recent_start], previous_map, now, S, decode_response)
     result_status["confirmed"]+=sum(r["date"]<recent_start and r.get("official_result",{}).get("status")=="confirmed" for r in races)
+    calendar=publish(races,now)
     out = {
         "updated_at": now.isoformat(timespec="seconds"),
-        "races": races,
+        "races": [r for r in races if r['date']>=recent_start],
+        "calendar": calendar,
         "status": {
             "race_count": len(races),
             "error_count": len(errors),

@@ -11,3 +11,6 @@
 .official-result{display:block;margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:.875rem;font-weight:400}.result-label{display:block;color:var(--muted);margin-bottom:4px}.result-line{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 8px}.result-line strong{font-size:.875rem;font-weight:600}.result-pending{display:block;color:var(--muted)}
 
 .auto-record{padding:14px 0;border-top:1px solid var(--line);font-size:.875rem}.auto-record p{margin:6px 0}.auto-record:first-child{border-top:0}
+
+
+.calendar-month-picker{display:flex;align-items:center;gap:12px;margin:0 0 10px;font-size:14px;font-weight:700}.calendar-month-picker select{flex:1;min-width:0}.hit-badge{display:inline-block;align-self:flex-start;width:fit-content;margin:4px 0;padding:3px 7px;border-radius:6px;background:#d8f5e3;color:#146334;font-size:12px;font-weight:800;white-space:nowrap}.official-result .result-hit{background:#e6f8ed;color:#146334;border-radius:4px;padding:3px}.candidate .hit-badge{margin-left:6px}

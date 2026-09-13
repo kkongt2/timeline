@@ -1,21 +1,42 @@
-"""Extend browsing to the previous two full weeks, without forecast backfill."""
+"""Browse a rolling calendar year, with daily files and no forecast backfill."""
 import gzip,json,re,sys
 from collections import defaultdict
 from datetime import datetime,timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-def window_start(now):return (now-timedelta(days=now.weekday()+14)).strftime('%Y%m%d')
+def window_start(now):
+    try:previous=now.replace(year=now.year-1)
+    except ValueError:previous=now.replace(year=now.year-1,day=28)
+    return previous.strftime('%Y%m%d')
 def race_key(r):return (r['date'],r['venue'],int(r['race_no']))
 
 def extend(races,now):
     floor=window_start(now);cutoff=(now-timedelta(days=2)).strftime('%Y%m%d')
     cards={race_key(r):r for r in races if r['date']>=floor}
+    for path in Path('data/calendar').glob('????????.json'):
+        if floor<=path.stem<cutoff:
+            for r in json.loads(path.read_text(encoding='utf-8'))['races']:
+                cards.setdefault(race_key(r),r)
     path=Path('data/calendar-archive.json')
     if path.exists():
         for r in json.loads(path.read_text())['races']:
             if floor<=r['date']<cutoff:cards.setdefault(race_key(r),r)
     return sorted(cards.values(),key=race_key)
+
+def publish(races,now):
+    """Keep initial mobile downloads small; load older cards by selected date."""
+    floor=window_start(now);directory=Path('data/calendar');directory.mkdir(parents=True,exist_ok=True)
+    groups=defaultdict(list)
+    for r in races:
+        if r['date']>=floor:groups[r['date']].append(r)
+    for date,cards in groups.items():
+        path=directory/(date+'.json')
+        content=json.dumps(dict(date=date,races=cards),ensure_ascii=False,separators=(',',':'))
+        if not path.exists() or path.read_text(encoding='utf-8')!=content:path.write_text(content,encoding='utf-8')
+    for path in directory.glob('????????.json'):
+        if path.stem<floor:path.unlink()
+    return [dict(date=date,venues=sorted({r['venue'] for r in cards}),races=len(cards)) for date,cards in sorted(groups.items())]
 
 def dividends(block,kind,expected):
     circles={chr(0x2460+i):i+1 for i in range(20)}
@@ -36,7 +57,7 @@ def dividends(block,kind,expected):
 def bootstrap():
     from itertools import combinations
     sys.path.insert(0,str(Path(__file__).parent/'model-research'))
-    from collect import VENUES
+    from collect import VENUES,get
     from update_kra import parse_card,S,decode_response
     from results_kra import attach_results
     now=datetime.now(ZoneInfo('Asia/Seoul'));floor=window_start(now);cutoff=(now-timedelta(days=2)).strftime('%Y%m%d')
@@ -67,6 +88,9 @@ def bootstrap():
         report=report_index[r['date'],r['venue']];source_key=(report['meet'],r['date'])
         if source_key not in texts:
             p=Path('training/raw')/str(report['meet'])/(r['date']+'.txt.gz')
+            if not p.exists():
+                p.parent.mkdir(parents=True,exist_ok=True)
+                p.write_bytes(gzip.compress(get(report['source']).encode('utf-8'),mtime=0))
             texts[source_key]=gzip.decompress(p.read_bytes()).decode()
         blocks=re.split(r'(?=제목\s*:\s*\d{2,4}년)',texts[source_key])
         matches=[b for b in blocks if (m:=re.search(r'제목\s*:\s*(\d{2,4})년\s*(\d+)월\s*(\d+)일.*?제\s*(\d+)경주',b)) and int(m[4])==r['race_no']]
@@ -89,7 +113,7 @@ def bootstrap():
             if card.get('official_result',{}).get('status')!='confirmed':raise ValueError('Missing historical result '+str(key))
             cards[key]=decorate(card)
     out=dict(from_date=floor,races=sorted(cards.values(),key=race_key))
-    Path('data/calendar-archive.json').write_text(json.dumps(out,ensure_ascii=False,separators=(',',':')))
+    Path('data/calendar-archive.json').write_text(json.dumps(out,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
     print('Archive ready:',len(cards),'races with place and QPL dividends',flush=True)
 
 if __name__=='__main__':bootstrap()
