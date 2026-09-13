@@ -38,11 +38,15 @@ function pickHTML(x,r,type,lead=false){
 }
 function render(){if(!current)return;ranked=analyze(current,$('#mode').value,odds);const r=ranked;$('#analysis').hidden=false;$('#raceTitle').textContent=(names[r.venue]||r.venue_name||'직접 입력')+' '+r.race_no+'R';$('#raceMeta').textContent=[r.date,r.title,manual?'직접 입력 / 데모':''].filter(Boolean).join(' · ');$('#horseCount').textContent=r.horses.length+'두';$('#placeRule').textContent=r.k+'착 이내';$('#modeHelp').textContent=r.mode==='accuracy'?'추정 적중확률 순으로 추천합니다. 배당을 입력해도 순위는 바뀌지 않습니다.':'배당을 입력한 후보를 추정 기대수익률 순으로 정렬합니다. 적중확률은 낮아질 수 있습니다.';const warning=timingReasons(r);$('#raceWarning').hidden=!warning.length;$('#raceWarning').textContent=warning.join(' · ');$('#placeLead').innerHTML=pickHTML(r.places[0],r,'place',true);$('#pairLead').innerHTML=pickHTML(r.pairs[0],r,'pair',true);$('#placeList').innerHTML=r.places.slice(1,5).map(x=>pickHTML(x,r,'place')).join('');$('#pairList').innerHTML=r.pairs.slice(1,5).map(x=>pickHTML(x,r,'pair')).join('');$('#horses').innerHTML=r.horses.map(h=>`<div class="horse"><strong>${h.number} ${esc(h.name)} · ${probabilityHTML(h.prob)}</strong><p class="hint">${h.reasons.map(esc).join(' · ')}</p><p class="hint">레이팅 ${esc(h.rating??'—')} · 부담 ${esc(h.burden??'—')}kg · 마체중 ${esc(h.horse_weight??'미발표')} · 데이터 ${Math.round(h.quality*100)}%</p></div>`).join('');$('#savePrediction').disabled=manual||!Number.isFinite(start(r))||start(r)<=Date.now()||warning.length>0;renderOverview();}
 function select(r,isManual=false){current=r;manual=isManual;odds={place:{},qpl:{}};$('#placeOdds').value='';$('#pairOdds').value='';if(names[r.venue])setVenue(r.venue);const d=String(r.date||'');if(/^\d{8}$/.test(d))$('#date').value=d.slice(0,4)+'-'+d.slice(4,6)+'-'+d.slice(6,8);if(r.race_no)$('#raceNo').value=r.race_no;$('#saveStatus').textContent='경주·추천 기준별 최초 기록을 보존합니다.';renderSelectors();render();}
+async function fetchJSON(url){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);
+ try{const res=await fetch(url,{cache:'no-store',signal:controller.signal});if(!res.ok)throw Error('HTTP '+res.status);return await res.json();}finally{clearTimeout(timer);}
+}
 async function fetchLiveDocument(){
  // Workflow commits do not rebuild branch-based Pages. Read the live data branch directly.
  const stamp=Date.now(),urls=['https://raw.githubusercontent.com/kkongt2/timeline/kra-mobile-pages/data/latest.json?t='+stamp,'data/latest.json?t='+stamp];
  let last;
- for(const url of urls){try{const res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);const doc=await res.json();if(!Array.isArray(doc.races))throw Error('데이터 형식 오류');return doc;}catch(e){last=e;}}
+ for(const url of urls){try{const doc=await fetchJSON(url);if(!Array.isArray(doc.races))throw Error('데이터 형식 오류');return doc;}catch(e){last=e;}}
  throw last;
 }
 async function load(){const id=++requestId;$('#dataStatus').textContent='경주 정보를 확인하는 중…';try{const doc=await fetchLiveDocument();if(id!==requestId)return false;source=doc;races=doc.races;$('#dataStatus').textContent=`갱신 ${doc.updated_at?.replace('T',' ').slice(0,16)||'시각 미확인'} · ${races.length}개 경주`;return true}catch(e){if(id===requestId)$('#dataStatus').textContent='불러오기 실패 · 새로고침을 눌러 다시 시도하세요.';return false}}
@@ -131,7 +135,7 @@ function renderAdvancedReport(){
 }
 async function fetchPublicJSON(path){
  for(const url of ['https://raw.githubusercontent.com/kkongt2/timeline/kra-mobile-pages/'+path,path]){
-  try{const res=await fetch(url+'?t='+Date.now(),{cache:'no-store'});if(res.ok)return await res.json();}catch{}
+  try{return await fetchJSON(url+'?t='+Date.now());}catch{}
  }
  throw Error('불러오기 실패');
 }

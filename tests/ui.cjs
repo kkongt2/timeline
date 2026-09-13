@@ -12,6 +12,7 @@ const nodes={},venues=['seoul','busan','jeju'].map(venue=>({dataset:{venue},clas
 function node(){return {textContent:'',innerHTML:'',value:'',hidden:false,disabled:false,dataset:{},classList:{toggle(){}},setAttribute(){},addEventListener(type,f){this[type]=f},insertAdjacentHTML(){},focus(){}}}
 const html=fs.readFileSync(root+'index.html','utf8');for(const m of html.matchAll(/id="([^"]+)"/g))nodes['#'+m[1]]=node();nodes['#mode'].value='accuracy';
 const storage=new Map(),sandbox={console,Intl,Date,Math,Number,Set,JSON,Array,String,Error,Infinity,localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},document:{querySelector:s=>{assert(nodes[s],'Missing DOM '+s);return nodes[s]},querySelectorAll:()=>venues},fetch:async()=>({ok:true,json:async()=>doc}),alert:m=>{throw Error(m)}};
+sandbox.AbortController=AbortController;sandbox.setTimeout=setTimeout;sandbox.clearTimeout=clearTimeout;
 vm.createContext(sandbox);vm.runInContext(fs.readFileSync(root+'model.js','utf8'),sandbox);vm.runInContext(fs.readFileSync(root+'app.js','utf8'),sandbox);
 (async()=>{await new Promise(setImmediate);nodes['#demoBtn'].onclick();assert(nodes['#placeLead'].innerHTML.includes('직접 입력 / 데모'));assert(nodes['#savePrediction'].disabled);
 const future={...r,date:'20990101',start_time:'12:00'};sandbox.fixture=future;vm.runInContext('source={updated_at:new Date().toISOString()};select(fixture);save();save();',sandbox);assert.equal(JSON.parse(storage.values().next().value).length,1);
@@ -52,4 +53,3 @@ assert.equal(vm.runInContext('venue',sandbox),'jeju');assert.equal(vm.runInConte
 console.log('PASS lazy historical loading, stale request protection, exact payout hit/miss/refund checks');
 console.log('PASS one-click race/date selection, month boundary, region-specific days, automatic valid selection, empty venue');
 console.log('PASS: probability normalization, small-field pairs, '+doc.races.length+' live race cards, partial odds ordering, DOM bindings, demo exclusion, duplicate records, separate modes, past/stale recording guards');})().catch(e=>{console.error(e);process.exitCode=1});
-
