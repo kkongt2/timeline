@@ -81,6 +81,19 @@ jobs:
       - name: Verify historical calendar
         run: python -m unittest discover -s tests -p 'test_calendar_archive.py'
 
+      - name: Publish prepared historical calendar
+        if: steps.archive.outputs.missing == 'true'
+        run: |
+          python scripts/calendar_archive.py --publish-only
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish one-year race calendar"
+            git pull --rebase origin kra-mobile-pages
+            git push origin HEAD:kra-mobile-pages
+          fi
+
       - name: Collect KRA race cards
         run: python scripts/update_kra.py
 
