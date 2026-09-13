@@ -99,8 +99,14 @@ def bootstrap():
         card={k:r[k] for k in ['date','venue','race_no','distance','grade']};card['start_time']=''
         card['horses']=[{k:h[k] for k in ['number','name','age','sex','rating','burden','jockey','trainer','horse_weight','horse_weight_change'] if k in h} for h in sorted(r['horses'],key=lambda h:h['number'])]
         winners=[h['number'] for h in sorted(r['horses'],key=lambda h:h['finish'])[:3]]
-        card['official_result']=dict(status='confirmed',version=2,source=report['source'],checked_at=now.isoformat(timespec='seconds'),starters=[h['number'] for h in card['horses']],
-            place=dividends(block,'place',[(n,) for n in r['place_winners']]),pair=dividends(block,'pair',[tuple(sorted(p)) for p in combinations(winners,2)]))
+        try:
+            card['official_result']=dict(status='confirmed',version=2,source=report['source'],checked_at=now.isoformat(timespec='seconds'),starters=[h['number'] for h in card['horses']],
+                place=dividends(block,'place',[(n,) for n in r['place_winners']]),pair=dividends(block,'pair',[tuple(sorted(p)) for p in combinations(winners,2)]))
+        except ValueError as exc:
+            # Older report formats and exceptional settlements must be checked
+            # against the official result page, never guessed from finishing order.
+            print('Checking official result:',race_key(card),str(exc),flush=True)
+            attach_results([card],{},now,S,decode_response)
         cards[race_key(card)]=decorate(card)
     for report in manifest['reports']:
         if not floor<=report['date']<cutoff:continue
@@ -110,7 +116,6 @@ def bootstrap():
             card,_=parse_card(report['date'],rn,report['meet'])
             if not card:raise ValueError('Missing historical card '+str(key))
             attach_results([card],{},now,S,decode_response)
-            if card.get('official_result',{}).get('status')!='confirmed':raise ValueError('Missing historical result '+str(key))
             cards[key]=decorate(card)
     out=dict(from_date=floor,races=sorted(cards.values(),key=race_key))
     Path('data/calendar-archive.json').write_text(json.dumps(out,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
