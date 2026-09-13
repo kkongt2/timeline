@@ -45,8 +45,9 @@ async function fetchJSON(url){
 async function fetchLiveDocument(){
  // Workflow commits do not rebuild branch-based Pages. Read the live data branch directly.
  const stamp=Date.now(),urls=['https://raw.githubusercontent.com/kkongt2/timeline/kra-mobile-pages/data/latest.json?t='+stamp,'data/latest.json?t='+stamp];
- let last;
- for(const url of urls){try{const doc=await fetchJSON(url);if(!Array.isArray(doc.races))throw Error('데이터 형식 오류');return doc;}catch(e){last=e;}}
+ let last,legacy;
+ for(const url of urls){try{const doc=await fetchJSON(url);if(!Array.isArray(doc.races))throw Error('데이터 형식 오류');if(!Array.isArray(doc.calendar)){legacy=doc;continue;}return doc;}catch(e){last=e;}}
+ if(legacy)return legacy;
  throw last;
 }
 async function load(){const id=++requestId;$('#dataStatus').textContent='경주 정보를 확인하는 중…';try{const doc=await fetchLiveDocument();if(id!==requestId)return false;source=doc;races=doc.races;$('#dataStatus').textContent=`갱신 ${doc.updated_at?.replace('T',' ').slice(0,16)||'시각 미확인'} · ${races.length}개 경주`;return true}catch(e){if(id===requestId)$('#dataStatus').textContent='불러오기 실패 · 새로고침을 눌러 다시 시도하세요.';return false}}
