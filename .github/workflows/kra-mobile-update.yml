@@ -68,7 +68,6 @@ jobs:
           persist-credentials: false
 
       - uses: actions/cache/restore@v4
-        if: steps.archive.outputs.missing == 'true'
         with:
           path: training/raw
           key: kra-history-v1-calendar-${{ github.run_id }}
@@ -90,6 +89,19 @@ jobs:
           git add data
           if ! git diff --cached --quiet; then
             git commit -m "Publish one-year race calendar"
+            git pull --rebase origin kra-mobile-pages
+            git push origin HEAD:kra-mobile-pages
+          fi
+
+      - name: Collect archived place odds
+        run: |
+          python -m unittest discover -s tests -p 'test_market_odds.py'
+          python scripts/market_odds.py
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market-odds data/market-odds-status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update archived non-winning place odds"
             git pull --rebase origin kra-mobile-pages
             git push origin HEAD:kra-mobile-pages
           fi
