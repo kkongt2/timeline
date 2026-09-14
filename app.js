@@ -4,6 +4,32 @@ const pct=x=>(x*100).toFixed(1)+'%',names={seoul:'서울',busan:'부경',jeju:'�
 let races=[],source=null,current=null,ranked=null,venue='seoul',odds={place:{},qpl:{}},manual=false,requestId=0,advancedReport=null;
 const day=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 let selectionRequest=0;
+const expandedResults=new Set(),marketOddsCache=new Map(),loadedMarketOdds=new Map();
+function resultKey(r,type,scope){return [scope,r.date,r.venue,r.race_no,type].join('-');}
+function nonWinningHTML(r,type,markets){
+ markets=markets||loadedMarketOdds.get(r.date)?.races?.[r.venue+':'+r.race_no];
+ const market=r.official_result?.[type],field=[...new Set((r.official_result?.starters||r.horses.map(h=>h.number)).map(Number))].sort((a,b)=>a-b);
+ const combinations=type==='place'?field.map(n=>[n]):field.flatMap((n,i)=>field.slice(i+1).map(m=>[n,m]));
+ const losers=combinations.filter(ns=>!matchingPayout(market,ns));
+ const quotes=markets?.[type]?.quotes||[],key=ns=>ns.map(Number).sort((a,b)=>a-b).join('-');
+ const priceMap=new Map(quotes.map(q=>[key(q.numbers),q.odds]));
+ return '<span class="all-odds-note">미당첨 '+(type==='place'?'말':'조합')+' · 성적표 배당'+(type==='pair'?' · 미당첨 배당 자료는 현재 확보되지 않았습니다.':' · 실제 환급 배당이 아닙니다.')+'</span>'+losers.map(ns=>{const value=priceMap.get(key(ns));return '<span class="result-line non-winning-line"><strong>'+ns.join('–')+(type==='place'?'번':'')+'</strong><span>'+(Number.isFinite(value)&&value>=1?value.toFixed(1)+'배':'배당 자료 없음')+'</span></span>';}).join('');
+}
+function toggleResults(e){
+ const button=e.target.closest('button[data-result-toggle]');if(!button)return false;
+ e.preventDefault();e.stopPropagation();const key=button.dataset.resultToggle,panel=$('#'+key),isOpen=expandedResults.has(key);
+ if(isOpen)expandedResults.delete(key);else expandedResults.add(key);
+ button.setAttribute('aria-expanded',String(!isOpen));button.textContent=isOpen?'미당첨 배당 모두 보기 ▾':'미당첨 배당 접기 ▴';panel.hidden=isOpen;
+ if(!isOpen){
+  const card=races.find(r=>r.date===button.dataset.resultDate&&r.venue===button.dataset.resultVenue&&String(r.race_no)===button.dataset.resultRace)||current;
+  if(!card)return true;
+  const date=card.date,type=button.dataset.resultType;
+  if(!marketOddsCache.has(date))marketOddsCache.set(date,fetchPublicJSON('data/market-odds/'+date+'.json').then(doc=>{if(doc.date!==date||doc.schema!==1)throw Error('배당 날짜 확인 필요');loadedMarketOdds.set(date,doc);return doc;}).catch(()=>{marketOddsCache.delete(date);return null;}));
+  panel.innerHTML='<span class="result-pending">배당 자료를 불러오는 중…</span>';
+  marketOddsCache.get(date).then(doc=>{const visible=$('#'+key);if(visible&&expandedResults.has(key))visible.innerHTML=nonWinningHTML(card,type,doc?.races?.[card.venue+':'+card.race_no]);});
+ }
+ return true;
+}
 function browseFrom(){const d=day().split('-').map(Number),last=new Date(Date.UTC(d[0]-1,d[1],0)).getUTCDate();return String(d[0]-1)+String(d[1]).padStart(2,'0')+String(Math.min(d[2],last)).padStart(2,'0');}
 function matchingPayout(market,numbers){const key=a=>a.map(Number).sort((a,b)=>a-b).join('-');return market?.status==='confirmed'&&Array.isArray(numbers)&&market.payouts?.find(p=>key(p.numbers)===key(numbers));}
 function hitHTML(r,type,numbers){return matchingPayout(r.official_result?.[type],numbers)?'<span class="hit-badge">✓ 적중</span>':'';}
@@ -16,13 +42,14 @@ function put(a){try{localStorage.setItem(KEY,JSON.stringify(a));return true}catc
 function timingReasons(r){const why=[];if(String(r.date)<day().replaceAll('-',''))why.push('지난 경주 조회 · '+(r.calendar_archive?'경주일 이전 이력으로':'현재 정보로')+' 재계산한 후보');else if(!Number.isFinite(start(r)))why.push('출발 시각 확인 필요');else if(start(r)<=Date.now())why.push(String(r.date)<day().replaceAll('-','')?'지난 경주 조회 · 현재 정보로 재계산한 후보':'이미 출발한 경주');if(!manual&&(!source?.updated_at||Date.now()-Date.parse(source.updated_at)>30*60000||!Number.isFinite(Date.parse(source.updated_at))))why.push('갱신 후 30분 경과 · 최신 출전정보 확인 필요');return why;}
 function why(r,x,type){return [...candidateReasons(r,x,type),...timingReasons(r),...(manual?['직접 입력 / 데모']:[])];}
 function isSelected(r,type){return !manual&&r.mode==='accuracy'&&r.selection?.[type]?.qualified===true&&timingReasons(r).length===0;}
-function officialResultHTML(r,type,numbers){
+function officialResultHTML(r,type,numbers,scope='lead'){
  if(String(r.date)>=day().replaceAll('-','')&&(!Number.isFinite(start(r))||start(r)>Date.now()))return '';
  const result=r.official_result,market=result?.[type];
  const title='<span class="result-label">실제 결과 · 확정 배당</span>';
  if(market?.status==='confirmed'&&market.payouts?.length){
   const hit=matchingPayout(market,numbers);
-  return '<span class="official-result">'+title+market.payouts.map(x=>'<span class="result-line'+(x===hit?' result-hit':'')+'"><strong>'+x.numbers.map(n=>esc(n)).join('–')+(type==='place'?'번':'')+'</strong><span>'+Number(x.odds).toFixed(1)+'배</span></span>').join('')+'</span>';
+  const key=resultKey(r,type,scope),open=expandedResults.has(key);
+  return '<span class="official-result">'+title+market.payouts.map(x=>'<span class="result-line'+(x===hit?' result-hit':'')+'"><strong>'+x.numbers.map(n=>esc(n)).join('–')+(type==='place'?'번':'')+'</strong><span>'+Number(x.odds).toFixed(1)+'배</span></span>').join('')+'<button type="button" class="result-toggle" data-result-toggle="'+key+'" data-result-date="'+esc(r.date)+'" data-result-venue="'+esc(r.venue)+'" data-result-race="'+Number(r.race_no)+'" data-result-type="'+type+'" aria-controls="'+key+'" aria-expanded="'+open+'">'+(open?'미당첨 배당 접기 ▴':'미당첨 배당 모두 보기 ▾')+'</button><span class="non-winning-odds" id="'+key+'"'+(open?'':' hidden')+'>'+nonWinningHTML(r,type)+'</span></span>';
  }
  return '<span class="official-result">'+title+'<span class="result-pending">'+(market?.status==='refunded'?'환불':result?.status==='unavailable'?'결과 불러오기 대기':'공식 결과 확인 중')+'</span></span>';
 }
@@ -66,14 +93,15 @@ function renderOverview(){
    const r=analyze(card,'accuracy'),fresh=timingReasons(r).length===0;
    const has=kind=>fresh&&r.selection?.[kind]?.qualified;
    if(has('place')||has('pair'))selected++;
-   const cell=kind=>{const x=kind==='place'?r.places[0]:r.pairs[0];return '<span><small>'+(kind==='place'?'연승':'복연승')+'</small><b>'+x.numbers.join(' – ')+'</b>'+hitHTML(card,kind,x.numbers)+'<small>'+probabilityHTML(x.prob)+'</small>'+(has(kind)?'<small class="selected-tag">선별 '+r.selectivePicks[kind].numbers.join('–')+'</small>':'')+officialResultHTML(card,kind,x.numbers)+'</span>'};
-   return '<button type="button" class="overview-row '+(!manual&&current?.date===r.date&&+current?.race_no===+r.race_no?'active':'')+'" data-overview-race="'+Number(r.race_no)+'"><span><b>'+Number(r.race_no)+'R</b><small>'+esc(r.start_time||'')+'</small></span>'+cell('place')+cell('pair')+'</button>';
+   const cell=kind=>{const x=kind==='place'?r.places[0]:r.pairs[0];return '<span><small>'+(kind==='place'?'연승':'복연승')+'</small><b>'+x.numbers.join(' – ')+'</b>'+hitHTML(card,kind,x.numbers)+'<small>'+probabilityHTML(x.prob)+'</small>'+(has(kind)?'<small class="selected-tag">선별 '+r.selectivePicks[kind].numbers.join('–')+'</small>':'')+officialResultHTML(card,kind,x.numbers,'overview')+'</span>'};
+   return '<div class="overview-row '+(!manual&&current?.date===r.date&&+current?.race_no===+r.race_no?'active':'')+'" data-overview-race="'+Number(r.race_no)+'"><button type="button" class="overview-select" data-overview-race="'+Number(r.race_no)+'" aria-label="'+Number(r.race_no)+'경주 선택"><b>'+Number(r.race_no)+'R</b><small>'+esc(r.start_time||'')+'</small></button>'+cell('place')+cell('pair')+'</div>';
   }catch{return '<p class="hint">'+Number(card.race_no)+'R · 출전정보 확인 필요</p>'}
  }).join('');
  const enabled=['place','pair'].some(k=>advancedReport?.policies?.[k]?.approved);
  $('#overviewStatus').textContent='전체 '+list.length+'경주 · 선별 '+selected+'경주'+(enabled?' · 최신 정보가 확인된 출발 전 경주만 선별 표시':' · 검증을 통과한 선별 기준이 아직 없어 일반 후보만 표시');
 }
-$('#raceOverview').addEventListener('click',e=>{const b=e.target.closest('button[data-overview-race]');if(!b)return;const r=dateRaces($('#date').value.replaceAll('-','')).find(x=>+x.race_no===+b.dataset.overviewRace);if(r)select(r);});
+$('#analysis').addEventListener('click',toggleResults);
+$('#raceOverview').addEventListener('click',e=>{if(toggleResults(e))return;if(e.target.closest('.non-winning-odds'))return;const b=e.target.closest('[data-overview-race]');if(!b)return;const r=dateRaces($('#date').value.replaceAll('-','')).find(x=>+x.race_no===+b.dataset.overviewRace);if(r)select(r);});
 function renderSelectors(){
  const allDates=venueDates(),selected=$('#date').value.replaceAll('-',''),months=[...new Set(allDates.map(d=>d.slice(0,6)))].reverse();
  const selectedMonth=selected.slice(0,6)||months[0]||'';

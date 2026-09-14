@@ -26,7 +26,7 @@ nodes['#raceButtons'].click({target:{closest:()=>({dataset:{race:'2'}})}});asser
 nodes['#calendarMonth'].value='203002';nodes['#calendarMonth'].onchange();assert.equal(vm.runInContext('current.race_no',sandbox),3);assert.equal(nodes['#date'].value,'2030-02-01');
 venues[1].onclick();assert.equal(nodes['#date'].value,'2030-02-02');assert.equal(vm.runInContext('current.race_no',sandbox),5);assert(!nodes['#dateCalendar'].innerHTML.includes('20300131'));
 venues[2].onclick();assert(nodes['#analysis'].hidden);assert.equal(nodes['#date'].value,'');assert(!nodes['#raceButtons'].innerHTML.includes('data-race='));
-nodes['#raceOverview'].click({target:{closest:()=>({dataset:{overviewRace:'5'}})}});
+nodes['#raceOverview'].click({target:{closest:selector=>selector==='[data-overview-race]'?({dataset:{overviewRace:'5'}}):null}});
 sandbox.archiveFixture={...r,date:'20000101',start_time:'',historical_view:true,official_result:{status:'confirmed',place:{status:'confirmed',payouts:[{numbers:[1],odds:1.5}]},pair:{status:'confirmed',payouts:[{numbers:[1,2],odds:3.2}]}}};
 vm.runInContext('select(archiveFixture)',sandbox);assert(nodes['#placeLead'].innerHTML.includes('1.5배'));assert(nodes['#pairLead'].innerHTML.includes('3.2배'));assert(nodes['#savePrediction'].disabled);
 sandbox.marketFixture={status:'confirmed',payouts:[{numbers:[2,1],odds:3.2}]};
@@ -37,6 +37,23 @@ assert.equal(vm.runInContext('Boolean(matchingPayout({...marketFixture,status:"r
 assert(vm.runInContext('hitHTML(archiveFixture,"place",[1])',sandbox).includes('✓ 적중'));
 assert.equal(vm.runInContext('hitHTML(archiveFixture,"place",[2])',sandbox),'');
 assert(vm.runInContext('officialResultHTML(archiveFixture,"pair",[2,1])',sandbox).includes('result-hit'));
+// Expand only losers, with archived prices separate from settled payouts.
+sandbox.oddsFixture={...r,date:'20260913',venue:'seoul',race_no:1,official_result:{status:'confirmed',starters:[1,2,3,4],place:{status:'confirmed',payouts:[{numbers:[1],odds:1.2},{numbers:[2],odds:1.3}]},pair:{status:'confirmed',payouts:[{numbers:[1,2],odds:2.0}]}}};
+sandbox.oddsDocument={schema:1,date:'20260913',races:{'seoul:1':{place:{quotes:[{numbers:[3],odds:2.7}]},pair:{quotes:[],status:'unavailable'}}}};
+const loserHTML=vm.runInContext('nonWinningHTML(oddsFixture,"place",oddsDocument.races["seoul:1"])',sandbox);
+assert(loserHTML.includes('3번')&&loserHTML.includes('2.7배')&&loserHTML.includes('4번')&&loserHTML.includes('배당 자료 없음'));
+assert(!loserHTML.includes('1번')&&!loserHTML.includes('2번'));
+assert.equal((vm.runInContext('nonWinningHTML(oddsFixture,"pair")',sandbox).match(/non-winning-line/g)||[]).length,5);
+assert(vm.runInContext('officialResultHTML(oddsFixture,"place",[1])',sandbox).includes('aria-expanded="false"'));
+const panelKey='lead-20260913-seoul-1-place';nodes['#'+panelKey]=node();nodes['#'+panelKey].hidden=true;
+const toggle={dataset:{resultToggle:panelKey,resultDate:'20260913',resultVenue:'seoul',resultRace:'1',resultType:'place'},setAttribute(k,v){this[k]=v}};
+sandbox.fetch=async()=>({ok:true,json:async()=>sandbox.oddsDocument});
+vm.runInContext('current=oddsFixture;races=[oddsFixture]',sandbox);
+const toggleEvent={target:{closest:s=>s==='button[data-result-toggle]'?toggle:null},preventDefault(){},stopPropagation(){}};
+nodes['#analysis'].click(toggleEvent);await new Promise(setImmediate);
+assert.equal(toggle['aria-expanded'],'true');assert.equal(nodes['#'+panelKey].hidden,false);assert(nodes['#'+panelKey].innerHTML.includes('2.7배'));
+nodes['#raceOverview'].click(toggleEvent);assert.equal(toggle['aria-expanded'],'false');assert.equal(nodes['#'+panelKey].hidden,true);
+console.log('PASS default collapse, expand/collapse, exact loser combinations, unavailable prices, and nested control isolation');
 // A date present only in the calendar index is retrieved on selection.
 sandbox.fetch=async()=>({ok:true,json:async()=>({date:'20300101',races:[{...r,date:'20300101',venue:'seoul',race_no:7}]})});
 vm.runInContext('races=[];source={calendar:[{date:"20300101",venues:["seoul"]}]};setVenue("seoul");$("#date").value="2030-01-01";',sandbox);
