@@ -46,7 +46,11 @@ def run():
                 if not cache.exists():
                     if not source:
                         key=(meet,date[:6])
-                        if key not in catalogs:catalogs[key]=catalog(key)
+                        if key not in catalogs:
+                            # Training caches stop at the original collection date.
+                            # Refresh a missing report's month before declaring it absent.
+                            for listing in Path('training/raw/catalog').glob(f'{meet}-{date[:6]}-*.txt.gz'):listing.unlink()
+                            catalogs[key]=catalog(key)
                         source=next((url for _,url in catalogs[key] if re.search(r'(20\d{6})[^/]*\.(?:rpt|txt)',url)[1]==date),None)
                     if not source:raise ValueError('Daily report not available yet')
                     cache.parent.mkdir(parents=True,exist_ok=True);cache.write_bytes(gzip.compress(get(source).encode('utf-8'),mtime=0))
