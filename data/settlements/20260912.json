@@ -189,7 +189,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=2",
-    "checked_at": "2026-09-14T01:24:48+09:00"
+    "checked_at": "2026-09-14T13:41:34+09:00"
   },
   "20260912:jeju:1": {
     "status": "confirmed",
@@ -247,7 +247,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=1",
-    "checked_at": "2026-09-14T01:24:48+09:00"
+    "checked_at": "2026-09-14T13:41:34+09:00"
   },
   "20260912:jeju:3": {
     "status": "confirmed",

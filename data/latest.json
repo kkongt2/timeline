@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-14T09:15:54+09:00",
+  "updated_at": "2026-09-14T13:41:34+09:00",
   "races": [
     {
       "venue": "jeju",
@@ -272,7 +272,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=1",
-        "checked_at": "2026-09-14T01:24:48+09:00"
+        "checked_at": "2026-09-14T13:41:34+09:00"
       }
     },
     {
@@ -544,7 +544,7 @@
         },
         "version": 2,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260912&realRcNo=2",
-        "checked_at": "2026-09-14T01:24:48+09:00"
+        "checked_at": "2026-09-14T13:41:34+09:00"
       }
     },
     {
@@ -11385,9 +11385,9 @@
       "added_races": 0
     },
     "results": {
-      "confirmed": 2498,
+      "confirmed": 2500,
       "pending": 0,
-      "errors": 2
+      "errors": 0
     },
     "history_v7": {
       "status": "ready",
