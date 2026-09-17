@@ -63,7 +63,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=1",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:2": {
     "status": "confirmed",
@@ -130,7 +130,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=2",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:3": {
     "status": "confirmed",
@@ -197,7 +197,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=3",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:4": {
     "status": "confirmed",
@@ -264,7 +264,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=4",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:5": {
     "status": "confirmed",
@@ -331,7 +331,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=5",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:6": {
     "status": "confirmed",
@@ -396,7 +396,7 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=6",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:7": {
     "status": "confirmed",
@@ -462,10 +462,73 @@
     },
     "version": 2,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=7",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "checked_at": "2026-09-18T02:16:45+09:00"
   },
   "20260917:jeju:8": {
-    "status": "unavailable",
-    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=8"
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            2
+          ],
+          "odds": 1.2
+        },
+        {
+          "numbers": [
+            3
+          ],
+          "odds": 3.7
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 1.5
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            2,
+            3
+          ],
+          "odds": 7
+        },
+        {
+          "numbers": [
+            2,
+            9
+          ],
+          "odds": 1.9
+        },
+        {
+          "numbers": [
+            3,
+            9
+          ],
+          "odds": 6.9
+        }
+      ]
+    },
+    "version": 2,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=8",
+    "checked_at": "2026-09-18T02:16:45+09:00"
   }
 }
