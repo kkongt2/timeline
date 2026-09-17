@@ -465,9 +465,7 @@
     "checked_at": "2026-09-17T16:33:49+09:00"
   },
   "20260917:jeju:8": {
-    "status": "pending",
-    "version": 2,
-    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=8",
-    "checked_at": "2026-09-17T16:33:49+09:00"
+    "status": "unavailable",
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20260917&realRcNo=8"
   }
 }
