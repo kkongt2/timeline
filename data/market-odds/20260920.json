@@ -1,1 +1,1 @@
-{"schema":1,"date":"20260920","races":{}}
+{"schema":1,"date":"20260920","races":{"seoul:1":{"place":{"quotes":[{"numbers":[6],"odds":1.1},{"numbers":[2],"odds":1.6},{"numbers":[10],"odds":2.4},{"numbers":[5],"odds":3.1},{"numbers":[11],"odds":5.1},{"numbers":[8],"odds":1.9},{"numbers":[1],"odds":20.7},{"numbers":[7],"odds":8.2},{"numbers":[4],"odds":2.1},{"numbers":[9],"odds":11.0}]},"pair":{"quotes":[],"status":"unavailable"},"source":"https://race.kra.co.kr/dbdata/fileDownLoad.do?fn=chollian/seoul/jungbo/rcresult/20260920dacom11.rpt&meet=1"}}}
