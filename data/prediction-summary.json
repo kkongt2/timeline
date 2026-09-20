@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated_at": "2026-09-19T14:44:52.337Z",
+  "updated_at": "2026-09-20T01:58:01.274Z",
   "window": {
     "min_minutes": 15,
     "max_minutes": 90
   },
-  "recorded_races": 21,
+  "recorded_races": 23,
   "paired": [
     {
       "id": "place:9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
@@ -33,10 +33,10 @@
       "kind": "place",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 21,
+      "recorded": 23,
       "settled": 21,
       "hits": 13,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 4.9996342336455495,
       "hit_rate": 0.6190476190476191,
@@ -48,10 +48,10 @@
       "kind": "pair",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 21,
+      "recorded": 23,
       "settled": 21,
       "hits": 2,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 2.268609778564664,
       "hit_rate": 0.09523809523809523,
@@ -63,10 +63,10 @@
       "kind": "place",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 21,
+      "recorded": 23,
       "settled": 21,
       "hits": 15,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 4.0548984977642695,
       "hit_rate": 0.7142857142857143,
@@ -78,10 +78,10 @@
       "kind": "pair",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 21,
+      "recorded": 23,
       "settled": 21,
       "hits": 5,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 3.3984059954554424,
       "hit_rate": 0.23809523809523808,
@@ -104,6 +104,92 @@
     }
   ],
   "recent": [
+    {
+      "id": "20260920:seoul:3",
+      "date": "20260920",
+      "venue": "seoul",
+      "race_no": 3,
+      "saved_at": "2026-09-20T01:58:01.274Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              1
+            ],
+            "prob": 0.5350581356632366,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              1,
+              5
+            ],
+            "prob": 0.23660397780529327,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              6
+            ],
+            "prob": 0.37070829379241527,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              6,
+              7
+            ],
+            "prob": 0.11577686487851394,
+            "status": "pending"
+          }
+        }
+      }
+    },
+    {
+      "id": "20260920:seoul:4",
+      "date": "20260920",
+      "venue": "seoul",
+      "race_no": 4,
+      "saved_at": "2026-09-20T01:58:01.274Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              5
+            ],
+            "prob": 0.46235182766823213,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              5,
+              8
+            ],
+            "prob": 0.16349395157573557,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              5
+            ],
+            "prob": 0.5060393730327885,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              5
+            ],
+            "prob": 0.1429239463592677,
+            "status": "pending"
+          }
+        }
+      }
+    },
     {
       "id": "20260919:jeju:7",
       "date": "20260919",

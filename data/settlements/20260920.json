@@ -1,0 +1,69 @@
+{
+  "20260920:seoul:1": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            6
+          ],
+          "odds": 1.1
+        },
+        {
+          "numbers": [
+            2
+          ],
+          "odds": 1.6
+        },
+        {
+          "numbers": [
+            10
+          ],
+          "odds": 2.4
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            2,
+            6
+          ],
+          "odds": 2
+        },
+        {
+          "numbers": [
+            6,
+            10
+          ],
+          "odds": 3.6
+        },
+        {
+          "numbers": [
+            2,
+            10
+          ],
+          "odds": 7.2
+        }
+      ]
+    },
+    "version": 2,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20260920&realRcNo=1",
+    "checked_at": "2026-09-20T10:57:10+09:00"
+  }
+}
