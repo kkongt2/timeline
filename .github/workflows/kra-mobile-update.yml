@@ -45,7 +45,9 @@ jobs:
         run: python -m pip install --disable-pip-version-check requests beautifulsoup4 charset-normalizer
 
       - name: Validate collector
-        run: python -m py_compile scripts/update_kra.py
+        run: |
+          python -m py_compile scripts/update_kra.py scripts/results_kra.py
+          python -m unittest discover -s tests -p 'test_results.py'
 
       - name: Check historical calendar seed
         id: archive
