@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-09-27T22:51:30+09:00",
+  "updated_at": "2026-09-28T14:10:19+09:00",
   "races": [],
   "calendar": [
-    {
-      "date": "20250927",
-      "venues": [
-        "jeju",
-        "seoul"
-      ],
-      "races": 18
-    },
     {
       "date": "20250928",
       "venues": [
@@ -1197,10 +1189,9 @@
     }
   ],
   "status": {
-    "race_count": 2468,
+    "race_count": 2450,
     "error_count": 0,
     "dates": [
-      "20250927",
       "20250928",
       "20251002",
       "20251003",
@@ -1351,7 +1342,7 @@
       "20260919",
       "20260920"
     ],
-    "browse_from": "20250927",
+    "browse_from": "20250928",
     "history": {
       "status": "ready",
       "through": "20260920",
@@ -1359,7 +1350,7 @@
       "excluded": 0
     },
     "results": {
-      "confirmed": 2468,
+      "confirmed": 2450,
       "pending": 0,
       "errors": 0
     },
