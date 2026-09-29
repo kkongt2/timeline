@@ -1,15 +1,7 @@
 {
-  "updated_at": "2026-09-28T14:10:19+09:00",
+  "updated_at": "2026-09-29T14:33:13+09:00",
   "races": [],
   "calendar": [
-    {
-      "date": "20250928",
-      "venues": [
-        "busan",
-        "seoul"
-      ],
-      "races": 17
-    },
     {
       "date": "20251002",
       "venues": [
@@ -1189,10 +1181,9 @@
     }
   ],
   "status": {
-    "race_count": 2450,
+    "race_count": 2433,
     "error_count": 0,
     "dates": [
-      "20250928",
       "20251002",
       "20251003",
       "20251004",
@@ -1342,7 +1333,7 @@
       "20260919",
       "20260920"
     ],
-    "browse_from": "20250928",
+    "browse_from": "20250929",
     "history": {
       "status": "ready",
       "through": "20260920",
@@ -1350,7 +1341,7 @@
       "excluded": 0
     },
     "results": {
-      "confirmed": 2450,
+      "confirmed": 2433,
       "pending": 0,
       "errors": 0
     },
