@@ -475,6 +475,16 @@ def enrich_weight(race, date, rc_no, meet, debug):
     except Exception as e:
         debug["weight_error"] = repr(e)
 
+def collection_dates(now):
+    """Retain two settlement days and query seven upcoming KST dates.
+
+    Weekend cards can be published on Wednesday, including across month/year
+    boundaries. Limiting lookahead to two days misses those already-public cards.
+    """
+    now = now.astimezone(ZoneInfo("Asia/Seoul"))
+    return [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(-2, 8)]
+
+
 def main():
     kst = ZoneInfo("Asia/Seoul")
     now = datetime.now(kst)
@@ -485,7 +495,8 @@ def main():
     probe = S.get(f"{BASE}/chulmaDetailInfoChulmapyo.do", params=params(today, 1, 1), timeout=(5, 10))
     probe.raise_for_status()
     print("KRA connectivity confirmed", flush=True)
-    dates = [(now + timedelta(days=i)).strftime("%Y%m%d") for i in range(-2, 3)]
+    dates = collection_dates(now)
+    print(f"Collecting race cards: {dates[0]} through {dates[-1]} (KST)", flush=True)
     previous_map = {}
     previous_complete = False
     try:
@@ -575,6 +586,8 @@ def main():
             "race_count": len(races),
             "error_count": len(errors),
             "dates": sorted({r["date"] for r in races}),
+            "collection_from": dates[0],
+            "collection_through": dates[-1],
             "browse_from": floor,
             "history": history_status,
             "results": result_status,
