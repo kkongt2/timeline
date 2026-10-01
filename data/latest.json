@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-01T03:08:06+09:00",
+  "updated_at": "2026-10-01T13:19:13+09:00",
   "races": [
     {
       "venue": "busan",
@@ -2381,7 +2381,7 @@
           "training_count": 5,
           "interval_weeks": 0,
           "gear": "",
-          "note": "",
+          "note": "말취소",
           "starts_1y": 0,
           "wins_1y": 0,
           "seconds_1y": 0,
