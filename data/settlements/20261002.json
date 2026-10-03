@@ -228,7 +228,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=1",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:2": {
     "status": "confirmed",
@@ -308,7 +308,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=2",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:3": {
     "status": "confirmed",
@@ -388,7 +388,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=3",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:4": {
     "status": "confirmed",
@@ -469,7 +469,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=4",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:4": {
     "status": "confirmed",
@@ -549,7 +549,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=4",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:5": {
     "status": "confirmed",
@@ -629,7 +629,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=5",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:3": {
     "status": "confirmed",
@@ -710,7 +710,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=3",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:5": {
     "status": "confirmed",
@@ -791,7 +791,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=5",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:6": {
     "status": "confirmed",
@@ -872,7 +872,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=6",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:7": {
     "status": "confirmed",
@@ -953,7 +953,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=7",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:8": {
     "status": "confirmed",
@@ -1034,7 +1034,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=8",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:busan:9": {
     "status": "confirmed",
@@ -1115,7 +1115,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261002&realRcNo=9",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:6": {
     "status": "confirmed",
@@ -1193,7 +1193,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=6",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   },
   "20261002:jeju:7": {
     "status": "confirmed",
@@ -1273,6 +1273,6 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261002&realRcNo=7",
-    "checked_at": "2026-10-02T19:34:12+09:00"
+    "checked_at": "2026-10-03T12:54:47+09:00"
   }
 }
