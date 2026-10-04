@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-03T14:27:37.446Z",
+  "updated_at": "2026-10-04T04:28:54.045Z",
   "window": {
     "min_minutes": 15,
     "max_minutes": 90
   },
-  "recorded_races": 31,
+  "recorded_races": 33,
   "paired": [
     {
       "id": "place:9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
@@ -33,10 +33,10 @@
       "kind": "place",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 31,
+      "recorded": 33,
       "settled": 31,
       "hits": 17,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 7.76867607236723,
       "hit_rate": 0.5483870967741935,
@@ -48,10 +48,10 @@
       "kind": "pair",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 31,
+      "recorded": 33,
       "settled": 31,
       "hits": 4,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 3.86614161230918,
       "hit_rate": 0.12903225806451613,
@@ -63,10 +63,10 @@
       "kind": "place",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 28,
+      "recorded": 30,
       "settled": 28,
       "hits": 19,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 6.292454521952556,
       "hit_rate": 0.6785714285714286,
@@ -78,10 +78,10 @@
       "kind": "pair",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 28,
+      "recorded": 30,
       "settled": 28,
       "hits": 6,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 4.223127210740155,
       "hit_rate": 0.21428571428571427,
@@ -93,10 +93,10 @@
       "kind": "place",
       "model": "6.0-conditions",
       "bundle_hash": "6da398f5f9bcfd8f0464ae58970d3048e8686e54c3060af33030d4a9beac13d9",
-      "recorded": 14,
+      "recorded": 16,
       "settled": 14,
       "hits": 11,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 2.4537568814433164,
       "hit_rate": 0.7857142857142857,
@@ -104,6 +104,110 @@
     }
   ],
   "recent": [
+    {
+      "id": "20261004:seoul:6",
+      "date": "20261004",
+      "venue": "seoul",
+      "race_no": 6,
+      "saved_at": "2026-10-04T04:28:54.045Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.522247812672157,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              11
+            ],
+            "prob": 0.20066015767983816,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.6346608583611154,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              4
+            ],
+            "prob": 0.2663678503406599,
+            "status": "pending"
+          }
+        },
+        "selective": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.6622114462306609,
+            "status": "pending"
+          }
+        }
+      }
+    },
+    {
+      "id": "20261004:seoul:7",
+      "date": "20261004",
+      "venue": "seoul",
+      "race_no": 7,
+      "saved_at": "2026-10-04T04:28:54.045Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              11
+            ],
+            "prob": 0.8421581003881545,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              5,
+              11
+            ],
+            "prob": 0.5101539973352545,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              5
+            ],
+            "prob": 0.6581585885911053,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              5,
+              11
+            ],
+            "prob": 0.27523993070586567,
+            "status": "pending"
+          }
+        },
+        "selective": {
+          "place": {
+            "numbers": [
+              5
+            ],
+            "prob": 0.6420463342799916,
+            "status": "pending"
+          }
+        }
+      }
+    },
     {
       "id": "20261003:jeju:4",
       "date": "20261003",
