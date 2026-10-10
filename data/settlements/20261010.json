@@ -68,7 +68,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=1",
-    "checked_at": "2026-10-10T13:28:01+09:00"
+    "checked_at": "2026-10-10T19:46:12+09:00"
   },
   "20261010:jeju:2": {
     "status": "confirmed",
@@ -139,7 +139,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=2",
-    "checked_at": "2026-10-10T13:28:01+09:00"
+    "checked_at": "2026-10-10T19:46:12+09:00"
   },
   "20261010:jeju:3": {
     "status": "confirmed",
@@ -219,7 +219,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=3",
-    "checked_at": "2026-10-10T13:28:01+09:00"
+    "checked_at": "2026-10-10T19:46:12+09:00"
   },
   "20261010:seoul:2": {
     "status": "confirmed",
@@ -300,7 +300,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=2",
-    "checked_at": "2026-10-10T13:28:01+09:00"
+    "checked_at": "2026-10-10T19:46:12+09:00"
   },
   "20261010:seoul:3": {
     "status": "confirmed",
@@ -381,6 +381,889 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=3",
-    "checked_at": "2026-10-10T13:28:01+09:00"
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:jeju:4": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            4
+          ],
+          "odds": 4.5
+        },
+        {
+          "numbers": [
+            6
+          ],
+          "odds": 2.2
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 2.3
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            4,
+            6
+          ],
+          "odds": 25.4
+        },
+        {
+          "numbers": [
+            4,
+            9
+          ],
+          "odds": 21.6
+        },
+        {
+          "numbers": [
+            6,
+            9
+          ],
+          "odds": 8.1
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            4,
+            6,
+            9
+          ],
+          "odds": 225.8
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=4",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:jeju:5": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            2
+          ],
+          "odds": 1.4
+        },
+        {
+          "numbers": [
+            4
+          ],
+          "odds": 3.4
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "odds": 2.4
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            2,
+            4
+          ],
+          "odds": 7.2
+        },
+        {
+          "numbers": [
+            1,
+            2
+          ],
+          "odds": 3.8
+        },
+        {
+          "numbers": [
+            1,
+            4
+          ],
+          "odds": 16.1
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            2,
+            4
+          ],
+          "odds": 36.7
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=5",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:5": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            3
+          ],
+          "odds": 1.8
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "odds": 1.3
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 2
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            3
+          ],
+          "odds": 4.1
+        },
+        {
+          "numbers": [
+            3,
+            9
+          ],
+          "odds": 5.4
+        },
+        {
+          "numbers": [
+            1,
+            9
+          ],
+          "odds": 3.8
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            3,
+            9
+          ],
+          "odds": 15.3
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=5",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:jeju:6": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 1
+        },
+        {
+          "numbers": [
+            6
+          ],
+          "odds": 1.9
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "odds": 4.4
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            6,
+            9
+          ],
+          "odds": 2.1
+        },
+        {
+          "numbers": [
+            8,
+            9
+          ],
+          "odds": 6.1
+        },
+        {
+          "numbers": [
+            6,
+            8
+          ],
+          "odds": 17.9
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            6,
+            8,
+            9
+          ],
+          "odds": 33.2
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=6",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:jeju:7": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5
+          ],
+          "odds": 2
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "odds": 1.3
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 3.8
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            8
+          ],
+          "odds": 4.2
+        },
+        {
+          "numbers": [
+            5,
+            9
+          ],
+          "odds": 19.9
+        },
+        {
+          "numbers": [
+            8,
+            9
+          ],
+          "odds": 5.2
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            8,
+            9
+          ],
+          "odds": 36.9
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261010&realRcNo=7",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:4": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            11
+          ],
+          "odds": 1.4
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "odds": 1.7
+        },
+        {
+          "numbers": [
+            5
+          ],
+          "odds": 11.1
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            8,
+            11
+          ],
+          "odds": 3.4
+        },
+        {
+          "numbers": [
+            5,
+            11
+          ],
+          "odds": 26.3
+        },
+        {
+          "numbers": [
+            5,
+            8
+          ],
+          "odds": 30.5
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            8,
+            11
+          ],
+          "odds": 123.1
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=4",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:6": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1
+          ],
+          "odds": 1.6
+        },
+        {
+          "numbers": [
+            3
+          ],
+          "odds": 1
+        },
+        {
+          "numbers": [
+            2
+          ],
+          "odds": 4.6
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            3
+          ],
+          "odds": 2.2
+        },
+        {
+          "numbers": [
+            1,
+            2
+          ],
+          "odds": 12.5
+        },
+        {
+          "numbers": [
+            2,
+            3
+          ],
+          "odds": 5.9
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            2,
+            3
+          ],
+          "odds": 24.3
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=6",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:7": {
+    "status": "confirmed",
+    "starters": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5
+          ],
+          "odds": 1.4
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 3.2
+        },
+        {
+          "numbers": [
+            6
+          ],
+          "odds": 1.5
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            9
+          ],
+          "odds": 5.8
+        },
+        {
+          "numbers": [
+            5,
+            6
+          ],
+          "odds": 2.3
+        },
+        {
+          "numbers": [
+            6,
+            9
+          ],
+          "odds": 7
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            6,
+            9
+          ],
+          "odds": 19.5
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=7",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:8": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            6
+          ],
+          "odds": 1.6
+        },
+        {
+          "numbers": [
+            5
+          ],
+          "odds": 1.8
+        },
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 3.7
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            6
+          ],
+          "odds": 3.2
+        },
+        {
+          "numbers": [
+            6,
+            9
+          ],
+          "odds": 8.3
+        },
+        {
+          "numbers": [
+            5,
+            9
+          ],
+          "odds": 10.3
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            5,
+            6,
+            9
+          ],
+          "odds": 30
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=8",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:9": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            7
+          ],
+          "odds": 7
+        },
+        {
+          "numbers": [
+            1
+          ],
+          "odds": 1.4
+        },
+        {
+          "numbers": [
+            4
+          ],
+          "odds": 2.7
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            7
+          ],
+          "odds": 15.1
+        },
+        {
+          "numbers": [
+            4,
+            7
+          ],
+          "odds": 35.9
+        },
+        {
+          "numbers": [
+            1,
+            4
+          ],
+          "odds": 6.2
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            1,
+            4,
+            7
+          ],
+          "odds": 146.7
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=9",
+    "checked_at": "2026-10-10T19:46:12+09:00"
+  },
+  "20261010:seoul:10": {
+    "status": "confirmed",
+    "starters": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "place": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            9
+          ],
+          "odds": 4.5
+        },
+        {
+          "numbers": [
+            11
+          ],
+          "odds": 2
+        },
+        {
+          "numbers": [
+            8
+          ],
+          "odds": 2.4
+        }
+      ]
+    },
+    "pair": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            9,
+            11
+          ],
+          "odds": 11.9
+        },
+        {
+          "numbers": [
+            8,
+            9
+          ],
+          "odds": 27.2
+        },
+        {
+          "numbers": [
+            8,
+            11
+          ],
+          "odds": 9.2
+        }
+      ]
+    },
+    "trio": {
+      "status": "confirmed",
+      "payouts": [
+        {
+          "numbers": [
+            8,
+            9,
+            11
+          ],
+          "odds": 136.8
+        }
+      ]
+    },
+    "version": 3,
+    "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261010&realRcNo=10",
+    "checked_at": "2026-10-10T19:46:12+09:00"
   }
 }
