@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T23:28:49+09:00",
+  "updated_at": "2026-10-15T12:20:01+09:00",
   "races": [
     {
       "venue": "busan",
@@ -71791,9 +71791,9 @@
       "20261017",
       "20261018"
     ],
-    "collection_from": "20261012",
-    "collection_through": "20261021",
-    "browse_from": "20251014",
+    "collection_from": "20261013",
+    "collection_through": "20261022",
+    "browse_from": "20251015",
     "history": {
       "status": "ready",
       "through": "20261011",
