@@ -1,19 +1,19 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-17T03:08:35.875Z",
+  "updated_at": "2026-10-17T07:44:48.573Z",
   "window": {
     "min_minutes": 15,
     "max_minutes": 90
   },
-  "recorded_races": 49,
+  "recorded_races": 51,
   "paired": [
     {
       "id": "place:9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
       "kind": "place",
       "baseline_model": "5.0-history",
       "challenger_model": "7.0-race-pace",
-      "races": 43,
-      "baseline_hits": 24,
+      "races": 45,
+      "baseline_hits": 25,
       "challenger_hits": 28
     },
     {
@@ -21,7 +21,7 @@
       "kind": "pair",
       "baseline_model": "5.0-history",
       "challenger_model": "7.0-race-pace",
-      "races": 43,
+      "races": 45,
       "baseline_hits": 10,
       "challenger_hits": 12
     }
@@ -33,14 +33,14 @@
       "kind": "place",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 49,
-      "settled": 46,
-      "hits": 25,
+      "recorded": 51,
+      "settled": 48,
+      "hits": 26,
       "pending": 3,
       "void": 0,
-      "brier_sum": 11.659517027291686,
-      "hit_rate": 0.5434782608695652,
-      "brier": 0.25346776146286276
+      "brier_sum": 12.118541309450952,
+      "hit_rate": 0.5416666666666666,
+      "brier": 0.2524696106135615
     },
     {
       "id": "general:9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd:pair",
@@ -48,14 +48,14 @@
       "kind": "pair",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 49,
-      "settled": 46,
+      "recorded": 51,
+      "settled": 48,
       "hits": 10,
       "pending": 3,
       "void": 0,
-      "brier_sum": 7.904999292511182,
-      "hit_rate": 0.21739130434782608,
-      "brier": 0.17184781070676483
+      "brier_sum": 7.950997112156846,
+      "hit_rate": 0.20833333333333334,
+      "brier": 0.16564577316993429
     },
     {
       "id": "challenger:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd:place",
@@ -63,14 +63,14 @@
       "kind": "place",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 46,
-      "settled": 43,
+      "recorded": 48,
+      "settled": 45,
       "hits": 28,
       "pending": 3,
       "void": 0,
-      "brier_sum": 9.683523609251424,
-      "hit_rate": 0.6511627906976745,
-      "brier": 0.22519822347096333
+      "brier_sum": 10.168914127574912,
+      "hit_rate": 0.6222222222222222,
+      "brier": 0.2259758695016647
     },
     {
       "id": "challenger:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd:pair",
@@ -78,14 +78,14 @@
       "kind": "pair",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 46,
-      "settled": 43,
+      "recorded": 48,
+      "settled": 45,
       "hits": 12,
       "pending": 3,
       "void": 0,
-      "brier_sum": 7.847753373460181,
-      "hit_rate": 0.27906976744186046,
-      "brier": 0.18250589240605072
+      "brier_sum": 7.89863973125408,
+      "hit_rate": 0.26666666666666666,
+      "brier": 0.17552532736120177
     },
     {
       "id": "selective:6da398f5f9bcfd8f0464ae58970d3048e8686e54c3060af33030d4a9beac13d9:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd:place",
@@ -93,10 +93,10 @@
       "kind": "place",
       "model": "6.0-conditions",
       "bundle_hash": "6da398f5f9bcfd8f0464ae58970d3048e8686e54c3060af33030d4a9beac13d9",
-      "recorded": 24,
+      "recorded": 25,
       "settled": 23,
       "hits": 17,
-      "pending": 1,
+      "pending": 2,
       "void": 0,
       "brier_sum": 4.496360246768227,
       "hit_rate": 0.7391304347826086,
@@ -104,6 +104,101 @@
     }
   ],
   "recent": [
+    {
+      "id": "20261017:seoul:9",
+      "date": "20261017",
+      "venue": "seoul",
+      "race_no": 9,
+      "saved_at": "2026-10-17T07:44:48.573Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.45046509079907887,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              4
+            ],
+            "prob": 0.14890179391871522,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              9
+            ],
+            "prob": 0.4944385506281751,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              9
+            ],
+            "prob": 0.17337423702885185,
+            "status": "pending"
+          }
+        }
+      }
+    },
+    {
+      "id": "20261017:seoul:10",
+      "date": "20261017",
+      "venue": "seoul",
+      "race_no": 10,
+      "saved_at": "2026-10-17T07:44:48.573Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.5535112543473176,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              4
+            ],
+            "prob": 0.2149454331433137,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.6132226040551247,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              2,
+              5
+            ],
+            "prob": 0.25427881571661537,
+            "status": "pending"
+          }
+        },
+        "selective": {
+          "place": {
+            "numbers": [
+              2
+            ],
+            "prob": 0.6260520614709744,
+            "status": "pending"
+          }
+        }
+      }
+    },
     {
       "id": "20261017:jeju:3",
       "date": "20261017",
@@ -169,7 +264,9 @@
               7
             ],
             "prob": 0.47179766671019,
-            "status": "pending"
+            "status": "settled",
+            "hit": true,
+            "odds": 1.6
           },
           "pair": {
             "numbers": [
@@ -177,7 +274,9 @@
               7
             ],
             "prob": 0.16194774947842686,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           }
         },
         "challenger": {
@@ -186,7 +285,9 @@
               4
             ],
             "prob": 0.4436425566367421,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           },
           "pair": {
             "numbers": [
@@ -194,7 +295,9 @@
               10
             ],
             "prob": 0.1315522972440241,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           }
         }
       }
@@ -212,7 +315,9 @@
               6
             ],
             "prob": 0.42429538916475124,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           },
           "pair": {
             "numbers": [
@@ -220,7 +325,9 @@
               6
             ],
             "prob": 0.14060848510860577,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           }
         },
         "challenger": {
@@ -229,7 +336,9 @@
               4
             ],
             "prob": 0.5371887938744656,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           },
           "pair": {
             "numbers": [
@@ -237,7 +346,9 @@
               6
             ],
             "prob": 0.18324942260132276,
-            "status": "pending"
+            "status": "settled",
+            "hit": false,
+            "odds": 0
           }
         }
       }
