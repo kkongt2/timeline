@@ -78,7 +78,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261016&realRcNo=1",
-    "checked_at": "2026-10-17T12:07:14+09:00"
+    "checked_at": "2026-10-17T23:28:17+09:00"
   },
   "20261016:jeju:1": {
     "status": "confirmed",
@@ -480,7 +480,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261016&realRcNo=2",
-    "checked_at": "2026-10-17T12:07:14+09:00"
+    "checked_at": "2026-10-17T23:28:17+09:00"
   },
   "20261016:busan:4": {
     "status": "confirmed",
