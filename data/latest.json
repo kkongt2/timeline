@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T17:48:27+09:00",
+  "updated_at": "2026-10-23T22:51:46+09:00",
   "races": [
     {
       "venue": "busan",
@@ -1746,7 +1746,7 @@
         },
         "version": 3,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261023&realRcNo=1",
-        "checked_at": "2026-10-23T12:29:57+09:00"
+        "checked_at": "2026-10-23T22:51:46+09:00"
       }
     },
     {
@@ -16324,7 +16324,88 @@
       "feature_version": "6.0-conditions",
       "history_through": "20261018",
       "feature_version_v7": "7.0-race-pace",
-      "history_through_v7": "20261018"
+      "history_through_v7": "20261018",
+      "official_result": {
+        "status": "confirmed",
+        "starters": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "place": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                2
+              ],
+              "odds": 1.2
+            },
+            {
+              "numbers": [
+                8
+              ],
+              "odds": 2.6
+            },
+            {
+              "numbers": [
+                5
+              ],
+              "odds": 1.5
+            }
+          ]
+        },
+        "pair": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                2,
+                8
+              ],
+              "odds": 6.0
+            },
+            {
+              "numbers": [
+                2,
+                5
+              ],
+              "odds": 1.9
+            },
+            {
+              "numbers": [
+                5,
+                8
+              ],
+              "odds": 6.9
+            }
+          ]
+        },
+        "trio": {
+          "status": "confirmed",
+          "payouts": [
+            {
+              "numbers": [
+                2,
+                5,
+                8
+              ],
+              "odds": 13.4
+            }
+          ]
+        },
+        "version": 3,
+        "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261023&realRcNo=9",
+        "checked_at": "2026-10-23T22:51:46+09:00"
+      }
     },
     {
       "venue": "jeju",
@@ -17928,7 +18009,7 @@
         },
         "version": 3,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261023&realRcNo=1",
-        "checked_at": "2026-10-23T12:29:57+09:00"
+        "checked_at": "2026-10-23T22:51:46+09:00"
       }
     },
     {
@@ -19543,7 +19624,7 @@
         },
         "version": 3,
         "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=2&realRcDate=20261023&realRcNo=2",
-        "checked_at": "2026-10-23T12:29:57+09:00"
+        "checked_at": "2026-10-23T22:51:46+09:00"
       }
     },
     {
@@ -71600,7 +71681,7 @@
       "excluded": 0
     },
     "results": {
-      "confirmed": 2495,
+      "confirmed": 2496,
       "pending": 0,
       "errors": 0
     },
