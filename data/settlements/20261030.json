@@ -78,7 +78,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261030&realRcNo=1",
-    "checked_at": "2026-10-30T20:00:32+09:00"
+    "checked_at": "2026-11-01T00:50:19+09:00"
   },
   "20261030:busan:2": {
     "status": "confirmed",
@@ -159,7 +159,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=3&realRcDate=20261030&realRcNo=2",
-    "checked_at": "2026-10-30T20:00:32+09:00"
+    "checked_at": "2026-11-01T00:50:19+09:00"
   },
   "20261030:busan:3": {
     "status": "confirmed",
