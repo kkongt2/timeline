@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "updated_at": "2026-10-31T15:51:37.834Z",
+  "updated_at": "2026-11-01T04:33:52.558Z",
   "window": {
     "min_minutes": 15,
     "max_minutes": 90
   },
-  "recorded_races": 69,
+  "recorded_races": 71,
   "paired": [
     {
       "id": "place:9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5:5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450:b0744dd54030a8e6df586e37db20a71c0f820a275652930930f362a4e526fcfd",
@@ -33,10 +33,10 @@
       "kind": "place",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 69,
+      "recorded": 71,
       "settled": 69,
       "hits": 39,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 16.93403485787706,
       "hit_rate": 0.5652173913043478,
@@ -48,10 +48,10 @@
       "kind": "pair",
       "model": "5.0-history",
       "bundle_hash": "9b88edb3a329b39d8ebbb8da883b7464725e379310823928d10899cd6ef197c5",
-      "recorded": 69,
+      "recorded": 71,
       "settled": 69,
       "hits": 15,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 11.390563860903649,
       "hit_rate": 0.21739130434782608,
@@ -63,10 +63,10 @@
       "kind": "place",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 66,
+      "recorded": 68,
       "settled": 66,
       "hits": 41,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 15.255881790447358,
       "hit_rate": 0.6212121212121212,
@@ -78,10 +78,10 @@
       "kind": "pair",
       "model": "7.0-race-pace",
       "bundle_hash": "5fc4c2d8a9806cf7b639990692a80a757ca16f7b8f71d5cd3c53e1da2ecaf450",
-      "recorded": 66,
+      "recorded": 68,
       "settled": 66,
       "hits": 16,
-      "pending": 0,
+      "pending": 2,
       "void": 0,
       "brier_sum": 11.285927850905928,
       "hit_rate": 0.24242424242424243,
@@ -104,6 +104,92 @@
     }
   ],
   "recent": [
+    {
+      "id": "20261101:seoul:6",
+      "date": "20261101",
+      "venue": "seoul",
+      "race_no": 6,
+      "saved_at": "2026-11-01T04:33:52.558Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              5
+            ],
+            "prob": 0.41918430688642105,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              1,
+              5
+            ],
+            "prob": 0.12887967981886034,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              1
+            ],
+            "prob": 0.44447117510332756,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              1,
+              5
+            ],
+            "prob": 0.19478762404932157,
+            "status": "pending"
+          }
+        }
+      }
+    },
+    {
+      "id": "20261101:seoul:7",
+      "date": "20261101",
+      "venue": "seoul",
+      "race_no": 7,
+      "saved_at": "2026-11-01T04:33:52.558Z",
+      "tracks": {
+        "general": {
+          "place": {
+            "numbers": [
+              3
+            ],
+            "prob": 0.6281731760674282,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              3,
+              10
+            ],
+            "prob": 0.28342088010001676,
+            "status": "pending"
+          }
+        },
+        "challenger": {
+          "place": {
+            "numbers": [
+              3
+            ],
+            "prob": 0.5202284106797764,
+            "status": "pending"
+          },
+          "pair": {
+            "numbers": [
+              3,
+              10
+            ],
+            "prob": 0.2422509005308348,
+            "status": "pending"
+          }
+        }
+      }
+    },
     {
       "id": "20261031:jeju:3",
       "date": "20261031",
