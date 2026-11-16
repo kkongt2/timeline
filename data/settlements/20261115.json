@@ -78,7 +78,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=1",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:2": {
     "status": "confirmed",
@@ -149,7 +149,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=2",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:3": {
     "status": "confirmed",
@@ -230,7 +230,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=3",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:4": {
     "status": "confirmed",
@@ -311,7 +311,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=4",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:5": {
     "status": "confirmed",
@@ -392,7 +392,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=5",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:7": {
     "status": "confirmed",
@@ -473,7 +473,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=7",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:6": {
     "status": "confirmed",
@@ -554,7 +554,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=6",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:8": {
     "status": "confirmed",
@@ -633,7 +633,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=8",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:9": {
     "status": "confirmed",
@@ -714,7 +714,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=9",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:10": {
     "status": "confirmed",
@@ -794,7 +794,7 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=10",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   },
   "20261115:seoul:11": {
     "status": "confirmed",
@@ -875,6 +875,6 @@
     },
     "version": 3,
     "source": "https://race.kra.co.kr/raceScore/ScoretableDetailList.do?Act=04&Sub=1&meet=1&realRcDate=20261115&realRcNo=11",
-    "checked_at": "2026-11-16T04:05:13+09:00"
+    "checked_at": "2026-11-16T15:02:19+09:00"
   }
 }
