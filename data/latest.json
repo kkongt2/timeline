@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T14:59:57+09:00",
+  "updated_at": "2026-11-20T00:38:29+09:00",
   "races": [
     {
       "venue": "busan",
@@ -36,6 +36,10 @@
             6
           ],
           "horse_id": "0056203",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 450.0,
+          "average_weight": 450.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -54,8 +58,6 @@
             "quinella_rate": 0.10077519379844961,
             "place_rate": 0.20155038759689922
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -184,6 +186,10 @@
             10
           ],
           "horse_id": "0056700",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 461,
@@ -194,8 +200,6 @@
             "quinella_rate": 0.06941431670281996,
             "place_rate": 0.11279826464208242
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -322,6 +326,10 @@
             5
           ],
           "horse_id": "0056129",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -340,8 +348,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -469,6 +475,10 @@
             10
           ],
           "horse_id": "0056672",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 370,
             "wins": 15,
@@ -487,8 +497,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -615,6 +623,10 @@
             9
           ],
           "horse_id": "0056960",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -633,8 +645,6 @@
             "quinella_rate": 0.13793103448275862,
             "place_rate": 0.21316614420062696
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -761,6 +771,10 @@
             4
           ],
           "horse_id": "0055686",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -779,8 +793,6 @@
             "quinella_rate": 0.2,
             "place_rate": 0.34054054054054056
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -908,6 +920,10 @@
             10
           ],
           "horse_id": "0056361",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -926,8 +942,6 @@
             "quinella_rate": 0.10077519379844961,
             "place_rate": 0.20155038759689922
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1055,6 +1069,10 @@
             10
           ],
           "horse_id": "0056680",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -1073,8 +1091,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1201,6 +1217,10 @@
             8
           ],
           "horse_id": "0055834",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 261,
             "wins": 10,
@@ -1219,8 +1239,6 @@
             "quinella_rate": 0.1565217391304348,
             "place_rate": 0.20869565217391303
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1347,6 +1365,10 @@
             4
           ],
           "horse_id": "0055804",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 402,
             "wins": 50,
@@ -1365,8 +1387,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1493,6 +1513,10 @@
             7
           ],
           "horse_id": "0056197",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -1511,8 +1535,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1657,6 +1679,10 @@
             10
           ],
           "horse_id": "0056086",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -1675,8 +1701,6 @@
             "quinella_rate": 0.175,
             "place_rate": 0.2625
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -1804,6 +1828,10 @@
             6
           ],
           "horse_id": "0055983",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 479.0,
+          "average_weight": 479.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -1822,8 +1850,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -1950,6 +1976,10 @@
             9
           ],
           "horse_id": "0055805",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 370,
             "wins": 15,
@@ -1968,8 +1998,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -2097,6 +2125,10 @@
             9
           ],
           "horse_id": "0055831",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 461.0,
+          "average_weight": 461.0,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -2115,8 +2147,6 @@
             "quinella_rate": 0.13793103448275862,
             "place_rate": 0.21316614420062696
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -2243,6 +2273,10 @@
             7
           ],
           "horse_id": "0055614",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -2261,8 +2295,6 @@
             "quinella_rate": 0.3157894736842105,
             "place_rate": 0.40789473684210525
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -2390,6 +2422,10 @@
             10
           ],
           "horse_id": "0055629",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -2408,8 +2444,6 @@
             "quinella_rate": 0.10077519379844961,
             "place_rate": 0.20155038759689922
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -2537,6 +2571,10 @@
             10
           ],
           "horse_id": "0056264",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 452.0,
+          "average_weight": 452.0,
           "jockey_stats_1y": {
             "starts": 402,
             "wins": 50,
@@ -2555,8 +2593,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -2686,6 +2722,10 @@
             8
           ],
           "horse_id": "0056114",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 502.0,
+          "average_weight": 500.0,
           "jockey_stats_1y": {
             "starts": 232,
             "wins": 7,
@@ -2704,8 +2744,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0583333333,
@@ -2834,6 +2872,10 @@
             8
           ],
           "horse_id": "0055727",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 472.0,
+          "average_weight": 472.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -2852,8 +2894,6 @@
             "quinella_rate": 0.18471337579617833,
             "place_rate": 0.28662420382165604
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -2981,6 +3021,10 @@
             10
           ],
           "horse_id": "0055878",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 356,
             "wins": 75,
@@ -2999,8 +3043,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -3127,6 +3169,10 @@
             7
           ],
           "horse_id": "0055973",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -3145,8 +3191,6 @@
             "quinella_rate": 0.06941431670281996,
             "place_rate": 0.11279826464208242
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -3295,6 +3339,10 @@
             10
           ],
           "horse_id": "0055528",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 470.0,
+          "average_weight": 473.0,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -3313,8 +3361,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0583333333,
@@ -3445,6 +3491,10 @@
             3
           ],
           "horse_id": "0053535",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 439.0,
+          "average_weight": 443.0,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -3463,8 +3513,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.32,
             0.035,
@@ -3595,6 +3643,10 @@
             9
           ],
           "horse_id": "0051733",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 451.0,
+          "average_weight": 450.0,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -3613,8 +3665,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2666666667,
             0.0291666667,
@@ -3744,6 +3794,10 @@
             8
           ],
           "horse_id": "0057040",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 512.0,
+          "average_weight": 512.0,
           "jockey_stats_1y": {
             "starts": 402,
             "wins": 50,
@@ -3762,8 +3816,6 @@
             "quinella_rate": 0.1565217391304348,
             "place_rate": 0.20869565217391303
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0583333333,
@@ -3894,6 +3946,10 @@
             9
           ],
           "horse_id": "0054284",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 478.0,
+          "average_weight": 474.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 305,
@@ -3904,8 +3960,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -4034,6 +4088,10 @@
             7
           ],
           "horse_id": "0056195",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 465.0,
+          "average_weight": 462.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -4052,8 +4110,6 @@
             "quinella_rate": 0.06941431670281996,
             "place_rate": 0.11279826464208242
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3666666667,
             0.0583333333,
@@ -4184,6 +4240,10 @@
             5
           ],
           "horse_id": "0053926",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 459.0,
+          "average_weight": 457.0,
           "jockey_stats_1y": {
             "starts": 139,
             "wins": 6,
@@ -4202,8 +4262,6 @@
             "quinella_rate": 0.07368421052631578,
             "place_rate": 0.1736842105263158
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -4334,6 +4392,10 @@
             6
           ],
           "horse_id": "0054361",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 437.0,
+          "average_weight": 447.0,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -4352,8 +4414,6 @@
             "quinella_rate": 0.19471947194719472,
             "place_rate": 0.297029702970297
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4571428571,
             0.05,
@@ -4482,6 +4542,10 @@
             2
           ],
           "horse_id": "0056781",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 525.0,
+          "average_weight": 524.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -4500,8 +4564,6 @@
             "quinella_rate": 0.21019108280254778,
             "place_rate": 0.3375796178343949
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5333333333,
             0.0583333333,
@@ -4632,6 +4694,10 @@
             2
           ],
           "horse_id": "0053660",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 467.0,
+          "average_weight": 464.0,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -4650,8 +4716,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0318181818,
@@ -4782,6 +4846,10 @@
             5
           ],
           "horse_id": "0053039",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 406.0,
+          "average_weight": 407.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 229,
@@ -4792,8 +4860,6 @@
             "quinella_rate": 0.2052401746724891,
             "place_rate": 0.3056768558951965
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1090909091,
             0.0318181818,
@@ -4941,6 +5007,10 @@
             7
           ],
           "horse_id": "0057782",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 462.0,
+          "average_weight": 457.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 271,
@@ -4951,8 +5021,6 @@
             "quinella_rate": 0.23616236162361623,
             "place_rate": 0.33948339483394835
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -5083,6 +5151,10 @@
             9
           ],
           "horse_id": "0051602",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 465.0,
+          "average_weight": 468.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 230,
@@ -5093,8 +5165,6 @@
             "quinella_rate": 0.1565217391304348,
             "place_rate": 0.20869565217391303
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -5224,6 +5294,10 @@
             5
           ],
           "horse_id": "0055739",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 443.0,
+          "average_weight": 443.0,
           "jockey_stats_1y": {
             "starts": 370,
             "wins": 15,
@@ -5242,8 +5316,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -5374,6 +5446,10 @@
             6
           ],
           "horse_id": "0050941",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 481.0,
+          "average_weight": 479.0,
           "jockey_stats_1y": {
             "starts": 332,
             "wins": 10,
@@ -5392,8 +5468,6 @@
             "quinella_rate": 0.06941431670281996,
             "place_rate": 0.11279826464208242
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.12,
             0.035,
@@ -5524,6 +5598,10 @@
             7
           ],
           "horse_id": "0051839",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 484.0,
+          "average_weight": 488.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -5542,8 +5620,6 @@
             "quinella_rate": 0.19471947194719472,
             "place_rate": 0.297029702970297
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -5674,6 +5750,10 @@
             7
           ],
           "horse_id": "0054162",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 450.0,
+          "average_weight": 439.0,
           "jockey_stats_1y": {
             "starts": 139,
             "wins": 6,
@@ -5692,8 +5772,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.15,
             0.04375,
@@ -5824,6 +5902,10 @@
             12
           ],
           "horse_id": "0054131",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 427.0,
+          "average_weight": 442.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -5842,8 +5924,6 @@
             "quinella_rate": 0.21019108280254778,
             "place_rate": 0.3375796178343949
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1090909091,
             0.0318181818,
@@ -5974,6 +6054,10 @@
             9
           ],
           "horse_id": "0051306",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 472.0,
+          "average_weight": 464.0,
           "jockey_stats_1y": {
             "starts": 402,
             "wins": 50,
@@ -5992,8 +6076,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -6109,7 +6191,7 @@
           "training_count": 11,
           "interval_weeks": 5,
           "gear": "",
-          "note": "",
+          "note": "말취소",
           "starts_1y": 1,
           "wins_1y": 0,
           "seconds_1y": 0,
@@ -6121,6 +6203,10 @@
             6
           ],
           "horse_id": "0055537",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 430.0,
+          "average_weight": 430.0,
           "jockey_stats_1y": {
             "starts": 232,
             "wins": 7,
@@ -6139,8 +6225,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -6271,6 +6355,10 @@
             8
           ],
           "horse_id": "0053402",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 446.0,
+          "average_weight": 435.0,
           "jockey_stats_1y": {
             "starts": 44,
             "wins": 0,
@@ -6289,8 +6377,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1833333333,
             0.0291666667,
@@ -6421,6 +6507,10 @@
             8
           ],
           "horse_id": "0051123",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 458.0,
+          "average_weight": 454.0,
           "jockey_stats_1y": {
             "starts": 261,
             "wins": 10,
@@ -6439,8 +6529,6 @@
             "quinella_rate": 0.1642512077294686,
             "place_rate": 0.22705314009661837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -6589,6 +6677,10 @@
             4
           ],
           "horse_id": "0050666",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 455.0,
+          "average_weight": 449.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -6607,8 +6699,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1571428571,
             0.025,
@@ -6738,6 +6828,10 @@
             4
           ],
           "horse_id": "0053791",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 491.0,
+          "average_weight": 487.0,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -6756,8 +6850,6 @@
             "quinella_rate": 0.06941431670281996,
             "place_rate": 0.11279826464208242
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -6888,6 +6980,10 @@
             4
           ],
           "horse_id": "0053546",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 440.0,
+          "average_weight": 437.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 320,
@@ -6898,8 +6994,6 @@
             "quinella_rate": 0.175,
             "place_rate": 0.2625
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1833333333,
             0.0291666667,
@@ -7027,6 +7121,10 @@
             7
           ],
           "horse_id": "0056059",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 530.0,
+          "average_weight": 534.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -7045,8 +7143,6 @@
             "quinella_rate": 0.3157894736842105,
             "place_rate": 0.40789473684210525
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.44,
             0.07,
@@ -7177,6 +7273,10 @@
             7
           ],
           "horse_id": "0054307",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 467.0,
+          "average_weight": 468.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -7195,8 +7295,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.22,
             0.035,
@@ -7327,6 +7425,10 @@
             5
           ],
           "horse_id": "0051664",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 463.0,
+          "average_weight": 454.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -7345,8 +7447,6 @@
             "quinella_rate": 0.18471337579617833,
             "place_rate": 0.28662420382165604
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1833333333,
             0.0291666667,
@@ -7477,6 +7577,10 @@
             4
           ],
           "horse_id": "0053634",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 517.0,
+          "average_weight": 501.0,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -7495,8 +7599,6 @@
             "quinella_rate": 0.19471947194719472,
             "place_rate": 0.297029702970297
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -7627,6 +7729,10 @@
             9
           ],
           "horse_id": "0054163",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 418.0,
+          "average_weight": 430.0,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -7645,8 +7751,6 @@
             "quinella_rate": 0.23616236162361623,
             "place_rate": 0.33948339483394835
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -7775,6 +7879,10 @@
             4
           ],
           "horse_id": "0052932",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 475.0,
+          "average_weight": 476.0,
           "jockey_stats_1y": {
             "starts": 332,
             "wins": 10,
@@ -7793,8 +7901,6 @@
             "quinella_rate": 0.2,
             "place_rate": 0.34054054054054056
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5333333333,
             0.0583333333,
@@ -7925,6 +8031,10 @@
             6
           ],
           "horse_id": "0053152",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 513.0,
+          "average_weight": 510.0,
           "jockey_stats_1y": {
             "starts": 342,
             "wins": 14,
@@ -7943,8 +8053,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1466666667,
             0.0233333333,
@@ -8074,6 +8182,10 @@
             8
           ],
           "horse_id": "0055943",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 435.0,
+          "average_weight": 433.0,
           "jockey_stats_1y": {
             "starts": 139,
             "wins": 6,
@@ -8092,8 +8204,6 @@
             "quinella_rate": 0.2453416149068323,
             "place_rate": 0.3447204968944099
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -8241,6 +8351,10 @@
             9
           ],
           "horse_id": "0055061",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 513.0,
+          "average_weight": 506.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -8259,8 +8373,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -8391,6 +8503,10 @@
             6
           ],
           "horse_id": "0061397",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 503.0,
+          "average_weight": 509.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 250,
@@ -8401,8 +8517,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -8533,6 +8647,10 @@
             4
           ],
           "horse_id": "0052886",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 449.0,
+          "average_weight": 437.0,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -8551,8 +8669,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -8683,6 +8799,10 @@
             7
           ],
           "horse_id": "0056976",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 477.0,
+          "average_weight": 478.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -8701,8 +8821,6 @@
             "quinella_rate": 0.18471337579617833,
             "place_rate": 0.28662420382165604
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -8833,6 +8951,10 @@
             7
           ],
           "horse_id": "0052443",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 455.0,
+          "average_weight": 449.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 207,
@@ -8843,8 +8965,6 @@
             "quinella_rate": 0.1642512077294686,
             "place_rate": 0.22705314009661837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1692307692,
             0.0269230769,
@@ -8975,6 +9095,10 @@
             6
           ],
           "horse_id": "0053508",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 462.0,
+          "average_weight": 455.0,
           "jockey_stats_1y": {
             "starts": 232,
             "wins": 7,
@@ -8993,8 +9117,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.22,
             0.035,
@@ -9123,6 +9245,10 @@
             4
           ],
           "horse_id": "0056205",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 462.0,
+          "average_weight": 458.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -9141,8 +9267,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0583333333,
@@ -9273,6 +9397,10 @@
             8
           ],
           "horse_id": "0053916",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 489.0,
+          "average_weight": 479.0,
           "jockey_stats_1y": {
             "starts": 356,
             "wins": 75,
@@ -9291,8 +9419,6 @@
             "quinella_rate": 0.23616236162361623,
             "place_rate": 0.33948339483394835
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -9423,6 +9549,10 @@
             9
           ],
           "horse_id": "0055183",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 502.0,
+          "average_weight": 503.0,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -9441,8 +9571,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -9573,6 +9701,10 @@
             9
           ],
           "horse_id": "0054463",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 465.0,
+          "average_weight": 464.0,
           "jockey_stats_1y": {
             "starts": 261,
             "wins": 10,
@@ -9591,8 +9723,6 @@
             "quinella_rate": 0.1565217391304348,
             "place_rate": 0.20869565217391303
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -9723,6 +9853,10 @@
             11
           ],
           "horse_id": "0055488",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 507.0,
+          "average_weight": 507.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -9741,8 +9875,6 @@
             "quinella_rate": 0.23672566371681417,
             "place_rate": 0.34513274336283184
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -9891,6 +10023,10 @@
             8
           ],
           "horse_id": "0053035",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 485.0,
+          "average_weight": 492.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -9909,8 +10045,6 @@
             "quinella_rate": 0.18471337579617833,
             "place_rate": 0.28662420382165604
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3714285714,
             0.0964285714,
@@ -10041,6 +10175,10 @@
             1
           ],
           "horse_id": "0053325",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 470.0,
+          "average_weight": 467.0,
           "jockey_stats_1y": {
             "starts": 356,
             "wins": 75,
@@ -10059,8 +10197,6 @@
             "quinella_rate": 0.3422818791946309,
             "place_rate": 0.47651006711409394
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.65,
             0.41875,
@@ -10191,6 +10327,10 @@
             8
           ],
           "horse_id": "0060838",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 509.0,
+          "average_weight": 509.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -10209,8 +10349,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.15,
             0.04375,
@@ -10341,6 +10479,10 @@
             5
           ],
           "horse_id": "0053135",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 549.0,
+          "average_weight": 543.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -10359,8 +10501,6 @@
             "quinella_rate": 0.2154255319148936,
             "place_rate": 0.3351063829787234
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.525,
             0.29375,
@@ -10490,6 +10630,10 @@
             3
           ],
           "horse_id": "0061932",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 458.0,
+          "average_weight": 453.0,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -10508,8 +10652,6 @@
             "quinella_rate": 0.23672566371681417,
             "place_rate": 0.34513274336283184
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3142857143,
             0.05,
@@ -10640,6 +10782,10 @@
             3
           ],
           "horse_id": "0051228",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 522.0,
+          "average_weight": 519.0,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -10658,8 +10804,6 @@
             "quinella_rate": 0.175,
             "place_rate": 0.2625
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4727272727,
             0.1227272727,
@@ -10790,6 +10934,10 @@
             4
           ],
           "horse_id": "0060821",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 499.0,
+          "average_weight": 495.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -10808,8 +10956,6 @@
             "quinella_rate": 0.15587529976019185,
             "place_rate": 0.2182254196642686
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4727272727,
             0.1227272727,
@@ -10940,6 +11086,10 @@
             5
           ],
           "horse_id": "0053388",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 492.0,
+          "average_weight": 489.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 185,
@@ -10950,8 +11100,6 @@
             "quinella_rate": 0.2,
             "place_rate": 0.34054054054054056
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.1227272727,
@@ -11082,6 +11230,10 @@
             4
           ],
           "horse_id": "0050670",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 468.0,
+          "average_weight": 472.0,
           "jockey_stats_1y": {
             "starts": 261,
             "wins": 10,
@@ -11100,8 +11252,6 @@
             "quinella_rate": 0.10077519379844961,
             "place_rate": 0.20155038759689922
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1692307692,
             0.0269230769,
@@ -11232,6 +11382,10 @@
             4
           ],
           "horse_id": "0047095",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 490.0,
+          "average_weight": 481.0,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -11250,8 +11404,6 @@
             "quinella_rate": 0.23616236162361623,
             "place_rate": 0.33948339483394835
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1777777778,
             0.075,
@@ -11382,6 +11534,10 @@
             3
           ],
           "horse_id": "0051328",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 503.0,
+          "average_weight": 498.0,
           "jockey_stats_1y": {
             "starts": 410,
             "wins": 35,
@@ -11400,8 +11556,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.1038461538,
@@ -11550,6 +11704,10 @@
             2
           ],
           "horse_id": "0046998",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 503.0,
+          "average_weight": 490.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -11568,8 +11726,6 @@
             "quinella_rate": 0.23672566371681417,
             "place_rate": 0.34513274336283184
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -11700,6 +11856,10 @@
             5
           ],
           "horse_id": "0050831",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 482.0,
+          "average_weight": 483.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -11718,8 +11878,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4727272727,
             0.1227272727,
@@ -11850,6 +12008,10 @@
             3
           ],
           "horse_id": "0053688",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 505.0,
+          "average_weight": 508.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 76,
@@ -11860,8 +12022,6 @@
             "quinella_rate": 0.3157894736842105,
             "place_rate": 0.40789473684210525
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4571428571,
             0.05,
@@ -11992,6 +12152,10 @@
             3
           ],
           "horse_id": "0051773",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 519.0,
+          "average_weight": 517.0,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -12010,8 +12174,6 @@
             "quinella_rate": 0.248,
             "place_rate": 0.332
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.04375,
@@ -12142,6 +12304,10 @@
             7
           ],
           "horse_id": "0044686",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 495.0,
+          "average_weight": 474.0,
           "jockey_stats_1y": {
             "starts": 232,
             "wins": 7,
@@ -12160,8 +12326,6 @@
             "quinella_rate": 0.2154255319148936,
             "place_rate": 0.3351063829787234
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2625,
             0.021875,
@@ -12292,6 +12456,10 @@
             4
           ],
           "horse_id": "0053504",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 539.0,
+          "average_weight": 529.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -12310,8 +12478,6 @@
             "quinella_rate": 0.23672566371681417,
             "place_rate": 0.34513274336283184
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6833333333,
             0.2791666667,
@@ -12442,6 +12608,10 @@
             9
           ],
           "horse_id": "0046088",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 494.0,
+          "average_weight": 465.0,
           "jockey_stats_1y": {
             "starts": 402,
             "wins": 50,
@@ -12460,8 +12630,6 @@
             "quinella_rate": 0.2154255319148936,
             "place_rate": 0.3351063829787234
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -12592,6 +12760,10 @@
             3
           ],
           "horse_id": "0044491",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 497.0,
+          "average_weight": 507.0,
           "jockey_stats_1y": {
             "starts": 332,
             "wins": 10,
@@ -12610,8 +12782,6 @@
             "quinella_rate": 0.19471947194719472,
             "place_rate": 0.297029702970297
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4428571429,
             0.0964285714,
@@ -12742,6 +12912,10 @@
             15
           ],
           "horse_id": "0053445",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 491.0,
+          "average_weight": 491.0,
           "jockey_stats_1y": {
             "starts": 356,
             "wins": 75,
@@ -12760,8 +12934,6 @@
             "quinella_rate": 0.17045454545454544,
             "place_rate": 0.2340909090909091
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6,
             0.3625,
@@ -12892,6 +13064,10 @@
             5
           ],
           "horse_id": "0047446",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 495.0,
+          "average_weight": 492.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -12910,8 +13086,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4333333333,
             0.2791666667,
@@ -13060,6 +13234,10 @@
             4
           ],
           "horse_id": "0047487",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 454.0,
+          "average_weight": 449.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -13078,8 +13256,6 @@
             "quinella_rate": 0.2,
             "place_rate": 0.34054054054054056
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.021875,
@@ -13210,6 +13386,10 @@
             5
           ],
           "horse_id": "0052944",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 534.0,
+          "average_weight": 531.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -13228,8 +13408,6 @@
             "quinella_rate": 0.10909090909090909,
             "place_rate": 0.17272727272727273
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2133333333,
             0.0233333333,
@@ -13359,6 +13537,10 @@
             8
           ],
           "horse_id": "0055220",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 472.0,
+          "average_weight": 469.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -13377,8 +13559,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4571428571,
             0.1928571429,
@@ -13509,6 +13689,10 @@
             12
           ],
           "horse_id": "0053854",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 476.0,
+          "average_weight": 478.0,
           "jockey_stats_1y": {
             "starts": 425,
             "wins": 44,
@@ -13527,8 +13711,6 @@
             "quinella_rate": 0.3157894736842105,
             "place_rate": 0.40789473684210525
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6,
             0.05,
@@ -13659,6 +13841,10 @@
             5
           ],
           "horse_id": "0046696",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 471.0,
+          "average_weight": 459.0,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -13677,8 +13863,6 @@
             "quinella_rate": 0.07368421052631578,
             "place_rate": 0.1736842105263158
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2333333333,
             0.0194444444,
@@ -13809,6 +13993,10 @@
             3
           ],
           "horse_id": "0051443",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 453.0,
+          "average_weight": 453.0,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -13827,8 +14015,6 @@
             "quinella_rate": 0.3422818791946309,
             "place_rate": 0.47651006711409394
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4428571429,
             0.0964285714,
@@ -13959,6 +14145,10 @@
             2
           ],
           "horse_id": "0053876",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 445.0,
+          "average_weight": 462.0,
           "jockey_stats_1y": {
             "starts": 44,
             "wins": 0,
@@ -13977,8 +14167,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3230769231,
             0.1807692308,
@@ -14109,6 +14297,10 @@
             4
           ],
           "horse_id": "0053571",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 483.0,
+          "average_weight": 472.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 303,
@@ -14119,8 +14311,6 @@
             "quinella_rate": 0.19471947194719472,
             "place_rate": 0.297029702970297
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.1227272727,
@@ -14251,6 +14441,10 @@
             7
           ],
           "horse_id": "0052500",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 447.0,
+          "average_weight": 435.0,
           "jockey_stats_1y": {
             "starts": 332,
             "wins": 10,
@@ -14269,8 +14463,6 @@
             "quinella_rate": 0.1642512077294686,
             "place_rate": 0.22705314009661837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2461538462,
             0.0269230769,
@@ -14401,6 +14593,10 @@
             2
           ],
           "horse_id": "0053328",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 466.0,
+          "average_weight": 447.0,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -14419,8 +14615,6 @@
             "quinella_rate": 0.2453416149068323,
             "place_rate": 0.3447204968944099
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.1227272727,
@@ -14551,6 +14745,10 @@
             5
           ],
           "horse_id": "0051911",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 454.0,
+          "average_weight": 458.0,
           "jockey_stats_1y": {
             "starts": 445,
             "wins": 29,
@@ -14569,8 +14767,6 @@
             "quinella_rate": 0.2052401746724891,
             "place_rate": 0.3056768558951965
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.1038461538,
@@ -14719,6 +14915,10 @@
             9
           ],
           "horse_id": "0052903",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 499.0,
+          "average_weight": 503.0,
           "jockey_stats_1y": {
             "starts": 632,
             "wins": 133,
@@ -14737,8 +14937,6 @@
             "quinella_rate": 0.22039473684210525,
             "place_rate": 0.2993421052631579
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6307692308,
             0.3346153846,
@@ -14869,6 +15067,10 @@
             5
           ],
           "horse_id": "0046172",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 489.0,
+          "average_weight": 474.0,
           "jockey_stats_1y": {
             "starts": 401,
             "wins": 46,
@@ -14887,8 +15089,6 @@
             "quinella_rate": 0.2453416149068323,
             "place_rate": 0.3447204968944099
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3230769231,
             0.1807692308,
@@ -15019,6 +15219,10 @@
             3
           ],
           "horse_id": "0051138",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 441.0,
+          "average_weight": 442.0,
           "jockey_stats_1y": {
             "starts": 44,
             "wins": 0,
@@ -15037,8 +15241,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6133333333,
             0.1566666667,
@@ -15169,6 +15371,10 @@
             9
           ],
           "horse_id": "0051457",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 499.0,
+          "average_weight": 485.0,
           "jockey_stats_1y": {
             "starts": 171,
             "wins": 3,
@@ -15187,8 +15393,6 @@
             "quinella_rate": 0.23672566371681417,
             "place_rate": 0.34513274336283184
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.2136363636,
@@ -15319,6 +15523,10 @@
             2
           ],
           "horse_id": "0050930",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 459.0,
+          "average_weight": 458.0,
           "jockey_stats_1y": {
             "starts": 356,
             "wins": 75,
@@ -15337,8 +15545,6 @@
             "quinella_rate": 0.10909090909090909,
             "place_rate": 0.17272727272727273
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.325,
             0.021875,
@@ -15469,6 +15675,10 @@
             9
           ],
           "horse_id": "0051824",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 545.0,
+          "average_weight": 535.0,
           "jockey_stats_1y": null,
           "trainer_stats_1y": {
             "starts": 257,
@@ -15479,8 +15689,6 @@
             "quinella_rate": 0.21011673151750973,
             "place_rate": 0.32684824902723736
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6222222222,
             0.1861111111,
@@ -15611,6 +15819,10 @@
             2
           ],
           "horse_id": "1412043",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 471.0,
+          "average_weight": 473.0,
           "jockey_stats_1y": {
             "starts": 370,
             "wins": 15,
@@ -15629,8 +15841,6 @@
             "quinella_rate": 0.20491803278688525,
             "place_rate": 0.27049180327868855
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4428571429,
             0.025,
@@ -15761,6 +15971,10 @@
             3
           ],
           "horse_id": "0051428",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 458.0,
+          "average_weight": 461.0,
           "jockey_stats_1y": {
             "starts": 261,
             "wins": 10,
@@ -15779,8 +15993,6 @@
             "quinella_rate": 0.18360655737704917,
             "place_rate": 0.29180327868852457
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.35,
             0.1125,
@@ -15911,6 +16123,10 @@
             4
           ],
           "horse_id": "0054245",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 467.0,
+          "average_weight": 470.0,
           "jockey_stats_1y": {
             "starts": 281,
             "wins": 37,
@@ -15929,8 +16145,6 @@
             "quinella_rate": 0.3422818791946309,
             "place_rate": 0.47651006711409394
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5636363636,
             0.3954545455,
@@ -16061,6 +16275,10 @@
             4
           ],
           "horse_id": "0051230",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 522.0,
+          "average_weight": 523.0,
           "jockey_stats_1y": {
             "starts": 518,
             "wins": 84,
@@ -16079,8 +16297,6 @@
             "quinella_rate": 0.2154255319148936,
             "place_rate": 0.3351063829787234
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3555555556,
             0.15,
@@ -16211,6 +16427,10 @@
             1
           ],
           "horse_id": "0050988",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 478.0,
+          "average_weight": 471.0,
           "jockey_stats_1y": {
             "starts": 446,
             "wins": 21,
@@ -16229,8 +16449,6 @@
             "quinella_rate": 0.13793103448275862,
             "place_rate": 0.21316614420062696
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2461538462,
             0.1807692308,
@@ -16379,6 +16597,10 @@
             6
           ],
           "horse_id": "3107584",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 269.0,
+          "average_weight": 271.0,
           "jockey_stats_1y": {
             "starts": 34,
             "wins": 3,
@@ -16397,8 +16619,6 @@
             "quinella_rate": 0.25882352941176473,
             "place_rate": 0.37254901960784315
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -16525,6 +16745,10 @@
             5
           ],
           "horse_id": "3109107",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": null,
+          "average_weight": null,
           "jockey_stats_1y": {
             "starts": 415,
             "wins": 37,
@@ -16543,8 +16767,6 @@
             "quinella_rate": 0.24752475247524752,
             "place_rate": 0.3787128712871287
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0875,
@@ -16675,6 +16897,10 @@
             8
           ],
           "horse_id": "3107536",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 264.0,
+          "average_weight": 269.0,
           "jockey_stats_1y": {
             "starts": 499,
             "wins": 84,
@@ -16693,8 +16919,6 @@
             "quinella_rate": 0.25882352941176473,
             "place_rate": 0.37254901960784315
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -16825,6 +17049,10 @@
             8
           ],
           "horse_id": "3105302",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 228.0,
+          "average_weight": 244.0,
           "jockey_stats_1y": {
             "starts": 447,
             "wins": 59,
@@ -16843,8 +17071,6 @@
             "quinella_rate": 0.16602316602316602,
             "place_rate": 0.26640926640926643
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -16973,6 +17199,10 @@
             2
           ],
           "horse_id": "3109081",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 289.0,
+          "average_weight": 292.0,
           "jockey_stats_1y": {
             "starts": 471,
             "wins": 53,
@@ -16991,8 +17221,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.0583333333,
@@ -17123,6 +17351,10 @@
             10
           ],
           "horse_id": "3104659",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 244.0,
+          "average_weight": 255.0,
           "jockey_stats_1y": {
             "starts": 421,
             "wins": 17,
@@ -17141,8 +17373,6 @@
             "quinella_rate": 0.10736196319018405,
             "place_rate": 0.18711656441717792
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -17273,6 +17503,10 @@
             8
           ],
           "horse_id": "3107363",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 273.0,
+          "average_weight": 276.0,
           "jockey_stats_1y": {
             "starts": 435,
             "wins": 108,
@@ -17291,8 +17525,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -17423,6 +17655,10 @@
             5
           ],
           "horse_id": "3107356",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 266.0,
+          "average_weight": 261.0,
           "jockey_stats_1y": {
             "starts": 322,
             "wins": 11,
@@ -17441,8 +17677,6 @@
             "quinella_rate": 0.10736196319018405,
             "place_rate": 0.18711656441717792
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3142857143,
             0.05,
@@ -17573,6 +17807,10 @@
             8
           ],
           "horse_id": "3104706",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 257.0,
+          "average_weight": 252.0,
           "jockey_stats_1y": {
             "starts": 472,
             "wins": 59,
@@ -17591,8 +17829,6 @@
             "quinella_rate": 0.25885558583106266,
             "place_rate": 0.34332425068119893
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.0318181818,
@@ -17723,6 +17959,10 @@
             8
           ],
           "horse_id": "3107602",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 282.0,
+          "average_weight": 272.0,
           "jockey_stats_1y": {
             "starts": 24,
             "wins": 4,
@@ -17741,8 +17981,6 @@
             "quinella_rate": 0.11940298507462686,
             "place_rate": 0.20149253731343283
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1333333333,
             0.0388888889,
@@ -17891,6 +18129,10 @@
             6
           ],
           "horse_id": "3107319",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 281.0,
+          "average_weight": 291.0,
           "jockey_stats_1y": {
             "starts": 447,
             "wins": 59,
@@ -17909,8 +18151,6 @@
             "quinella_rate": 0.16602316602316602,
             "place_rate": 0.26640926640926643
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4428571429,
             0.025,
@@ -18041,6 +18281,10 @@
             1
           ],
           "horse_id": "3107606",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 286.0,
+          "average_weight": 290.0,
           "jockey_stats_1y": {
             "starts": 499,
             "wins": 84,
@@ -18059,8 +18303,6 @@
             "quinella_rate": 0.24210526315789474,
             "place_rate": 0.3447368421052632
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.1807692308,
@@ -18191,6 +18433,10 @@
             10
           ],
           "horse_id": "3018106",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 288.0,
+          "average_weight": 282.0,
           "jockey_stats_1y": {
             "starts": 206,
             "wins": 9,
@@ -18209,8 +18455,6 @@
             "quinella_rate": 0.25885558583106266,
             "place_rate": 0.34332425068119893
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.22,
             0.135,
@@ -18341,6 +18585,10 @@
             4
           ],
           "horse_id": "3107334",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 303.0,
+          "average_weight": 301.0,
           "jockey_stats_1y": {
             "starts": 415,
             "wins": 37,
@@ -18359,8 +18607,6 @@
             "quinella_rate": 0.25882352941176473,
             "place_rate": 0.37254901960784315
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3818181818,
             0.0318181818,
@@ -18491,6 +18737,10 @@
             9
           ],
           "horse_id": "3104099",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 248.0,
+          "average_weight": 251.0,
           "jockey_stats_1y": {
             "starts": 483,
             "wins": 84,
@@ -18509,8 +18759,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6,
             0.1928571429,
@@ -18641,6 +18889,10 @@
             6
           ],
           "horse_id": "3108684",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 272.0,
+          "average_weight": 278.0,
           "jockey_stats_1y": {
             "starts": 471,
             "wins": 53,
@@ -18659,8 +18911,6 @@
             "quinella_rate": 0.11940298507462686,
             "place_rate": 0.20149253731343283
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3666666667,
             0.225,
@@ -18791,6 +19041,10 @@
             10
           ],
           "horse_id": "3104091",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 302.0,
+          "average_weight": 305.0,
           "jockey_stats_1y": {
             "starts": 501,
             "wins": 77,
@@ -18809,8 +19063,6 @@
             "quinella_rate": 0.2556179775280899,
             "place_rate": 0.3792134831460674
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.0964285714,
@@ -18941,6 +19193,10 @@
             2
           ],
           "horse_id": "3017214",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 303.0,
+          "average_weight": 307.0,
           "jockey_stats_1y": {
             "starts": 110,
             "wins": 6,
@@ -18959,8 +19215,6 @@
             "quinella_rate": 0.11910112359550562,
             "place_rate": 0.2202247191011236
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.0318181818,
@@ -19091,6 +19345,10 @@
             6
           ],
           "horse_id": "3104599",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 267.0,
+          "average_weight": 262.0,
           "jockey_stats_1y": {
             "starts": 168,
             "wins": 10,
@@ -19109,8 +19367,6 @@
             "quinella_rate": 0.10736196319018405,
             "place_rate": 0.18711656441717792
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.22,
             0.035,
@@ -19241,6 +19497,10 @@
             5
           ],
           "horse_id": "3102316",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 282.0,
+          "average_weight": 285.0,
           "jockey_stats_1y": {
             "starts": 336,
             "wins": 22,
@@ -19259,8 +19519,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -19409,6 +19667,10 @@
             8
           ],
           "horse_id": "3107436",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 265.0,
+          "average_weight": 276.0,
           "jockey_stats_1y": {
             "starts": 415,
             "wins": 37,
@@ -19427,8 +19689,6 @@
             "quinella_rate": 0.0778688524590164,
             "place_rate": 0.1680327868852459
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.15,
             0.04375,
@@ -19559,6 +19819,10 @@
             4
           ],
           "horse_id": "3107590",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 278.0,
+          "average_weight": 285.0,
           "jockey_stats_1y": {
             "starts": 336,
             "wins": 22,
@@ -19577,8 +19841,6 @@
             "quinella_rate": 0.17405063291139242,
             "place_rate": 0.28164556962025317
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3647058824,
             0.0205882353,
@@ -19709,6 +19971,10 @@
             9
           ],
           "horse_id": "3105299",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 244.0,
+          "average_weight": 242.0,
           "jockey_stats_1y": {
             "starts": 435,
             "wins": 108,
@@ -19727,8 +19993,6 @@
             "quinella_rate": 0.13367609254498714,
             "place_rate": 0.2133676092544987
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1714285714,
             0.05,
@@ -19859,6 +20123,10 @@
             3
           ],
           "horse_id": "3104678",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 307.0,
+          "average_weight": 306.0,
           "jockey_stats_1y": {
             "starts": 447,
             "wins": 59,
@@ -19877,8 +20145,6 @@
             "quinella_rate": 0.16602316602316602,
             "place_rate": 0.26640926640926643
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.52,
             0.135,
@@ -20009,6 +20275,10 @@
             2
           ],
           "horse_id": "3104794",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 279.0,
+          "average_weight": 274.0,
           "jockey_stats_1y": {
             "starts": 110,
             "wins": 6,
@@ -20027,8 +20297,6 @@
             "quinella_rate": 0.11910112359550562,
             "place_rate": 0.2202247191011236
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1826086957,
             0.0152173913,
@@ -20159,6 +20427,10 @@
             7
           ],
           "horse_id": "3105271",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 271.0,
+          "average_weight": 262.0,
           "jockey_stats_1y": {
             "starts": 471,
             "wins": 53,
@@ -20177,8 +20449,6 @@
             "quinella_rate": 0.22055137844611528,
             "place_rate": 0.3283208020050125
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2285714286,
             0.0964285714,
@@ -20309,6 +20579,10 @@
             3
           ],
           "horse_id": "3104134",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 260.0,
+          "average_weight": 271.0,
           "jockey_stats_1y": {
             "starts": 64,
             "wins": 2,
@@ -20327,8 +20601,6 @@
             "quinella_rate": 0.2556179775280899,
             "place_rate": 0.3792134831460674
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1833333333,
             0.0291666667,
@@ -20459,6 +20731,10 @@
             4
           ],
           "horse_id": "3104801",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 278.0,
+          "average_weight": 265.0,
           "jockey_stats_1y": {
             "starts": 136,
             "wins": 6,
@@ -20477,8 +20753,6 @@
             "quinella_rate": 0.1724137931034483,
             "place_rate": 0.2664576802507837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.24,
             0.07,
@@ -20609,6 +20883,10 @@
             1
           ],
           "horse_id": "3104084",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 266.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 472,
             "wins": 59,
@@ -20627,8 +20905,6 @@
             "quinella_rate": 0.18681318681318682,
             "place_rate": 0.2813186813186813
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1692307692,
             0.0269230769,
@@ -20759,6 +21035,10 @@
             7
           ],
           "horse_id": "3107594",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 258.0,
+          "average_weight": 263.0,
           "jockey_stats_1y": {
             "starts": 483,
             "wins": 84,
@@ -20777,8 +21057,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4666666667,
             0.2611111111,
@@ -20927,6 +21205,10 @@
             8
           ],
           "horse_id": "3104698",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 294.0,
+          "average_weight": 301.0,
           "jockey_stats_1y": {
             "starts": 313,
             "wins": 17,
@@ -20945,8 +21227,6 @@
             "quinella_rate": 0.10736196319018405,
             "place_rate": 0.18711656441717792
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.1807692308,
@@ -21077,6 +21357,10 @@
             7
           ],
           "horse_id": "3103831",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 254.0,
+          "average_weight": 258.0,
           "jockey_stats_1y": {
             "starts": 24,
             "wins": 4,
@@ -21095,8 +21379,6 @@
             "quinella_rate": 0.25882352941176473,
             "place_rate": 0.37254901960784315
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.275,
             0.04375,
@@ -21227,6 +21509,10 @@
             4
           ],
           "horse_id": "3107932",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 301.0,
+          "average_weight": 298.0,
           "jockey_stats_1y": {
             "starts": 336,
             "wins": 22,
@@ -21245,8 +21531,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2666666667,
             0.0291666667,
@@ -21377,6 +21661,10 @@
             8
           ],
           "horse_id": "3104812",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 263.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 499,
             "wins": 84,
@@ -21395,8 +21683,6 @@
             "quinella_rate": 0.24752475247524752,
             "place_rate": 0.3787128712871287
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.42,
             0.135,
@@ -21527,6 +21813,10 @@
             3
           ],
           "horse_id": "3104647",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 256.0,
+          "average_weight": 247.0,
           "jockey_stats_1y": {
             "starts": 185,
             "wins": 11,
@@ -21545,8 +21835,6 @@
             "quinella_rate": 0.0778688524590164,
             "place_rate": 0.1680327868852459
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3142857143,
             0.05,
@@ -21677,6 +21965,10 @@
             8
           ],
           "horse_id": "3104308",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 281.0,
+          "average_weight": 287.0,
           "jockey_stats_1y": {
             "starts": 206,
             "wins": 9,
@@ -21695,8 +21987,6 @@
             "quinella_rate": 0.25885558583106266,
             "place_rate": 0.34332425068119893
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2444444444,
             0.0388888889,
@@ -21827,6 +22117,10 @@
             4
           ],
           "horse_id": "3102610",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 258.0,
+          "average_weight": 263.0,
           "jockey_stats_1y": {
             "starts": 421,
             "wins": 17,
@@ -21845,8 +22139,6 @@
             "quinella_rate": 0.13367609254498714,
             "place_rate": 0.2133676092544987
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1466666667,
             0.0233333333,
@@ -21977,6 +22269,10 @@
             1
           ],
           "horse_id": "3107352",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 268.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 483,
             "wins": 84,
@@ -21995,8 +22291,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4,
             0.16875,
@@ -22127,6 +22421,10 @@
             7
           ],
           "horse_id": "3101746",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 272.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 322,
             "wins": 11,
@@ -22145,8 +22443,6 @@
             "quinella_rate": 0.11910112359550562,
             "place_rate": 0.2202247191011236
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2333333333,
             0.0194444444,
@@ -22277,6 +22573,10 @@
             5
           ],
           "horse_id": "3103639",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 251.0,
+          "average_weight": 261.0,
           "jockey_stats_1y": {
             "starts": 501,
             "wins": 77,
@@ -22295,8 +22595,6 @@
             "quinella_rate": 0.2556179775280899,
             "place_rate": 0.3792134831460674
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3818181818,
             0.1227272727,
@@ -22445,6 +22743,10 @@
             9
           ],
           "horse_id": "3105275",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 292.0,
+          "average_weight": 286.0,
           "jockey_stats_1y": {
             "starts": 313,
             "wins": 17,
@@ -22463,8 +22765,6 @@
             "quinella_rate": 0.14775725593667546,
             "place_rate": 0.2559366754617414
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1294117647,
             0.0205882353,
@@ -22595,6 +22895,10 @@
             5
           ],
           "horse_id": "3102645",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 285.0,
+          "average_weight": 277.0,
           "jockey_stats_1y": {
             "starts": 472,
             "wins": 59,
@@ -22613,8 +22917,6 @@
             "quinella_rate": 0.18681318681318682,
             "place_rate": 0.2813186813186813
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3647058824,
             0.0205882353,
@@ -22745,6 +23047,10 @@
             1
           ],
           "horse_id": "3107612",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 288.0,
+          "average_weight": 283.0,
           "jockey_stats_1y": {
             "starts": 471,
             "wins": 53,
@@ -22763,8 +23069,6 @@
             "quinella_rate": 0.13367609254498714,
             "place_rate": 0.2133676092544987
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.7666666667,
             0.1958333333,
@@ -22895,6 +23199,10 @@
             3
           ],
           "horse_id": "3105497",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 287.0,
+          "average_weight": 297.0,
           "jockey_stats_1y": {
             "starts": 501,
             "wins": 77,
@@ -22913,8 +23221,6 @@
             "quinella_rate": 0.2556179775280899,
             "place_rate": 0.3792134831460674
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.48,
             0.2233333333,
@@ -23045,6 +23351,10 @@
             7
           ],
           "horse_id": "3104271",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 277.0,
+          "average_weight": 281.0,
           "jockey_stats_1y": {
             "starts": 435,
             "wins": 108,
@@ -23063,8 +23373,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2909090909,
             0.0318181818,
@@ -23195,6 +23503,10 @@
             5
           ],
           "horse_id": "3103767",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 256.0,
+          "average_weight": 258.0,
           "jockey_stats_1y": {
             "starts": 499,
             "wins": 84,
@@ -23213,8 +23525,6 @@
             "quinella_rate": 0.14775725593667546,
             "place_rate": 0.2559366754617414
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3565217391,
             0.0152173913,
@@ -23345,6 +23655,10 @@
             2
           ],
           "horse_id": "3103475",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 282.0,
+          "average_weight": 288.0,
           "jockey_stats_1y": {
             "starts": 415,
             "wins": 37,
@@ -23363,8 +23677,6 @@
             "quinella_rate": 0.24210526315789474,
             "place_rate": 0.3447368421052632
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.025,
@@ -23495,6 +23807,10 @@
             1
           ],
           "horse_id": "3107369",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 259.0,
+          "average_weight": 277.0,
           "jockey_stats_1y": {
             "starts": 24,
             "wins": 4,
@@ -23513,8 +23829,6 @@
             "quinella_rate": 0.25885558583106266,
             "place_rate": 0.34332425068119893
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5142857143,
             0.3107142857,
@@ -23645,6 +23959,10 @@
             1
           ],
           "horse_id": "3103618",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 253.0,
+          "average_weight": 258.0,
           "jockey_stats_1y": {
             "starts": 336,
             "wins": 22,
@@ -23663,8 +23981,6 @@
             "quinella_rate": 0.17405063291139242,
             "place_rate": 0.28164556962025317
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2666666667,
             0.1958333333,
@@ -23795,6 +24111,10 @@
             10
           ],
           "horse_id": "3101784",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 267.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 185,
             "wins": 11,
@@ -23813,8 +24133,6 @@
             "quinella_rate": 0.22055137844611528,
             "place_rate": 0.3283208020050125
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2666666667,
             0.1125,
@@ -23963,6 +24281,10 @@
             4
           ],
           "horse_id": "3018999",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 277.0,
+          "average_weight": 289.0,
           "jockey_stats_1y": {
             "starts": 24,
             "wins": 4,
@@ -23981,8 +24303,6 @@
             "quinella_rate": 0.13367609254498714,
             "place_rate": 0.2133676092544987
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2,
             0.021875,
@@ -24113,6 +24433,10 @@
             2
           ],
           "horse_id": "3104237",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 276.0,
+          "average_weight": 280.0,
           "jockey_stats_1y": {
             "starts": 499,
             "wins": 84,
@@ -24131,8 +24455,6 @@
             "quinella_rate": 0.25882352941176473,
             "place_rate": 0.37254901960784315
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.28,
             0.2233333333,
@@ -24263,6 +24585,10 @@
             9
           ],
           "horse_id": "3105329",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 251.0,
+          "average_weight": 251.0,
           "jockey_stats_1y": {
             "starts": 472,
             "wins": 59,
@@ -24281,8 +24607,6 @@
             "quinella_rate": 0.18681318681318682,
             "place_rate": 0.2813186813186813
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.2625,
             0.021875,
@@ -24413,6 +24737,10 @@
             3
           ],
           "horse_id": "3104669",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 264.0,
+          "average_weight": 272.0,
           "jockey_stats_1y": {
             "starts": 336,
             "wins": 22,
@@ -24431,8 +24759,6 @@
             "quinella_rate": 0.17405063291139242,
             "place_rate": 0.28164556962025317
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.6375,
             0.021875,
@@ -24563,6 +24889,10 @@
             8
           ],
           "horse_id": "3103398",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 266.0,
+          "average_weight": 264.0,
           "jockey_stats_1y": {
             "starts": 322,
             "wins": 11,
@@ -24581,8 +24911,6 @@
             "quinella_rate": 0.11910112359550562,
             "place_rate": 0.2202247191011236
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.1294117647,
             0.0205882353,
@@ -24713,6 +25041,10 @@
             1
           ],
           "horse_id": "3105238",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 264.0,
+          "average_weight": 257.0,
           "jockey_stats_1y": {
             "starts": 447,
             "wins": 59,
@@ -24731,8 +25063,6 @@
             "quinella_rate": 0.1724137931034483,
             "place_rate": 0.2664576802507837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.4666666667,
             0.15,
@@ -24863,6 +25193,10 @@
             2
           ],
           "horse_id": "3103557",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 308.0,
+          "average_weight": 314.0,
           "jockey_stats_1y": {
             "starts": 435,
             "wins": 108,
@@ -24881,8 +25215,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5777777778,
             0.2611111111,
@@ -25013,6 +25345,10 @@
             1
           ],
           "horse_id": "3104805",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 264.0,
+          "average_weight": 267.0,
           "jockey_stats_1y": {
             "starts": 136,
             "wins": 6,
@@ -25031,8 +25367,6 @@
             "quinella_rate": 0.25885558583106266,
             "place_rate": 0.34332425068119893
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3714285714,
             0.2392857143,
@@ -25163,6 +25497,10 @@
             8
           ],
           "horse_id": "3103672",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 309.0,
+          "average_weight": 294.0,
           "jockey_stats_1y": {
             "starts": 483,
             "wins": 84,
@@ -25181,8 +25519,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.15,
             0.04375,
@@ -25313,6 +25649,10 @@
             5
           ],
           "horse_id": "3102254",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 277.0,
+          "average_weight": 261.0,
           "jockey_stats_1y": {
             "starts": 501,
             "wins": 77,
@@ -25331,8 +25671,6 @@
             "quinella_rate": 0.0778688524590164,
             "place_rate": 0.1680327868852459
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3142857143,
             0.05,
@@ -25481,6 +25819,10 @@
             4
           ],
           "horse_id": "3107542",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 278.0,
+          "average_weight": 290.0,
           "jockey_stats_1y": {
             "starts": 501,
             "wins": 77,
@@ -25499,8 +25841,6 @@
             "quinella_rate": 0.2556179775280899,
             "place_rate": 0.3792134831460674
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5125,
             0.084375,
@@ -25631,6 +25971,10 @@
             6
           ],
           "horse_id": "3104750",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 279.0,
+          "average_weight": 281.0,
           "jockey_stats_1y": {
             "starts": 421,
             "wins": 17,
@@ -25649,8 +25993,6 @@
             "quinella_rate": 0.24210526315789474,
             "place_rate": 0.3447368421052632
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3230769231,
             0.0269230769,
@@ -25781,6 +26123,10 @@
             8
           ],
           "horse_id": "3104321",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 270.0,
+          "average_weight": 272.0,
           "jockey_stats_1y": {
             "starts": 483,
             "wins": 84,
@@ -25799,8 +26145,6 @@
             "quinella_rate": 0.35962877030162416,
             "place_rate": 0.5034802784222738
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3,
             0.025,
@@ -25931,6 +26275,10 @@
             6
           ],
           "horse_id": "3104749",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 270.0,
+          "average_weight": 273.0,
           "jockey_stats_1y": {
             "starts": 415,
             "wins": 37,
@@ -25949,8 +26297,6 @@
             "quinella_rate": 0.24752475247524752,
             "place_rate": 0.3787128712871287
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3904761905,
             0.1595238095,
@@ -26081,6 +26427,10 @@
             1
           ],
           "horse_id": "3104122",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 281.0,
+          "average_weight": 287.0,
           "jockey_stats_1y": {
             "starts": 447,
             "wins": 59,
@@ -26099,8 +26449,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5166666667,
             0.3625,
@@ -26231,6 +26579,10 @@
             5
           ],
           "horse_id": "3103692",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 275.0,
+          "average_weight": 278.0,
           "jockey_stats_1y": {
             "starts": 472,
             "wins": 59,
@@ -26249,8 +26601,6 @@
             "quinella_rate": 0.18681318681318682,
             "place_rate": 0.2813186813186813
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3818181818,
             0.3045454545,
@@ -26381,6 +26731,10 @@
             8
           ],
           "horse_id": "3018120",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 280.0,
+          "average_weight": 287.0,
           "jockey_stats_1y": {
             "starts": 24,
             "wins": 4,
@@ -26399,8 +26753,6 @@
             "quinella_rate": 0.1724137931034483,
             "place_rate": 0.2664576802507837
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.22,
             0.035,
@@ -26531,6 +26883,10 @@
             1
           ],
           "horse_id": "3104747",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 288.0,
+          "average_weight": 290.0,
           "jockey_stats_1y": {
             "starts": 435,
             "wins": 108,
@@ -26549,8 +26905,6 @@
             "quinella_rate": 0.37449392712550605,
             "place_rate": 0.49190283400809715
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.52,
             0.435,
@@ -26681,6 +27035,10 @@
             1
           ],
           "horse_id": "3109130",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 295.0,
+          "average_weight": 300.0,
           "jockey_stats_1y": {
             "starts": 471,
             "wins": 53,
@@ -26699,8 +27057,6 @@
             "quinella_rate": 0.22055137844611528,
             "place_rate": 0.3283208020050125
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.5777777778,
             0.4833333333,
@@ -26831,6 +27187,10 @@
             10
           ],
           "horse_id": "3104684",
+          "horse_weight": null,
+          "horse_weight_change": null,
+          "previous_weight": 253.0,
+          "average_weight": 257.0,
           "jockey_stats_1y": {
             "starts": 322,
             "wins": 11,
@@ -26849,8 +27209,6 @@
             "quinella_rate": 0.11910112359550562,
             "place_rate": 0.2202247191011236
           },
-          "horse_weight": null,
-          "horse_weight_change": null,
           "features_v6": [
             0.3263157895,
             0.0710526316,
@@ -72769,9 +73127,9 @@
       "20261121",
       "20261122"
     ],
-    "collection_from": "20261117",
-    "collection_through": "20261126",
-    "browse_from": "20251119",
+    "collection_from": "20261118",
+    "collection_through": "20261127",
+    "browse_from": "20251120",
     "history": {
       "status": "ready",
       "through": "20261115",
