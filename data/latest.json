@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T16:06:34+09:00",
+  "updated_at": "2026-11-26T02:56:21+09:00",
   "races": [
     {
       "venue": "busan",
@@ -293,7 +293,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -440,7 +440,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -586,7 +586,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -880,7 +880,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -1027,7 +1027,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -1321,7 +1321,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -1467,7 +1467,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -2640,7 +2640,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -3233,7 +3233,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -3693,7 +3693,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -3831,7 +3831,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -3977,7 +3977,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -4272,7 +4272,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -4437,7 +4437,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -4583,7 +4583,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -4733,7 +4733,7 @@
             "history": 4,
             "pace_starts": 4,
             "sectional_starts": 4,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -5026,7 +5026,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -5317,7 +5317,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -5912,7 +5912,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -7082,7 +7082,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -7350,7 +7350,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -8070,7 +8070,7 @@
             "history": 4,
             "pace_starts": 4,
             "sectional_starts": 4,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -8338,7 +8338,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -8472,7 +8472,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -9056,7 +9056,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -9340,7 +9340,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -9624,7 +9624,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -9774,7 +9774,7 @@
             "history": 7,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -10208,7 +10208,7 @@
             "history": 1,
             "pace_starts": 1,
             "sectional_starts": 1,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -10525,7 +10525,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -10675,7 +10675,7 @@
             "history": 5,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -10825,7 +10825,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -10975,7 +10975,7 @@
             "history": 5,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -11125,7 +11125,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -11714,7 +11714,7 @@
             "history": 22,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -12331,7 +12331,7 @@
             "history": 7,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -13230,7 +13230,7 @@
             "history": 8,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -17006,7 +17006,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -17155,7 +17155,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -17748,7 +17748,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -17894,7 +17894,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -18040,7 +18040,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -18336,7 +18336,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -18504,7 +18504,7 @@
             "history": 8,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -18954,7 +18954,7 @@
             "history": 6,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -21371,7 +21371,7 @@
             "history": 5,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -25025,7 +25025,7 @@
             "history": 11,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -25325,7 +25325,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -25475,7 +25475,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -25925,7 +25925,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -27607,7 +27607,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -27755,7 +27755,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -28801,7 +28801,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -29718,7 +29718,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -32903,7 +32903,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -34571,7 +34571,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -35171,7 +35171,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -35639,7 +35639,7 @@
             "history": 12,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -35939,7 +35939,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -36389,7 +36389,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -36846,7 +36846,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -36992,7 +36992,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -37138,7 +37138,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -37431,7 +37431,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -37578,7 +37578,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -37725,7 +37725,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -37871,7 +37871,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -38018,7 +38018,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -38164,7 +38164,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -38311,7 +38311,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -38763,7 +38763,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -38909,7 +38909,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -39647,7 +39647,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -39793,7 +39793,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -41146,7 +41146,7 @@
             "history": 4,
             "pace_starts": 4,
             "sectional_starts": 4,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -42062,7 +42062,7 @@
             "history": 5,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -42943,7 +42943,7 @@
             "history": 6,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -43561,7 +43561,7 @@
             "history": 6,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -44741,7 +44741,7 @@
             "history": 6,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -44891,7 +44891,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -45659,7 +45659,7 @@
             "history": 3,
             "pace_starts": 3,
             "sectional_starts": 3,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -48820,7 +48820,7 @@
             "history": 5,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -49411,7 +49411,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -49711,7 +49711,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -50179,7 +50179,7 @@
             "history": 11,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -52428,7 +52428,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -53169,7 +53169,7 @@
             "history": 8,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         }
       ],
@@ -54387,7 +54387,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -55740,7 +55740,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -55886,7 +55886,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -56034,7 +56034,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -56328,7 +56328,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -56639,7 +56639,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -56786,7 +56786,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -56932,7 +56932,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -57078,7 +57078,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -57224,7 +57224,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -59337,7 +59337,7 @@
             "history": 8,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -62507,7 +62507,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -62807,7 +62807,7 @@
             "history": 7,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -63407,7 +63407,7 @@
             "history": 2,
             "pace_starts": 2,
             "sectional_starts": 2,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -68245,7 +68245,7 @@
             "history": 11,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -68695,7 +68695,7 @@
             "history": 0,
             "pace_starts": 0,
             "sectional_starts": 0,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -69013,7 +69013,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -69163,7 +69163,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -70205,7 +70205,7 @@
             "history": 10,
             "pace_starts": 5,
             "sectional_starts": 5,
-            "identity": "name_cohort_sex"
+            "identity": "official_id_checked"
           }
         },
         {
@@ -73563,9 +73563,9 @@
       "20261128",
       "20261129"
     ],
-    "collection_from": "20261123",
-    "collection_through": "20261202",
-    "browse_from": "20251125",
+    "collection_from": "20261124",
+    "collection_through": "20261203",
+    "browse_from": "20251126",
     "history": {
       "status": "ready",
       "through": "20261122",
